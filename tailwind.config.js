@@ -6,61 +6,55 @@ module.exports = {
   ],
   theme: {
     extend: {
-        screens: {
-            sm: "640px",
-            md: "768px",
-            lg: "1024px",
-            xl: "1280px",
-    },
+      screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+      },
       fontFamily: {
-        sans: ["Inter", "sans-serif"], // cambia por tu font
+        display: ["var(--font-display)"],
+        sans:    ["var(--font-body)", "DM Sans", "system-ui", "sans-serif"],
+        body:    ["var(--font-body)", "DM Sans", "system-ui", "sans-serif"],
+        mono:    ['"JetBrains Mono"', "ui-monospace", "monospace"],
       },
-
-      fontSize: {
-        // Headings
-        "h1": ["64px", { lineHeight: "1.1" }], // 404 Title
-        "h2": ["48px", { lineHeight: "1.2" }], // Hero Headline
-        "h3": ["36px", { lineHeight: "1.3" }], // Primary
-        "h4": ["28px", { lineHeight: "1.4" }], // Secondary
-        "h5": ["22px", { lineHeight: "1.5" }], // Subtitle
-        "h6": ["18px", { lineHeight: "1.5" }], // Box Title
-
-        // Text
-        "body": ["16px", { lineHeight: "1.6" }],
-        "button": ["14px", { lineHeight: "1.4" }],
-        "overline": ["12px", { lineHeight: "1.3", letterSpacing: "0.1em" }],
-      },
-    },
-    colors: {
-        primary: {
-          DEFAULT: "#0A0A0A",
-          light: "#333333",
-          dark: "#000000",
+      colors: {
+        "irca-green": {
+          DEFAULT: "#6FB03F",
+          600: "#5E9B33",
+          700: "#4E8228",
+          50:  "#EEF7E5",
+          100: "#DCEFCB",
         },
-
-        secondary: {
-          DEFAULT: "#6B7280",
-          light: "#9CA3AF",
-          dark: "#4B5563",
+        "irca-blue": {
+          DEFAULT: "#0080C0",
+          600: "#006FA6",
+          700: "#005A87",
+          50:  "#E5F2F9",
+          100: "#C7E2F0",
         },
-
-        neutral: {
-          50: "#F9FAFB",
-          100: "#F3F4F6",
-          200: "#E5E7EB",
-          300: "#D1D5DB",
-          400: "#9CA3AF",
-          500: "#6B7280",
-          600: "#4B5563",
-          700: "#374151",
-          800: "#1F2937",
-          900: "#111827",
+        ink: {
+          1000: "#0B1118",
+          900:  "#14202C",
+          700:  "#334759",
+          500:  "#5C7186",
+          400:  "#7A8FA3",
+          300:  "#A8B6C5",
+          200:  "#D2DAE3",
+          100:  "#E5EAF0",
+          50:   "#F1F4F7",
+          25:   "#F8FAFB",
         },
-
-        black: "#000000",
+        paper: "#FFFFFF",
+        "bg-deep": "#0B2034",
         white: "#FFFFFF",
+        black: "#000000",
         transparent: "transparent",
       },
+      maxWidth: {
+        content: "1280px",
+      },
+    },
   },
   plugins: [],
 };

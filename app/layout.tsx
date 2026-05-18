@@ -1,87 +1,51 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
- 
-// ─── Font ────────────────────────────────────────────────────────────────────
-// Cambia Inter por la fuente del proyecto.
-// Asegúrate de que el nombre coincida con el definido en tailwind.config.js
-const inter = Inter({
+
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
   display: "swap",
 });
- 
-// ─── Metadata ────────────────────────────────────────────────────────────────
-// Actualiza estos valores al iniciar cada proyecto nuevo.
-// NEXT_PUBLIC_SITE_URL debe estar definido en .env.local
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://tudominio.com";
- 
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ircaconsultores.com";
+
 export const metadata: Metadata = {
-  // Title: las páginas hijas usan el template automáticamente.
-  // Ejemplo: la página "Nosotros" aparece como "Nosotros | Nombre del Proyecto"
   title: {
-    default: "Nombre del Proyecto",
-    template: "%s | Nombre del Proyecto",
+    default: "IRCA Consultores® · Ingeniería Ambiental y Cumplimiento Normativo",
+    template: "%s | IRCA Consultores®",
   },
-  description: "Descripción del proyecto. Máximo 160 caracteres para SEO.",
+  description:
+    "Consultoría ambiental integral desde 1999. Ingeniería ambiental, cumplimiento normativo, atención legal y trámites gubernamentales en México.",
   metadataBase: new URL(siteUrl),
- 
-  // Open Graph — redes sociales (Facebook, LinkedIn, WhatsApp)
   openGraph: {
-    title: "Nombre del Proyecto",
-    description: "Descripción del proyecto.",
+    title: "IRCA Consultores® · Ingeniería Ambiental y Cumplimiento Normativo",
+    description: "Consultoría ambiental integral desde 1999.",
     url: siteUrl,
-    siteName: "Nombre del Proyecto",
+    siteName: "IRCA Consultores®",
     locale: "es_MX",
     type: "website",
-    images: [
-      {
-        url: "/og-image.png", // 1200x630px — agregar a /public
-        width: 1200,
-        height: 630,
-        alt: "Nombre del Proyecto",
-      },
-    ],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "IRCA Consultores®" }],
   },
- 
-  // Twitter / X
   twitter: {
     card: "summary_large_image",
-    title: "Nombre del Proyecto",
-    description: "Descripción del proyecto.",
+    title: "IRCA Consultores®",
+    description: "Consultoría ambiental integral desde 1999.",
     images: ["/og-image.png"],
-    // creator: "@tuhandle", // descomentar si aplica
   },
- 
-  // Robots — índexable por defecto, se puede sobreescribir por página
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
-  },
- 
-  // Favicon e íconos — agregar archivos a /public/icons
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   icons: {
-    icon: "/icons/favicon.ico",
-    shortcut: "/icons/favicon-32x32.png",
-    apple: "/icons/apple-touch-icon.png",
+    icon: "/favicon.ico",
   },
 };
- 
-// ─── Layout ──────────────────────────────────────────────────────────────────
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={inter.variable}>
-      <body className="font-sans antialiased bg-white text-primary">
+    <html lang="es" className={dmSans.variable}>
+      <body className="antialiased">
         <Navbar />
         <main>{children}</main>
         <Footer />

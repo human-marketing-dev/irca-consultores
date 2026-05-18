@@ -1,24 +1,84 @@
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Variables opcionales */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand */
+  --irca-green:     #6FB03F;
+  --irca-green-600: #5E9B33;
+  --irca-green-700: #4E8228;
+  --irca-green-50:  #EEF7E5;
+  --irca-green-100: #DCEFCB;
+
+  --irca-blue:      #0080C0;
+  --irca-blue-600:  #006FA6;
+  --irca-blue-700:  #005A87;
+  --irca-blue-50:   #E5F2F9;
+  --irca-blue-100:  #C7E2F0;
+
+  /* Neutrals */
+  --ink-1000: #0B1118;
+  --ink-900:  #14202C;
+  --ink-700:  #334759;
+  --ink-500:  #5C7186;
+  --ink-400:  #7A8FA3;
+  --ink-300:  #A8B6C5;
+  --ink-200:  #D2DAE3;
+  --ink-100:  #E5EAF0;
+  --ink-50:   #F1F4F7;
+  --ink-25:   #F8FAFB;
+
+  /* Semantic */
+  --success:    #4E8228;
+  --success-bg: #EEF7E5;
+  --info:       #0080C0;
+  --info-bg:    #E5F2F9;
+  --warning:    #C77A0C;
+  --warning-bg: #FBF1DF;
+  --danger:     #B0331E;
+  --danger-bg:  #FBE7E2;
+
+  /* Context tokens */
+  --fg-1: #0B1118;
+  --fg-2: #14202C;
+  --fg-3: #334759;
+  --fg-4: #5C7186;
+  --bg-1: #FFFFFF;
+  --bg-2: #F8FAFB;
+  --bg-3: #F1F4F7;
+  --bg-deep: #0B2034;
+  --border-soft:   #E5EAF0;
+  --border-strong: #D2DAE3;
+  --border-focus:  #0080C0;
+
+  /* Typography — Satoshi loaded via @import above; DM Sans via next/font CSS var */
+  --font-display: "Satoshi", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Consolas, monospace;
+
+  /* Shadows (subtle, corporate) */
+  --shadow-1: 0 1px 0 rgba(11,32,52,0.04), 0 1px 2px rgba(11,32,52,0.06);
+  --shadow-2: 0 1px 0 rgba(11,32,52,0.05), 0 4px 12px -2px rgba(11,32,52,0.08);
+  --shadow-3: 0 1px 0 rgba(11,32,52,0.06), 0 12px 32px -8px rgba(11,32,52,0.12);
+  --shadow-focus: 0 0 0 3px rgba(0,128,192,0.25);
+
+  /* Motion */
+  --duration-fast: 120ms;
+  --duration: 200ms;
+  --easing-standard: cubic-bezier(0.2, 0.6, 0.2, 1);
 }
 
-/* Dark mode opcional */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-/* Base styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--fg-2);
+  background: var(--bg-1);
+  font-family: var(--font-body, "DM Sans", system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "cv11";
+}
+
+::selection {
+  background: var(--irca-green-100);
+  color: var(--ink-1000);
 }
