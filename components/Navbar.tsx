@@ -1,115 +1,97 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Icon from "@/components/ui/Icon";
 
 const navItems = [
-  { id: "home",     label: "Inicio" },
-  { id: "services", label: "Servicios" },
-  { id: "about",    label: "Nosotros" },
-  { id: "clients",  label: "Clientes" },
-  { id: "contact",  label: "Contacto" },
+  { href: "/",                label: "Inicio" },
+  { href: "/servicios/",      label: "Servicios" },
+  { href: "/sobre-nosotros/", label: "Nosotros" },
+  { href: "/experiencia/",    label: "Clientes" },
+  { href: "/contacto/",       label: "Contacto" },
 ];
 
-function scrollTo(id: string) {
-  const el = document.getElementById(id);
-  if (el) window.scrollTo({ top: el.offsetTop - 72, behavior: "smooth" });
+function isActive(href: string, pathname: string) {
+  if (href === "/") return pathname === "/";
+  return pathname.startsWith(href);
 }
 
 export default function Navbar() {
-  const [active, setActive] = useState("home");
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => { if (e.isIntersecting) setActive(e.target.id); });
-      },
-      { rootMargin: "-40% 0px -55% 0px" }
-    );
-    navItems.forEach(({ id }) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
-  }, []);
-
-  const handleNav = (id: string) => {
-    setMobileOpen(false);
-    scrollTo(id);
-  };
-
   return (
-    <header style={{
-      position: "sticky", top: 0, zIndex: 50,
-      background: "rgba(255,255,255,0.92)",
-      backdropFilter: "saturate(140%) blur(10px)",
-      WebkitBackdropFilter: "saturate(140%) blur(10px)",
-      borderBottom: "1px solid var(--border-soft)",
-    }}>
-      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "14px 32px", display: "flex", alignItems: "center", gap: 32 }}>
-        <button
-          onClick={() => handleNav("home")}
-          style={{ background: "none", border: 0, padding: 0, cursor: "pointer", flexShrink: 0 }}
-          aria-label="Ir al inicio"
-        >
+    <header
+      className="px-4 sm:px-6"
+      style={{
+        position: "sticky", top: 0, zIndex: 50,
+        background: "rgba(255,255,255,0.92)",
+        backdropFilter: "saturate(140%) blur(10px)",
+        WebkitBackdropFilter: "saturate(140%) blur(10px)",
+        borderBottom: "1px solid var(--border-soft)",
+      }}
+    >
+      <div className="flex items-center gap-4 sm:gap-8 py-3.5" style={{ maxWidth: 1280, margin: "0 auto" }}>
+        <Link href="/" style={{ display: "flex", flexShrink: 0 }}>
           <Image
             src="/logo-irca.png"
             alt="IRCA Consultores"
             width={500}
             height={246}
             priority
-            style={{ height: 36, width: "auto", display: "block" }}
+            style={{ height: 32, width: "auto", display: "block" }}
           />
-        </button>
+        </Link>
 
         {/* Desktop nav */}
-        <nav style={{ display: "flex", gap: 4, marginLeft: 12 }} className="hidden md:flex">
-          {navItems.map(({ id, label }) => (
-            <button
-              key={id}
-              onClick={() => handleNav(id)}
+        <nav className="hidden md:flex gap-1 ml-3">
+          {navItems.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
               style={{
-                background: "transparent", border: 0,
+                display: "inline-block",
                 padding: "8px 14px", borderRadius: 8,
                 fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 600,
-                color: active === id ? "var(--irca-green-700)" : "var(--fg-2)",
-                cursor: "pointer",
+                color: isActive(href, pathname) ? "var(--irca-green-700)" : "var(--fg-2)",
+                textDecoration: "none",
                 transition: "color var(--duration-fast)",
               }}
             >
               {label}
-            </button>
+            </Link>
           ))}
         </nav>
 
         {/* Desktop CTA */}
-        <div style={{ marginLeft: "auto", display: "flex", gap: 10, alignItems: "center" }} className="hidden md:flex">
+        <div className="hidden md:flex items-center gap-5 ml-auto">
           <a
             href="tel:+528115059330"
             style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: "var(--fg-3)", textDecoration: "none", fontWeight: 600 }}
           >
             <Icon name="phone" size={14} /> +52 81 1505‑9330
           </a>
-          <button
-            onClick={() => handleNav("contact")}
+          <Link
+            href="/contacto/"
             style={{
               display: "inline-flex", alignItems: "center", gap: 8,
-              background: "var(--irca-green)", color: "#fff", border: "1px solid transparent",
+              background: "var(--irca-green)", color: "#fff",
               padding: "7px 14px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 13,
-              borderRadius: 6, cursor: "pointer", boxShadow: "var(--shadow-1)",
+              borderRadius: 6, textDecoration: "none", boxShadow: "var(--shadow-1)",
             }}
           >
             Solicitar diagnóstico <Icon name="arrow-right" size={14} />
-          </button>
+          </Link>
         </div>
 
-        {/* Mobile menu toggle */}
+        {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          style={{ marginLeft: "auto", background: "none", border: 0, cursor: "pointer", color: "var(--fg-2)", padding: 4 }}
-          className="flex md:hidden"
+          className="flex md:hidden ml-auto"
+          style={{ background: "none", border: 0, cursor: "pointer", color: "var(--fg-2)", padding: 4 }}
           aria-label="Abrir menú"
         >
           <Icon name={mobileOpen ? "x" : "menu"} size={22} />
@@ -118,34 +100,35 @@ export default function Navbar() {
 
       {/* Mobile dropdown */}
       {mobileOpen && (
-        <div style={{ borderTop: "1px solid var(--border-soft)", background: "#fff", padding: "12px 24px 20px" }}>
-          {navItems.map(({ id, label }) => (
-            <button
-              key={id}
-              onClick={() => handleNav(id)}
+        <div style={{ borderTop: "1px solid var(--border-soft)", background: "#fff" }} className="px-6 pb-5 pt-3">
+          {navItems.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={() => setMobileOpen(false)}
               style={{
-                display: "block", width: "100%", textAlign: "left",
-                background: "transparent", border: 0,
+                display: "block",
                 padding: "12px 4px", borderBottom: "1px solid var(--border-soft)",
                 fontFamily: "var(--font-body)", fontSize: 15, fontWeight: 600,
-                color: active === id ? "var(--irca-green-700)" : "var(--fg-2)",
-                cursor: "pointer",
+                color: isActive(href, pathname) ? "var(--irca-green-700)" : "var(--fg-2)",
+                textDecoration: "none",
               }}
             >
               {label}
-            </button>
+            </Link>
           ))}
-          <button
-            onClick={() => handleNav("contact")}
+          <Link
+            href="/contacto/"
+            onClick={() => setMobileOpen(false)}
+            className="flex items-center justify-center gap-2 mt-4 w-full"
             style={{
-              display: "flex", alignItems: "center", gap: 8, marginTop: 16,
-              background: "var(--irca-green)", color: "#fff", border: "none",
+              background: "var(--irca-green)", color: "#fff",
               padding: "10px 18px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 14,
-              borderRadius: 6, cursor: "pointer", width: "100%", justifyContent: "center",
+              borderRadius: 6, textDecoration: "none",
             }}
           >
             Solicitar diagnóstico <Icon name="arrow-right" size={14} />
-          </button>
+          </Link>
         </div>
       )}
     </header>
