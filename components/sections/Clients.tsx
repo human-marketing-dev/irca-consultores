@@ -53,24 +53,20 @@ export default function Clients() {
         <div style={{ border: "1px solid var(--border-soft)", borderRadius: 12, overflow: "hidden" }}>
           <div className="grid grid-cols-3 md:grid-cols-6">
             {clients.map(({ name, logo }, i) => {
-              const isLastColMobile  = (i + 1) % 3 === 0;
-              const isLastColDesktop = (i + 1) % 6 === 0;
-              const isLastRowMobile  = i >= clients.length - 3;
-              const isLastRowDesktop = i >= clients.length - 6;
+              const mobileLastCol  = (i + 1) % 3 === 0;
+              const desktopLastCol = (i + 1) % 6 === 0;
+              const mobileLastRow  = i >= clients.length - 3;
+              const desktopLastRow = i >= clients.length - 6;
               return (
                 <div
                   key={name}
-                  style={{
-                    padding: "20px 16px",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    background: "#fff",
-                    borderRight: isLastColMobile ? "none" : `1px solid var(--border-soft)`,
-                    borderBottom: isLastRowMobile ? "none" : `1px solid var(--border-soft)`,
-                  }}
-                  className={`
-                    ${isLastColDesktop ? "md:border-r-0" : ""}
-                    ${isLastRowDesktop ? "md:border-b-0" : ""}
-                  `}
+                  style={{ padding: "20px 16px", display: "flex", alignItems: "center", justifyContent: "center", background: "#fff", borderColor: "var(--border-soft)" }}
+                  className={[
+                    mobileLastCol  ? "border-r-0"    : "border-r",
+                    mobileLastRow  ? "border-b-0"    : "border-b",
+                    desktopLastCol ? "md:border-r-0" : "md:border-r",
+                    desktopLastRow ? "md:border-b-0" : "md:border-b",
+                  ].join(" ")}
                 >
                   <Image
                     src={logo}

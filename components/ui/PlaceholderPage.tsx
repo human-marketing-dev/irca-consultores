@@ -36,7 +36,7 @@ export default function PlaceholderPage({ eyebrow, title, description, keyword }
             href="/contacto/"
             style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--irca-green)", color: "#fff", padding: "10px 20px", borderRadius: 8, fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 14, textDecoration: "none", boxShadow: "var(--shadow-1)" }}
           >
-            Solicitar diagnóstico <Icon name="arrow-right" size={15} />
+            Solicitar información <Icon name="arrow-right" size={15} />
           </Link>
           <Link
             href="/servicios/"

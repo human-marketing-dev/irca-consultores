@@ -18,21 +18,6 @@ function Eyebrow({ children, color = "var(--irca-green-700)" }: { children: Reac
   );
 }
 
-const statuses: Array<[string, "success" | "info" | "warning", string]> = [
-  ["MIA Federal", "success", "Vigente"],
-  ["ERA Estatal",  "info",    "En revisión"],
-  ["COA Anual",   "warning", "Por vencer · 49 d"],
-  ["LAU Edomex",  "success", "Vigente"],
-];
-
-const palette = {
-  success: { bg: "var(--success-bg)", fg: "var(--success)" },
-  info:    { bg: "var(--info-bg)",    fg: "var(--info)" },
-  warning: { bg: "var(--warning-bg)", fg: "var(--warning)" },
-};
-
-const chartBars = [78, 92, 64, 88, 73, 95];
-
 export default function Hero() {
   return (
     <section id="home" className="px-4 sm:px-6" style={{ position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #FFFFFF 0%, var(--bg-2) 100%)" }}>
@@ -48,12 +33,12 @@ export default function Hero() {
       </svg>
 
       <div
-        className="relative grid grid-cols-1 md:[grid-template-columns:1.2fr_1fr] gap-12 md:gap-16 items-center py-16 md:py-24"
+        className="relative grid grid-cols-1 md:[grid-template-columns:1.1fr_0.9fr] gap-12 md:gap-16 items-center py-16 md:py-24"
         style={{ maxWidth: 1280, margin: "0 auto" }}
       >
         {/* Copy */}
         <div>
-          <Eyebrow color="var(--irca-blue-700)">Consultoría Ambiental en Monterrey · desde 1999</Eyebrow>
+          <Eyebrow color="var(--irca-blue-700)">Consultoría Ambiental · Monterrey · desde 1999</Eyebrow>
           <h1 style={{
             fontFamily: "var(--font-display)", fontWeight: 900,
             fontSize: "clamp(36px, 5vw + 8px, 84px)",
@@ -78,7 +63,7 @@ export default function Hero() {
                 borderRadius: 10, textDecoration: "none", boxShadow: "var(--shadow-1)",
               }}
             >
-              Solicitar diagnóstico <Icon name="arrow-right" size={17} />
+              Hablar con un especialista <Icon name="arrow-right" size={17} />
             </a>
             <a
               href="/servicios/"
@@ -107,57 +92,30 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Card stack — hidden on mobile */}
-        <div className="relative hidden md:block" style={{ height: 460 }}>
-          {/* Compliance tracker card */}
+        {/* Photo — hidden on mobile */}
+        <div className="relative hidden md:flex flex-col gap-3">
           <div style={{
-            position: "absolute", top: 0, right: 0, width: 360,
-            background: "#fff", border: "1px solid var(--border-soft)",
-            borderRadius: 16, padding: 22, boxShadow: "var(--shadow-3)",
+            aspectRatio: "4/3", border: "1.5px dashed var(--border-strong)",
+            borderRadius: 20, background: "var(--bg-2)",
+            display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+            gap: 12, color: "var(--fg-4)", textAlign: "center", padding: 32,
+            boxShadow: "var(--shadow-2)",
           }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 12, color: "var(--fg-4)", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase" }}>
-              <span style={{ width: 8, height: 8, borderRadius: 8, background: "var(--irca-green)", boxShadow: "0 0 0 4px var(--irca-green-50)" }} />
-              Cumplimiento normativo
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            <div style={{ fontSize: 14, fontWeight: 600, color: "var(--fg-3)", lineHeight: 1.4 }}>
+              Foto del equipo o instalaciones
             </div>
-            <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 26, color: "var(--fg-1)", letterSpacing: "-0.02em", marginTop: 14, lineHeight: 1.15 }}>
-              Planta Saltillo
-            </div>
-            <div style={{ fontSize: 13, color: "var(--fg-3)", marginTop: 4 }}>Vitromex · seguimiento 2012 – Vigente</div>
-            <div style={{ height: 1, background: "var(--border-soft)", margin: "18px 0" }} />
-            {statuses.map(([label, type, status]) => {
-              const c = palette[type];
-              return (
-                <div key={label} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0" }}>
-                  <span style={{ fontSize: 14, fontWeight: 600, color: "var(--fg-2)" }}>{label}</span>
-                  <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "3px 9px", borderRadius: 999, background: c.bg, color: c.fg, fontSize: 11, fontWeight: 600 }}>
-                    <span style={{ width: 6, height: 6, borderRadius: 999, background: c.fg }} /> {status}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Milieus Pro mini chart card */}
-          <div style={{
-            position: "absolute", bottom: 0, left: 0, width: 320,
-            background: "var(--bg-deep)", borderRadius: 16, padding: 22,
-            color: "#fff", boxShadow: "var(--shadow-3)",
-          }}>
-            <div style={{ fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)" }}>
-              Milieus Pro · piloto
-            </div>
-            <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 24, marginTop: 12, letterSpacing: "-0.02em", lineHeight: 1.15 }}>
-              Tu archivo ambiental,<br />en tiempo real.
-            </div>
-            <div className="flex items-end gap-2 mt-4">
-              {chartBars.map((h, i) => (
-                <div key={i} style={{ width: 14, height: h * 0.7, background: i % 2 === 0 ? "var(--irca-green)" : "var(--irca-blue)", borderRadius: 3 }} />
-              ))}
-            </div>
-            <div style={{ fontSize: 11, color: "rgba(255,255,255,0.6)", marginTop: 8 }}>
-              Cumplimiento por instalación · últimos 6 meses
+            <div style={{ fontSize: 12, lineHeight: 1.5, maxWidth: "28ch", color: "var(--fg-4)" }}>
+              Reemplazar con fotografía corporativa del equipo IRCA o trabajo de campo
             </div>
           </div>
+          <p style={{ fontSize: 11, color: "var(--fg-4)", letterSpacing: "0.04em", margin: 0, textAlign: "center" }}>
+            Placeholder · pendiente material fotográfico del cliente
+          </p>
         </div>
       </div>
     </section>

@@ -22,15 +22,13 @@ export default function Footer() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12" style={{ maxWidth: 1280, margin: "0 auto" }}>
         {/* Brand col — spans 2 on mobile */}
         <div className="col-span-2 md:col-span-1">
-          <div style={{ background: "#fff", display: "inline-block", padding: "8px 10px", borderRadius: 8 }}>
-            <Image
-              src="/logo-irca.png"
-              alt="IRCA Consultores"
-              width={500}
-              height={246}
-              style={{ height: 28, width: "auto", display: "block" }}
-            />
-          </div>
+          <Image
+            src="/logo-irca-consultores-blanco.webp"
+            alt="IRCA Consultores"
+            width={300}
+            height={120}
+            style={{ height: 32, width: "auto", display: "block" }}
+          />
           <p style={{ fontSize: 13, lineHeight: 1.65, marginTop: 16, maxWidth: "42ch", color: "rgba(255,255,255,0.6)" }}>
             IRCA Ingeniería y Servicios, S.C. (IIS) · Environmental North de México, S.C. (ENM).
             Capacidad de contratación como servicios especializados (REPSE).
