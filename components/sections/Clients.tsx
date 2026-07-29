@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Icon from "@/components/ui/Icon";
 
+// El orden importa: la retícula es de 8 columnas en desktop, así que los
+// índices 6–7 cierran la primera fila y los 14–15 cierran la segunda.
 const clients = [
   { name: "Deacero",          logo: "/deacero-logo.webp" },
   { name: "Vitromex",         logo: "/vitromex-logo.webp" },
@@ -8,12 +10,16 @@ const clients = [
   { name: "Fundición Águilas",logo: "/fundicion-aguilas-logo.webp" },
   { name: "Daltile",          logo: "/daltile-logo.webp" },
   { name: "Vesuvius",         logo: "/vesuvius-logo.webp" },
+  { name: "Daimler",          logo: "/daimler-logo.webp" },
+  { name: "Sigma Alimentos",  logo: "/sigma-alimentos-logo.webp" },
   { name: "Prolec GE",        logo: "/prolec-logo.webp" },
   { name: "Hunter Douglas",   logo: "/hunter-douglas-logo.webp" },
   { name: "Fisterra Energy",  logo: "/fisterra-energy-logo.webp" },
   { name: "ASK Chemicals",    logo: "/ask-chemicals-logo.webp" },
   { name: "Coflex",           logo: "/coflex-logo.webp" },
   { name: "Novocast",         logo: "/novocast-logo.webp" },
+  { name: "Saint-Gobain",     logo: "/saint-gobain-logo.webp" },
+  { name: "CFE / Pemex",      logo: "/cfe-pemex-logo.webp" },
 ];
 
 const caseStudies = [
@@ -49,23 +55,26 @@ export default function Clients() {
           </a>
         </div>
 
-        {/* Client grid — 3 cols mobile, 6 desktop */}
+        {/* Client grid — 2 cols mobile, 4 tablet, 8 desktop (16 logos = 2 filas exactas) */}
         <div style={{ border: "1px solid var(--border-soft)", borderRadius: 12, overflow: "hidden" }}>
-          <div className="grid grid-cols-3 md:grid-cols-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8">
             {clients.map(({ name, logo }, i) => {
-              const mobileLastCol  = (i + 1) % 3 === 0;
-              const desktopLastCol = (i + 1) % 6 === 0;
-              const mobileLastRow  = i >= clients.length - 3;
-              const desktopLastRow = i >= clients.length - 6;
+              const edge = (cols: number) => ({
+                lastCol: (i + 1) % cols === 0,
+                lastRow: i >= clients.length - cols,
+              });
+              const sm = edge(2), md = edge(4), lg = edge(8);
               return (
                 <div
                   key={name}
-                  style={{ padding: "20px 16px", display: "flex", alignItems: "center", justifyContent: "center", background: "#fff", borderColor: "var(--border-soft)" }}
+                  style={{ padding: "16px 12px", display: "flex", alignItems: "center", justifyContent: "center", background: "#fff", borderColor: "var(--border-soft)" }}
                   className={[
-                    mobileLastCol  ? "border-r-0"    : "border-r",
-                    mobileLastRow  ? "border-b-0"    : "border-b",
-                    desktopLastCol ? "md:border-r-0" : "md:border-r",
-                    desktopLastRow ? "md:border-b-0" : "md:border-b",
+                    sm.lastCol ? "border-r-0"     : "border-r",
+                    sm.lastRow ? "border-b-0"     : "border-b",
+                    md.lastCol ? "sm:border-r-0"  : "sm:border-r",
+                    md.lastRow ? "sm:border-b-0"  : "sm:border-b",
+                    lg.lastCol ? "md:border-r-0"  : "md:border-r",
+                    lg.lastRow ? "md:border-b-0"  : "md:border-b",
                   ].join(" ")}
                 >
                   <Image
@@ -73,8 +82,8 @@ export default function Clients() {
                     alt={name}
                     width={120}
                     height={48}
-                    className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                    style={{ objectFit: "contain", width: "100%", maxWidth: 220, height: 110 }}
+                    className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 h-[92px] md:h-[76px]"
+                    style={{ objectFit: "contain", width: "100%", maxWidth: 220 }}
                   />
                 </div>
               );

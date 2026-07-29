@@ -9,6 +9,15 @@ const sectores = [
     ),
   },
   {
+    label: "Construcción y desarrollo inmobiliario",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+    ),
+  },
+  {
     label: "Minero",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -17,7 +26,7 @@ const sectores = [
     ),
   },
   {
-    label: "Energético",
+    label: "Energético: petrolíferos y eléctrico",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
@@ -25,19 +34,10 @@ const sectores = [
     ),
   },
   {
-    label: "Acuícola",
+    label: "Marítimo y acuícola",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
-      </svg>
-    ),
-  },
-  {
-    label: "Inmobiliario",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-        <polyline points="9 22 9 12 15 12 15 22"/>
       </svg>
     ),
   },
@@ -64,18 +64,13 @@ const sectores = [
     ),
   },
   {
-    label: "Gubernamental",
+    label: "Obra pública y paraestatal",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 21V8l9-7 9 7v13"/><path d="M9 21v-8h6v8"/>
       </svg>
     ),
   },
-];
-
-const entities = [
-  { label: "IRCA Ingeniería y Servicios, S.C.", color: "green" },
-  { label: "Environmental North de México, S.C.", color: "blue" },
 ];
 
 const coverage = ["Nuevo León", "Coahuila", "Tamaulipas", "Sonora", "Guanajuato", "CDMX", "Nacional"];
@@ -104,13 +99,13 @@ export default function SectoresStrip() {
         </div>
 
         {/* Sectors grid */}
-        <div className="grid grid-cols-4 md:grid-cols-8 gap-3 mb-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-10">
           {sectores.map(({ label, icon }, i) => (
             <div
               key={label}
               style={{
                 display: "flex", flexDirection: "column", alignItems: "center", gap: 10,
-                padding: "18px 8px", borderRadius: 12,
+                padding: "18px 12px", borderRadius: 12,
                 background: "var(--bg-2)", border: "1px solid var(--border-soft)",
                 textAlign: "center",
               }}
@@ -123,28 +118,29 @@ export default function SectoresStrip() {
               }}>
                 {icon}
               </div>
-              <span style={{ fontSize: 11, fontWeight: 700, color: "var(--fg-2)", lineHeight: 1.3, letterSpacing: "0.02em" }}>{label}</span>
+              <span style={{ fontSize: 12, fontWeight: 700, color: "var(--fg-2)", lineHeight: 1.35, letterSpacing: "0.01em", textWrap: "balance" }}>{label}</span>
             </div>
           ))}
         </div>
 
-        {/* Legal entities callout */}
+        {/* Registro ante la STPS */}
         <div style={{ height: 1, background: "var(--border-soft)", marginBottom: 20 }} />
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 md:gap-8">
           <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--fg-4)", flexShrink: 0 }}>
-            Razones sociales
+            Registro vigente
           </span>
-          <div className="flex flex-wrap gap-3">
-            {entities.map(({ label, color }) => (
-              <span key={label} style={{
-                padding: "6px 14px", borderRadius: 999,
-                background: color === "green" ? "var(--irca-green-50)" : "var(--irca-blue-50)",
-                color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)",
-                fontSize: 12, fontWeight: 700, border: `1px solid ${color === "green" ? "var(--irca-green-100)" : "var(--irca-blue-100)"}`,
-              }}>
-                {label}
-              </span>
-            ))}
+          <div className="flex flex-wrap items-center gap-3">
+            <span style={{
+              padding: "6px 14px", borderRadius: 999,
+              background: "var(--irca-green-50)", color: "var(--irca-green-700)",
+              fontSize: 12, fontWeight: 700, border: "1px solid var(--irca-green-100)",
+            }}>
+              REPSE
+            </span>
+            <span style={{ fontSize: 13, color: "var(--fg-3)", lineHeight: 1.5 }}>
+              Registro de Prestadoras de Servicios Especializados u Obras Especializadas
+              ante la <strong style={{ color: "var(--fg-2)", fontWeight: 600 }}>STPS</strong>.
+            </span>
           </div>
         </div>
 

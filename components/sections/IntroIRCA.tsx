@@ -1,12 +1,22 @@
-const differentiators = [
+import CoverageMap from "@/components/sections/CoverageMap";
+
+type Differentiator = {
+  icon: React.ReactNode;
+  label: string;
+  desc: string;
+  color: "green" | "blue";
+  extra?: React.ReactNode;
+};
+
+const differentiators: Differentiator[] = [
   {
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
       </svg>
     ),
-    label: "Firma técnico-jurídica",
-    desc: "Combinamos ingeniería ambiental y derecho en un solo equipo. No necesitas contratar dos despachos.",
+    label: "Estrategia técnico-jurídica",
+    desc: "Un despacho técnico entrega estudios y mediciones. Nosotros diseñamos la estrategia de cumplimiento: qué exige la norma, qué demuestra la evidencia técnica y cómo se sostiene ante la autoridad.",
     color: "green",
   },
   {
@@ -17,7 +27,7 @@ const differentiators = [
       </svg>
     ),
     label: "Equipamiento propio de campo",
-    desc: "Sonómetros calibrados, equipos HACH para agua y drones UAV para levantamientos fotogramétricos.",
+    desc: "Uso de tecnología, desarrollos propios y equipos para evaluación de la contaminación en aire, agua, suelo y ruido.",
     color: "blue",
   },
   {
@@ -29,8 +39,9 @@ const differentiators = [
       </svg>
     ),
     label: "Presencia nacional",
-    desc: "Oficinas en Monterrey con cobertura en Coahuila, Tamaulipas, Sonora, Guanajuato y CDMX.",
+    desc: "Sede operativa en Monterrey y operación recurrente en los principales polos industriales del país.",
     color: "green",
+    extra: <CoverageMap />,
   },
 ];
 
@@ -58,15 +69,27 @@ export default function IntroIRCA() {
           </h2>
 
           <p style={{ fontSize: 17, lineHeight: 1.65, color: "var(--fg-3)", marginBottom: 16, maxWidth: "58ch" }}>
-            Desde 1999, IRCA Consultores opera como la conjunción entre ingeniería ambiental y
-            derecho ambiental. Nuestro modelo integrado permite que un solo equipo atienda desde
-            el estudio técnico de impacto hasta la defensa jurídica ante PROFEPA, SEMARNAT o CONAGUA.
+            Desde 1999 acompañamos a la industria mexicana en los momentos en que lo ambiental deja
+            de ser un trámite: una clausura, una auditoría, un requerimiento de PROFEPA, un proyecto
+            que no puede detenerse. En ese recorrido hemos resuelto manifestaciones de impacto
+            ambiental, estudios de riesgo, licencias y programas de cumplimiento para acerías,
+            fundiciones, plantas de generación, desarrollos inmobiliarios y obra pública.
+          </p>
+          <p style={{ fontSize: 17, lineHeight: 1.65, color: "var(--fg-3)", marginBottom: 16, maxWidth: "58ch" }}>
+            Ese trabajo nos obligó a construir herramientas propias:{" "}
+            <strong style={{ color: "var(--fg-2)", fontWeight: 600 }}>metodologías internas</strong>{" "}
+            de diagnóstico y evidencia, equipamiento de campo para aire, agua, suelo y ruido,{" "}
+            <strong style={{ color: "var(--fg-2)", fontWeight: 600 }}>inteligencia artificial</strong>{" "}
+            aplicada al análisis normativo y{" "}
+            <strong style={{ color: "var(--fg-2)", fontWeight: 600 }}>Milieus Pro</strong>, nuestra
+            plataforma para administrar el expediente ambiental y los vencimientos de cada instalación.
           </p>
           <p style={{ fontSize: 17, lineHeight: 1.65, color: "var(--fg-3)", marginBottom: 32, maxWidth: "58ch" }}>
-            Somos dos razones sociales —<strong style={{ color: "var(--fg-2)", fontWeight: 600 }}>IRCA Ingeniería y Servicios, S.C.</strong> y{" "}
-            <strong style={{ color: "var(--fg-2)", fontWeight: 600 }}>Environmental North de México, S.C.</strong>—
-            con más de 12 profesionales certificados, equipamiento propio de campo y cobertura
-            en los principales polos industriales del país.
+            Y nos llevó a un modelo poco común en México: un despacho{" "}
+            <strong style={{ color: "var(--fg-2)", fontWeight: 600 }}>50/50</strong>, con la misma
+            profundidad en la ingeniería que en el derecho. Ingenieros y abogados trabajan sobre el
+            mismo expediente, de modo que la medición sostiene el argumento jurídico y el argumento
+            jurídico se construye sobre datos defendibles.
           </p>
 
           <a
@@ -87,11 +110,10 @@ export default function IntroIRCA() {
 
         {/* Right — differentiators */}
         <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
-          {differentiators.map(({ icon, label, desc, color }, i) => (
+          {differentiators.map(({ icon, label, desc, color, extra }, i) => (
             <div
               key={label}
               style={{
-                display: "flex", alignItems: "flex-start", gap: 16,
                 padding: "20px 22px",
                 background: i === 1 ? "var(--bg-2)" : "#fff",
                 borderRadius: i === 0 ? "12px 12px 0 0" : i === differentiators.length - 1 ? "0 0 12px 12px" : 0,
@@ -99,22 +121,25 @@ export default function IntroIRCA() {
                 marginTop: i > 0 ? -1 : 0,
               }}
             >
-              <div style={{
-                width: 40, height: 40, borderRadius: 10, flexShrink: 0,
-                background: color === "green" ? "var(--irca-green-50)" : "var(--irca-blue-50)",
-                color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)",
-                display: "inline-flex", alignItems: "center", justifyContent: "center",
-              }}>
-                {icon}
-              </div>
-              <div>
-                <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15, color: "var(--fg-1)", marginBottom: 4 }}>
-                  {label}
+              <div style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
+                <div style={{
+                  width: 40, height: 40, borderRadius: 10, flexShrink: 0,
+                  background: color === "green" ? "var(--irca-green-50)" : "var(--irca-blue-50)",
+                  color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)",
+                  display: "inline-flex", alignItems: "center", justifyContent: "center",
+                }}>
+                  {icon}
                 </div>
-                <div style={{ fontSize: 14, lineHeight: 1.55, color: "var(--fg-3)" }}>
-                  {desc}
+                <div>
+                  <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15, color: "var(--fg-1)", marginBottom: 4 }}>
+                    {label}
+                  </div>
+                  <div style={{ fontSize: 14, lineHeight: 1.55, color: "var(--fg-3)" }}>
+                    {desc}
+                  </div>
                 </div>
               </div>
+              {extra && <div style={{ marginTop: 16 }}>{extra}</div>}
             </div>
           ))}
 

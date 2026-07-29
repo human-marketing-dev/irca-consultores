@@ -198,9 +198,10 @@ export default function Servicios() {
             </h1>
             <div>
               <p style={{ fontSize: 17, lineHeight: 1.65, color: "var(--fg-3)", margin: "0 0 24px" }}>
-                IRCA Consultores cubre el ciclo ambiental completo: del diagnóstico inicial y los estudios
-                técnicos hasta los trámites de licenciamiento, la capacitación interna y, cuando es necesario,
-                la defensa jurídica ante autoridades federales.
+                IRCA Consultores cubre el ciclo ambiental completo: el diagnóstico inicial, la estrategia
+                de cumplimiento, los estudios técnicos, los trámites de licenciamiento, la capacitación
+                interna especializada y, cuando es necesario, la defensa jurídica y la intermediación
+                ante autoridades de los tres niveles de gobierno.
               </p>
               <Link
                 href="/contacto/"

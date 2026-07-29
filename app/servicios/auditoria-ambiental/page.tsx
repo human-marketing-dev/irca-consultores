@@ -223,11 +223,13 @@ export default function AuditoriaAmbiental() {
             <Eyebrow color="var(--irca-blue-700)">Auditoría y Diagnóstico Ambiental</Eyebrow>
             <h1 style={{
               fontFamily: "var(--font-display)", fontWeight: 900,
-              fontSize: "clamp(32px,4.5vw,56px)", letterSpacing: "-0.03em", lineHeight: 1.05,
+              fontSize: "clamp(30px,4vw,48px)", letterSpacing: "-0.03em", lineHeight: 1.07,
               margin: "18px 0 20px", color: "var(--ink-1000)",
             }}>
-              Auditoría ambiental para empresas que no pueden permitirse una{" "}
-              <span style={{ color: "var(--irca-green)" }}>multa</span>.
+              Auditoría ambiental y/o de SST para empresas que no pueden permitirse una{" "}
+              <span style={{ color: "var(--irca-green)" }}>multa</span>{" "}
+              <span style={{ color: "var(--danger)" }}>o paro de actividades</span>{" "}
+              por incumplimiento.
             </h1>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 14px" }}>
               Identificamos tus brechas de cumplimiento antes que la autoridad. Una radiografía técnica y legal del estado real de tu operación frente a SEMARNAT, PROFEPA, CONAGUA y normatividad estatal.
@@ -324,7 +326,7 @@ export default function AuditoriaAmbiental() {
           </div>
           <div>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 22px" }}>
-              Una auditoría ambiental es la evaluación sistemática del grado en que tu instalación cumple con las obligaciones ambientales que le aplican: federales, estatales y municipales. La mayoría de las empresas no tiene una multa por mala fe, sino por desconocer una obligación, perder un vencimiento o asumir que un trámite estaba en regla cuando no lo estaba. Este servicio elimina esa zona ciega: te dice con precisión qué cumples, qué no cumples y qué representa cada brecha en términos de riesgo real.
+              Una auditoría ambiental es la evaluación sistemática del grado en que tu instalación cumple con las obligaciones ambientales que le aplican —federales, estatales y municipales— y, cuando el alcance así lo define, con las obligaciones de seguridad y salud en el trabajo que le aplican conforme a las Normas Oficiales Mexicanas de la STPS. La mayoría de las empresas no tiene una multa por mala fe, sino por desconocer una obligación, perder un vencimiento o asumir que un trámite estaba en regla cuando no lo estaba. Este servicio elimina esa zona ciega: te dice con precisión qué cumples, qué no cumples y qué representa cada brecha en términos de riesgo real.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: 0 }}>
               En IRCA Consultores abordamos la auditoría desde nuestros dos frentes: el técnico y el jurídico. No nos limitamos a levantar un checklist; construimos una matriz de requerimientos legales aplicable a tu giro y operación específica, valoramos la criticidad de cada hallazgo y lo traducimos en un plan de gestión de incumplimientos accionable. Más de 25 años atendiendo sectores industrial, minero, energético e inmobiliario nos permiten anticipar qué revisa cada autoridad y cómo se comporta en campo durante una inspección.
@@ -392,18 +394,21 @@ export default function AuditoriaAmbiental() {
           <div>
             <Eyebrow>Para quién es</Eyebrow>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 20px", color: "var(--ink-1000)" }}>
-              ¿Cuándo necesita tu empresa una auditoría ambiental?
+              ¿Cuándo necesita tu empresa una auditoría ambiental o de SST?
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 28px" }}>
-              No es un trámite reservado para grandes corporativos. Es una herramienta de gestión de riesgo útil para cualquier organización cuya operación genere emisiones, descargas, residuos o requiera permisos ambientales. Es especialmente recomendable en estos escenarios:
+              No es un trámite reservado para grandes corporativos. Es una herramienta de gestión de riesgo útil para cualquier organización cuya operación genere emisiones, descargas, residuos, requiera permisos ambientales o exponga a su personal a riesgos de seguridad y salud en el trabajo. Es especialmente recomendable en estos escenarios:
             </p>
             <div style={{ display: "grid", gap: 14 }}>
-              <CheckItem>Recibiste una notificación de inspección de PROFEPA, SEMARNAT o una autoridad estatal y necesitas saber qué encontrarán.</CheckItem>
-              <CheckItem>Vas a comprar, vender o fusionar una instalación industrial y necesitas conocer sus pasivos ambientales.</CheckItem>
-              <CheckItem>Heredaste la responsabilidad ambiental de una planta y no tienes claridad de su estatus de cumplimiento.</CheckItem>
+              <CheckItem>Recibiste una notificación de inspección de PROFEPA, SEMARNAT, STPS o una autoridad estatal y necesitas saber qué encontrarán.</CheckItem>
+              <CheckItem>Vas a comprar, vender o fusionar una instalación industrial y necesitas conocer sus pasivos ambientales y laborales.</CheckItem>
+              <CheckItem>Heredaste la responsabilidad ambiental o de seguridad e higiene de una planta y no tienes claridad de su estatus de cumplimiento.</CheckItem>
               <CheckItem>Operas en un sector regulado (industrial, minero, energético, metalúrgico) y quieres establecer una línea base ordenada.</CheckItem>
+              <CheckItem>Tu operación implica trabajos de alto riesgo —altura, espacios confinados, sustancias químicas peligrosas, maquinaria— y necesitas verificar el cumplimiento de las NOM de la STPS.</CheckItem>
+              <CheckItem>Tuviste un accidente o incidente laboral y necesitas revisar programas, comisiones mixtas y expedientes antes de que lo haga la autoridad.</CheckItem>
               <CheckItem>Acumulas trámites dispersos, vencimientos olvidados o documentación incompleta y necesitas poner orden.</CheckItem>
-              <CheckItem>Buscas obtener una certificación como Industria Limpia y necesitas conocer tu punto de partida.</CheckItem>
+              <CheckItem>Tu corporativo o tus clientes te exigen evidencia de cumplimiento ambiental y de seguridad e higiene como condición para operar o contratar.</CheckItem>
+              <CheckItem>Buscas obtener una certificación como Industria Limpia o el reconocimiento de Empresa Segura de la STPS y necesitas conocer tu punto de partida.</CheckItem>
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -435,7 +440,7 @@ export default function AuditoriaAmbiental() {
             </div>
             <div>
               <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-2)", margin: 0 }}>
-                IRCA Consultores es una firma de consultoría ambiental fundada en 1999, especializada en ingeniería ambiental y cumplimiento normativo. A lo largo de más de 25 años nos hemos consolidado como referente técnico-legal ambiental en el norte de México, con cobertura nacional y proyectos en sectores tan diversos como el industrial, minero, energético, acuícola, inmobiliario y gubernamental. Operamos bajo dos razones sociales —IRCA Ingeniería y Servicios, S.C. y Environmental North de México, S.C.— y conjugamos rigor técnico con solidez jurídica para representar a nuestros clientes ante SEMARNAT, PROFEPA, CONAGUA, STPS y demás autoridades. Nuestro equipo multidisciplinario acompaña cada proyecto de principio a fin: del diagnóstico a la resolución.
+                IRCA Consultores es una firma de consultoría ambiental fundada en 1999, especializada en ingeniería ambiental y cumplimiento normativo. A lo largo de más de 25 años nos hemos consolidado como referente técnico-legal ambiental en el norte de México, con cobertura nacional y proyectos en sectores tan diversos como el industrial, minero, energético, acuícola, inmobiliario y gubernamental. Operamos en regla con lo que le exigimos a nuestros clientes: contamos con registro <strong style={{ color: "var(--fg-1)", fontWeight: 600 }}>REPSE</strong> ante la STPS y mantenemos vigentes los <strong style={{ color: "var(--fg-1)", fontWeight: 600 }}>Registros de Prestador de Servicios</strong> en materia ambiental y de seguridad e higiene en los estados donde operamos. Conjugamos rigor técnico con solidez jurídica para representar a nuestros clientes ante SEMARNAT, PROFEPA, CONAGUA, STPS y demás autoridades. Nuestro equipo multidisciplinario acompaña cada proyecto de principio a fin: del diagnóstico a la resolución.
               </p>
             </div>
           </div>

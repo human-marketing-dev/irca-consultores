@@ -33,7 +33,7 @@ export default function MissionStrip() {
       <div className="relative" style={{ maxWidth: 1280, margin: "0 auto" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 10, fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)" }}>
           <span style={{ width: 24, height: 2, background: "rgba(255,255,255,0.6)", display: "inline-block" }} />
-          Por qué IRCA
+          Por qué IRCA Consultores
         </div>
         <h2 style={{
           fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(30px,4vw,56px)",

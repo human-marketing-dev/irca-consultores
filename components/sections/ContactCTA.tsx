@@ -17,12 +17,20 @@ const fields = [
 ] as const;
 
 const serviceOptions = [
-  "MIA / ERA federal o estatal",
-  "Trámites gubernamentales",
-  "Atención legal e intermediación",
-  "SHE / Industria Limpia",
-  "Otro",
+  "Auditoría ambiental",
+  "Estudios ambientales",
+  "Estudios de ingeniería",
+  "Permisos y autorizaciones",
+  "Asesoría legal ambiental",
+  "Atención de autoridades",
+  "Seguridad y salud ocupacional",
+  "Capacitación ambiental",
+  "Otro / aún no lo sé",
 ];
+
+const WHATSAPP_URL =
+  "https://wa.me/528115059330?text=" +
+  encodeURIComponent("Hola, tengo una situación ambiental urgente y necesito apoyo de IRCA Consultores.");
 
 const inputStyle: React.CSSProperties = {
   border: "1px solid var(--border-strong)", borderRadius: 8,
@@ -52,14 +60,25 @@ export default function ContactCTA() {
             letterSpacing: "-0.03em", lineHeight: 1.05,
             margin: "16px 0 24px", color: "var(--ink-1000)",
           }}>
-            Cuéntanos tu caso.{" "}
-            <span style={{ color: "var(--irca-green)" }}>Te respondemos</span>{" "}
-            en menos de{" "}
-            <span style={{ color: "var(--irca-blue)" }}>24 horas</span>.
+            Atención ambiental{" "}
+            <span style={{ color: "var(--irca-green)" }}>técnica</span> y{" "}
+            <span style={{ color: "var(--irca-blue)" }}>legal</span>{" "}
+            para decisiones críticas.
           </h2>
-          <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "48ch", margin: "0 0 32px" }}>
-            Cuéntanos del proyecto, la planta o la autoridad involucrada.
-            Nuestro equipo te contactará en menos de 24 hrs hábiles con una propuesta de alcance.
+          <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "52ch", margin: "0 0 14px" }}>
+            <strong style={{ color: "var(--fg-2)", fontWeight: 600 }}>Cuéntanos tu caso:</strong>{" "}
+            cada situación ambiental requiere una respuesta distinta. No es lo mismo solicitar un
+            estudio, atender una auditoría, responder un requerimiento o enfrentar una inspección
+            o acción de autoridad.
+          </p>
+          <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "52ch", margin: "0 0 14px" }}>
+            En IRCA Consultores analizamos el contexto operativo, la evidencia técnica, el marco
+            normativo y los riesgos regulatorios para ayudarte a definir el siguiente paso con claridad.
+          </p>
+          <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "52ch", margin: "0 0 32px" }}>
+            Para situaciones urgentes, contáctanos directamente por teléfono o WhatsApp. Para
+            solicitudes ordinarias de propuesta, nuestro equipo procurará contactarte dentro del
+            siguiente día hábil.
           </p>
           <div style={{ display: "grid", gap: 12 }}>
             {contactDetails.map(({ icon, value }) => (
@@ -70,6 +89,35 @@ export default function ContactCTA() {
                 {value}
               </div>
             ))}
+          </div>
+
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 24 }}>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex", alignItems: "center", gap: 9,
+                background: "#25D366", color: "#fff", border: "1px solid #1EB855",
+                padding: "12px 20px", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 15,
+                borderRadius: 10, textDecoration: "none", boxShadow: "var(--shadow-1)",
+              }}
+            >
+              <Icon name="whatsapp" size={18} />
+              WhatsApp para emergencias
+            </a>
+            <a
+              href="/contacto/"
+              style={{
+                display: "inline-flex", alignItems: "center", gap: 9,
+                background: "#fff", color: "var(--fg-1)", border: "1px solid var(--border-strong)",
+                padding: "12px 20px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 15,
+                borderRadius: 10, textDecoration: "none",
+              }}
+            >
+              <Icon name="calendar" size={17} />
+              Agendar cita sin compromiso
+            </a>
           </div>
         </div>
 
@@ -87,7 +135,7 @@ export default function ContactCTA() {
                 Gracias, recibimos tu solicitud.
               </div>
               <div style={{ fontSize: 14, color: "var(--fg-3)", marginTop: 8 }}>
-                Un coordinador te contactará en menos de 24 horas hábiles.
+                Un coordinador procurará contactarte dentro del siguiente día hábil.
               </div>
             </div>
           ) : (
