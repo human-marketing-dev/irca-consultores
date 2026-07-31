@@ -1,23 +1,19 @@
-import Icon from "@/components/ui/Icon";
-
 const pillars = [
   {
     n: "01",
-    title: "Rigor técnico",
-    desc: "Estudios técnicos respaldados por más de 12 profesionales certificados en ingeniería y ciencias ambientales. Equipamiento propio de campo: HACH, sonómetros calibrados y drones UAV.",
+    title: "Consultoría técnica",
+    desc: "No elaboramos estudios como documentos aislados. Interpretamos procesos, mediciones, instalaciones, riesgos ambientales y condiciones reales de operación para traducirlos en criterios de cumplimiento y rutas de acción.",
   },
   {
     n: "02",
-    title: "Solidez jurídica",
-    desc: "Abogados especialistas en derecho ambiental, amparo, litigio federal y procedimientos administrativos. Representación directa ante PROFEPA, SEMARNAT, CONAGUA, STPS y COFEPRIS.",
+    title: "Asesoría legal",
+    desc: "No analizamos la norma en abstracto. La conectamos con evidencia técnica y el criterio de ingeniería, operación industrial, expedientes, autorizaciones, obligaciones ambientales y criterios de inspección de las autoridades.",
   },
-];
-
-const milieusFeatures = [
-  "Gestión centralizada de obligaciones ambientales",
-  "Alertas de vencimientos y calendario regulatorio",
-  "Resguardo digital del expediente ambiental",
-  "Indicadores de cumplimiento por instalación",
+  {
+    n: "03",
+    title: "Soluciones defendibles",
+    desc: "El resultado son estrategias, permisos, informes y respuestas que pueden sostenerse técnicamente en campo y jurídicamente ante una autoridad, una auditoría, una inspección o una controversia administrativa.",
+  },
 ];
 
 export default function MissionStrip() {
@@ -35,18 +31,32 @@ export default function MissionStrip() {
           <span style={{ width: 24, height: 2, background: "rgba(255,255,255,0.6)", display: "inline-block" }} />
           Por qué IRCA Consultores
         </div>
-        <h2 style={{
-          fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(30px,4vw,56px)",
-          letterSpacing: "-0.025em", lineHeight: 1.05,
-          margin: "16px 0 48px", color: "#fff", maxWidth: "24ch",
-        }}>
-          La conjunción{" "}
-          <span style={{ color: "var(--irca-green)" }}>técnico–jurídica</span>{" "}
-          es nuestro diferenciador.
-        </h2>
+        <div className="grid grid-cols-1 md:[grid-template-columns:1fr_1fr] gap-8 md:gap-16 items-start" style={{ margin: "16px 0 48px" }}>
+          <h2 style={{
+            fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(30px,4vw,52px)",
+            letterSpacing: "-0.025em", lineHeight: 1.05,
+            margin: 0, color: "#fff", maxWidth: "20ch",
+          }}>
+            La diferencia está en integrar lo{" "}
+            <span style={{ color: "var(--irca-green)" }}>técnico</span> con lo{" "}
+            <span style={{ color: "var(--irca-blue)" }}>jurídico</span>.
+          </h2>
+          <div style={{ display: "grid", gap: 16 }}>
+            <p style={{ fontSize: 16, lineHeight: 1.65, color: "rgba(255,255,255,0.75)", margin: 0 }}>
+              La mayoría de las consultorías ambientales resuelve desde el estudio técnico. Muchos
+              despachos legales resuelven desde la interpretación normativa. IRCA Consultores integra
+              ambas visiones para construir soluciones ambientales técnicamente sustentadas,
+              jurídicamente defendibles y operativamente viables.
+            </p>
+            <p style={{ fontSize: 16, lineHeight: 1.65, color: "rgba(255,255,255,0.75)", margin: 0 }}>
+              Nuestro valor no está solo en elaborar documentos, permisos o estrategias legales, sino
+              en entender cómo se relacionan la operación real de una empresa, la evidencia técnica,
+              la norma aplicable y el criterio de la autoridad.
+            </p>
+          </div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Pillars 01 and 02 */}
           {pillars.map(({ n, title, desc }) => (
             <div key={n} style={{ borderTop: "1px solid rgba(255,255,255,0.15)", paddingTop: 22 }}>
               <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, opacity: 0.55, marginBottom: 12 }}>{n}</div>
@@ -54,43 +64,6 @@ export default function MissionStrip() {
               <div style={{ fontSize: 15, lineHeight: 1.6, opacity: 0.75 }}>{desc}</div>
             </div>
           ))}
-
-          {/* Pillar 03 — Milieus Pro visual card */}
-          <div style={{
-            background: "rgba(255,255,255,0.05)", border: "1px solid rgba(111,176,63,0.35)",
-            borderRadius: 14, padding: 24, display: "flex", flexDirection: "column", gap: 16,
-          }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "3px 10px", borderRadius: 999, background: "rgba(111,176,63,0.15)", border: "1px solid rgba(111,176,63,0.3)", color: "var(--irca-green)", fontSize: 10, fontWeight: 700, letterSpacing: "0.1em" }}>
-                EN BETA
-              </div>
-            </div>
-            <div>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.015em", color: "#fff", lineHeight: 1.2 }}>
-                Milieus Pro
-              </div>
-              <div style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", marginTop: 4 }}>
-                Plataforma de gestión ambiental digital
-              </div>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              {milieusFeatures.map(f => (
-                <div key={f} style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  <span style={{ width: 18, height: 18, borderRadius: 999, background: "rgba(111,176,63,0.2)", color: "var(--irca-green)", display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <Icon name="check" size={10} stroke={2.5} />
-                  </span>
-                  <span style={{ fontSize: 13, color: "rgba(255,255,255,0.75)", lineHeight: 1.4 }}>{f}</span>
-                </div>
-              ))}
-            </div>
-            <a
-              href="/sobre-nosotros/"
-              style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "var(--irca-green)", fontWeight: 600, fontSize: 13, textDecoration: "none", marginTop: "auto" }}
-            >
-              Más sobre IRCA
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
         </div>
       </div>
     </section>

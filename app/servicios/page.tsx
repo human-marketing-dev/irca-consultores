@@ -4,7 +4,7 @@ import Icon, { type IconName } from "@/components/ui/Icon";
 
 export const metadata: Metadata = {
   title: "Servicios de Consultoría Ambiental — IRCA Consultores",
-  description: "Siete áreas de especialidad ambiental: auditoría, estudios de impacto, derecho ambiental, trámites, seguridad ocupacional, ingeniería y capacitación. IRCA Consultores, Monterrey.",
+  description: "Nueve áreas de especialidad ambiental y de seguridad y salud: auditoría, estudios ambientales, trámites y autorizaciones, servicios legales, supervisión, estudios de ingeniería y capacitación. IRCA Consultores, Monterrey.",
 };
 
 /* ── helpers ──────────────────────────────────────────── */
@@ -29,113 +29,143 @@ type Service = {
   alcance: string[];
   subservicios?: { label: string; href: string }[];
   href: string;
+  /** Para el servicio que aún no tiene página propia. */
+  ctaLabel?: string;
 };
 
 const services: Service[] = [
   {
     icon: "shield-check", accent: "green", number: "01",
     title: "Auditoría y diagnóstico ambiental",
-    desc: "Identificamos el perfil de cumplimiento de tu instalación ante SEMARNAT, PROFEPA, CONAGUA y STPS antes de que lo haga la autoridad. Punto de partida de cualquier estrategia ambiental seria.",
+    desc: "Identificamos el perfil de cumplimiento de tu instalación ante SEMARNAT, PROFEPA y CONAGUA antes de que lo haga la autoridad. Punto de partida de cualquier estrategia ambiental seria.",
     alcance: [
-      "Matrices de requerimientos legales aplicables",
-      "Programas de Gestión Integral (PGI) y RETC",
-      "Auditorías bajo norma ISO 19011",
-      "Diagnóstico de emisiones no conducidas",
-      "Planes de manejo de residuos industriales",
+      "Auditorías de diagnóstico y de cumplimiento",
+      "Auditoría voluntaria de Industria Limpia (PROFEPA)",
+      "Inventarios de emisiones y corrientes de residuos",
+      "Auditorías de cliente y de producto",
+      "Estándares internacionales de autogestión (ISO 14001)",
+    ],
+    subservicios: [
+      { label: "Industria Limpia", href: "/servicios/tramites-y-licencias-ambientales/industria-limpia/" },
+      { label: "ISO 14001", href: "/servicios/tramites-y-licencias-ambientales/iso-14001/" },
     ],
     href: "/servicios/auditoria-ambiental/",
   },
   {
     icon: "flask", accent: "blue", number: "02",
     title: "Estudios ambientales",
-    desc: "Elaboramos los estudios técnicos que las autoridades requieren para autorizar, modificar o regularizar proyectos de inversión. Metodología verificable y expedientes que se resuelven.",
+    desc: "Caracterizamos y evaluamos sitios e instalaciones bajo normativa mexicana y metodología ASTM, y diseñamos la solución técnica que sigue. Estudios que sostienen decisiones de inversión y de remediación.",
     alcance: [
-      "Manifestación de Impacto Ambiental (MIA)",
-      "Estudio de Riesgo Ambiental (ERA)",
-      "Estudio Técnico Justificativo forestal (ETJ)",
-      "Evaluación Ambiental de Sitio Phase I y II (ASTM)",
-      "Caracterización y remediación de sitios contaminados",
+      "Evaluación de sitios contaminados Phase I y II (ASTM)",
+      "Caracterización de sitios contaminados (normativa mexicana)",
+      "Balance hídrico, huella de carbono y análisis de ciclo de vida",
+      "Diseño ambiental: rellenos sanitarios, plantas de tratamiento y descontaminación",
+      "Monitoreo de emisiones",
     ],
     subservicios: [
-      { label: "Impacto ambiental (MIA)", href: "/servicios/estudios-ambientales/estudio-de-impacto-ambiental/" },
-      { label: "Riesgo ambiental (ERA)", href: "/servicios/estudios-ambientales/estudio-de-riesgo-ambiental/" },
-      { label: "Forestal (ETJ)", href: "/servicios/estudios-ambientales/estudio-tecnico-justificativo/" },
       { label: "Phase I y II", href: "/servicios/estudios-ambientales/evaluacion-ambiental-fase-1-y-2/" },
+      { label: "Remediación de suelos", href: "/servicios/ingenieria-ambiental/remediacion-de-suelos-contaminados/" },
+      { label: "Ruido NOM-081", href: "/servicios/ingenieria-ambiental/control-de-ruido-perimetral/" },
     ],
     href: "/servicios/estudios-ambientales/",
   },
   {
-    icon: "scale", accent: "green", number: "03",
-    title: "Derecho ambiental y defensa jurídica",
-    desc: "Defensa ante visitas de inspección, emplazamientos y sanciones de PROFEPA, SEMARNAT y CONAGUA. Litigio ambiental especializado con resultados comprobados.",
+    icon: "file-text", accent: "green", number: "03",
+    title: "Estudios, trámites y administración de autorizaciones",
+    desc: "Elaboramos los estudios y gestionamos las autorizaciones federales y estatales que tu proyecto necesita para operar. Seguimiento hasta resolución favorable y administración del expediente en el tiempo.",
     alcance: [
-      "Atención a visitas de inspección y actas circunstanciadas",
-      "Recursos de revisión y juicios de nulidad",
-      "Juicio de amparo en materia ambiental",
-      "Medidas cautelares y suspensión de clausuras",
-      "Defensa contra clausuras y sanciones económicas",
-    ],
-    href: "/servicios/derecho-ambiental/",
-  },
-  {
-    icon: "file-text", accent: "blue", number: "04",
-    title: "Trámites y licencias ambientales",
-    desc: "Gestionamos los trámites de autorización ambiental federal y estatal: desde la LAU hasta la certificación Industria Limpia. Seguimiento hasta resolución favorable.",
-    alcance: [
-      "Licencia Ambiental Única (LAU) y COA",
-      "Concesiones y permisos de descarga CONAGUA",
-      "Registro federal de emisiones (RETC y LLFF)",
-      "Certificación Industria Limpia (PROFEPA)",
-      "Sistemas de gestión ISO 14001",
+      "Impacto Ambiental (MIA) y Riesgo Ambiental (ERA)",
+      "Programa de Prevención de Accidentes (PPA)",
+      "Licencia Ambiental Única (LAU) y Licencia de Fuentes Fijas (LFF)",
+      "Cambio de Uso de Suelo Forestal (CUSTF)",
+      "Planes de Manejo de Residuos (PMR) y Cédulas de Operación Anual (COA)",
+      "Trámites ante SEMARNAT, STPS, COFEPRIS, CONAGUA y gobiernos estatales",
     ],
     subservicios: [
-      { label: "Industria Limpia", href: "/servicios/tramites-y-licencias-ambientales/industria-limpia/" },
-      { label: "ISO 14001", href: "/servicios/tramites-y-licencias-ambientales/iso-14001/" },
+      { label: "Impacto ambiental (MIA)", href: "/servicios/estudios-ambientales/estudio-de-impacto-ambiental/" },
+      { label: "Riesgo ambiental (ERA)", href: "/servicios/estudios-ambientales/estudio-de-riesgo-ambiental/" },
+      { label: "Forestal (ETJ / CUSTF)", href: "/servicios/estudios-ambientales/estudio-tecnico-justificativo/" },
     ],
     href: "/servicios/tramites-y-licencias-ambientales/",
   },
   {
-    icon: "hardhat", accent: "green", number: "05",
-    title: "Seguridad y salud ocupacional (SHE)",
-    desc: "Auditorías de seguridad laboral, cumplimiento NOM-STPS e implementación de sistemas ISO 45001. Gestión integral del riesgo laboral para operaciones industriales.",
+    icon: "scale", accent: "blue", number: "04",
+    title: "Servicios legales y atención de autoridades",
+    desc: "Atendemos inspecciones, procedimientos sancionadores y litigio ante PROFEPA, SEMARNAT, CONAGUA y STPS. Defensa técnica y jurídica desde el acta circunstanciada hasta el amparo.",
     alcance: [
-      "Implementación y auditoría ISO 45001",
-      "Matrices de requerimientos legales NOM-STPS",
-      "Análisis de riesgos (AMEF) y NOM específicas",
-      "Programa de Prevención de Accidentes (PPA)",
-      "Comisiones Mixtas de Seguridad e Higiene",
-      "Auditorías SHE y planes de Protección Civil",
+      "Atención de visitas de inspección y procedimiento administrativo sancionador",
+      "Planes estratégicos de cumplimiento, intermediación y representación",
+      "Defensa de estudios, trámites, multas y sanciones",
+      "Recursos de revisión y juicios de nulidad",
+      "Juicio de amparo en materia ambiental",
+    ],
+    href: "/servicios/derecho-ambiental/",
+  },
+  {
+    icon: "eye", accent: "green", number: "05",
+    title: "Consultoría, administración y supervisión ambiental",
+    desc: "Operamos como tu área ambiental externa: acompañamiento continuo, supervisión en campo y control de los compromisos adquiridos ante la autoridad. Cumplimiento sostenido, no solo el trámite resuelto.",
+    alcance: [
+      "Consultoría y staff externo con acompañamiento permanente",
+      "Supervisión y vigilancia ambiental",
+      "Seguimiento de términos y condicionantes de autorizaciones",
+      "Control documental y calendario de obligaciones",
+    ],
+    href: "/contacto/",
+    ctaLabel: "Solicitar información",
+  },
+  {
+    icon: "hardhat", accent: "blue", number: "06",
+    title: "Auditoría y diagnóstico Seguridad y Salud",
+    desc: "Evaluamos el cumplimiento de tu operación frente a las NOM-STPS y a los estándares internacionales de gestión. Diagnóstico previo a cualquier inspección o proceso de certificación.",
+    alcance: [
+      "Auditorías de diagnóstico y de cumplimiento",
+      "Auditoría de autogestión (STPS)",
+      "Auditoría de manejo de sustancias",
+      "Estándares internacionales de autogestión (ISO 45001)",
     ],
     href: "/servicios/seguridad-y-salud-ocupacional/",
   },
   {
-    icon: "droplet", accent: "blue", number: "06",
-    title: "Ingeniería ambiental",
-    desc: "Diseño, construcción y operación de sistemas de tratamiento de agua residual, remediación de suelos contaminados, control acústico y levantamientos geoespaciales con drones.",
+    icon: "alert-triangle", accent: "green", number: "07",
+    title: "Estudio de seguridad y salud",
+    desc: "Analizamos riesgos laborales, equipos y manejo de sustancias con metodologías reconocidas internacionalmente. Gestión integral del riesgo para operaciones industriales.",
     alcance: [
-      "Diseño y operación de PTAR industriales",
-      "Remediación de suelos y aguas subterráneas",
-      "Control de ruido perimetral (NOM-081-SEMARNAT)",
-      "Levantamientos fotogramétricos con drones UAV",
-      "Modelos digitales de elevación (DEM) y SIG",
+      "Auditorías de riesgos laborales y de equipos",
+      "Manejo de sustancias peligrosas",
+      "Metodologías de cumplimiento (SMART, DuPont, entre otras)",
+      "Estándares internacionales de gestión de seguridad y salud (ISO 45001)",
+    ],
+    href: "/servicios/seguridad-y-salud-ocupacional/",
+  },
+  {
+    icon: "compass", accent: "blue", number: "08",
+    title: "Estudios de ingeniería",
+    desc: "Resolvemos la ingeniería de soporte que los proyectos ambientales y de infraestructura requieren, del subsuelo a la red hidráulica. Estudios ejecutables, no solo entregables.",
+    alcance: [
+      "Geología, geofísica y estabilidad de taludes",
+      "Estudios hidrológicos y geohidrológicos",
+      "Tránsito y vialidad",
+      "Topografía",
+      "Ingeniería de agua potable y alcantarillado sanitario",
+      "Soluciones pluviales e hidráulicas",
     ],
     subservicios: [
-      { label: "Remediación de suelos", href: "/servicios/ingenieria-ambiental/remediacion-de-suelos-contaminados/" },
-      { label: "Ruido NOM-081", href: "/servicios/ingenieria-ambiental/control-de-ruido-perimetral/" },
       { label: "Geoespaciales y UAV", href: "/servicios/ingenieria-ambiental/servicios-geoespaciales/" },
     ],
     href: "/servicios/ingenieria-ambiental/",
   },
   {
-    icon: "building", accent: "green", number: "07",
-    title: "Capacitación ambiental",
-    desc: "Programas de capacitación impartidos por los mismos especialistas que ejecutan los proyectos. No solo teoría: instructores que conocen la realidad de la industria mexicana.",
+    icon: "graduation-cap", accent: "green", number: "09",
+    title: "Capacitación técnica especializada",
+    desc: "Programas impartidos por los mismos especialistas que ejecutan los proyectos. No solo teoría: instructores que conocen la realidad de la industria mexicana.",
     alcance: [
-      "Manejo de residuos peligrosos e industriales",
-      "ISO 14001 e ISO 45001 para equipos internos",
-      "Atención a inspecciones ambientales y STPS",
-      "Respuesta a contingencias y emergencias",
-      "RETC, COA y legislación ambiental aplicada",
+      "Sistemas de gestión (ISO)",
+      "Atención de visitas de inspección",
+      "Manejo de residuos y respuesta a emergencias",
+      "Auditorías de cliente y de servicios",
+      "Legislación aplicable en materia de SHE",
+      "Cursos para cumplimiento de normas STPS y Protección Civil",
     ],
     href: "/servicios/capacitacion-ambiental/",
   },
@@ -193,7 +223,7 @@ export default function Servicios() {
               letterSpacing: "-0.03em", lineHeight: 1.05,
               margin: 0, color: "var(--fg-1)",
             }}>
-              Siete áreas de especialidad.{" "}
+              Nueve áreas de especialidad.{" "}
               <span style={{ color: "var(--irca-green)" }}>Un solo equipo.</span>
             </h1>
             <div>
@@ -227,7 +257,7 @@ export default function Servicios() {
             const isGreen = s.accent === "green";
             return (
               <article
-                key={s.href}
+                key={s.number}
                 style={{
                   background: i % 2 === 0 ? "#fff" : "var(--bg-2)",
                   border: "1px solid var(--border-soft)",
@@ -315,7 +345,7 @@ export default function Servicios() {
                       color: "#fff", fontWeight: 700, fontSize: 14, textDecoration: "none",
                     }}
                   >
-                    Ver servicio completo
+                    {s.ctaLabel ?? "Ver servicio completo"}
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                   </Link>
                 </div>

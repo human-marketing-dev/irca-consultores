@@ -18,7 +18,11 @@ export type IconName =
   | "satellite"
   | "flask"
   | "whatsapp"
-  | "calendar";
+  | "calendar"
+  | "eye"
+  | "alert-triangle"
+  | "graduation-cap"
+  | "compass";
 
 interface IconProps {
   name: IconName;
@@ -78,6 +82,14 @@ export default function Icon({ name, size = 20, color = "currentColor", stroke =
       return <svg {...p}><path d="M5 12a7 7 0 0 1 7-7"/><path d="M8 15a4 4 0 0 1 4-4"/><circle cx="18" cy="6" r="1.5"/><path d="M14 14l7 7"/><circle cx="6" cy="18" r="3"/></svg>;
     case "flask":
       return <svg {...p}><path d="M9 3v6L4 19a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-10V3"/><path d="M8 3h8"/><path d="M6 14h12"/></svg>;
+    case "eye":
+      return <svg {...p}><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/></svg>;
+    case "alert-triangle":
+      return <svg {...p}><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>;
+    case "graduation-cap":
+      return <svg {...p}><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>;
+    case "compass":
+      return <svg {...p}><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>;
     case "calendar":
       return <svg {...p}><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg>;
     case "whatsapp":

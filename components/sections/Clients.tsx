@@ -22,15 +22,6 @@ const clients = [
   { name: "CFE / Pemex",      logo: "/cfe-pemex-logo.webp" },
 ];
 
-const caseStudies = [
-  { proj: "SSP — Islas Marías",            svc: "MIA, ETJ, PVA, ANP",                period: "2009 – 2012" },
-  { proj: "CONAPESCA · FONDEN",            svc: "Avisos de obra, PVA, mitigación",   period: "2013 – 2018" },
-  { proj: "Energía de Celaya · Fisterra",  svc: "MIA, ERA, modelación de emisiones", period: "2016 – Vigente" },
-  { proj: "Deacero — Acería Ramos Arizpe", svc: "MIA, PVA, programas específicos",   period: "2010 – Vigente" },
-  { proj: "Frisa Forjados (4 plantas)",    svc: "MIA, ERA, LAU, SHE",                period: "2019 – Vigente" },
-  { proj: "San Pedro Garza García",        svc: "MIA municipal, asesoría normativa", period: "2021 – Vigente" },
-];
-
 export default function Clients() {
   return (
     <section id="clients" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff" }}>
@@ -91,19 +82,6 @@ export default function Clients() {
           </div>
         </div>
 
-        {/* Case study cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5 mt-8">
-          {caseStudies.map(({ proj, svc, period }) => (
-            <article
-              key={proj}
-              style={{ background: "var(--bg-2)", borderRadius: 12, padding: 20, border: "1px solid var(--border-soft)" }}
-            >
-              <div style={{ fontSize: 11, color: "var(--fg-4)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" }}>{period}</div>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 17, letterSpacing: "-0.015em", marginTop: 8, color: "var(--fg-1)" }}>{proj}</div>
-              <div style={{ fontSize: 13, color: "var(--fg-3)", marginTop: 6, lineHeight: 1.5 }}>{svc}</div>
-            </article>
-          ))}
-        </div>
       </div>
     </section>
   );
