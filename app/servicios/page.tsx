@@ -29,8 +29,6 @@ type Service = {
   alcance: string[];
   subservicios?: { label: string; href: string }[];
   href: string;
-  /** Para el servicio que aún no tiene página propia. */
-  ctaLabel?: string;
 };
 
 const services: Service[] = [
@@ -46,8 +44,8 @@ const services: Service[] = [
       "Estándares internacionales de autogestión (ISO 14001)",
     ],
     subservicios: [
-      { label: "Industria Limpia", href: "/servicios/tramites-y-licencias-ambientales/industria-limpia/" },
-      { label: "ISO 14001", href: "/servicios/tramites-y-licencias-ambientales/iso-14001/" },
+      { label: "Industria Limpia", href: "/servicios/auditoria-ambiental/industria-limpia/" },
+      { label: "ISO 14001", href: "/servicios/auditoria-ambiental/iso-14001/" },
     ],
     href: "/servicios/auditoria-ambiental/",
   },
@@ -64,8 +62,8 @@ const services: Service[] = [
     ],
     subservicios: [
       { label: "Phase I y II", href: "/servicios/estudios-ambientales/evaluacion-ambiental-fase-1-y-2/" },
-      { label: "Remediación de suelos", href: "/servicios/ingenieria-ambiental/remediacion-de-suelos-contaminados/" },
-      { label: "Ruido NOM-081", href: "/servicios/ingenieria-ambiental/control-de-ruido-perimetral/" },
+      { label: "Remediación de suelos", href: "/servicios/estudios-ambientales/remediacion-de-suelos-contaminados/" },
+      { label: "Ruido NOM-081", href: "/servicios/estudios-ambientales/control-de-ruido-perimetral/" },
     ],
     href: "/servicios/estudios-ambientales/",
   },
@@ -82,11 +80,11 @@ const services: Service[] = [
       "Trámites ante SEMARNAT, STPS, COFEPRIS, CONAGUA y gobiernos estatales",
     ],
     subservicios: [
-      { label: "Impacto ambiental (MIA)", href: "/servicios/estudios-ambientales/estudio-de-impacto-ambiental/" },
-      { label: "Riesgo ambiental (ERA)", href: "/servicios/estudios-ambientales/estudio-de-riesgo-ambiental/" },
-      { label: "Forestal (ETJ / CUSTF)", href: "/servicios/estudios-ambientales/estudio-tecnico-justificativo/" },
+      { label: "Impacto ambiental (MIA)", href: "/servicios/tramites-y-autorizaciones-ambientales/estudio-de-impacto-ambiental/" },
+      { label: "Riesgo ambiental (ERA)", href: "/servicios/tramites-y-autorizaciones-ambientales/estudio-de-riesgo-ambiental/" },
+      { label: "Forestal (ETJ / CUSTF)", href: "/servicios/tramites-y-autorizaciones-ambientales/estudio-tecnico-justificativo/" },
     ],
-    href: "/servicios/tramites-y-licencias-ambientales/",
+    href: "/servicios/tramites-y-autorizaciones-ambientales/",
   },
   {
     icon: "scale", accent: "blue", number: "04",
@@ -99,7 +97,7 @@ const services: Service[] = [
       "Recursos de revisión y juicios de nulidad",
       "Juicio de amparo en materia ambiental",
     ],
-    href: "/servicios/derecho-ambiental/",
+    href: "/servicios/servicios-legales-y-atencion-de-autoridades/",
   },
   {
     icon: "eye", accent: "green", number: "05",
@@ -111,8 +109,7 @@ const services: Service[] = [
       "Seguimiento de términos y condicionantes de autorizaciones",
       "Control documental y calendario de obligaciones",
     ],
-    href: "/contacto/",
-    ctaLabel: "Solicitar información",
+    href: "/servicios/consultoria-y-supervision-ambiental/",
   },
   {
     icon: "hardhat", accent: "blue", number: "06",
@@ -124,7 +121,7 @@ const services: Service[] = [
       "Auditoría de manejo de sustancias",
       "Estándares internacionales de autogestión (ISO 45001)",
     ],
-    href: "/servicios/seguridad-y-salud-ocupacional/",
+    href: "/servicios/auditoria-seguridad-y-salud/",
   },
   {
     icon: "alert-triangle", accent: "green", number: "07",
@@ -136,7 +133,7 @@ const services: Service[] = [
       "Metodologías de cumplimiento (SMART, DuPont, entre otras)",
       "Estándares internacionales de gestión de seguridad y salud (ISO 45001)",
     ],
-    href: "/servicios/seguridad-y-salud-ocupacional/",
+    href: "/servicios/estudios-de-seguridad-y-salud/",
   },
   {
     icon: "compass", accent: "blue", number: "08",
@@ -151,9 +148,9 @@ const services: Service[] = [
       "Soluciones pluviales e hidráulicas",
     ],
     subservicios: [
-      { label: "Geoespaciales y UAV", href: "/servicios/ingenieria-ambiental/servicios-geoespaciales/" },
+      { label: "Geoespaciales y UAV", href: "/servicios/estudios-de-ingenieria/servicios-geoespaciales/" },
     ],
-    href: "/servicios/ingenieria-ambiental/",
+    href: "/servicios/estudios-de-ingenieria/",
   },
   {
     icon: "graduation-cap", accent: "green", number: "09",
@@ -167,7 +164,7 @@ const services: Service[] = [
       "Legislación aplicable en materia de SHE",
       "Cursos para cumplimiento de normas STPS y Protección Civil",
     ],
-    href: "/servicios/capacitacion-ambiental/",
+    href: "/servicios/capacitacion-tecnica-especializada/",
   },
 ];
 
@@ -345,7 +342,7 @@ export default function Servicios() {
                       color: "#fff", fontWeight: 700, fontSize: 14, textDecoration: "none",
                     }}
                   >
-                    {s.ctaLabel ?? "Ver servicio completo"}
+                    Ver servicio completo
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                   </Link>
                 </div>

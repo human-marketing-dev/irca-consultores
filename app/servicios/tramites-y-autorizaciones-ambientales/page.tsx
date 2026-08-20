@@ -4,8 +4,8 @@ import ServiceFAQ from "@/components/servicios/ServiceFAQ";
 import ServiceContactSection from "@/components/servicios/ServiceContactSection";
 
 export const metadata: Metadata = {
-  title: "Ingeniería Ambiental",
-  description: "Diseño de PTAR, remediación de suelos, control de ruido NOM-081, monitoreo ambiental, levantamientos con drones y proyectos hidrológicos y geofísicos. Ingeniería ambiental especializada en México. IRCA Consultores.",
+  title: "Estudios, Trámites y Administración de Autorizaciones",
+  description: "MIA, ERA, PPA, LAU, LFF, CUSTF, planes de manejo de residuos y COA ante SEMARNAT, STPS, COFEPRIS, CONAGUA y gobiernos estatales. Seguimiento hasta resolución favorable. IRCA Consultores.",
 };
 
 /* ── shared helpers ─────────────────────────────────── */
@@ -44,49 +44,51 @@ function CheckItem({ children }: { children: React.ReactNode }) {
 
 /* ── hero card data ─────────────────────────────────── */
 
-const projects = [
-  { label: "PTAR industria alimentaria 120 m³/día",  status: "En operación",    palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
-  { label: "Remediación suelos — derrame HC",         status: "En ejecución",   palette: { bg: "var(--warning-bg)", fg: "var(--warning)" } },
-  { label: "Monitoreo ruido NOM-081 Hunter Douglas",  status: "Completado",     palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
-  { label: "Levantamiento UAV cuenca hidrológica",    status: "En análisis",    palette: { bg: "var(--info-bg)",    fg: "var(--info)"    } },
+const tramitesList = [
+  { label: "MIA modalidad particular",        status: "En evaluación", palette: { bg: "var(--info-bg)",    fg: "var(--info)"    } },
+  { label: "LAU Industria Química",           status: "Autorizada",    palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
+  { label: "CUSTF — 4.2 ha",                  status: "En trámite",    palette: { bg: "var(--warning-bg)", fg: "var(--warning)" } },
+  { label: "COA Federal 2025",                status: "Presentada",    palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
 ];
 
 /* ── subservicios ───────────────────────────────────── */
 
 const subservicios = [
   {
-    href: "/servicios/ingenieria-ambiental/remediacion-de-suelos-contaminados/",
+    href: "/servicios/tramites-y-autorizaciones-ambientales/estudio-de-impacto-ambiental/",
     color: "green",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2a10 10 0 0 1 0 20"/><path d="M12 2a10 10 0 0 0 0 20"/><path d="M2 12h20"/>
-        <path d="M12 2v20"/>
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h8"/><path d="M8 17h6"/>
       </svg>
     ),
-    label: "Alta intención comercial",
-    title: "Remediación de Suelos Contaminados",
-    desc: "Evaluación del sitio contaminado, diseño de la estrategia de remediación (biorremediación, extracción de vapores, excavación), supervisión de trabajos y verificación del cumplimiento ante la autoridad.",
+    label: "Impacto ambiental",
+    title: "Manifestación de Impacto Ambiental (MIA)",
+    desc: "El estudio que autoriza tu proyecto ante SEMARNAT o la autoridad estatal. Modalidad particular o regional, con la caracterización, la evaluación de impactos y las medidas de mitigación que sostienen el resolutivo.",
   },
   {
-    href: "/servicios/ingenieria-ambiental/control-de-ruido-perimetral/",
+    href: "/servicios/tramites-y-autorizaciones-ambientales/estudio-de-riesgo-ambiental/",
     color: "blue",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+        <path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
       </svg>
     ),
-    label: "NOM-081-SEMARNAT · Sonometría",
-    title: "Control de Ruido Perimetral (NOM-081)",
-    desc: "Monitoreo de ruido perimetral con sonómetros de precisión y modelación acústica. Clientes como Hunter Douglas, Prolec, Novocast y Vitromex. Diagnóstico, plan de mitigación y verificación de cumplimiento.",
+    label: "Riesgo ambiental",
+    title: "Estudio de Riesgo Ambiental (ERA)",
+    desc: "Obligatorio para actividades altamente riesgosas. Modelación de escenarios, radios de afectación y medidas preventivas, base técnica del Programa de Prevención de Accidentes ante SEMARNAT y Protección Civil.",
   },
   {
-    href: "/servicios/ingenieria-ambiental/servicios-geoespaciales/",
+    href: "/servicios/tramites-y-autorizaciones-ambientales/estudio-tecnico-justificativo/",
     color: "green",
-    icon: <Icon name="drone" size={24} />,
-    label: "UAV · DEM · Ortofotomosaico · SIG",
-    title: "Servicios Geoespaciales y Drones",
-    desc: "Levantamientos fotogramétricos con drones (UAV), generación de Modelos Digitales de Elevaciones, ortofotomosaicos, curvas de nivel y capas SIG para proyectos ambientales, hidrológicos y de obra civil.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22V12"/><path d="M12 12c0-4 3-7 8-7 0 5-3 8-8 8z"/><path d="M12 14c0-3-2.5-5.5-6.5-5.5C5.5 12.5 8 15 12 15z"/>
+      </svg>
+    ),
+    label: "Forestal",
+    title: "Cambio de Uso de Suelo Forestal (ETJ / CUSTF)",
+    desc: "Estudio Técnico Justificativo para remover vegetación forestal en terrenos con esa condición. Sin la autorización de CUSTF, ninguna obra sobre suelo forestal puede iniciar legalmente.",
   },
 ];
 
@@ -94,77 +96,58 @@ const subservicios = [
 
 const alcanceCards = [
   {
+    color: "green",
+    icon: <Icon name="file-text" size={24} />,
+    title: "Impacto Ambiental (MIA) y Riesgo Ambiental (ERA)",
+    desc: "Los dos estudios que abren la puerta a la autorización federal o estatal de un proyecto. Elaboramos la manifestación y, cuando la actividad es altamente riesgosa, el estudio de riesgo que la acompaña, con la modelación y las medidas que exige la autoridad.",
+  },
+  {
     color: "blue",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
-      </svg>
-    ),
-    title: "Plantas de Tratamiento de Aguas Residuales (PTAR)",
-    desc: "Diseño, ingeniería de detalle y supervisión de obra de PTAR municipales e industriales. Selección de tecnología según caudal, carga contaminante y parámetros de descarga requeridos por CONAGUA o por el sistema de alcantarillado receptor.",
+    icon: <Icon name="alert-triangle" size={24} />,
+    title: "Programa de Prevención de Accidentes (PPA)",
+    desc: "Documento derivado del ERA que integra los escenarios de riesgo, las medidas preventivas y los protocolos de respuesta. Se presenta ante SEMARNAT y es requisito para operar actividades altamente riesgosas.",
   },
   {
     color: "green",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
-        <line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>
+        <rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10"/><path d="M7 13h6"/>
       </svg>
     ),
-    title: "Celdas de confinamiento sanitarias e industriales",
-    desc: "Diseño y supervisión de celdas de confinamiento para residuos sólidos urbanos y residuos industriales no peligrosos: geomembrana, lixiviados, gas, cobertura y control perimetral. Cumplimiento de NOM-083 y NOM-161.",
+    title: "Licencia Ambiental Única (LAU) y Licencia de Fuentes Fijas (LFF)",
+    desc: "El permiso de operación en materia de atmósfera. Gestionamos la LAU federal para fuentes de jurisdicción federal y la licencia estatal de fuentes fijas, incluidas sus actualizaciones cuando cambia el proceso o la capacidad instalada.",
   },
   {
     color: "blue",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+        <path d="M12 22V12"/><path d="M12 12c0-4 3-7 8-7 0 5-3 8-8 8z"/><path d="M12 14c0-3-2.5-5.5-6.5-5.5C5.5 12.5 8 15 12 15z"/>
       </svg>
     ),
-    title: "Estudios y modelos de control de ruido (NOM-081)",
-    desc: "Monitoreo de ruido perimetral bajo NOM-081-SEMARNAT con sonómetros de precisión calibrados, modelación acústica y diseño de barreras o medidas de mitigación. Informes con validez regulatoria ante SEMARNAT.",
+    title: "Cambio de Uso de Suelo Forestal (CUSTF)",
+    desc: "Autorización indispensable para retirar vegetación forestal. Incluye el Estudio Técnico Justificativo, el cálculo de la compensación ambiental y el seguimiento del pago al Fondo Forestal Mexicano.",
   },
   {
     color: "green",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="M13 13l6 6"/>
+        <path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6l1 14h10l1-14"/><path d="M10 11v5"/><path d="M14 11v5"/>
       </svg>
     ),
-    title: "Monitoreo de calidad del aire, agua y suelo",
-    desc: "Campañas de muestreo y análisis en campo y laboratorio para calidad del aire (emisiones, inmisiones), aguas superficiales y subterráneas, y suelos. Incluye diseño de la red de muestreo, cadena de custodia y reporte técnico.",
+    title: "Planes de Manejo de Residuos (PMR) y COA",
+    desc: "Registro como generador, plan de manejo de residuos peligrosos y de manejo especial, y la Cédula de Operación Anual que consolida cada año emisiones, descargas, residuos y transferencias ante el RETC.",
   },
   {
     color: "blue",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/>
-        <path d="M6.6 8.4A7 7 0 0 0 5 12"/><path d="M17.4 8.4A7 7 0 0 1 19 12"/>
-      </svg>
-    ),
-    title: "Forestación, reforestación y rescate de flora y fauna",
-    desc: "Programas de rescate y reubicación de flora y fauna silvestres previos a obras con impacto ambiental, reforestación con especies nativas, viveros temporales y seguimiento de indicadores de supervivencia conforme a la autorización de la MIA.",
+    icon: <Icon name="building" size={24} />,
+    title: "Trámites ante SEMARNAT, STPS, COFEPRIS, CONAGUA y estados",
+    desc: "Concesiones y permisos de descarga de CONAGUA, registros ante COFEPRIS y STPS, licencias de uso de suelo, dictámenes de arbolado y demás autorizaciones estatales y municipales. Un solo interlocutor para todas las ventanillas.",
   },
   {
     color: "green",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
-      </svg>
-    ),
-    title: "Obra civil en ingeniería ambiental",
-    desc: "Supervisión de trabajos de obra civil asociados a proyectos ambientales: zanjas de conducción, tanques de ecualización, estructuras de retención, bermas de contención, canales de escurrimiento y obras de estabilización de taludes.",
-  },
-  {
-    color: "blue",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="3 11 22 2 13 21 11 13 3 11"/>
-      </svg>
-    ),
-    title: "Proyectos hidrológicos, geológicos y geofísicos",
-    desc: "Estudios hidrológicos e hidráulicos para determinación de gastos de diseño y zonas de inundación, caracterización geológica y estructural del sitio, y prospección geofísica (sísmica, eléctrica, electromagnética) para evaluaciones de suelo y subsuelo.",
+    icon: <Icon name="calendar" size={24} />,
+    title: "Administración del expediente en el tiempo",
+    desc: "La autorización no termina cuando se emite: hay condicionantes que acreditar, informes que presentar y vigencias que renovar. Administramos el expediente completo para que ninguna obligación derivada se pierda de vista.",
   },
 ];
 
@@ -173,28 +156,28 @@ const alcanceCards = [
 const pillars = [
   {
     n: "01",
-    title: "Diseño propio, no especificaciones genéricas",
-    body: "Cada proyecto de ingeniería ambiental es único: el caudal de la PTAR, el contaminante del suelo, el perfil de ruido de la planta. Dimensionamos desde cero con los datos reales de cada sitio, no adaptamos una solución de catálogo al problema del cliente.",
+    title: "Conocemos los criterios reales de cada ventanilla",
+    body: "No interpretamos la norma en abstracto: sabemos qué revisa cada unidad de SEMARNAT, cuáles son los requisitos no escritos de CONAGUA en cada cuenca y cuánto tarda en promedio cada trámite. Eso nos permite estructurar el expediente correcto desde el primer envío.",
   },
   {
     n: "02",
-    title: "Supervisión de obra con criterio ambiental",
-    body: "Diseñar bien no es suficiente si la obra se ejecuta sin control técnico. Nuestro equipo supervisa la construcción de PTAR, celdas de confinamiento y obras de contención con el mismo rigor que el diseño —verificando materiales, procedimientos y tolerancias.",
+    title: "25 años gestionando trámites en México",
+    body: "Desde 1999 hemos tramitado LAU, COA, concesiones de agua, autorizaciones de residuos y certificaciones ante prácticamente todas las dependencias ambientales federales y de los estados del norte del país.",
   },
   {
     n: "03",
-    title: "Equipamiento propio: sonómetros, drones, laboratorio de campo",
-    body: "No dependemos de terceros para los monitoreos. Contamos con sonómetros de precisión para NOM-081, drones de levantamiento fotogramétrico y equipos de muestreo de agua, aire y suelo. Eso reduce tiempos, costos y la incertidumbre sobre la cadena de custodia.",
+    title: "El mismo equipo que auditó, tramita",
+    body: "Si ya hiciste una auditoría con nosotros, el expediente técnico de tu instalación ya está en nuestras manos. Eso elimina la curva de aprendizaje y reduce el tiempo de preparación de documentos.",
   },
   {
     n: "04",
-    title: "25 años de proyectos en el norte de México",
-    body: "Desde PTAR en plantas alimentarias hasta remediación de sitios con derrames de hidrocarburos, estudios hidrológicos para parques industriales y levantamientos geoespaciales en zonas mineras. El catálogo de proyectos de IRCA en ingeniería ambiental es uno de los más amplios del mercado regional.",
+    title: "Seguimiento hasta resolución, no hasta entrega",
+    body: "Entregamos el expediente y lo seguimos. Respondemos observaciones de la autoridad, aportamos información complementaria y reportamos el estatus del trámite hasta que tienes el documento en mano.",
   },
   {
     n: "05",
-    title: "Integración con el cumplimiento regulatorio",
-    body: "Una PTAR bien diseñada solo es valiosa si cumple los parámetros de descarga de CONAGUA. Un estudio de ruido solo es útil si su metodología resiste una inspección de SEMARNAT. Diseñamos siempre con el marco normativo en vista, no como requisito adicional.",
+    title: "Trazabilidad completa del trámite",
+    body: "Documentamos cada paso del proceso: fechas de presentación, folios, observaciones recibidas, respuestas enviadas. Si en el futuro la autoridad pide historial del trámite o surge una impugnación, el expediente está completo.",
   },
 ];
 
@@ -202,24 +185,24 @@ const pillars = [
 
 const faqs = [
   {
-    q: "¿Qué tecnologías de tratamiento de aguas residuales usan para diseñar una PTAR?",
-    a: "La selección de tecnología depende del caudal, la composición del agua residual (DBO, DQO, sólidos, nitrógeno, grasas), el espacio disponible y los parámetros de descarga exigidos. Trabajamos con sistemas de lodos activados, reactores biológicos de membrana (MBR), lagunas de oxidación, sistemas anaerobios (UASB, biodigestores) y tratamientos fisicoquímicos. El diseño parte siempre de una caracterización del afluente y de la normatividad de descarga aplicable.",
+    q: "¿Qué instalaciones necesitan Licencia Ambiental Única (LAU)?",
+    a: "La LAU es obligatoria para todas las instalaciones incluidas en el listado de actividades de competencia federal de la LGEEPA. Incluye industria química, petroquímica, pinturas y tintas, automotriz, electrónica, cemento, papel, azúcar, bebidas, tratamiento de residuos peligrosos, entre otras. Muchos estados tienen su propio listado para instalaciones de competencia estatal. Si tienes dudas sobre si tu instalación requiere LAU, podemos revisarlo sin costo.",
   },
   {
-    q: "¿Cuánto tarda un proyecto de remediación de suelos contaminados?",
-    a: "El plazo varía enormemente según el tipo y extensión de la contaminación, la tecnología seleccionada y los criterios de cierre exigidos por la autoridad. Una remediación por excavación de un sitio pequeño puede completarse en semanas; un proceso de biorremediación in situ de un derrame histórico de hidrocarburos puede requerir meses o años. El primer paso es siempre una Evaluación de Sitio (Fase II) que delimita el volumen de material contaminado y define la estrategia más efectiva.",
+    q: "¿Cuándo se presenta la Cédula de Operación Anual (COA)?",
+    a: "La COA federal se presenta durante el mes de enero de cada año, reportando los datos del año anterior. El incumplimiento puede derivar en sanciones de PROFEPA. Las COA estatales tienen calendarios propios que varían por entidad. En IRCA te ayudamos a identificar todas las obligaciones de reporte que aplican a tu instalación —federal y estatal— y a presentarlas en tiempo.",
   },
   {
-    q: "¿Qué mide el estudio de ruido bajo NOM-081-SEMARNAT y cuándo es obligatorio?",
-    a: "La NOM-081 establece los límites máximos de emisión de ruido en el entorno inmediato de instalaciones industriales, medidos en los linderos del predio receptor. La norma fija límites diferenciados por horario (diurno/nocturno) y tipo de zona (habitacional, mixta, comercial, industrial). Es exigible cuando una autoridad ambiental —federal o estatal— lo solicita en el contexto de una LAU, una MIA, una denuncia vecinal o una visita de inspección. En IRCA realizamos el monitoreo con sonómetros de tipo 1 y elaboramos el informe con el formato que la autoridad acepta.",
+    q: "¿Cuánto tarda obtener una concesión de agua de CONAGUA?",
+    a: "Los plazos varían según el tipo de aprovechamiento (superficial o subterráneo), la cuenca hidrológica y la disponibilidad de agua declarada. En condiciones normales, una nueva concesión puede tardar entre 6 y 18 meses. Las modificaciones a concesiones existentes suelen ser más rápidas. CONAGUA puede emitir suspensiones provisionales del aprovechamiento mientras resuelve el trámite, lo que hace crítico iniciar antes de que expire la concesión vigente.",
   },
   {
-    q: "¿Para qué sirven los levantamientos con drones en proyectos ambientales?",
-    a: "Los vuelos UAV permiten obtener en horas lo que antes requería semanas de topografía tradicional: modelos digitales de elevaciones, ortofotomosaicos de alta resolución, curvas de nivel y mapas de cobertura vegetal. En proyectos ambientales los usamos para delimitación de zonas de inundación, cálculo de volúmenes de excavación en remediaciones, seguimiento de obras de confinamiento, reconocimiento de vegetación para ETJ y MIA, y monitoreo de avance de reforestaciones.",
+    q: "¿Cuál es la diferencia entre la Licencia Ambiental Única y el permiso de funcionamiento municipal?",
+    a: "Son trámites distintos con distintas autoridades. La LAU la emite SEMARNAT o la dependencia ambiental estatal y acredita el cumplimiento de la normatividad ambiental. El permiso de funcionamiento lo emite el municipio y se refiere a uso de suelo y zonificación. Para operar legalmente, en general se necesitan ambos. Hay instalaciones que también requieren dictámenes de protección civil y visto bueno de otras dependencias.",
   },
   {
-    q: "¿En qué se diferencian los estudios hidrológicos y geofísicos que realizan?",
-    a: "Los estudios hidrológicos calculan el comportamiento del agua en superficie: cuánto escurre, con qué velocidad, cuáles son los caudales de diseño para una obra de drenaje o un sistema de retención. Los estudios geofísicos investigan el subsuelo sin excavar: mediante métodos sísmicos, de resistividad eléctrica o electromagnéticos podemos identificar la profundidad del nivel freático, zonas de fractura, la extensión de un plume de contaminación o la estabilidad de un sitio para una obra de confinamiento. Los dos estudios son frecuentemente complementarios en proyectos de remediación y obra civil ambiental.",
+    q: "¿Qué ventajas tiene la certificación Industria Limpia más allá del reconocimiento?",
+    a: "El Certificado de Industria Limpia de PROFEPA tiene beneficios operativos concretos: reduce la frecuencia de visitas de inspección no programadas, puede usarse como diferenciador en licitaciones públicas y cadenas de suministro, facilita acceso a ciertos créditos verdes y mejora la relación con la autoridad reguladora. Además, el proceso de certificación suele identificar oportunidades de eficiencia que se traducen en ahorro real.",
   },
 ];
 
@@ -228,31 +211,31 @@ const faqs = [
 const related = [
   {
     color: "green",
-    icon: <Icon name="flask" size={22} />,
-    title: "Estudios Ambientales",
-    desc: "MIA, ERA y ETJ que soportan técnicamente los proyectos de ingeniería ambiental ante SEMARNAT, CONAFOR y CONAGUA.",
-    href: "/servicios/estudios-ambientales/",
-  },
-  {
-    color: "blue",
-    icon: <Icon name="file-text" size={22} />,
-    title: "Trámites y Licencias Ambientales",
-    desc: "Gestión de concesiones CONAGUA para aprovechamiento de agua, permisos de descarga y autorizaciones de obra.",
-    href: "/servicios/tramites-y-licencias-ambientales/",
-  },
-  {
-    color: "green",
     icon: <Icon name="shield-check" size={22} />,
     title: "Auditoría y Diagnóstico Ambiental",
-    desc: "Diagnóstico técnico que identifica los proyectos de ingeniería necesarios para cerrar brechas de cumplimiento.",
+    desc: "Diagnóstico previo que identifica los trámites pendientes y las brechas de cumplimiento antes de que llegue la autoridad.",
     href: "/servicios/auditoria-ambiental/",
   },
   {
     color: "blue",
     icon: <Icon name="scale" size={22} />,
-    title: "Derecho Ambiental",
-    desc: "Defensa jurídica cuando un proyecto de remediación o una PTAR son objeto de un procedimiento ante la autoridad.",
-    href: "/servicios/derecho-ambiental/",
+    title: "Servicios Legales y Atención de Autoridades",
+    desc: "Defensa jurídica cuando un trámite es impugnado, negado o cuando la autoridad inicia un procedimiento sancionador.",
+    href: "/servicios/servicios-legales-y-atencion-de-autoridades/",
+  },
+  {
+    color: "green",
+    icon: <Icon name="flask" size={22} />,
+    title: "Estudios Ambientales",
+    desc: "MIA, ERA y ETJ que soportan técnicamente los trámites de autorización ante SEMARNAT y otras dependencias.",
+    href: "/servicios/estudios-ambientales/",
+  },
+  {
+    color: "blue",
+    icon: <Icon name="hardhat" size={22} />,
+    title: "Auditoría y Diagnóstico Seguridad y Salud",
+    desc: "Cumplimiento de obligaciones de seguridad y salud ante STPS, complementario a los trámites ambientales federales.",
+    href: "/servicios/auditoria-seguridad-y-salud/",
   },
 ];
 
@@ -260,7 +243,7 @@ const related = [
    PAGE
 ════════════════════════════════════════════════════════ */
 
-export default function IngenieriaAmbiental() {
+export default function TramitesYAutorizaciones() {
   return (
     <>
       {/* ── HERO ──────────────────────────────────────── */}
@@ -274,13 +257,12 @@ export default function IngenieriaAmbiental() {
       >
         <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.22 }} aria-hidden="true">
           <defs>
-            <pattern id="topoIng" width="44" height="44" patternUnits="userSpaceOnUse">
+            <pattern id="topoTramites" width="44" height="44" patternUnits="userSpaceOnUse">
               <path d="M0 22 Q11 13 22 22 T44 22" stroke="#DCEFCB" strokeWidth="1" fill="none" />
               <path d="M0 33 Q11 24 22 33 T44 33" stroke="#C7E2F0" strokeWidth="1" fill="none" />
-              <path d="M0 11 Q11 2 22 11 T44 11"  stroke="#DCEFCB" strokeWidth="0.6" fill="none" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#topoIng)" />
+          <rect width="100%" height="100%" fill="url(#topoTramites)" />
         </svg>
 
         <div
@@ -289,20 +271,20 @@ export default function IngenieriaAmbiental() {
         >
           {/* Copy */}
           <div>
-            <Eyebrow>Ingeniería Ambiental</Eyebrow>
+            <Eyebrow>Estudios, Trámites y Administración de Autorizaciones</Eyebrow>
             <h1 style={{
               fontFamily: "var(--font-display)", fontWeight: 900,
               fontSize: "clamp(32px,4.5vw,56px)", letterSpacing: "-0.03em", lineHeight: 1.05,
               margin: "18px 0 20px", color: "var(--ink-1000)",
             }}>
-              Ingeniería ambiental aplicada:{" "}
-              <span style={{ color: "var(--irca-green)" }}>PTAR, remediación, ruido y geoespacial</span>.
+              Del estudio a la autorización, y de la autorización{" "}
+              <span style={{ color: "var(--irca-green)" }}>a su administración</span>.
             </h1>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 14px" }}>
-              Diseño, construcción y supervisión de soluciones de ingeniería ambiental: desde plantas de tratamiento de aguas residuales hasta levantamientos fotogramétricos con drones y proyectos de remediación de suelos.
+              MIA, ERA, PPA, LAU, LFF, CUSTF, planes de manejo y COA ante SEMARNAT, STPS, COFEPRIS, CONAGUA y gobiernos estatales.
             </p>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 32px" }}>
-              Cada proyecto parte de los datos reales del sitio, no de soluciones de catálogo. Y cada entregable está diseñado para resistir el escrutinio de la autoridad ambiental.
+              Cada autorización tiene su estudio, su ventanilla y sus condicionantes. Seguimiento hasta resolución favorable y administración del expediente durante toda su vigencia.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -319,23 +301,23 @@ export default function IngenieriaAmbiental() {
               </a>
             </div>
             <div className="flex flex-wrap gap-6 mt-8" style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--fg-4)" }}>
-              <span>PTAR</span><span>NOM-081</span><span>Remediación</span><span>UAV · SIG</span>
+              <span>SEMARNAT</span><span>PROFEPA</span><span>CONAGUA</span><span>LAU · COA</span>
             </div>
           </div>
 
-          {/* Projects status card */}
+          {/* Trámites status card */}
           <div className="hidden md:block">
             <div style={{ background: "#fff", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 24, boxShadow: "var(--shadow-3)" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 11, color: "var(--fg-4)", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase" }}>
                 <span style={{ width: 8, height: 8, borderRadius: 8, background: "var(--irca-green)", boxShadow: "0 0 0 4px var(--irca-green-50)" }} />
-                Proyectos activos
+                Trámites en gestión
               </div>
               <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, color: "var(--fg-1)", letterSpacing: "-0.02em", marginTop: 14, lineHeight: 1.15 }}>
-                Ingeniería en campo y gabinete
+                Seguimiento activo de expedientes
               </div>
               <div style={{ height: 1, background: "var(--border-soft)", margin: "18px 0" }} />
               <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                {projects.map(({ label, status, palette }) => (
+                {tramitesList.map(({ label, status, palette }) => (
                   <div key={label} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0" }}>
                     <span style={{ fontSize: 13, fontWeight: 600, color: "var(--fg-2)" }}>{label}</span>
                     <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "3px 9px", borderRadius: 999, background: palette.bg, color: palette.fg, fontSize: 11, fontWeight: 600, flexShrink: 0, marginLeft: 8 }}>
@@ -347,10 +329,10 @@ export default function IngenieriaAmbiental() {
               <div style={{ height: 1, background: "var(--border-soft)", margin: "14px 0" }} />
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
                 {[
-                  { label: "PTAR diseñadas", n: "18" },
-                  { label: "Sitios remediad.", n: "12" },
-                  { label: "Vuelos UAV",      n: "45+" },
-                  { label: "Estudios ruido",  n: "30+" },
+                  { label: "LAU activas",  n: "12" },
+                  { label: "COA anuales",  n: "28" },
+                  { label: "Concesiones",  n: "7"  },
+                  { label: "Certificados", n: "9"  },
                 ].map(({ label, n }) => (
                   <div key={label} style={{ background: "var(--bg-2)", borderRadius: 10, padding: "10px 12px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <span style={{ fontSize: 12, color: "var(--fg-3)", fontWeight: 500 }}>{label}</span>
@@ -369,21 +351,21 @@ export default function IngenieriaAmbiental() {
           <div>
             <Eyebrow>Sobre el Servicio</Eyebrow>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 28px", color: "var(--ink-1000)" }}>
-              Ingeniería que resuelve el problema, no solo el expediente
+              Por qué los trámites ambientales fallan y cómo evitarlo
             </h2>
             <ImgPlaceholder
               ratio="16/9"
-              label="Proyecto de ingeniería ambiental / trabajo de campo"
-              sub="Reemplazar con foto real de PTAR, remediación en sitio, monitoreo de ruido o vuelo con dron."
+              label="Gestión de trámites / revisión de expediente"
+              sub="Reemplazar con foto real del equipo revisando documentos, en gestión ante ventanilla o en reunión con la autoridad."
             />
             <p style={{ fontSize: 11, color: "var(--fg-4)", letterSpacing: "0.04em", margin: "8px 0 0" }}>Placeholder · pendiente material fotográfico del cliente</p>
           </div>
           <div>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 22px" }}>
-              En ingeniería ambiental la distancia entre el papel y el campo puede ser enorme. Una PTAR bien diseñada en gabinete que no toma en cuenta la variabilidad estacional del afluente, un estudio de ruido hecho con equipo sin calibrar o una remediación dimensionada sin caracterizar realmente la extensión del plume son proyectos que no funcionan —y que pueden generar más problemas regulatorios de los que resuelven.
+              La mayoría de los retrasos en trámites ambientales no ocurren por falta de voluntad de la autoridad: ocurren por expedientes incompletos, datos inconsistentes con reportes previos, argumentos mal dirigidos o formatos desactualizados. La autoridad regresa el expediente con observaciones, el trámite se reinicia y el reloj corre —semanas o meses— mientras la operación espera o se expone a una irregularidad.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: 0 }}>
-              En IRCA Consultores la ingeniería ambiental parte siempre del sitio: muestreos, caracterizaciones, levantamientos y recorridos de campo antes de abrir el software de diseño. Contamos con laboratorio propio de campo, equipos de monitoreo calibrados, drones para levantamientos geoespaciales y 25 años de proyectos ejecutados en el norte de México —desde pequeñas PTAR industriales hasta grandes proyectos de remediación y obras de confinamiento.
+              En IRCA Consultores llevamos más de 25 años gestionando trámites ambientales ante SEMARNAT, PROFEPA, CONAGUA y dependencias estatales. Conocemos el proceso desde adentro: qué documentos realmente revisan, qué inconsistencias generan observaciones y cuáles son los tiempos reales de resolución en cada dependencia. Eso nos permite preparar expedientes que se resuelven en tiempo y sin retrocesos innecesarios.
             </p>
             <a
               href="#contacto"
@@ -395,16 +377,16 @@ export default function IngenieriaAmbiental() {
         </div>
       </section>
 
-      {/* ── ESPECIALIDADES (subservicios) ─────────────── */}
+      {/* ── CERTIFICACIONES ESPECIALIZADAS (subservicios) ─ */}
       <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-2)", borderTop: "1px solid var(--border-soft)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <Eyebrow color="var(--irca-blue-700)">Especialidades destacadas</Eyebrow>
+          <Eyebrow color="var(--irca-blue-700)">Estudios especializados</Eyebrow>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-4 mb-10">
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.05, margin: 0, color: "var(--ink-1000)" }}>
-              Tres servicios con página propia por su profundidad técnica
+              Los estudios que sustentan cada autorización
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>
-              Remediación de suelos, control de ruido y servicios geoespaciales son disciplinas con equipamiento propio, metodología específica y clientes que buscan exactamente esa especialidad —merecen su propio espacio.
+              Ninguna autorización relevante se resuelve solo con un formato. Detrás de cada una hay un estudio técnico que la autoridad evalúa, y de su calidad depende que el trámite avance o se detenga en prevención.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -427,7 +409,7 @@ export default function IngenieriaAmbiental() {
                     <div style={{ display: "inline-block", padding: "2px 8px", borderRadius: 999, background: color === "green" ? "var(--irca-green-50)" : "var(--irca-blue-50)", color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)", fontSize: 11, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 6 }}>
                       {label}
                     </div>
-                    <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.015em", color: "var(--fg-1)", margin: 0, lineHeight: 1.2 }}>{title}</h3>
+                    <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, letterSpacing: "-0.015em", color: "var(--fg-1)", margin: 0, lineHeight: 1.2 }}>{title}</h3>
                   </div>
                 </div>
                 <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>{desc}</p>
@@ -446,10 +428,10 @@ export default function IngenieriaAmbiental() {
           <Eyebrow>Alcance del servicio</Eyebrow>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-4 mb-11">
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.05, margin: 0, color: "var(--ink-1000)" }}>
-              ¿Qué proyectos de ingeniería ambiental realizamos?
+              ¿Qué trámites y licencias gestionamos?
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>
-              Cubrimos el espectro completo de la ingeniería ambiental aplicada: tratamiento de agua, confinamiento de residuos, control acústico, monitoreo, vegetación y obra civil con criterio ambiental.
+              Cubrimos el universo completo de obligaciones y autorizaciones ambientales de una instalación industrial en México: desde las licencias de operación hasta los permisos de transporte de residuos y los dictámenes de arbolado urbano.
             </p>
           </div>
 
@@ -474,10 +456,10 @@ export default function IngenieriaAmbiental() {
 
             {/* Dark CTA card */}
             <article style={{ background: "linear-gradient(160deg,var(--bg-deep),#0f2c47)", border: "1px solid var(--bg-deep)", borderRadius: 14, padding: 24, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 12, justifyContent: "center" }}>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.01em", color: "#fff", lineHeight: 1.25 }}>El diseño empieza siempre en el campo</div>
-              <p style={{ fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.72)", margin: 0 }}>Cuéntanos el problema técnico y hacemos una visita de reconocimiento inicial sin costo.</p>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.01em", color: "#fff", lineHeight: 1.25 }}>¿No sabes qué trámites necesita tu instalación?</div>
+              <p style={{ fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.72)", margin: 0 }}>Hacemos un diagnóstico de obligaciones sin costo para que conozcas exactamente qué está pendiente.</p>
               <a href="#contacto" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "#fff", fontWeight: 600, fontSize: 14, textDecoration: "none", marginTop: 4 }}>
-                Solicitar información <Icon name="arrow-right" size={16} />
+                Consultar sin costo <Icon name="arrow-right" size={16} />
               </a>
             </article>
           </div>
@@ -485,7 +467,7 @@ export default function IngenieriaAmbiental() {
       </section>
 
       {/* ── ¿CUÁNDO? ──────────────────────────────────── */}
-      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-2)" }}>
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--irca-green-50)" }}>
         <div
           className="grid grid-cols-1 md:[grid-template-columns:1.05fr_0.95fr] gap-10 md:gap-16 items-center"
           style={{ maxWidth: 1280, margin: "0 auto" }}
@@ -493,25 +475,25 @@ export default function IngenieriaAmbiental() {
           <div>
             <Eyebrow>Para quién es</Eyebrow>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 20px", color: "var(--ink-1000)" }}>
-              ¿Cuándo necesita tu empresa ingeniería ambiental?
+              ¿Cuándo necesitas gestionar o regularizar tus trámites?
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 28px" }}>
-              Los proyectos de ingeniería ambiental surgen tanto en contextos de cumplimiento regulatorio como de expansión, modernización o respuesta a contingencias. En todos los casos, la calidad técnica del proyecto define si la solución funciona —y si la autoridad la acepta.
+              Hay momentos en que los trámites ambientales se vuelven urgentes: una inspección inminente, una fusión que requiere due diligence, o simplemente la detección de una obligación vencida. En todos los casos, cuanto antes se actúa, más opciones hay.
             </p>
             <div style={{ display: "grid", gap: 14 }}>
-              <CheckItem>Tu instalación genera aguas residuales y CONAGUA requiere que cumplas parámetros de descarga.</CheckItem>
-              <CheckItem>Ocurrió un derrame de hidrocarburos u otro contaminante y necesitas una evaluación de daño y plan de remediación.</CheckItem>
-              <CheckItem>Recibiste quejas de vecinos por ruido y la autoridad ambiental te requirió un estudio bajo NOM-081.</CheckItem>
-              <CheckItem>Tu proyecto de construcción requiere un levantamiento topográfico georreferenciado o un modelo de cuenca para la MIA.</CheckItem>
-              <CheckItem>Tu autorización ambiental incluye compromisos de reforestación o rescate de flora y fauna que debes ejecutar y documentar.</CheckItem>
-              <CheckItem>Necesitas caracterizar el subsuelo de un sitio para diseñar una obra de confinamiento o evaluar la extensión de una contaminación.</CheckItem>
+              <CheckItem>Vas a iniciar operaciones o construir y necesitas las autorizaciones previas.</CheckItem>
+              <CheckItem>Tu LAU venció o fue modificada y necesitas actualizarla ante la autoridad competente.</CheckItem>
+              <CheckItem>Tienes una COA pendiente de presentar o detectaste errores en reportes anteriores.</CheckItem>
+              <CheckItem>Tu concesión de agua está próxima a vencer y necesitas renovarla o modificarla.</CheckItem>
+              <CheckItem>Recibiste una observación de PROFEPA sobre falta de permisos o licencias vigentes.</CheckItem>
+              <CheckItem>Quieres impulsar una certificación de desempeño ambiental para diferenciarte o cumplir con un cliente.</CheckItem>
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <ImgPlaceholder
               ratio="4/3"
-              label="Trabajo de campo / levantamiento / monitoreo"
-              sub="Reemplazar con foto real de campo: monitoreo de ruido, vuelo con dron, muestreo de suelo o supervisión de PTAR."
+              label="Gestión ante ventanilla / presentación de expediente"
+              sub="Reemplazar con foto real del equipo en gestión, reunión con la autoridad o revisión de expediente."
             />
             <p style={{ fontSize: 11, color: "var(--fg-4)", letterSpacing: "0.04em", margin: 0 }}>Placeholder · pendiente material fotográfico del cliente</p>
           </div>
@@ -551,7 +533,7 @@ export default function IngenieriaAmbiental() {
           ))}
         </svg>
         <div className="relative" style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <Eyebrow color="rgba(255,255,255,0.7)">Por qué IRCA</Eyebrow>
+          <Eyebrow color="rgba(255,255,255,0.7)">Por qué IRCA Consultores</Eyebrow>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(28px,4vw,48px)", letterSpacing: "-0.025em", lineHeight: 1.05, margin: "16px 0 48px", color: "#fff", maxWidth: "22ch" }}>
             ¿Por qué contratar a{" "}
             <span style={{ color: "var(--irca-green)" }}>IRCA Consultores</span>?
@@ -565,7 +547,7 @@ export default function IngenieriaAmbiental() {
               </div>
             ))}
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: 16, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 14, padding: 28 }}>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.015em", lineHeight: 1.25 }}>Una solución diseñada en gabinete sin datos de campo es una apuesta.</div>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.015em", lineHeight: 1.25 }}>Un expediente mal integrado puede costar meses de operación.</div>
               <a href="#contacto" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--irca-green)", color: "#fff", padding: "12px 20px", fontWeight: 600, fontSize: 14, borderRadius: 8, textDecoration: "none", alignSelf: "flex-start" }}>
                 Solicitar información <Icon name="arrow-right" size={16} />
               </a>
@@ -579,7 +561,7 @@ export default function IngenieriaAmbiental() {
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <Eyebrow color="var(--irca-blue-700)">Preguntas frecuentes</Eyebrow>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(24px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 36px", color: "var(--ink-1000)" }}>
-            Preguntas frecuentes sobre ingeniería ambiental
+            Preguntas frecuentes sobre trámites y licencias ambientales
           </h2>
           <ServiceFAQ items={faqs} />
         </div>
@@ -619,11 +601,11 @@ export default function IngenieriaAmbiental() {
 
       {/* ── CTA + FORM ───────────────────────────────── */}
       <ServiceContactSection
-        headline={<>Los mejores proyectos de ingeniería ambiental empiezan <span style={{ color: "var(--irca-green)" }}>con los datos correctos del sitio</span>.</>}
-        copy="Cuéntanos el reto técnico que tienes —tratamiento de agua, contaminación de suelo, ruido, levantamiento o monitoreo— y hacemos una evaluación inicial sin compromiso."
-        formTitle="Consultar proyecto de ingeniería ambiental"
-        motivoLabel="Tipo de proyecto"
-        motivoOptions={["PTAR / Tratamiento de aguas residuales", "Remediación de suelos contaminados", "Control de ruido (NOM-081)", "Monitoreo de calidad ambiental", "Levantamiento geoespacial / UAV", "Proyecto hidrológico o geofísico", "Forestación / Rescate de flora y fauna", "Otro"]}
+        headline={<>Un expediente bien armado desde el inicio <span style={{ color: "var(--irca-green)" }}>evita meses de prevención</span> y de espera.</>}
+        copy="Cuéntanos qué proyecto quieres autorizar o qué obligaciones tienes vigentes —o si aún no sabes cuáles te aplican— y hacemos el diagnóstico de trámites que corresponde a tu operación."
+        formTitle="Consultar estudios y autorizaciones"
+        motivoLabel="Trámite de interés"
+        motivoOptions={["Impacto Ambiental (MIA)", "Riesgo Ambiental (ERA) y PPA", "Licencia Ambiental Única (LAU) o LFF", "Cambio de Uso de Suelo Forestal (CUSTF)", "Plan de manejo de residuos o COA", "Trámite CONAGUA (agua)", "No sé qué trámites necesito", "Otro"]}
       />
     </>
   );

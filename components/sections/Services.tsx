@@ -27,43 +27,43 @@ const services: { icon: IconName; accent: "green" | "blue"; title: string; desc:
     icon: "scale", accent: "green",
     title: "Servicios legales y atención de autoridades",
     desc: "Atención de inspecciones, procedimientos sancionadores, planes de cumplimiento, representación, litigio, recursos de revisión, juicios de nulidad y amparo.",
-    href: "/servicios/derecho-ambiental/",
+    href: "/servicios/servicios-legales-y-atencion-de-autoridades/",
   },
   {
     icon: "file-text", accent: "blue",
     title: "Estudios, trámites y administración de autorizaciones",
     desc: "MIA, ERA, PPA, LAU, LFFF, CUSTF, planes de manejo y COAs ante SEMARNAT, STPS, COFEPRIS y CONAGUA.",
-    href: "/servicios/tramites-y-licencias-ambientales/",
+    href: "/servicios/tramites-y-autorizaciones-ambientales/",
   },
   {
     icon: "hardhat", accent: "green",
     title: "Auditoría y diagnóstico Seguridad y Salud",
     desc: "Auditorías de diagnóstico y cumplimiento, autogestión STPS, manejo de sustancias y estándares internacionales de autogestión ISO 45001.",
-    href: "/servicios/seguridad-y-salud-ocupacional/",
+    href: "/servicios/auditoria-seguridad-y-salud/",
   },
   {
     icon: "eye", accent: "blue",
     title: "Consultoría, administración y supervisión ambiental",
     desc: "Staff externo y acompañamiento, supervisión y vigilancia ambiental, seguimiento de términos y condicionantes de autorizaciones.",
-    href: "/servicios/",
+    href: "/servicios/consultoria-y-supervision-ambiental/",
   },
   {
     icon: "alert-triangle", accent: "green",
     title: "Estudio de seguridad y salud",
     desc: "Auditorías de riesgos laborales y equipos, manejo de sustancias, metodologías de cumplimiento (SMART, DuPont) y estándares ISO 45001.",
-    href: "/servicios/seguridad-y-salud-ocupacional/",
+    href: "/servicios/estudios-de-seguridad-y-salud/",
   },
   {
     icon: "graduation-cap", accent: "blue",
     title: "Capacitación técnica especializada",
     desc: "Sistemas de gestión ISO, atención a inspecciones, manejo de residuos, respuesta a emergencias y normas STPS y Protección Civil.",
-    href: "/servicios/capacitacion-ambiental/",
+    href: "/servicios/capacitacion-tecnica-especializada/",
   },
   {
     icon: "compass", accent: "green",
     title: "Estudios de ingeniería",
     desc: "Geología, geofísica, estabilidad de taludes, hidrología, geohidrología, tránsito y vialidad, topografía, agua potable y soluciones pluviales.",
-    href: "/servicios/ingenieria-ambiental/",
+    href: "/servicios/estudios-de-ingenieria/",
   },
 ];
 
@@ -110,10 +110,10 @@ export default function Services() {
             );
           })}
 
-          {/* CTA tile — ocupa el resto de la última fila (9 tarjetas + CTA = 3 filas exactas) */}
+          {/* CTA tile — una celda más de la retícula, del mismo tamaño que una tarjeta */}
           <Link
             href="/servicios/"
-            className="flex flex-col justify-between lg:col-span-3 lg:flex-row lg:items-center"
+            className="flex flex-col justify-between"
             style={{
               background: "var(--irca-green)", borderRadius: 14, padding: 22,
               textDecoration: "none", color: "#fff", minHeight: 160,
@@ -122,7 +122,7 @@ export default function Services() {
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.015em", lineHeight: 1.2 }}>
               Ver todos los servicios
             </div>
-            <div className="mt-6 lg:mt-0" style={{ display: "flex", alignItems: "center", gap: 8, fontWeight: 600, fontSize: 14 }}>
+            <div className="mt-6" style={{ display: "flex", alignItems: "center", gap: 8, fontWeight: 600, fontSize: 14 }}>
               Catálogo completo <Icon name="arrow-up-right" size={18} />
             </div>
           </Link>

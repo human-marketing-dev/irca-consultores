@@ -4,8 +4,8 @@ import ServiceFAQ from "@/components/servicios/ServiceFAQ";
 import ServiceContactSection from "@/components/servicios/ServiceContactSection";
 
 export const metadata: Metadata = {
-  title: "Trámites y Licencias Ambientales",
-  description: "Licencia Ambiental Única (LAU), Cédula de Operación Anual (COA), trámites CONAGUA, permisos de residuos y certificaciones ambientales ante SEMARNAT, PROFEPA y dependencias estatales. IRCA Consultores.",
+  title: "Estudios de Seguridad y Salud",
+  description: "Estudios de riesgos laborales y de equipos, manejo de sustancias peligrosas, metodologías SMART y DuPont y estándares ISO 45001 para operaciones industriales. IRCA Consultores, Monterrey.",
 };
 
 /* ── shared helpers ─────────────────────────────────── */
@@ -44,90 +44,64 @@ function CheckItem({ children }: { children: React.ReactNode }) {
 
 /* ── hero card data ─────────────────────────────────── */
 
-const tramitesList = [
-  { label: "LAU Industria Química",          status: "En revisión",  palette: { bg: "var(--info-bg)",    fg: "var(--info)"    } },
-  { label: "COA Federal 2025",               status: "Presentada",   palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
-  { label: "Concesión CONAGUA agua subterr.", status: "En trámite",  palette: { bg: "var(--warning-bg)", fg: "var(--warning)" } },
-  { label: "Industria Limpia PROFEPA",       status: "Certificado",  palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
-];
-
-/* ── subservicios ───────────────────────────────────── */
-
-const subservicios = [
-  {
-    href: "/servicios/tramites-y-licencias-ambientales/industria-limpia/",
-    color: "green",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/>
-      </svg>
-    ),
-    label: "Industria Limpia · 590 búsquedas/mes",
-    title: "Certificación Industria Limpia (PROFEPA)",
-    desc: "Obtén o renueva el Certificado de Industria Limpia ante PROFEPA. El programa reconoce el desempeño ambiental sobresaliente y reduce tu exposición a inspecciones y procedimientos sancionadores.",
-  },
-  {
-    href: "/servicios/tramites-y-licencias-ambientales/iso-14001/",
-    color: "blue",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/>
-      </svg>
-    ),
-    label: "ISO 14001 · 480 búsquedas/mes",
-    title: "ISO 14001 y Sistemas de Gestión Ambiental",
-    desc: "Implementación, mantenimiento y auditoría de Sistemas de Gestión Ambiental bajo ISO 14001:2015. Desde el diagnóstico de brechas hasta la certificación con organismo acreditado.",
-  },
+const nomItems = [
+  { label: "Riesgo mecánico — prensa hidráulica", status: "Crítico",  palette: { bg: "var(--danger-bg)",  fg: "var(--danger)"  } },
+  { label: "Exposición a sílice — área de corte", status: "Alto",     palette: { bg: "var(--warning-bg)", fg: "var(--warning)" } },
+  { label: "Trabajo en altura — mantenimiento",   status: "Medio",    palette: { bg: "var(--info-bg)",    fg: "var(--info)"    } },
+  { label: "Almacén de sustancias — controlado",  status: "Aceptable",palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
 ];
 
 /* ── alcance cards ──────────────────────────────────── */
 
 const alcanceCards = [
   {
+    color: "blue",
+    icon: <Icon name="alert-triangle" size={24} />,
+    title: "Estudio de riesgos laborales",
+    desc: "Identificación y evaluación sistemática de los riesgos por puesto y por área: mecánicos, eléctricos, químicos, ergonómicos, físicos y psicosociales. Cada riesgo se jerarquiza por probabilidad y severidad para definir qué se controla primero.",
+  },
+  {
     color: "green",
-    icon: <Icon name="file-text" size={24} />,
-    title: "Licencia Ambiental Única (LAU) federal y estatal",
-    desc: "Obtención y renovación de la LAU ante SEMARNAT y dependencias ambientales estatales. Aplicamos el conocimiento de los criterios de evaluación de cada unidad para estructurar expedientes sólidos y reducir el tiempo de resolución.",
+    icon: <Icon name="hardhat" size={24} />,
+    title: "Análisis de equipos y maquinaria",
+    desc: "Revisión de guardas, dispositivos de paro, sistemas de bloqueo y etiquetado, y condiciones de operación de maquinaria y equipo crítico. Determinamos qué equipos representan riesgo real y qué control técnico corresponde a cada uno.",
+  },
+  {
+    color: "blue",
+    icon: <Icon name="flask" size={24} />,
+    title: "Manejo de sustancias químicas peligrosas",
+    desc: "Inventario, clasificación y evaluación de la exposición a sustancias peligrosas: compatibilidades de almacenamiento, señalización, hojas de datos de seguridad, controles de ingeniería y equipo de protección requerido por tipo de agente.",
+  },
+  {
+    color: "green",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/>
+      </svg>
+    ),
+    title: "Metodologías de cumplimiento (SMART, DuPont)",
+    desc: "Aplicación de marcos reconocidos internacionalmente para medir madurez en seguridad y estructurar el plan de mejora. La metodología se elige según el punto de partida de la operación y el objetivo del corporativo.",
   },
   {
     color: "blue",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h8"/><path d="M8 17h8"/>
+        <circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/>
       </svg>
     ),
-    title: "Cédula de Operación Anual (COA) federal y estatal",
-    desc: "Elaboración y presentación de la COA en tiempo y forma, federal (SEMARNAT) y estatal según corresponda. Incluimos validación de datos de emisiones, residuos y consumos con base en tu información operativa real.",
+    title: "Estándares internacionales ISO 45001",
+    desc: "Evaluación del sistema de gestión de seguridad y salud contra los requisitos de ISO 45001:2018, con identificación de brechas y ruta de cierre. Base técnica para quien busca certificarse o sostener una certificación existente.",
   },
   {
     color: "green",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+        <path d="M11 6h10"/><path d="M11 12h10"/><path d="M11 18h10"/>
+        <path d="M3 6l1.5 1.5L6 5"/><path d="M3 12l1.5 1.5L6 11"/><path d="M3 18l1.5 1.5L6 17"/>
       </svg>
     ),
-    title: "Trámites CONAGUA: permisos y concesiones",
-    desc: "Gestión de permisos de descarga de aguas residuales, títulos de concesión de agua superficial y subterránea, y modificaciones a concesiones existentes ante la Comisión Nacional del Agua.",
-  },
-  {
-    color: "blue",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/>
-      </svg>
-    ),
-    title: "Permisos de recolección y transporte de residuos",
-    desc: "Obtención de autorizaciones para el manejo, recolección, transporte y disposición final de residuos peligrosos y de manejo especial ante SEMARNAT y autoridades estatales.",
-  },
-  {
-    color: "green",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-      </svg>
-    ),
-    title: "Licencias de uso de suelo y dictámenes de arbolado",
-    desc: "Trámites de compatibilidad de uso de suelo ante municipios y estados, incluyendo dictámenes técnicos de arbolado urbano para proyectos que requieren remoción o afectación de vegetación en zonas urbanas.",
+    title: "Plan de control priorizado",
+    desc: "El estudio no termina en el diagnóstico: cada riesgo relevante se traduce en un control concreto —de ingeniería, administrativo o de protección personal— con responsable, plazo y criterio de verificación.",
   },
 ];
 
@@ -136,28 +110,28 @@ const alcanceCards = [
 const pillars = [
   {
     n: "01",
-    title: "Conocemos los criterios reales de cada ventanilla",
-    body: "No interpretamos la norma en abstracto: sabemos qué revisa cada unidad de SEMARNAT, cuáles son los requisitos no escritos de CONAGUA en cada cuenca y cuánto tarda en promedio cada trámite. Eso nos permite estructurar el expediente correcto desde el primer envío.",
+    title: "Riesgo evaluado sobre el proceso real",
+    body: "Un estudio de riesgos que se resuelve con una plantilla genérica describe una planta que no existe. Recorremos la operación, observamos las tareas como se ejecutan y evaluamos el riesgo sobre esa realidad, no sobre el procedimiento escrito.",
   },
   {
     n: "02",
-    title: "25 años gestionando trámites en México",
-    body: "Desde 1999 hemos tramitado LAU, COA, concesiones de agua, autorizaciones de residuos y certificaciones ante prácticamente todas las dependencias ambientales federales y de los estados del norte del país.",
+    title: "Metodologías reconocidas, no criterios propios",
+    body: "Trabajamos con marcos auditables —SMART, DuPont, ISO 45001— para que el resultado sea comparable, defendible ante un corporativo o un cliente, y sostenible entre una evaluación y la siguiente.",
   },
   {
     n: "03",
-    title: "El mismo equipo que auditó, tramita",
-    body: "Si ya hiciste una auditoría con nosotros, el expediente técnico de tu instalación ya está en nuestras manos. Eso elimina la curva de aprendizaje y reduce el tiempo de preparación de documentos.",
+    title: "Jerarquía de controles aplicada con criterio",
+    body: "El equipo de protección personal es el último recurso, no el primero. Proponemos controles de ingeniería y administrativos cuando son viables, y lo justificamos técnicamente frente al costo de implementación.",
   },
   {
     n: "04",
-    title: "Seguimiento hasta resolución, no hasta entrega",
-    body: "Entregamos el expediente y lo seguimos. Respondemos observaciones de la autoridad, aportamos información complementaria y reportamos el estatus del trámite hasta que tienes el documento en mano.",
+    title: "Lectura conjunta con el riesgo ambiental",
+    body: "El manejo de sustancias, las emisiones y los residuos peligrosos son a la vez un problema laboral y ambiental. Evaluarlos con un solo equipo evita conclusiones que se contradicen entre el expediente de STPS y el de SEMARNAT.",
   },
   {
     n: "05",
-    title: "Trazabilidad completa del trámite",
-    body: "Documentamos cada paso del proceso: fechas de presentación, folios, observaciones recibidas, respuestas enviadas. Si en el futuro la autoridad pide historial del trámite o surge una impugnación, el expediente está completo.",
+    title: "Del estudio a la implementación",
+    body: "Podemos acompañar el cierre de los controles identificados a través de nuestros servicios de auditoría de seguimiento y capacitación técnica, sin que tengas que explicar el diagnóstico a un proveedor nuevo.",
   },
 ];
 
@@ -165,24 +139,24 @@ const pillars = [
 
 const faqs = [
   {
-    q: "¿Qué instalaciones necesitan Licencia Ambiental Única (LAU)?",
-    a: "La LAU es obligatoria para todas las instalaciones incluidas en el listado de actividades de competencia federal de la LGEEPA. Incluye industria química, petroquímica, pinturas y tintas, automotriz, electrónica, cemento, papel, azúcar, bebidas, tratamiento de residuos peligrosos, entre otras. Muchos estados tienen su propio listado para instalaciones de competencia estatal. Si tienes dudas sobre si tu instalación requiere LAU, podemos revisarlo sin costo.",
+    q: "¿En qué se diferencia del servicio de auditoría de seguridad y salud?",
+    a: "La auditoría mide cumplimiento: contrasta tu operación contra las NOM-STPS y los estándares aplicables para decir qué cumples y qué no. El estudio analiza riesgo: identifica qué puede lastimar a alguien, con qué probabilidad y severidad, y qué control corresponde. Es frecuente hacer ambos, pero responden preguntas distintas.",
   },
   {
-    q: "¿Cuándo se presenta la Cédula de Operación Anual (COA)?",
-    a: "La COA federal se presenta durante el mes de enero de cada año, reportando los datos del año anterior. El incumplimiento puede derivar en sanciones de PROFEPA. Las COA estatales tienen calendarios propios que varían por entidad. En IRCA te ayudamos a identificar todas las obligaciones de reporte que aplican a tu instalación —federal y estatal— y a presentarlas en tiempo.",
+    q: "¿Qué son las metodologías SMART y DuPont?",
+    a: "Son marcos de referencia internacionales para evaluar y desarrollar la gestión de seguridad. El modelo DuPont —conocido por la Curva de Bradley— mide la madurez cultural en seguridad, desde el cumplimiento reactivo hasta la interdependencia entre trabajadores. Los criterios tipo SMART se usan para que cada acción del plan sea específica, medible, alcanzable, relevante y con fecha. Se eligen según el punto de partida y el objetivo del cliente.",
   },
   {
-    q: "¿Cuánto tarda obtener una concesión de agua de CONAGUA?",
-    a: "Los plazos varían según el tipo de aprovechamiento (superficial o subterráneo), la cuenca hidrológica y la disponibilidad de agua declarada. En condiciones normales, una nueva concesión puede tardar entre 6 y 18 meses. Las modificaciones a concesiones existentes suelen ser más rápidas. CONAGUA puede emitir suspensiones provisionales del aprovechamiento mientras resuelve el trámite, lo que hace crítico iniciar antes de que expire la concesión vigente.",
+    q: "¿El estudio sirve para una inspección de la STPS?",
+    a: "Sirve como sustento técnico. Varias NOM —entre ellas las de maquinaria, sustancias químicas y equipo de protección personal— exigen un análisis de riesgos documentado como base de las medidas adoptadas. Un estudio bien hecho es justamente esa evidencia. Aun así, la preparación integral para inspección corresponde al servicio de auditoría y diagnóstico.",
   },
   {
-    q: "¿Cuál es la diferencia entre la Licencia Ambiental Única y el permiso de funcionamiento municipal?",
-    a: "Son trámites distintos con distintas autoridades. La LAU la emite SEMARNAT o la dependencia ambiental estatal y acredita el cumplimiento de la normatividad ambiental. El permiso de funcionamiento lo emite el municipio y se refiere a uso de suelo y zonificación. Para operar legalmente, en general se necesitan ambos. Hay instalaciones que también requieren dictámenes de protección civil y visto bueno de otras dependencias.",
+    q: "¿Cuánto tiempo toma un estudio de riesgos?",
+    a: "Depende del número de puestos, áreas y equipos críticos. Tras un recorrido inicial de alcance podemos dar un tiempo estimado realista. Lo determinante no es el tamaño de la planta sino la diversidad de procesos: una operación con muchas tareas distintas exige más observación de campo que una línea repetitiva.",
   },
   {
-    q: "¿Qué ventajas tiene la certificación Industria Limpia más allá del reconocimiento?",
-    a: "El Certificado de Industria Limpia de PROFEPA tiene beneficios operativos concretos: reduce la frecuencia de visitas de inspección no programadas, puede usarse como diferenciador en licitaciones públicas y cadenas de suministro, facilita acceso a ciertos créditos verdes y mejora la relación con la autoridad reguladora. Además, el proceso de certificación suele identificar oportunidades de eficiencia que se traducen en ahorro real.",
+    q: "¿Incluye la medición de agentes como ruido, iluminación o sustancias?",
+    a: "El estudio identifica qué agentes requieren medición y bajo qué norma. Las mediciones específicas —ruido, iluminación, vibraciones, partículas o vapores— se cotizan como alcance complementario, ya que implican equipo calibrado y protocolos de muestreo definidos por cada NOM.",
   },
 ];
 
@@ -191,31 +165,31 @@ const faqs = [
 const related = [
   {
     color: "green",
+    icon: <Icon name="hardhat" size={22} />,
+    title: "Auditoría y Diagnóstico Seguridad y Salud",
+    desc: "Evaluación de cumplimiento frente a las NOM-STPS y a los estándares de autogestión, complementaria al análisis de riesgo.",
+    href: "/servicios/auditoria-seguridad-y-salud/",
+  },
+  {
+    color: "blue",
+    icon: <Icon name="graduation-cap" size={22} />,
+    title: "Capacitación Técnica Especializada",
+    desc: "Formación en normas STPS, manejo de sustancias y respuesta a emergencias para cerrar los controles administrativos del plan.",
+    href: "/servicios/capacitacion-tecnica-especializada/",
+  },
+  {
+    color: "green",
     icon: <Icon name="shield-check" size={22} />,
     title: "Auditoría y Diagnóstico Ambiental",
-    desc: "Diagnóstico previo que identifica los trámites pendientes y las brechas de cumplimiento antes de que llegue la autoridad.",
+    desc: "Diagnóstico ambiental que se cruza con el riesgo laboral en manejo de sustancias, residuos peligrosos y emisiones.",
     href: "/servicios/auditoria-ambiental/",
   },
   {
     color: "blue",
     icon: <Icon name="scale" size={22} />,
-    title: "Derecho Ambiental",
-    desc: "Defensa jurídica cuando un trámite es impugnado, negado o cuando la autoridad inicia un procedimiento sancionador.",
-    href: "/servicios/derecho-ambiental/",
-  },
-  {
-    color: "green",
-    icon: <Icon name="flask" size={22} />,
-    title: "Estudios Ambientales",
-    desc: "MIA, ERA y ETJ que soportan técnicamente los trámites de autorización ante SEMARNAT y otras dependencias.",
-    href: "/servicios/estudios-ambientales/",
-  },
-  {
-    color: "blue",
-    icon: <Icon name="hardhat" size={22} />,
-    title: "SHE / Seguridad y Salud Ocupacional",
-    desc: "Cumplimiento de obligaciones de seguridad y salud ante STPS, complementario a los trámites ambientales federales.",
-    href: "/servicios/seguridad-y-salud-ocupacional/",
+    title: "Servicios Legales y Atención de Autoridades",
+    desc: "Defensa ante procedimientos de la STPS e impugnación de sanciones derivadas de inspecciones de seguridad laboral.",
+    href: "/servicios/servicios-legales-y-atencion-de-autoridades/",
   },
 ];
 
@@ -223,7 +197,7 @@ const related = [
    PAGE
 ════════════════════════════════════════════════════════ */
 
-export default function TramitesYLicencias() {
+export default function EstudiosDeSeguridadYSalud() {
   return (
     <>
       {/* ── HERO ──────────────────────────────────────── */}
@@ -237,12 +211,12 @@ export default function TramitesYLicencias() {
       >
         <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.22 }} aria-hidden="true">
           <defs>
-            <pattern id="topoTramites" width="44" height="44" patternUnits="userSpaceOnUse">
+            <pattern id="topoSHE" width="44" height="44" patternUnits="userSpaceOnUse">
               <path d="M0 22 Q11 13 22 22 T44 22" stroke="#DCEFCB" strokeWidth="1" fill="none" />
-              <path d="M0 33 Q11 24 22 33 T44 33" stroke="#C7E2F0" strokeWidth="1" fill="none" />
+              <path d="M0 11 Q11 2 22 11 T44 11"  stroke="#C7E2F0" strokeWidth="1" fill="none" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#topoTramites)" />
+          <rect width="100%" height="100%" fill="url(#topoSHE)" />
         </svg>
 
         <div
@@ -251,20 +225,21 @@ export default function TramitesYLicencias() {
         >
           {/* Copy */}
           <div>
-            <Eyebrow>Trámites y Licencias Ambientales</Eyebrow>
+            <Eyebrow>Estudios de Seguridad y Salud</Eyebrow>
             <h1 style={{
               fontFamily: "var(--font-display)", fontWeight: 900,
               fontSize: "clamp(32px,4.5vw,56px)", letterSpacing: "-0.03em", lineHeight: 1.05,
               margin: "18px 0 20px", color: "var(--ink-1000)",
             }}>
-              Licencia ambiental única y trámites ante{" "}
-              <span style={{ color: "var(--irca-green)" }}>SEMARNAT, PROFEPA y CONAGUA</span>.
+              Saber qué puede{" "}
+              <span style={{ color: "var(--danger)" }}>lastimar a alguien</span>{" "}
+              antes de que ocurra.
             </h1>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 14px" }}>
-              Gestionamos todos los trámites ambientales de tu instalación: LAU, COA, concesiones de agua, permisos de residuos y certificaciones de desempeño ambiental.
+              Análisis de riesgos laborales, equipos y manejo de sustancias con metodologías reconocidas internacionalmente. Gestión integral del riesgo para operaciones industriales.
             </p>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 32px" }}>
-              Cada trámite tiene sus tiempos, sus requisitos y su ventanilla. Un expediente mal integrado puede retrasar meses una operación. Nosotros lo hacemos bien desde el primer envío.
+              Un accidente rara vez sorprende a quien evaluó el riesgo. El estudio convierte lo que el personal ya intuye en evidencia técnica priorizada, con el control que corresponde a cada hallazgo.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -281,23 +256,23 @@ export default function TramitesYLicencias() {
               </a>
             </div>
             <div className="flex flex-wrap gap-6 mt-8" style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--fg-4)" }}>
-              <span>SEMARNAT</span><span>PROFEPA</span><span>CONAGUA</span><span>LAU · COA</span>
+              <span>STPS</span><span>ISO 45001</span><span>NOM-004</span><span>NOM-017</span><span>NOM-027</span>
             </div>
           </div>
 
-          {/* Trámites status card */}
+          {/* NOM compliance card */}
           <div className="hidden md:block">
             <div style={{ background: "#fff", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 24, boxShadow: "var(--shadow-3)" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 11, color: "var(--fg-4)", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase" }}>
                 <span style={{ width: 8, height: 8, borderRadius: 8, background: "var(--irca-green)", boxShadow: "0 0 0 4px var(--irca-green-50)" }} />
-                Trámites en gestión
+                Diagnóstico NOM-STPS
               </div>
               <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, color: "var(--fg-1)", letterSpacing: "-0.02em", marginTop: 14, lineHeight: 1.15 }}>
-                Seguimiento activo de expedientes
+                Estado de cumplimiento por norma
               </div>
               <div style={{ height: 1, background: "var(--border-soft)", margin: "18px 0" }} />
               <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                {tramitesList.map(({ label, status, palette }) => (
+                {nomItems.map(({ label, status, palette }) => (
                   <div key={label} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0" }}>
                     <span style={{ fontSize: 13, fontWeight: 600, color: "var(--fg-2)" }}>{label}</span>
                     <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "3px 9px", borderRadius: 999, background: palette.bg, color: palette.fg, fontSize: 11, fontWeight: 600, flexShrink: 0, marginLeft: 8 }}>
@@ -309,10 +284,10 @@ export default function TramitesYLicencias() {
               <div style={{ height: 1, background: "var(--border-soft)", margin: "14px 0" }} />
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
                 {[
-                  { label: "LAU activas",  n: "12" },
-                  { label: "COA anuales",  n: "28" },
-                  { label: "Concesiones",  n: "7"  },
-                  { label: "Certificados", n: "9"  },
+                  { label: "NOM auditadas", n: "12" },
+                  { label: "Cumplimiento",  n: "89%" },
+                  { label: "PPA activos",   n: "6"   },
+                  { label: "CMSH vigentes", n: "11"  },
                 ].map(({ label, n }) => (
                   <div key={label} style={{ background: "var(--bg-2)", borderRadius: 10, padding: "10px 12px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <span style={{ fontSize: 12, color: "var(--fg-3)", fontWeight: 500 }}>{label}</span>
@@ -331,21 +306,21 @@ export default function TramitesYLicencias() {
           <div>
             <Eyebrow>Sobre el Servicio</Eyebrow>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 28px", color: "var(--ink-1000)" }}>
-              Por qué los trámites ambientales fallan y cómo evitarlo
+              Cumplimiento NOM-STPS que se sostiene más allá de la inspección
             </h2>
             <ImgPlaceholder
               ratio="16/9"
-              label="Gestión de trámites / revisión de expediente"
-              sub="Reemplazar con foto real del equipo revisando documentos, en gestión ante ventanilla o en reunión con la autoridad."
+              label="Análisis de riesgos en planta"
+              sub="Reemplazar con foto real del equipo evaluando maquinaria, tareas de alto riesgo o almacén de sustancias."
             />
             <p style={{ fontSize: 11, color: "var(--fg-4)", letterSpacing: "0.04em", margin: "8px 0 0" }}>Placeholder · pendiente material fotográfico del cliente</p>
           </div>
           <div>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 22px" }}>
-              La mayoría de los retrasos en trámites ambientales no ocurren por falta de voluntad de la autoridad: ocurren por expedientes incompletos, datos inconsistentes con reportes previos, argumentos mal dirigidos o formatos desactualizados. La autoridad regresa el expediente con observaciones, el trámite se reinicia y el reloj corre —semanas o meses— mientras la operación espera o se expone a una irregularidad.
+              Un estudio de seguridad y salud responde una pregunta concreta: qué en esta operación puede lesionar a un trabajador, con qué probabilidad y con qué gravedad. No es un inventario de documentos faltantes ni un checklist de normas; es la evaluación técnica del riesgo real por puesto, por área y por equipo, incluida la exposición a sustancias químicas peligrosas.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: 0 }}>
-              En IRCA Consultores llevamos más de 25 años gestionando trámites ambientales ante SEMARNAT, PROFEPA, CONAGUA y dependencias estatales. Conocemos el proceso desde adentro: qué documentos realmente revisan, qué inconsistencias generan observaciones y cuáles son los tiempos reales de resolución en cada dependencia. Eso nos permite preparar expedientes que se resuelven en tiempo y sin retrocesos innecesarios.
+              En IRCA Consultores aplicamos metodologías reconocidas internacionalmente —SMART, DuPont y los requisitos de ISO 45001— sobre la operación como efectivamente se ejecuta, no como está descrita en el procedimiento. Cada riesgo relevante se jerarquiza y se traduce en un control concreto siguiendo la jerarquía correcta: primero ingeniería, luego administración y sólo al final equipo de protección personal.
             </p>
             <a
               href="#contacto"
@@ -357,61 +332,16 @@ export default function TramitesYLicencias() {
         </div>
       </section>
 
-      {/* ── CERTIFICACIONES ESPECIALIZADAS (subservicios) ─ */}
-      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-2)", borderTop: "1px solid var(--border-soft)" }}>
-        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <Eyebrow color="var(--irca-blue-700)">Certificaciones especializadas</Eyebrow>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-4 mb-10">
-            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.05, margin: 0, color: "var(--ink-1000)" }}>
-              Más allá del cumplimiento: diferénciate con una certificación
-            </h2>
-            <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>
-              La Licencia Ambiental Única y la COA son el mínimo exigido. Las certificaciones de desempeño ambiental van más allá: demuestran a clientes, socios e inversionistas que tu operación supera los estándares regulatorios.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {subservicios.map(({ href, color, icon, label, title, desc }) => (
-              <a
-                key={href}
-                href={href}
-                style={{ display: "flex", flexDirection: "column", gap: 16, background: "#fff", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 28, boxShadow: "var(--shadow-1)", textDecoration: "none" }}
-              >
-                <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
-                  <div style={{
-                    width: 52, height: 52, borderRadius: 12, flexShrink: 0,
-                    background: color === "green" ? "var(--irca-green-50)" : "var(--irca-blue-50)",
-                    color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)",
-                    display: "inline-flex", alignItems: "center", justifyContent: "center",
-                  }}>
-                    {icon}
-                  </div>
-                  <div>
-                    <div style={{ display: "inline-block", padding: "2px 8px", borderRadius: 999, background: color === "green" ? "var(--irca-green-50)" : "var(--irca-blue-50)", color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)", fontSize: 11, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 6 }}>
-                      {label}
-                    </div>
-                    <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, letterSpacing: "-0.015em", color: "var(--fg-1)", margin: 0, lineHeight: 1.2 }}>{title}</h3>
-                  </div>
-                </div>
-                <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>{desc}</p>
-                <div style={{ display: "inline-flex", alignItems: "center", gap: 6, color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)", fontWeight: 600, fontSize: 14, marginTop: "auto" }}>
-                  Ver servicio <Icon name="arrow-right" size={14} />
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── ALCANCE ───────────────────────────────────── */}
-      <section id="incluye" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff" }}>
+      <section id="incluye" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-2)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <Eyebrow>Alcance del servicio</Eyebrow>
+          <Eyebrow color="var(--irca-blue-700)">Alcance del servicio</Eyebrow>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-4 mb-11">
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.05, margin: 0, color: "var(--ink-1000)" }}>
-              ¿Qué trámites y licencias gestionamos?
+              ¿Qué incluye el servicio SHE / EHS?
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>
-              Cubrimos el universo completo de obligaciones y autorizaciones ambientales de una instalación industrial en México: desde las licencias de operación hasta los permisos de transporte de residuos y los dictámenes de arbolado urbano.
+              El alcance se define por el número de puestos, áreas y equipos críticos a evaluar, y por la metodología que requiera tu corporativo o tu cliente. Puede acotarse a un proceso específico o cubrir la instalación completa.
             </p>
           </div>
 
@@ -419,7 +349,7 @@ export default function TramitesYLicencias() {
             {alcanceCards.map(({ color, icon, title, desc }) => (
               <article
                 key={title}
-                style={{ background: "var(--bg-2)", border: "1px solid var(--border-soft)", borderRadius: 14, padding: 24, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 14 }}
+                style={{ background: "#fff", border: "1px solid var(--border-soft)", borderRadius: 14, padding: 24, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 14 }}
               >
                 <div style={{
                   width: 46, height: 46, borderRadius: 10,
@@ -436,10 +366,10 @@ export default function TramitesYLicencias() {
 
             {/* Dark CTA card */}
             <article style={{ background: "linear-gradient(160deg,var(--bg-deep),#0f2c47)", border: "1px solid var(--bg-deep)", borderRadius: 14, padding: 24, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 12, justifyContent: "center" }}>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.01em", color: "#fff", lineHeight: 1.25 }}>¿No sabes qué trámites necesita tu instalación?</div>
-              <p style={{ fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.72)", margin: 0 }}>Hacemos un diagnóstico de obligaciones sin costo para que conozcas exactamente qué está pendiente.</p>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.01em", color: "#fff", lineHeight: 1.25 }}>Cada instalación tiene su propio perfil de riesgo</div>
+              <p style={{ fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.72)", margin: 0 }}>Cuéntanos tu sector y número de trabajadores y hacemos un diagnóstico inicial sin costo.</p>
               <a href="#contacto" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "#fff", fontWeight: 600, fontSize: 14, textDecoration: "none", marginTop: 4 }}>
-                Consultar sin costo <Icon name="arrow-right" size={16} />
+                Solicitar diagnóstico <Icon name="arrow-right" size={16} />
               </a>
             </article>
           </div>
@@ -447,7 +377,7 @@ export default function TramitesYLicencias() {
       </section>
 
       {/* ── ¿CUÁNDO? ──────────────────────────────────── */}
-      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--irca-green-50)" }}>
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff" }}>
         <div
           className="grid grid-cols-1 md:[grid-template-columns:1.05fr_0.95fr] gap-10 md:gap-16 items-center"
           style={{ maxWidth: 1280, margin: "0 auto" }}
@@ -455,25 +385,25 @@ export default function TramitesYLicencias() {
           <div>
             <Eyebrow>Para quién es</Eyebrow>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 20px", color: "var(--ink-1000)" }}>
-              ¿Cuándo necesitas gestionar o regularizar tus trámites?
+              Cuándo necesitas un estudio de seguridad y salud
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 28px" }}>
-              Hay momentos en que los trámites ambientales se vuelven urgentes: una inspección inminente, una fusión que requiere due diligence, o simplemente la detección de una obligación vencida. En todos los casos, cuanto antes se actúa, más opciones hay.
+              Varias NOM-STPS exigen un análisis de riesgos documentado como sustento de las medidas adoptadas. Más allá de la obligación, es la herramienta que evita que un incidente previsible se convierta en un accidente. Es especialmente recomendable en estos escenarios:
             </p>
             <div style={{ display: "grid", gap: 14 }}>
-              <CheckItem>Vas a iniciar operaciones o construir y necesitas las autorizaciones previas.</CheckItem>
-              <CheckItem>Tu LAU venció o fue modificada y necesitas actualizarla ante la autoridad competente.</CheckItem>
-              <CheckItem>Tienes una COA pendiente de presentar o detectaste errores en reportes anteriores.</CheckItem>
-              <CheckItem>Tu concesión de agua está próxima a vencer y necesitas renovarla o modificarla.</CheckItem>
-              <CheckItem>Recibiste una observación de PROFEPA sobre falta de permisos o licencias vigentes.</CheckItem>
-              <CheckItem>Quieres impulsar una certificación de desempeño ambiental para diferenciarte o cumplir con un cliente.</CheckItem>
+              <CheckItem>Tu operación implica trabajos de alto riesgo: altura, espacios confinados, energías peligrosas o maquinaria pesada.</CheckItem>
+              <CheckItem>Tuviste un accidente o un cuasi accidente y necesitas entender la causa raíz y qué control faltaba.</CheckItem>
+              <CheckItem>Almacenas o procesas sustancias químicas peligrosas y no tienes evaluada la exposición real del personal.</CheckItem>
+              <CheckItem>Vas a instalar maquinaria nueva o modificar una línea y necesitas evaluar el riesgo antes de arrancar.</CheckItem>
+              <CheckItem>Tu corporativo o tu cliente exige una evaluación bajo una metodología específica como DuPont o ISO 45001.</CheckItem>
+              <CheckItem>Tu siniestralidad subió y necesitas datos para decidir dónde invertir en control de riesgo.</CheckItem>
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <ImgPlaceholder
               ratio="4/3"
-              label="Gestión ante ventanilla / presentación de expediente"
-              sub="Reemplazar con foto real del equipo en gestión, reunión con la autoridad o revisión de expediente."
+              label="Evaluación de equipo y maquinaria"
+              sub="Reemplazar con foto real de revisión de guardas, bloqueo y etiquetado o medición de agentes en campo."
             />
             <p style={{ fontSize: 11, color: "var(--fg-4)", letterSpacing: "0.04em", margin: 0 }}>Placeholder · pendiente material fotográfico del cliente</p>
           </div>
@@ -481,7 +411,7 @@ export default function TramitesYLicencias() {
       </section>
 
       {/* ── SOBRE IRCA ────────────────────────────────── */}
-      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff" }}>
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--irca-green-50)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div className="grid grid-cols-1 md:[grid-template-columns:0.9fr_1.1fr] gap-10 md:gap-16 items-center">
             <div>
@@ -489,7 +419,7 @@ export default function TramitesYLicencias() {
               <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 28px", color: "var(--ink-1000)" }}>
                 Sobre IRCA Consultores
               </h2>
-              <div style={{ border: "1.5px dashed var(--irca-green-700)", borderRadius: 14, background: "var(--bg-2)", aspectRatio: "4/3", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10, color: "var(--fg-4)", textAlign: "center", padding: 24 }}>
+              <div style={{ border: "1.5px dashed var(--irca-green-700)", borderRadius: 14, background: "#fff", aspectRatio: "4/3", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10, color: "var(--fg-4)", textAlign: "center", padding: 24 }}>
                 <Icon name="building" size={32} />
                 <div style={{ fontSize: 13, fontWeight: 600, color: "var(--fg-3)" }}>Equipo / oficinas IRCA</div>
                 <div style={{ fontSize: 12, lineHeight: 1.5, maxWidth: "30ch" }}>Reemplazar con foto real del equipo multidisciplinario o de las instalaciones de la firma.</div>
@@ -513,7 +443,7 @@ export default function TramitesYLicencias() {
           ))}
         </svg>
         <div className="relative" style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <Eyebrow color="rgba(255,255,255,0.7)">Por qué IRCA</Eyebrow>
+          <Eyebrow color="rgba(255,255,255,0.7)">Por qué IRCA Consultores</Eyebrow>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(28px,4vw,48px)", letterSpacing: "-0.025em", lineHeight: 1.05, margin: "16px 0 48px", color: "#fff", maxWidth: "22ch" }}>
             ¿Por qué contratar a{" "}
             <span style={{ color: "var(--irca-green)" }}>IRCA Consultores</span>?
@@ -527,7 +457,7 @@ export default function TramitesYLicencias() {
               </div>
             ))}
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: 16, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 14, padding: 28 }}>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.015em", lineHeight: 1.25 }}>Un expediente mal integrado puede costar meses de operación.</div>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.015em", lineHeight: 1.25 }}>Cumplimiento en papel no resiste una inspección técnica detallada.</div>
               <a href="#contacto" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--irca-green)", color: "#fff", padding: "12px 20px", fontWeight: 600, fontSize: 14, borderRadius: 8, textDecoration: "none", alignSelf: "flex-start" }}>
                 Solicitar información <Icon name="arrow-right" size={16} />
               </a>
@@ -541,7 +471,7 @@ export default function TramitesYLicencias() {
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <Eyebrow color="var(--irca-blue-700)">Preguntas frecuentes</Eyebrow>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(24px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 36px", color: "var(--ink-1000)" }}>
-            Preguntas frecuentes sobre trámites y licencias ambientales
+            Preguntas frecuentes sobre estudios de seguridad y salud
           </h2>
           <ServiceFAQ items={faqs} />
         </div>
@@ -581,11 +511,11 @@ export default function TramitesYLicencias() {
 
       {/* ── CTA + FORM ───────────────────────────────── */}
       <ServiceContactSection
-        headline={<>Un trámite bien gestionado desde el inicio <span style={{ color: "var(--irca-green)" }}>evita meses de espera</span> y exposición a sanciones.</>}
-        copy="Cuéntanos qué licencias o trámites necesitas —o no sabes si necesitas— y hacemos un diagnóstico de obligaciones sin costo. Sin compromiso, con respuesta en 24 horas hábiles."
-        formTitle="Consultar trámite ambiental"
-        motivoLabel="Trámite de interés"
-        motivoOptions={["Licencia Ambiental Única (LAU)", "Cédula de Operación Anual (COA)", "Trámite CONAGUA (agua)", "Permiso de residuos peligrosos", "Certificación Industria Limpia", "ISO 14001", "No sé qué trámites necesito", "Otro"]}
+        headline={<>El riesgo que nadie midió <span style={{ color: "var(--irca-green)" }}>es el que termina en accidente</span>.</>}
+        copy="Cuéntanos qué procesos, equipos o sustancias quieres evaluar y bajo qué metodología te la piden. Con eso definimos el alcance del estudio y el trabajo de campo que implica."
+        formTitle="Solicitar estudio de seguridad y salud"
+        motivoLabel="Necesidad principal"
+        motivoOptions={["Estudio de riesgos laborales", "Análisis de equipos y maquinaria", "Manejo de sustancias peligrosas", "Metodología DuPont / SMART", "Brechas ISO 45001", "Investigación de accidente", "Otro"]}
       />
     </>
   );

@@ -4,8 +4,8 @@ import ServiceFAQ from "@/components/servicios/ServiceFAQ";
 import ServiceContactSection from "@/components/servicios/ServiceContactSection";
 
 export const metadata: Metadata = {
-  title: "Derecho Ambiental y Defensa Jurídica",
-  description: "Despacho de derecho ambiental y defensa jurídica ante PROFEPA, SEMARNAT y CONAGUA. Litigio ambiental, amparo indirecto, recursos de revisión y procedimientos administrativos en México. IRCA Consultores.",
+  title: "Auditoría y Diagnóstico Seguridad y Salud",
+  description: "Auditorías de diagnóstico y cumplimiento en seguridad y salud, auditoría de autogestión STPS, auditoría de manejo de sustancias y estándares internacionales ISO 45001. IRCA Consultores, Monterrey.",
 };
 
 /* ── shared helpers ─────────────────────────────────── */
@@ -34,7 +34,7 @@ function ImgPlaceholder({ ratio, label, sub, borderColor = "var(--border-strong)
 function CheckItem({ children }: { children: React.ReactNode }) {
   return (
     <div style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
-      <span style={{ flexShrink: 0, width: 24, height: 24, borderRadius: 999, background: "var(--irca-blue-50)", color: "var(--irca-blue-700)", display: "inline-flex", alignItems: "center", justifyContent: "center", marginTop: 1 }}>
+      <span style={{ flexShrink: 0, width: 24, height: 24, borderRadius: 999, background: "var(--irca-green-50)", color: "var(--irca-green-700)", display: "inline-flex", alignItems: "center", justifyContent: "center", marginTop: 1 }}>
         <Icon name="check" size={14} stroke={2.4} />
       </span>
       <span style={{ fontSize: 15, lineHeight: 1.55, color: "var(--fg-2)" }}>{children}</span>
@@ -44,11 +44,11 @@ function CheckItem({ children }: { children: React.ReactNode }) {
 
 /* ── hero card data ─────────────────────────────────── */
 
-const proceedings = [
-  { label: "Visita de verificación PROFEPA", status: "En atención",        palette: { bg: "var(--info-bg)",    fg: "var(--info)"    } },
-  { label: "Procedimiento administrativo",   status: "Plazo de pruebas",   palette: { bg: "var(--warning-bg)", fg: "var(--warning)" } },
-  { label: "Recurso de revisión",            status: "Resolución favorable",palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
-  { label: "Amparo indirecto",               status: "Sentencia pendiente", palette: { bg: "var(--info-bg)",    fg: "var(--info)"    } },
+const nomItems = [
+  { label: "NOM-004 STPS (equipo de protección)",  status: "Cumple",     palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
+  { label: "NOM-017 STPS (equipo de seguridad)",   status: "Cumple",     palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
+  { label: "NOM-027 STPS (Comisión Mixta)",        status: "En proceso",  palette: { bg: "var(--warning-bg)", fg: "var(--warning)" } },
+  { label: "PPA / Protección Civil",               status: "Pendiente",  palette: { bg: "var(--info-bg)",    fg: "var(--info)"    } },
 ];
 
 /* ── alcance cards ──────────────────────────────────── */
@@ -56,75 +56,56 @@ const proceedings = [
 const alcanceCards = [
   {
     color: "blue",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 21V8l9-5 9 5v13"/><path d="M9 21V12h6v9"/>
-      </svg>
-    ),
-    title: "Atención en visitas de inspección",
-    desc: "Presencia jurídica y técnica desde el momento en que la autoridad llega a tus instalaciones. Orientamos al personal, supervisamos el levantamiento de actas y protegemos tus derechos procedimentales desde el primer minuto.",
-  },
-  {
-    color: "green",
-    icon: <Icon name="scale" size={24} />,
-    title: "Litigio ambiental y solución de controversias",
-    desc: "Defensa en procedimientos contenciosos ante tribunales administrativos y federales. Evaluamos la vía más efectiva —negociación, recurso o litigio— según el expediente, el monto de la sanción y los antecedentes de la autoridad.",
-  },
-  {
-    color: "blue",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h8"/><path d="M8 17h6"/>
-      </svg>
-    ),
-    title: "Procedimientos administrativos y emplazamientos",
-    desc: "Elaboración y presentación de respuestas a emplazamientos, ofrecimiento de pruebas y alegatos dentro de los procedimientos sancionadores de PROFEPA, SEMARNAT, CONAGUA y dependencias estatales.",
-  },
-  {
-    color: "green",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/>
-      </svg>
-    ),
-    title: "Recursos de revisión y juicios de nulidad",
-    desc: "Interposición y seguimiento de recursos de revisión ante la misma autoridad y demandas de nulidad ante el Tribunal Federal de Justicia Administrativa cuando una resolución viola derechos o contiene vicios de procedimiento.",
-  },
-  {
-    color: "blue",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/>
-      </svg>
-    ),
-    title: "Juicio de Amparo Indirecto",
-    desc: "Elaboración, presentación y seguimiento de amparos indirectos cuando actos de autoridad ambiental violan garantías constitucionales. Incluye suspensión provisional y definitiva del acto reclamado cuando procede.",
-  },
-  {
-    color: "green",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
-      </svg>
-    ),
-    title: "Estrategias jurídico-ambientales preventivas",
-    desc: "Diseño de esquemas de cumplimiento que reducen la exposición legal antes de que llegue la autoridad: matrices de requerimientos, planes de atención a hallazgos y protocolos de respuesta a inspecciones.",
-  },
-  {
-    color: "blue",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-      </svg>
-    ),
-    title: "Intermediación con autoridades federales y estatales",
-    desc: "Gestión directa ante PROFEPA, SEMARNAT, CONAGUA, STPS y dependencias ambientales estatales para negociar plazos, términos de regularización o acuerdos que eviten la escalada del procedimiento.",
-  },
-  {
-    color: "green",
     icon: <Icon name="shield-check" size={24} />,
-    title: "Defensa ante PROFEPA, SEMARNAT y CONAGUA",
-    desc: "Representación especializada en las principales dependencias de fiscalización ambiental federal. Conocemos sus procesos internos, sus criterios de sanción y los argumentos que efectivamente inciden en sus resoluciones.",
+    title: "Auditoría de diagnóstico",
+    desc: "Establece tu línea base: qué NOM-STPS te aplican según giro, procesos y número de trabajadores, y en qué estado está cada obligación. Es el punto de partida para saber de qué tamaño es realmente la brecha antes de comprometer plazos o presupuesto.",
+  },
+  {
+    color: "green",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+      </svg>
+    ),
+    title: "Auditoría de cumplimiento",
+    desc: "Verificación documental y de campo del grado real de conformidad frente a cada norma aplicable: expedientes, programas, registros, condiciones físicas y evidencia de capacitación. Los hallazgos se jerarquizan por riesgo de sanción y por riesgo para el trabajador.",
+  },
+  {
+    color: "blue",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/>
+      </svg>
+    ),
+    title: "Auditoría de autogestión (STPS)",
+    desc: "Evaluación bajo el Programa de Autogestión en Seguridad y Salud en el Trabajo de la STPS, que reconoce a los centros de trabajo con sistemas de administración efectivos. Acompañamos el diagnóstico, el plan de acción y el proceso de acreditación.",
+  },
+  {
+    color: "green",
+    icon: <Icon name="flask" size={24} />,
+    title: "Auditoría de manejo de sustancias",
+    desc: "Revisión específica del almacenamiento, trasiego, señalización, compatibilidades, hojas de datos de seguridad y controles de exposición de sustancias químicas peligrosas, conforme a la NOM-005-STPS y a la normatividad de transporte y residuos aplicable.",
+  },
+  {
+    color: "blue",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
+      </svg>
+    ),
+    title: "Estándares internacionales de autogestión (ISO 45001)",
+    desc: "Auditoría del Sistema de Gestión de Seguridad y Salud contra los requisitos de ISO 45001:2018: contexto, liderazgo, planificación, operación y mejora. Identificación de no conformidades y ruta de cierre previa a la certificación o su renovación.",
+  },
+  {
+    color: "green",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M11 6h10"/><path d="M11 12h10"/><path d="M11 18h10"/>
+        <path d="M3 6l1.5 1.5L6 5"/><path d="M3 12l1.5 1.5L6 11"/><path d="M3 18l1.5 1.5L6 17"/>
+      </svg>
+    ),
+    title: "Plan de cierre de hallazgos",
+    desc: "Cada hallazgo se traduce en una acción con responsable, prioridad y fecha. El plan ordena el camino de forma realista, atacando primero lo que la STPS revisa antes y lo que representa mayor exposición para el personal.",
   },
 ];
 
@@ -133,28 +114,28 @@ const alcanceCards = [
 const pillars = [
   {
     n: "01",
-    title: "El abogado y el ingeniero conocen el mismo expediente",
-    body: "En la mayoría de los despachos, el abogado ambiental depende de un perito externo para entender la parte técnica. En IRCA, el equipo que elaboró tus estudios, gestionó tus trámites o hizo tu auditoría es el mismo que defiende tu caso. Eso elimina la brecha entre argumento y evidencia.",
+    title: "Visión SHE integrada con el cumplimiento ambiental",
+    body: "Muchas consultoras abordan la seguridad laboral en aislamiento. En IRCA trabajamos la gestión de riesgos como parte de un sistema integrado: cuando auditamos tu instalación revisamos simultáneamente las obligaciones ambientales y las de seguridad laboral. Eso evita duplicar esfuerzos y genera expedientes coherentes.",
   },
   {
     n: "02",
-    title: "25 años frente a las mismas autoridades",
-    body: "Sabemos cómo opera PROFEPA en campo, qué criterios usa SEMARNAT para valorar pruebas y cómo negocia CONAGUA. Esa experiencia acumulada no se improvisa y marca la diferencia entre una resolución de sanción y un sobreseimiento.",
+    title: "Conocimiento real del proceso de inspección STPS",
+    body: "Sabemos cómo inspecciona la STPS, qué NOM revisan primero, qué documentos solicitan en campo y qué tipo de observaciones generan actas de incumplimiento. Preparamos tu instalación con ese conocimiento práctico, no solo con el texto de la norma.",
   },
   {
     n: "03",
-    title: "Reacción inmediata desde el primer contacto",
-    body: "Cuando la autoridad está en la puerta, cada hora cuenta. Contamos con protocolos de respuesta inmediata para visitas de inspección no anunciadas: presencia jurídica en sitio, orientación al personal y control del acta desde el levantamiento.",
+    title: "Del diagnóstico a la implementación sin cambio de equipo",
+    body: "Hacemos el diagnóstico, diseñamos el sistema, acompañamos la implementación y auditamos el resultado. No entregamos un documento y te dejamos solo. El mismo equipo que identificó los hallazgos es el que supervisa que se cierren.",
   },
   {
     n: "04",
-    title: "Estrategia, no solo reacción",
-    body: "Evaluamos todas las vías posibles —negociación, recurso administrativo, juicio de nulidad, amparo— y recomendamos la que mejor combina velocidad, costo y probabilidad de resultado favorable. No escalamos innecesariamente ni cedemos sin analizar.",
+    title: "Metodologías probadas en sector industrial y manufactura",
+    body: "Tenemos experiencia en empresas de manufactura, químico, metalmecánico, acuícola, minero y construcción. Adaptamos las herramientas de análisis de riesgos al proceso real de cada planta, no a un checklist genérico.",
   },
   {
     n: "05",
-    title: "Continuidad más allá del fallo",
-    body: "Una resolución favorable no termina el trabajo: hay condicionantes que cumplir, plazos que monitorear y expedientes que cerrar. Continuamos el acompañamiento hasta que el caso está efectivamente resuelto y tu operación está fuera de riesgo.",
+    title: "Capacitación que genera cumplimiento sostenido",
+    body: "Un sistema de gestión de seguridad sólo funciona si el personal lo entiende y lo aplica. Incluimos formación práctica para supervisores, brigadas y Comisiones Mixtas, con materiales adaptados al nivel de cada grupo.",
   },
 ];
 
@@ -162,24 +143,24 @@ const pillars = [
 
 const faqs = [
   {
-    q: "¿Qué hago si recibo una orden de inspección de PROFEPA?",
-    a: "Lo primero es no obstruir la visita ni proporcionar información más allá de lo que el acta requiere. Contáctanos de inmediato —podemos presentarnos en el sitio o guiar al responsable por teléfono durante el levantamiento. El acta de inspección es el documento más importante del procedimiento: lo que quede asentado en ella define las opciones de defensa.",
+    q: "¿Qué empresas están obligadas a tener un Programa de Prevención de Accidentes?",
+    a: "El PPA es obligatorio para los centros de trabajo clasificados como de alta siniestralidad o que realizan actividades de alto riesgo conforme al Reglamento Federal de Seguridad y Salud en el Trabajo. Sin embargo, la STPS puede requerirlo a cualquier empresa durante una visita de inspección. Elaborar el PPA de forma proactiva reduce significativamente la exposición a sanciones y demuestra compromiso con la seguridad de los trabajadores.",
   },
   {
-    q: "¿Cuánto tiempo tengo para responder a un emplazamiento?",
-    a: "La Ley Federal de Procedimiento Administrativo establece un plazo de 15 días hábiles para ofrecer pruebas y alegatos en procedimientos sancionadores de PROFEPA. Ese plazo es fatal: vencido sin respuesta, la autoridad puede resolver con los elementos que tenga. Actuar rápido desde el emplazamiento es crítico.",
+    q: "¿Qué es la Comisión Mixta de Seguridad e Higiene y cuándo es obligatoria?",
+    a: "La Comisión Mixta de Seguridad e Higiene (CMSH) es un órgano paritario —integrado por representantes del patrón y de los trabajadores— que tiene por objeto investigar las causas de accidentes y enfermedades, proponer medidas preventivas y vigilar su cumplimiento. Es obligatoria para todos los centros de trabajo en México, sin importar el número de empleados. La STPS verifica su constitución, registro y funcionamiento activo durante las inspecciones.",
   },
   {
-    q: "¿Vale la pena interponer un recurso de revisión?",
-    a: "Depende del monto de la sanción, los vicios del procedimiento y la solidez de los argumentos disponibles. El recurso de revisión suspende la ejecutoriedad de la multa mientras se resuelve y, en muchos casos, es el primer paso necesario antes de acudir al Tribunal o al amparo. Lo evaluamos con base en el expediente concreto.",
+    q: "¿Cuál es la diferencia entre ISO 45001 y el cumplimiento NOM-STPS?",
+    a: "Son marcos complementarios, no equivalentes. El cumplimiento NOM-STPS es obligatorio por ley: implica cumplir las normas oficiales mexicanas específicas (equipos de protección, instalaciones eléctricas, manejo de sustancias, etc.) y evitar sanciones. ISO 45001 es un estándar internacional voluntario de gestión sistémica: establece un marco de mejora continua del desempeño en seguridad y salud. Muchas empresas buscan ISO 45001 por exigencia de clientes o mercados internacionales, y su implementación suele facilitar el cumplimiento NOM-STPS como consecuencia.",
   },
   {
-    q: "¿Pueden representarme si ya hay una sanción firme?",
-    a: "Si la sanción ya causó firmeza, las opciones de impugnación se reducen, pero pueden no estar agotadas: existen mecanismos de condonación, pago en parcialidades y en algunos casos todavía es posible acudir al amparo directo. Lo importante es actuar antes de que la autoridad inicie el procedimiento de ejecución.",
+    q: "¿Qué NOM-STPS se revisan con mayor frecuencia durante inspecciones?",
+    a: "Las NOM de mayor revisión en campo son: NOM-001 (instalaciones eléctricas), NOM-004 (sistemas y dispositivos de seguridad en maquinaria), NOM-005 (manejo y almacenamiento de sustancias químicas peligrosas), NOM-017 (equipo de protección personal), NOM-022 (electricidad estática) y NOM-027 (administración de la seguridad y salud —CMSH—). La NOM-030 sobre servicios preventivos de seguridad y salud también es frecuente en empresas medianas y grandes.",
   },
   {
-    q: "¿Qué diferencia hace que el abogado conozca la parte técnica del caso?",
-    a: "En el derecho ambiental, los argumentos más sólidos son los que combinan la norma con la evidencia técnica: mediciones, estudios, registros de monitoreo. Un abogado que no entiende esa evidencia no puede valorarla ni presentarla de forma efectiva ante la autoridad. En IRCA, el equipo técnico y el jurídico trabajan sobre el mismo expediente.",
+    q: "¿Qué incluye un Programa Interno de Protección Civil?",
+    a: "El PIPC incluye: identificación de riesgos internos y externos de la instalación, medidas de prevención y mitigación, organización de brigadas de emergencia (evacuación, primeros auxilios, prevención y combate de incendios, búsqueda y rescate), plan de evacuación con rutas y puntos de reunión, protocolos de comunicación interna y con autoridades, y programa de simulacros. Es exigido por la Ley General de Protección Civil y la normatividad estatal para instalaciones que rebasan ciertos umbrales de riesgo o número de personas.",
   },
 ];
 
@@ -190,29 +171,29 @@ const related = [
     color: "green",
     icon: <Icon name="shield-check" size={22} />,
     title: "Auditoría y Diagnóstico Ambiental",
-    desc: "Identifica las brechas de cumplimiento antes de que lo haga la autoridad. Una auditoría preventiva es la mejor preparación para una inspección.",
+    desc: "Diagnóstico integral que cubre simultáneamente las obligaciones ambientales y de seguridad laboral, generando un solo plan de acción.",
     href: "/servicios/auditoria-ambiental/",
   },
   {
     color: "blue",
     icon: <Icon name="file-text" size={22} />,
-    title: "Trámites y Licencias Ambientales",
-    desc: "Regulariza la situación de tu instalación obteniendo los permisos y licencias que cierran las brechas detectadas en un procedimiento.",
-    href: "/servicios/tramites-y-licencias-ambientales/",
+    title: "Estudios, Trámites y Administración de Autorizaciones",
+    desc: "Gestión de LAU, COA y certificaciones ambientales complementarias al sistema de gestión de seguridad y salud.",
+    href: "/servicios/tramites-y-autorizaciones-ambientales/",
   },
   {
     color: "green",
-    icon: <Icon name="flask" size={22} />,
-    title: "Estudios Ambientales",
-    desc: "MIA, ERA y evaluaciones de sitio que sirven como evidencia técnica en procedimientos administrativos o para sustentar medidas de regularización.",
-    href: "/servicios/estudios-ambientales/",
+    icon: <Icon name="scale" size={22} />,
+    title: "Servicios Legales y Atención de Autoridades",
+    desc: "Defensa jurídica ante procedimientos de la STPS o impugnación de sanciones derivadas de inspecciones de seguridad laboral.",
+    href: "/servicios/servicios-legales-y-atencion-de-autoridades/",
   },
   {
     color: "blue",
-    icon: <Icon name="hardhat" size={22} />,
-    title: "SHE / Seguridad y Salud Ocupacional",
-    desc: "Cumplimiento de obligaciones de seguridad y salud que reduce la exposición a procedimientos de la STPS, complementando la defensa ambiental.",
-    href: "/servicios/seguridad-y-salud-ocupacional/",
+    icon: <Icon name="building" size={22} />,
+    title: "Capacitación Técnica Especializada",
+    desc: "Formación en materia ambiental para el personal, complementaria a la capacitación en seguridad y salud ocupacional.",
+    href: "/servicios/capacitacion-tecnica-especializada/",
   },
 ];
 
@@ -220,7 +201,7 @@ const related = [
    PAGE
 ════════════════════════════════════════════════════════ */
 
-export default function DerechoAmbiental() {
+export default function AuditoriaSeguridadYSalud() {
   return (
     <>
       {/* ── HERO ──────────────────────────────────────── */}
@@ -234,12 +215,12 @@ export default function DerechoAmbiental() {
       >
         <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.22 }} aria-hidden="true">
           <defs>
-            <pattern id="topoDerecho" width="44" height="44" patternUnits="userSpaceOnUse">
-              <path d="M0 22 Q11 13 22 22 T44 22" stroke="#C7E2F0" strokeWidth="1" fill="none" />
-              <path d="M0 33 Q11 24 22 33 T44 33" stroke="#DCEFCB" strokeWidth="1" fill="none" />
+            <pattern id="topoSHE" width="44" height="44" patternUnits="userSpaceOnUse">
+              <path d="M0 22 Q11 13 22 22 T44 22" stroke="#DCEFCB" strokeWidth="1" fill="none" />
+              <path d="M0 11 Q11 2 22 11 T44 11"  stroke="#C7E2F0" strokeWidth="1" fill="none" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#topoDerecho)" />
+          <rect width="100%" height="100%" fill="url(#topoSHE)" />
         </svg>
 
         <div
@@ -248,20 +229,20 @@ export default function DerechoAmbiental() {
         >
           {/* Copy */}
           <div>
-            <Eyebrow color="var(--irca-blue-700)">Derecho Ambiental y Defensa Jurídica</Eyebrow>
+            <Eyebrow>Auditoría y Diagnóstico Seguridad y Salud</Eyebrow>
             <h1 style={{
               fontFamily: "var(--font-display)", fontWeight: 900,
               fontSize: "clamp(32px,4.5vw,56px)", letterSpacing: "-0.03em", lineHeight: 1.05,
               margin: "18px 0 20px", color: "var(--ink-1000)",
             }}>
-              Defensa jurídica ambiental ante PROFEPA, SEMARNAT y{" "}
-              <span style={{ color: "var(--irca-green)" }}>CONAGUA</span>.
+              Saber en qué estado estás{" "}
+              <span style={{ color: "var(--irca-green)" }}>antes de que llegue la STPS</span>.
             </h1>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 14px" }}>
-              Representación legal especializada cuando la autoridad ya está en la puerta —y estrategia preventiva para que no llegue a sancionar.
+              Auditorías de diagnóstico y de cumplimiento, autogestión STPS, manejo de sustancias y estándares internacionales ISO 45001. Diagnóstico previo a cualquier inspección o certificación.
             </p>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 32px" }}>
-              El derecho ambiental combina normatividad administrativa, procesal y constitucional con conocimiento técnico del sector regulado. Nuestro equipo domina los dos frentes.
+              La STPS inspecciona con criterios técnicos precisos. Conocer qué normas revisan, qué documentos solicitan y cómo se prioriza cada hallazgo marca la diferencia entre una visita sin consecuencias y una sanción.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -278,25 +259,25 @@ export default function DerechoAmbiental() {
               </a>
             </div>
             <div className="flex flex-wrap gap-6 mt-8" style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--fg-4)" }}>
-              <span>PROFEPA</span><span>SEMARNAT</span><span>CONAGUA</span><span>STPS</span>
+              <span>STPS</span><span>ISO 45001</span><span>NOM-004</span><span>NOM-017</span><span>NOM-027</span>
             </div>
           </div>
 
-          {/* Proceedings status card — hidden on mobile */}
+          {/* NOM compliance card */}
           <div className="hidden md:block">
             <div style={{ background: "#fff", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 24, boxShadow: "var(--shadow-3)" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 11, color: "var(--fg-4)", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase" }}>
-                <span style={{ width: 8, height: 8, borderRadius: 8, background: "var(--irca-blue)", boxShadow: "0 0 0 4px var(--irca-blue-50)" }} />
-                Expedientes activos
+                <span style={{ width: 8, height: 8, borderRadius: 8, background: "var(--irca-green)", boxShadow: "0 0 0 4px var(--irca-green-50)" }} />
+                Diagnóstico NOM-STPS
               </div>
               <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, color: "var(--fg-1)", letterSpacing: "-0.02em", marginTop: 14, lineHeight: 1.15 }}>
-                Seguimiento jurídico en tiempo real
+                Estado de cumplimiento por norma
               </div>
               <div style={{ height: 1, background: "var(--border-soft)", margin: "18px 0" }} />
               <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                {proceedings.map(({ label, status, palette }) => (
+                {nomItems.map(({ label, status, palette }) => (
                   <div key={label} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0" }}>
-                    <span style={{ fontSize: 14, fontWeight: 600, color: "var(--fg-2)" }}>{label}</span>
+                    <span style={{ fontSize: 13, fontWeight: 600, color: "var(--fg-2)" }}>{label}</span>
                     <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "3px 9px", borderRadius: 999, background: palette.bg, color: palette.fg, fontSize: 11, fontWeight: 600, flexShrink: 0, marginLeft: 8 }}>
                       <span style={{ width: 6, height: 6, borderRadius: 999, background: palette.fg }} /> {status}
                     </span>
@@ -304,9 +285,18 @@ export default function DerechoAmbiental() {
                 ))}
               </div>
               <div style={{ height: 1, background: "var(--border-soft)", margin: "14px 0" }} />
-              <div style={{ display: "flex", alignItems: "center", gap: 10, color: "var(--irca-blue-700)", fontSize: 13, fontWeight: 600 }}>
-                <Icon name="scale" size={16} />
-                Defensa técnica y jurídica en un solo expediente
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+                {[
+                  { label: "NOM auditadas", n: "12" },
+                  { label: "Cumplimiento",  n: "89%" },
+                  { label: "PPA activos",   n: "6"   },
+                  { label: "CMSH vigentes", n: "11"  },
+                ].map(({ label, n }) => (
+                  <div key={label} style={{ background: "var(--bg-2)", borderRadius: 10, padding: "10px 12px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span style={{ fontSize: 12, color: "var(--fg-3)", fontWeight: 500 }}>{label}</span>
+                    <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.02em", color: "var(--irca-green)" }}>{n}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -319,21 +309,21 @@ export default function DerechoAmbiental() {
           <div>
             <Eyebrow>Sobre el Servicio</Eyebrow>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 28px", color: "var(--ink-1000)" }}>
-              Por qué la defensa ambiental requiere doble capacidad
+              Cumplimiento NOM-STPS que se sostiene más allá de la inspección
             </h2>
             <ImgPlaceholder
               ratio="16/9"
-              label="Representación ante autoridad / revisión de expediente"
-              sub="Reemplazar con foto real del equipo en reunión jurídica, revisando expediente o en gestión ante autoridad."
+              label="Auditoría de seguridad / recorrido en planta"
+              sub="Reemplazar con foto real del equipo en auditoría de campo, recorrido de instalaciones o análisis de riesgos."
             />
             <p style={{ fontSize: 11, color: "var(--fg-4)", letterSpacing: "0.04em", margin: "8px 0 0" }}>Placeholder · pendiente material fotográfico del cliente</p>
           </div>
           <div>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 22px" }}>
-              El derecho ambiental en México combina normatividad administrativa, procesal y constitucional con un profundo conocimiento técnico del sector regulado. Cuando una empresa recibe una visita de inspección, un emplazamiento o una resolución sancionadora, el resultado no depende solo de la norma: depende de quién interpreta el expediente, cómo se presentan los argumentos y qué tan rápido se reacciona. Un error procesal en los primeros días puede limitar las opciones de defensa durante meses.
+              El cumplimiento en seguridad y salud laboral se aborda con demasiada frecuencia como una reacción a una inspección: se elaboran los documentos que faltan, se constituye la Comisión Mixta y se archiva el expediente hasta la próxima visita. Ese enfoque genera cumplimiento en papel que no refleja las condiciones reales de la planta —y que no resiste una inspección técnica detallada.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: 0 }}>
-              En IRCA Consultores la práctica jurídica ambiental no está separada de la ingeniería: el mismo equipo que conoce tu instalación, tu expediente y tu historial de cumplimiento es el que defiende tu caso ante la autoridad. Esa integración elimina la brecha entre lo que dice el perito y lo que argumenta el abogado —una brecha que en litigios ambientales suele ser costosa.
+              En IRCA Consultores diseñamos sistemas de gestión de seguridad y salud que funcionan en la operación diaria: matrices de obligaciones actualizadas, análisis de riesgos basados en los procesos reales de cada instalación, programas de prevención implementados y personal capacitado para mantenerlos. El resultado es una empresa que cumple porque tiene el sistema, no porque preparó el expediente.
             </p>
             <a
               href="#contacto"
@@ -351,10 +341,10 @@ export default function DerechoAmbiental() {
           <Eyebrow color="var(--irca-blue-700)">Alcance del servicio</Eyebrow>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-4 mb-11">
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.05, margin: 0, color: "var(--ink-1000)" }}>
-              ¿Qué incluye la defensa jurídica ambiental?
+              ¿Qué incluye el servicio SHE / EHS?
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>
-              Cubrimos todas las etapas del proceso: desde la atención inmediata en la visita de inspección hasta la resolución final en tribunales. El alcance se define con base en la etapa procesal y el tipo de procedimiento.
+              El alcance se define según el giro, el número de centros de trabajo y el objetivo: preparar una inspección, acreditar autogestión o sostener una certificación. Puede acotarse a una auditoría específica o cubrir el sistema completo.
             </p>
           </div>
 
@@ -379,10 +369,10 @@ export default function DerechoAmbiental() {
 
             {/* Dark CTA card */}
             <article style={{ background: "linear-gradient(160deg,var(--bg-deep),#0f2c47)", border: "1px solid var(--bg-deep)", borderRadius: 14, padding: 24, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 12, justifyContent: "center" }}>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.01em", color: "#fff", lineHeight: 1.25 }}>Cada procedimiento es diferente</div>
-              <p style={{ fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.72)", margin: 0 }}>Cuéntanos en qué etapa estás y evaluamos la mejor estrategia sin compromiso.</p>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.01em", color: "#fff", lineHeight: 1.25 }}>Cada instalación tiene su propio perfil de riesgo</div>
+              <p style={{ fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.72)", margin: 0 }}>Cuéntanos tu sector y número de trabajadores y hacemos un diagnóstico inicial sin costo.</p>
               <a href="#contacto" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "#fff", fontWeight: 600, fontSize: 14, textDecoration: "none", marginTop: 4 }}>
-                Consultar sin costo <Icon name="arrow-right" size={16} />
+                Solicitar diagnóstico <Icon name="arrow-right" size={16} />
               </a>
             </article>
           </div>
@@ -398,25 +388,25 @@ export default function DerechoAmbiental() {
           <div>
             <Eyebrow>Para quién es</Eyebrow>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 20px", color: "var(--ink-1000)" }}>
-              ¿Cuándo necesita tu empresa defensa jurídica ambiental?
+              ¿Cuándo necesita tu empresa apoyo en seguridad y salud?
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 28px" }}>
-              La defensa jurídica ambiental no es solo para empresas en crisis. También es una herramienta preventiva que reduce la exposición legal antes de que la autoridad inicie un procedimiento. Es especialmente urgente o recomendable en estos escenarios:
+              La STPS inspecciona de forma periódica y no siempre con aviso previo. La mejor preparación es mantener el sistema activo, no activarlo cuando ya se recibió la notificación de visita.
             </p>
             <div style={{ display: "grid", gap: 14 }}>
-              <CheckItem>Recibiste una orden de visita de verificación de PROFEPA, SEMARNAT, CONAGUA o una autoridad estatal.</CheckItem>
-              <CheckItem>Te llegó un emplazamiento o resolución sancionadora y no sabes si impugnar ni en qué plazo.</CheckItem>
-              <CheckItem>Tienes una multa firme y quieres explorar opciones de reducción, pago en parcialidades o condonación.</CheckItem>
-              <CheckItem>Operación detenida o clausurada y necesitas levantar la medida de seguridad lo antes posible.</CheckItem>
-              <CheckItem>Quieres diseñar una estrategia preventiva antes de la próxima inspección basada en tu expediente real.</CheckItem>
-              <CheckItem>Compraste una empresa con antecedentes ambientales y necesitas limpiar el expediente ante la autoridad.</CheckItem>
+              <CheckItem>Recibiste una notificación de inspección de la STPS y necesitas revisar tu estado de cumplimiento.</CheckItem>
+              <CheckItem>Tuviste un accidente o incidente en planta y necesitas actualizar tu PPA y tu análisis de riesgos.</CheckItem>
+              <CheckItem>Quieres implementar ISO 45001 por exigencia de un cliente, una certificación de cadena de suministro o un banco.</CheckItem>
+              <CheckItem>Tu Comisión Mixta no está activa o no tiene su registro vigente ante la STPS.</CheckItem>
+              <CheckItem>Tienes una empresa nueva o expansión y necesitas estructurar el sistema de seguridad desde cero.</CheckItem>
+              <CheckItem>Tu Programa Interno de Protección Civil está vencido o nunca fue elaborado conforme a la norma vigente.</CheckItem>
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <ImgPlaceholder
               ratio="4/3"
-              label="Reunión con autoridad / gestión jurídica"
-              sub="Reemplazar con foto real del equipo en gestión ante autoridad, tribunal o revisión de expediente."
+              label="Capacitación de brigada / recorrido de seguridad"
+              sub="Reemplazar con foto real de capacitación en planta, recorrido de seguridad o constitución de Comisión Mixta."
             />
             <p style={{ fontSize: 11, color: "var(--fg-4)", letterSpacing: "0.04em", margin: 0 }}>Placeholder · pendiente material fotográfico del cliente</p>
           </div>
@@ -424,7 +414,7 @@ export default function DerechoAmbiental() {
       </section>
 
       {/* ── SOBRE IRCA ────────────────────────────────── */}
-      <section id="nosotros" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--irca-green-50)" }}>
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--irca-green-50)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div className="grid grid-cols-1 md:[grid-template-columns:0.9fr_1.1fr] gap-10 md:gap-16 items-center">
             <div>
@@ -456,7 +446,7 @@ export default function DerechoAmbiental() {
           ))}
         </svg>
         <div className="relative" style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <Eyebrow color="rgba(255,255,255,0.7)">Por qué IRCA</Eyebrow>
+          <Eyebrow color="rgba(255,255,255,0.7)">Por qué IRCA Consultores</Eyebrow>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(28px,4vw,48px)", letterSpacing: "-0.025em", lineHeight: 1.05, margin: "16px 0 48px", color: "#fff", maxWidth: "22ch" }}>
             ¿Por qué contratar a{" "}
             <span style={{ color: "var(--irca-green)" }}>IRCA Consultores</span>?
@@ -470,8 +460,8 @@ export default function DerechoAmbiental() {
               </div>
             ))}
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: 16, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 14, padding: 28 }}>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.015em", lineHeight: 1.25 }}>Cuando la autoridad está en la puerta, cada hora cuenta.</div>
-              <a href="#contacto" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--irca-green)", color: "#fff", border: "1px solid transparent", padding: "12px 20px", fontWeight: 600, fontSize: 14, borderRadius: 8, textDecoration: "none", alignSelf: "flex-start" }}>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.015em", lineHeight: 1.25 }}>Cumplimiento en papel no resiste una inspección técnica detallada.</div>
+              <a href="#contacto" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--irca-green)", color: "#fff", padding: "12px 20px", fontWeight: 600, fontSize: 14, borderRadius: 8, textDecoration: "none", alignSelf: "flex-start" }}>
                 Solicitar información <Icon name="arrow-right" size={16} />
               </a>
             </div>
@@ -484,7 +474,7 @@ export default function DerechoAmbiental() {
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <Eyebrow color="var(--irca-blue-700)">Preguntas frecuentes</Eyebrow>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(24px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 36px", color: "var(--ink-1000)" }}>
-            Preguntas frecuentes sobre derecho ambiental
+            Preguntas frecuentes sobre seguridad y salud ocupacional
           </h2>
           <ServiceFAQ items={faqs} />
         </div>
@@ -524,11 +514,11 @@ export default function DerechoAmbiental() {
 
       {/* ── CTA + FORM ───────────────────────────────── */}
       <ServiceContactSection
-        headline={<>Cuando la autoridad ya actuó, la rapidez de <span style={{ color: "var(--irca-green)" }}>respuesta</span> define el resultado.</>}
-        copy="Un procedimiento ambiental mal atendido puede derivar en sanciones, clausuras o antecedentes que complican futuras operaciones. Da el primer paso: cuéntanos en qué etapa estás y evaluamos tus opciones sin compromiso."
-        formTitle="Consultar caso ambiental"
-        motivoLabel="Situación actual"
-        motivoOptions={["Visita de inspección recibida", "Emplazamiento o procedimiento activo", "Sanción o multa impuesta", "Estrategia preventiva", "Clausura o medida de seguridad", "Otro"]}
+        headline={<>Un sistema de seguridad que funciona en la operación diaria <span style={{ color: "var(--irca-green)" }}>resiste cualquier inspección</span>.</>}
+        copy="Cuéntanos en qué estado está tu sistema de gestión de seguridad y salud y hacemos un diagnóstico inicial sin compromiso. Respondemos en 24 horas hábiles."
+        formTitle="Solicitar auditoría de seguridad y salud"
+        motivoLabel="Necesidad principal"
+        motivoOptions={["Auditoría de diagnóstico", "Auditoría de cumplimiento", "Autogestión STPS", "Auditoría de manejo de sustancias", "Brechas ISO 45001", "Preparación para inspección STPS", "Otro"]}
       />
     </>
   );

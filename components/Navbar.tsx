@@ -9,13 +9,15 @@ import Icon, { type IconName } from "@/components/ui/Icon";
 /* ── services for the dropdown ───────────────────────────── */
 
 const services: { href: string; label: string; icon: IconName }[] = [
-  { href: "/servicios/auditoria-ambiental/",              label: "Auditoría y Diagnóstico Ambiental",  icon: "shield-check" },
-  { href: "/servicios/estudios-ambientales/",             label: "Estudios Ambientales",                icon: "flask"        },
-  { href: "/servicios/derecho-ambiental/",                label: "Derecho Ambiental",                   icon: "scale"        },
-  { href: "/servicios/tramites-y-licencias-ambientales/", label: "Trámites y Licencias Ambientales",    icon: "file-text"    },
-  { href: "/servicios/seguridad-y-salud-ocupacional/",    label: "SHE / Seguridad y Salud",             icon: "hardhat"      },
-  { href: "/servicios/ingenieria-ambiental/",             label: "Ingeniería Ambiental",                icon: "drone"        },
-  { href: "/servicios/capacitacion-ambiental/",           label: "Capacitación Ambiental",              icon: "building"     },
+  { href: "/servicios/auditoria-ambiental/",                          label: "Auditoría y Diagnóstico Ambiental",              icon: "shield-check"    },
+  { href: "/servicios/estudios-ambientales/",                         label: "Estudios Ambientales",                           icon: "flask"           },
+  { href: "/servicios/tramites-y-autorizaciones-ambientales/",        label: "Estudios, Trámites y Autorizaciones",            icon: "file-text"       },
+  { href: "/servicios/servicios-legales-y-atencion-de-autoridades/",  label: "Servicios Legales y Atención de Autoridades",     icon: "scale"           },
+  { href: "/servicios/consultoria-y-supervision-ambiental/",          label: "Consultoría y Supervisión Ambiental",            icon: "eye"             },
+  { href: "/servicios/auditoria-seguridad-y-salud/",                  label: "Auditoría y Diagnóstico Seguridad y Salud",      icon: "hardhat"         },
+  { href: "/servicios/estudios-de-seguridad-y-salud/",                label: "Estudios de Seguridad y Salud",                  icon: "alert-triangle"  },
+  { href: "/servicios/estudios-de-ingenieria/",                       label: "Estudios de Ingeniería",                         icon: "compass"         },
+  { href: "/servicios/capacitacion-tecnica-especializada/",           label: "Capacitación Técnica Especializada",             icon: "graduation-cap"  },
 ];
 
 /* ── top-level nav (non-services) ────────────────────────── */

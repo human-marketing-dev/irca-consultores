@@ -17,14 +17,15 @@ const fields = [
 ] as const;
 
 const serviceOptions = [
-  "Auditoría ambiental",
+  "Auditoría y diagnóstico ambiental",
   "Estudios ambientales",
+  "Estudios, trámites y autorizaciones",
+  "Servicios legales y atención de autoridades",
+  "Consultoría y supervisión ambiental",
+  "Auditoría y diagnóstico de seguridad y salud",
+  "Estudios de seguridad y salud",
   "Estudios de ingeniería",
-  "Permisos y autorizaciones",
-  "Asesoría legal ambiental",
-  "Atención de autoridades",
-  "Seguridad y salud ocupacional",
-  "Capacitación ambiental",
+  "Capacitación técnica especializada",
   "Otro / aún no lo sé",
 ];
 

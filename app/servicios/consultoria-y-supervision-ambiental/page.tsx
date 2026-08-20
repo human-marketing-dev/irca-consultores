@@ -4,8 +4,8 @@ import ServiceFAQ from "@/components/servicios/ServiceFAQ";
 import ServiceContactSection from "@/components/servicios/ServiceContactSection";
 
 export const metadata: Metadata = {
-  title: "Seguridad y Salud Ocupacional (SHE / EHS)",
-  description: "Auditorías de seguridad laboral, cumplimiento NOM-STPS, ISO 45001, análisis de riesgos laborales y Programas de Prevención de Accidentes para empresas en México. IRCA Consultores.",
+  title: "Consultoría, Administración y Supervisión Ambiental",
+  description: "Staff ambiental externo, supervisión y vigilancia en campo, seguimiento de términos y condicionantes de autorizaciones y control documental de obligaciones. IRCA Consultores, Monterrey.",
 };
 
 /* ── shared helpers ─────────────────────────────────── */
@@ -45,10 +45,10 @@ function CheckItem({ children }: { children: React.ReactNode }) {
 /* ── hero card data ─────────────────────────────────── */
 
 const nomItems = [
-  { label: "NOM-004 STPS (equipo de protección)",  status: "Cumple",     palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
-  { label: "NOM-017 STPS (equipo de seguridad)",   status: "Cumple",     palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
-  { label: "NOM-027 STPS (Comisión Mixta)",        status: "En proceso",  palette: { bg: "var(--warning-bg)", fg: "var(--warning)" } },
-  { label: "PPA / Protección Civil",               status: "Pendiente",  palette: { bg: "var(--info-bg)",    fg: "var(--info)"    } },
+  { label: "Condicionantes MIA vigentes",        status: "Al día",     palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
+  { label: "COA — vence en 34 días",             status: "Próximo",    palette: { bg: "var(--warning-bg)", fg: "var(--warning)" } },
+  { label: "Informe de cumplimiento semestral",  status: "En proceso", palette: { bg: "var(--info-bg)",    fg: "var(--info)"    } },
+  { label: "Bitácora de residuos — semana 32",   status: "Cerrada",    palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
 ];
 
 /* ── alcance cards ──────────────────────────────────── */
@@ -58,63 +58,41 @@ const alcanceCards = [
     color: "blue",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/>
-      </svg>
-    ),
-    title: "Sistemas de gestión ISO 45001",
-    desc: "Diseño, implementación y mantenimiento de Sistemas de Gestión de Seguridad y Salud en el Trabajo bajo la norma ISO 45001:2018. Desde el diagnóstico inicial de brechas hasta la preparación para la certificación con organismo acreditado.",
-  },
-  {
-    color: "green",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
-      </svg>
-    ),
-    title: "Matrices de requerimientos legales en SST",
-    desc: "Identificación, sistematización y actualización de todas las obligaciones aplicables en materia de seguridad y salud en el trabajo (NOM-STPS, reglamentos estatales, normas de emergencia). Base documental para auditorías e inspecciones de la STPS.",
-  },
-  {
-    color: "blue",
-    icon: <Icon name="hardhat" size={24} />,
-    title: "Análisis y evaluación de riesgos laborales",
-    desc: "Aplicación de metodologías AMEF, revisión de condiciones inseguras y evaluación de puestos de trabajo bajo NOM-004, NOM-005, NOM-017 y NOM-027 STPS. Identificación de controles prioritarios y seguimiento de acciones correctivas.",
-  },
-  {
-    color: "green",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-      </svg>
-    ),
-    title: "Programas de Prevención de Accidentes (PPA)",
-    desc: "Elaboración del Programa de Prevención de Accidentes conforme a los requerimientos de la STPS: análisis de siniestralidad, identificación de factores de riesgo, medidas preventivas priorizadas y cronograma de implementación.",
-  },
-  {
-    color: "blue",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
       </svg>
     ),
-    title: "Comisiones Mixtas de Seguridad e Higiene (STPS)",
-    desc: "Constitución, registro ante la STPS y capacitación de las Comisiones Mixtas de Seguridad e Higiene que exige la legislación laboral. Incluimos la elaboración del Reglamento Interior de Trabajo y los programas de verificación periódica.",
+    title: "Consultoría y staff externo",
+    desc: "Un especialista asignado a tu operación, con acompañamiento permanente y disponibilidad para resolver las decisiones ambientales del día a día. Funcionas con capacidad técnica propia sin sostener la estructura interna que eso implicaría.",
   },
   {
     color: "green",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-      </svg>
-    ),
-    title: "Protección Civil y respuesta a emergencias",
-    desc: "Elaboración del Programa Interno de Protección Civil (PIPC), análisis de riesgos de la instalación, planes de evacuación y respuesta a emergencias, formación de brigadas y simulacros conforme a la normatividad federal y estatal.",
+    icon: <Icon name="eye" size={24} />,
+    title: "Supervisión y vigilancia ambiental",
+    desc: "Presencia en campo durante obra u operación para verificar que lo autorizado sea lo que efectivamente ocurre: manejo de residuos, control de emisiones y descargas, afectación a vegetación y fauna, y condiciones del frente de trabajo.",
   },
   {
     color: "blue",
+    icon: <Icon name="check" size={24} stroke={2.2} />,
+    title: "Seguimiento de términos y condicionantes",
+    desc: "Cada autorización llega con condicionantes que hay que cumplir, documentar y reportar. Las traducimos en responsables, entregables y fechas, y damos seguimiento hasta que cada una queda acreditada ante la autoridad.",
+  },
+  {
+    color: "green",
+    icon: <Icon name="calendar" size={24} />,
+    title: "Calendario de obligaciones",
+    desc: "Todos tus vencimientos recurrentes —COA, informes, renovaciones, monitoreos, reportes de condicionantes— en un solo calendario regulatorio, con alertas anticipadas para que ninguna fecha se resuelva a última hora.",
+  },
+  {
+    color: "blue",
+    icon: <Icon name="file-text" size={24} />,
+    title: "Control documental del expediente",
+    desc: "Resguardo ordenado de autorizaciones, licencias, bitácoras, manifiestos, reportes y evidencia de cumplimiento. Cuando llega una inspección, el expediente está completo y localizable, no disperso entre áreas.",
+  },
+  {
+    color: "green",
     icon: <Icon name="shield-check" size={24} />,
-    title: "Auditorías de cumplimiento normativo SHE",
-    desc: "Diagnósticos integrales del sistema de seguridad y salud de la instalación frente al marco normativo STPS vigente. Identificación de brechas, priorización de hallazgos por nivel de riesgo y plan de acción con responsables y fechas.",
+    title: "Preparación permanente ante inspección",
+    desc: "Revisiones periódicas del estado de cumplimiento y simulacros de inspección para detectar brechas antes que la autoridad. El objetivo es que una visita no requiera preparación extraordinaria.",
   },
 ];
 
@@ -123,28 +101,28 @@ const alcanceCards = [
 const pillars = [
   {
     n: "01",
-    title: "Visión SHE integrada con el cumplimiento ambiental",
-    body: "Muchas consultoras abordan la seguridad laboral en aislamiento. En IRCA trabajamos la gestión de riesgos como parte de un sistema integrado: cuando auditamos tu instalación revisamos simultáneamente las obligaciones ambientales y las de seguridad laboral. Eso evita duplicar esfuerzos y genera expedientes coherentes.",
+    title: "Continuidad, no intervenciones aisladas",
+    body: "El incumplimiento rara vez nace de un error grave: nace de un vencimiento que nadie vio, un condicionante que quedó sin evidencia o una bitácora que dejó de llenarse. La supervisión continua ataca exactamente ese tipo de fallas.",
   },
   {
     n: "02",
-    title: "Conocimiento real del proceso de inspección STPS",
-    body: "Sabemos cómo inspecciona la STPS, qué NOM revisan primero, qué documentos solicitan en campo y qué tipo de observaciones generan actas de incumplimiento. Preparamos tu instalación con ese conocimiento práctico, no solo con el texto de la norma.",
+    title: "El mismo equipo que tramitó, supervisa",
+    body: "Quien gestionó tu autorización conoce sus condicionantes de memoria. Eso elimina la curva de aprendizaje y evita que el seguimiento se convierta en una relectura del resolutivo cada trimestre.",
   },
   {
     n: "03",
-    title: "Del diagnóstico a la implementación sin cambio de equipo",
-    body: "Hacemos el diagnóstico, diseñamos el sistema, acompañamos la implementación y auditamos el resultado. No entregamos un documento y te dejamos solo. El mismo equipo que identificó los hallazgos es el que supervisa que se cierren.",
+    title: "Respaldo técnico y jurídico inmediato",
+    body: "Si aparece un requerimiento, una inspección o una controversia, no hay que contratar a nadie ni explicar el historial desde cero. El área legal ya tiene el expediente y el contexto operativo.",
   },
   {
     n: "04",
-    title: "Metodologías probadas en sector industrial y manufactura",
-    body: "Tenemos experiencia en empresas de manufactura, químico, metalmecánico, acuícola, minero y construcción. Adaptamos las herramientas de análisis de riesgos al proceso real de cada planta, no a un checklist genérico.",
+    title: "Costo previsible frente a estructura interna",
+    body: "Un esquema de acompañamiento cuesta una fracción de un área ambiental propia y te da acceso a especialistas en impacto, residuos, agua, aire y derecho ambiental sin contratar a cada uno.",
   },
   {
     n: "05",
-    title: "Capacitación que genera cumplimiento sostenido",
-    body: "Un sistema de gestión de seguridad sólo funciona si el personal lo entiende y lo aplica. Incluimos formación práctica para supervisores, brigadas y Comisiones Mixtas, con materiales adaptados al nivel de cada grupo.",
+    title: "Evidencia lista, no reconstruida",
+    body: "Documentamos el cumplimiento conforme ocurre. Cuando la autoridad lo pide, la evidencia ya existe con su fecha y su respaldo, en lugar de armarse contra reloj cuando llega el requerimiento.",
   },
 ];
 
@@ -152,24 +130,24 @@ const pillars = [
 
 const faqs = [
   {
-    q: "¿Qué empresas están obligadas a tener un Programa de Prevención de Accidentes?",
-    a: "El PPA es obligatorio para los centros de trabajo clasificados como de alta siniestralidad o que realizan actividades de alto riesgo conforme al Reglamento Federal de Seguridad y Salud en el Trabajo. Sin embargo, la STPS puede requerirlo a cualquier empresa durante una visita de inspección. Elaborar el PPA de forma proactiva reduce significativamente la exposición a sanciones y demuestra compromiso con la seguridad de los trabajadores.",
+    q: "¿En qué se diferencia de contratar servicios por proyecto?",
+    a: "Un servicio por proyecto termina cuando se entrega el estudio o se obtiene el permiso. La consultoría y supervisión es un acompañamiento continuo: sostiene el cumplimiento después de la autorización, que es justamente donde se acumula la mayoría de los incumplimientos. No sustituye a los servicios por proyecto, los administra en el tiempo.",
   },
   {
-    q: "¿Qué es la Comisión Mixta de Seguridad e Higiene y cuándo es obligatoria?",
-    a: "La Comisión Mixta de Seguridad e Higiene (CMSH) es un órgano paritario —integrado por representantes del patrón y de los trabajadores— que tiene por objeto investigar las causas de accidentes y enfermedades, proponer medidas preventivas y vigilar su cumplimiento. Es obligatoria para todos los centros de trabajo en México, sin importar el número de empleados. La STPS verifica su constitución, registro y funcionamiento activo durante las inspecciones.",
+    q: "¿Sustituye a nuestro personal ambiental interno?",
+    a: "Puede operar de las dos formas. En empresas sin área ambiental, funcionamos como esa área. En empresas que ya tienen personal, trabajamos como respaldo especializado: aportamos las disciplinas que no están cubiertas internamente y liberamos al equipo de la carga documental y de seguimiento.",
   },
   {
-    q: "¿Cuál es la diferencia entre ISO 45001 y el cumplimiento NOM-STPS?",
-    a: "Son marcos complementarios, no equivalentes. El cumplimiento NOM-STPS es obligatorio por ley: implica cumplir las normas oficiales mexicanas específicas (equipos de protección, instalaciones eléctricas, manejo de sustancias, etc.) y evitar sanciones. ISO 45001 es un estándar internacional voluntario de gestión sistémica: establece un marco de mejora continua del desempeño en seguridad y salud. Muchas empresas buscan ISO 45001 por exigencia de clientes o mercados internacionales, y su implementación suele facilitar el cumplimiento NOM-STPS como consecuencia.",
+    q: "¿Con qué frecuencia hay presencia en sitio?",
+    a: "Depende del riesgo y la etapa. Una obra con condicionantes activas puede requerir supervisión semanal o permanente durante el frente de trabajo; una planta en operación estable suele resolverse con visitas mensuales y seguimiento remoto. La frecuencia se define en el alcance y se ajusta si cambian las condiciones.",
   },
   {
-    q: "¿Qué NOM-STPS se revisan con mayor frecuencia durante inspecciones?",
-    a: "Las NOM de mayor revisión en campo son: NOM-001 (instalaciones eléctricas), NOM-004 (sistemas y dispositivos de seguridad en maquinaria), NOM-005 (manejo y almacenamiento de sustancias químicas peligrosas), NOM-017 (equipo de protección personal), NOM-022 (electricidad estática) y NOM-027 (administración de la seguridad y salud —CMSH—). La NOM-030 sobre servicios preventivos de seguridad y salud también es frecuente en empresas medianas y grandes.",
+    q: "¿Qué pasa si llega una inspección durante el acompañamiento?",
+    a: "Atendemos la visita contigo. El expediente ya está integrado y conocemos el estado de cada obligación, lo que permite responder en el momento en lugar de pedir prórrogas. Si el asunto deriva en un procedimiento, el área legal lo toma con todo el contexto documentado.",
   },
   {
-    q: "¿Qué incluye un Programa Interno de Protección Civil?",
-    a: "El PIPC incluye: identificación de riesgos internos y externos de la instalación, medidas de prevención y mitigación, organización de brigadas de emergencia (evacuación, primeros auxilios, prevención y combate de incendios, búsqueda y rescate), plan de evacuación con rutas y puntos de reunión, protocolos de comunicación interna y con autoridades, y programa de simulacros. Es exigido por la Ley General de Protección Civil y la normatividad estatal para instalaciones que rebasan ciertos umbrales de riesgo o número de personas.",
+    q: "¿Se puede contratar solo la supervisión de obra?",
+    a: "Sí. La supervisión y vigilancia ambiental de obra es un alcance frecuente por sí solo, sobre todo cuando la MIA impone condicionantes de rescate de flora y fauna, manejo de residuos de construcción o control de emisiones durante la ejecución.",
   },
 ];
 
@@ -178,31 +156,31 @@ const faqs = [
 const related = [
   {
     color: "green",
-    icon: <Icon name="shield-check" size={22} />,
-    title: "Auditoría y Diagnóstico Ambiental",
-    desc: "Diagnóstico integral que cubre simultáneamente las obligaciones ambientales y de seguridad laboral, generando un solo plan de acción.",
-    href: "/servicios/auditoria-ambiental/",
+    icon: <Icon name="file-text" size={22} />,
+    title: "Estudios, Trámites y Administración de Autorizaciones",
+    desc: "Obtención de las autorizaciones cuyos términos y condicionantes damos seguimiento durante toda su vigencia.",
+    href: "/servicios/tramites-y-autorizaciones-ambientales/",
   },
   {
     color: "blue",
-    icon: <Icon name="file-text" size={22} />,
-    title: "Trámites y Licencias Ambientales",
-    desc: "Gestión de LAU, COA y certificaciones ambientales complementarias al sistema de gestión de seguridad y salud.",
-    href: "/servicios/tramites-y-licencias-ambientales/",
+    icon: <Icon name="shield-check" size={22} />,
+    title: "Auditoría y Diagnóstico Ambiental",
+    desc: "Línea base de cumplimiento con la que arranca el acompañamiento: qué se cumple, qué no y qué riesgo representa cada brecha.",
+    href: "/servicios/auditoria-ambiental/",
   },
   {
     color: "green",
     icon: <Icon name="scale" size={22} />,
-    title: "Derecho Ambiental",
-    desc: "Defensa jurídica ante procedimientos de la STPS o impugnación de sanciones derivadas de inspecciones de seguridad laboral.",
-    href: "/servicios/derecho-ambiental/",
+    title: "Servicios Legales y Atención de Autoridades",
+    desc: "Respaldo jurídico inmediato cuando una inspección o un requerimiento escala a procedimiento administrativo.",
+    href: "/servicios/servicios-legales-y-atencion-de-autoridades/",
   },
   {
     color: "blue",
-    icon: <Icon name="building" size={22} />,
-    title: "Capacitación Ambiental",
-    desc: "Formación en materia ambiental para el personal, complementaria a la capacitación en seguridad y salud ocupacional.",
-    href: "/servicios/capacitacion-ambiental/",
+    icon: <Icon name="graduation-cap" size={22} />,
+    title: "Capacitación Técnica Especializada",
+    desc: "Formación del personal interno para que el cumplimiento se sostenga desde la operación y no dependa solo del consultor.",
+    href: "/servicios/capacitacion-tecnica-especializada/",
   },
 ];
 
@@ -210,7 +188,7 @@ const related = [
    PAGE
 ════════════════════════════════════════════════════════ */
 
-export default function SeguridadYSalud() {
+export default function ConsultoriaYSupervisionAmbiental() {
   return (
     <>
       {/* ── HERO ──────────────────────────────────────── */}
@@ -238,20 +216,21 @@ export default function SeguridadYSalud() {
         >
           {/* Copy */}
           <div>
-            <Eyebrow>Seguridad y Salud Ocupacional · SHE</Eyebrow>
+            <Eyebrow>Consultoría, Administración y Supervisión Ambiental</Eyebrow>
             <h1 style={{
               fontFamily: "var(--font-display)", fontWeight: 900,
               fontSize: "clamp(32px,4.5vw,56px)", letterSpacing: "-0.03em", lineHeight: 1.05,
               margin: "18px 0 20px", color: "var(--ink-1000)",
             }}>
-              Auditorías de seguridad laboral y cumplimiento{" "}
-              <span style={{ color: "var(--irca-green)" }}>NOM-STPS</span>.
+              Tu área ambiental externa: el cumplimiento{" "}
+              <span style={{ color: "var(--irca-green)" }}>se sostiene</span>{" "}
+              después del permiso.
             </h1>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 14px" }}>
-              Diagnóstico, implementación y seguimiento de sistemas de gestión en seguridad y salud ocupacional: desde las NOM-STPS hasta ISO 45001 y Protección Civil.
+              Acompañamiento permanente, supervisión en campo y control de los compromisos adquiridos ante la autoridad. Staff especializado sin el costo de un área interna.
             </p>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 32px" }}>
-              La STPS inspecciona con criterios técnicos precisos. Conocer qué normas revisan, qué documentos solicitan y cómo se prioriza cada hallazgo marca la diferencia entre una inspección sin consecuencias y una sanción.
+              La mayoría de los incumplimientos no ocurre al tramitar, sino después: un condicionante sin evidencia, un informe que no se presentó, un vencimiento que nadie vio. Ahí es donde trabajamos.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -322,17 +301,17 @@ export default function SeguridadYSalud() {
             </h2>
             <ImgPlaceholder
               ratio="16/9"
-              label="Auditoría de seguridad / recorrido en planta"
-              sub="Reemplazar con foto real del equipo en auditoría de campo, recorrido de instalaciones o análisis de riesgos."
+              label="Supervisión ambiental en campo"
+              sub="Reemplazar con foto real del equipo supervisando obra, verificando condicionantes o revisando bitácoras en sitio."
             />
             <p style={{ fontSize: 11, color: "var(--fg-4)", letterSpacing: "0.04em", margin: "8px 0 0" }}>Placeholder · pendiente material fotográfico del cliente</p>
           </div>
           <div>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 22px" }}>
-              El cumplimiento en seguridad y salud laboral se aborda con demasiada frecuencia como una reacción a una inspección: se elaboran los documentos que faltan, se constituye la Comisión Mixta y se archiva el expediente hasta la próxima visita. Ese enfoque genera cumplimiento en papel que no refleja las condiciones reales de la planta —y que no resiste una inspección técnica detallada.
+              Obtener la autorización es el principio, no el final. Cada resolutivo llega con términos y condicionantes que deben cumplirse, documentarse y reportarse durante toda la vida del proyecto. Cuando nadie administra ese seguimiento, el expediente se degrada en silencio: informes que no se presentaron, evidencia que no se levantó, vencimientos que pasaron. La instalación opera creyendo que cumple porque en su momento obtuvo el permiso.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: 0 }}>
-              En IRCA Consultores diseñamos sistemas de gestión de seguridad y salud que funcionan en la operación diaria: matrices de obligaciones actualizadas, análisis de riesgos basados en los procesos reales de cada instalación, programas de prevención implementados y personal capacitado para mantenerlos. El resultado es una empresa que cumple porque tiene el sistema, no porque preparó el expediente.
+              En IRCA Consultores operamos como el área ambiental de tu empresa: un especialista asignado, supervisión en campo cuando la operación lo exige, un calendario vivo de obligaciones y un expediente ordenado que se actualiza conforme ocurren los hechos. Cuando llega una inspección o un requerimiento, la evidencia ya existe —con su fecha y su respaldo— en lugar de reconstruirse contra reloj.
             </p>
             <a
               href="#contacto"
@@ -353,7 +332,7 @@ export default function SeguridadYSalud() {
               ¿Qué incluye el servicio SHE / EHS?
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>
-              Cubrimos el ciclo completo de la gestión de seguridad y salud: diagnóstico, implementación, capacitación y auditoría. El alcance se adapta a la madurez del sistema de tu instalación y al sector de actividad.
+              El alcance se define según la etapa del proyecto, el número de instalaciones y la carga de condicionantes vigentes. Puede ir del seguimiento documental remoto hasta la supervisión permanente de un frente de obra.
             </p>
           </div>
 
@@ -397,25 +376,25 @@ export default function SeguridadYSalud() {
           <div>
             <Eyebrow>Para quién es</Eyebrow>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 20px", color: "var(--ink-1000)" }}>
-              ¿Cuándo necesita tu empresa apoyo en seguridad y salud?
+              Cuándo conviene un esquema de acompañamiento continuo
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 28px" }}>
-              La STPS inspecciona de forma periódica y no siempre con aviso previo. La mejor preparación es mantener el sistema activo, no activarlo cuando ya se recibió la notificación de visita.
+              No es un servicio para grandes corporativos únicamente. Aplica a cualquier operación con autorizaciones vigentes, condicionantes que cumplir u obligaciones recurrentes que hoy dependen de que alguien se acuerde. Es especialmente recomendable en estos escenarios:
             </p>
             <div style={{ display: "grid", gap: 14 }}>
-              <CheckItem>Recibiste una notificación de inspección de la STPS y necesitas revisar tu estado de cumplimiento.</CheckItem>
-              <CheckItem>Tuviste un accidente o incidente en planta y necesitas actualizar tu PPA y tu análisis de riesgos.</CheckItem>
-              <CheckItem>Quieres implementar ISO 45001 por exigencia de un cliente, una certificación de cadena de suministro o un banco.</CheckItem>
-              <CheckItem>Tu Comisión Mixta no está activa o no tiene su registro vigente ante la STPS.</CheckItem>
-              <CheckItem>Tienes una empresa nueva o expansión y necesitas estructurar el sistema de seguridad desde cero.</CheckItem>
-              <CheckItem>Tu Programa Interno de Protección Civil está vencido o nunca fue elaborado conforme a la norma vigente.</CheckItem>
+              <CheckItem>No tienes un área ambiental interna y las obligaciones se reparten entre personas que ya tienen otras funciones.</CheckItem>
+              <CheckItem>Obtuviste una MIA o una autorización con condicionantes y nadie está dando seguimiento formal a su cumplimiento.</CheckItem>
+              <CheckItem>Vas a ejecutar una obra que requiere supervisión y vigilancia ambiental durante todo el frente de trabajo.</CheckItem>
+              <CheckItem>Operas varias instalaciones y no tienes visibilidad consolidada de qué cumple cada una y con qué vigencia.</CheckItem>
+              <CheckItem>Ya te pasó que un vencimiento se resolvió a última hora o de plano se dejó pasar.</CheckItem>
+              <CheckItem>Tu corporativo o tus clientes te piden evidencia periódica de cumplimiento ambiental y hoy armarla toma semanas.</CheckItem>
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <ImgPlaceholder
               ratio="4/3"
-              label="Capacitación de brigada / recorrido de seguridad"
-              sub="Reemplazar con foto real de capacitación en planta, recorrido de seguridad o constitución de Comisión Mixta."
+              label="Expediente y calendario de obligaciones"
+              sub="Reemplazar con foto real del equipo en revisión documental, junta de seguimiento o verificación de condicionantes."
             />
             <p style={{ fontSize: 11, color: "var(--fg-4)", letterSpacing: "0.04em", margin: 0 }}>Placeholder · pendiente material fotográfico del cliente</p>
           </div>
@@ -455,7 +434,7 @@ export default function SeguridadYSalud() {
           ))}
         </svg>
         <div className="relative" style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <Eyebrow color="rgba(255,255,255,0.7)">Por qué IRCA</Eyebrow>
+          <Eyebrow color="rgba(255,255,255,0.7)">Por qué IRCA Consultores</Eyebrow>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(28px,4vw,48px)", letterSpacing: "-0.025em", lineHeight: 1.05, margin: "16px 0 48px", color: "#fff", maxWidth: "22ch" }}>
             ¿Por qué contratar a{" "}
             <span style={{ color: "var(--irca-green)" }}>IRCA Consultores</span>?
@@ -483,7 +462,7 @@ export default function SeguridadYSalud() {
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <Eyebrow color="var(--irca-blue-700)">Preguntas frecuentes</Eyebrow>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(24px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 36px", color: "var(--ink-1000)" }}>
-            Preguntas frecuentes sobre seguridad y salud ocupacional
+            Preguntas frecuentes sobre consultoría y supervisión ambiental
           </h2>
           <ServiceFAQ items={faqs} />
         </div>
@@ -523,11 +502,11 @@ export default function SeguridadYSalud() {
 
       {/* ── CTA + FORM ───────────────────────────────── */}
       <ServiceContactSection
-        headline={<>Un sistema de seguridad que funciona en la operación diaria <span style={{ color: "var(--irca-green)" }}>resiste cualquier inspección</span>.</>}
-        copy="Cuéntanos en qué estado está tu sistema de gestión de seguridad y salud y hacemos un diagnóstico inicial sin compromiso. Respondemos en 24 horas hábiles."
-        formTitle="Consultar servicio SHE"
+        headline={<>Deja de perseguir vencimientos: <span style={{ color: "var(--irca-green)" }}>que alguien los administre</span> por ti.</>}
+        copy="Cuéntanos cuántas instalaciones tienes, qué autorizaciones están vigentes y cómo llevas hoy el seguimiento. Con eso definimos el alcance del acompañamiento y su periodicidad."
+        formTitle="Solicitar acompañamiento ambiental"
         motivoLabel="Necesidad principal"
-        motivoOptions={["Diagnóstico NOM-STPS", "Implementar ISO 45001", "Programa de Prevención de Accidentes", "Comisión Mixta de Seguridad", "Protección Civil / PIPC", "Preparación para inspección STPS", "Otro"]}
+        motivoOptions={["Staff ambiental externo", "Supervisión y vigilancia de obra", "Seguimiento de condicionantes", "Calendario de obligaciones", "Control documental del expediente", "Varias instalaciones", "Otro"]}
       />
     </>
   );

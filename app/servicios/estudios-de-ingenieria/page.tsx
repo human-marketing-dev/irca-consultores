@@ -4,8 +4,8 @@ import ServiceFAQ from "@/components/servicios/ServiceFAQ";
 import ServiceContactSection from "@/components/servicios/ServiceContactSection";
 
 export const metadata: Metadata = {
-  title: "Estudios Ambientales",
-  description: "Evaluación de sitios contaminados ASTM Phase I y II, caracterización bajo normativa mexicana, balance hídrico, huella de carbono, análisis de ciclo de vida, diseño ambiental y monitoreo de emisiones. IRCA Consultores.",
+  title: "Estudios de Ingeniería",
+  description: "Geología, geofísica, estabilidad de taludes, estudios hidrológicos y geohidrológicos, tránsito y vialidad, topografía, agua potable, alcantarillado y soluciones pluviales. IRCA Consultores, Monterrey.",
 };
 
 /* ── shared helpers ─────────────────────────────────── */
@@ -44,47 +44,23 @@ function CheckItem({ children }: { children: React.ReactNode }) {
 
 /* ── hero card data ─────────────────────────────────── */
 
-const portfolio = [
-  { label: "Phase I — predio industrial",   status: "Completado",     palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
-  { label: "Phase II — muestreo de suelo",  status: "En laboratorio", palette: { bg: "var(--info-bg)",    fg: "var(--info)"    } },
-  { label: "Balance hídrico planta norte",  status: "En elaboración", palette: { bg: "var(--warning-bg)", fg: "var(--warning)" } },
-  { label: "Huella de carbono 2025",        status: "Verificada",     palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
+const projects = [
+  { label: "Geohidrología — acuífero regional",     status: "En análisis",   palette: { bg: "var(--info-bg)",    fg: "var(--info)"    } },
+  { label: "Estabilidad de taludes — corte 18 m",   status: "En ejecución",  palette: { bg: "var(--warning-bg)", fg: "var(--warning)" } },
+  { label: "Estudio hidrológico de cuenca",         status: "Entregado",     palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
+  { label: "Topografía y levantamiento UAV",        status: "Completado",    palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
 ];
 
 /* ── subservicios ───────────────────────────────────── */
 
 const subservicios = [
   {
-    href: "/servicios/estudios-ambientales/evaluacion-ambiental-fase-1-y-2/",
+    href: "/servicios/estudios-de-ingenieria/servicios-geoespaciales/",
     color: "blue",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/>
-      </svg>
-    ),
-    label: "ASTM E1527 · due diligence",
-    title: "Evaluación Ambiental de Sitio Fase I y II",
-    desc: "Due diligence ambiental bajo estándar ASTM para compraventas, fusiones y financiamientos. La Fase I documenta el historial y los indicios de contaminación; la Fase II lo confirma con muestreo y análisis de laboratorio.",
-  },
-  {
-    href: "/servicios/estudios-ambientales/remediacion-de-suelos-contaminados/",
-    color: "green",
-    icon: <Icon name="droplet" size={24} />,
-    label: "Remediación de suelos",
-    title: "Caracterización y remediación de sitios",
-    desc: "Delimitación de la pluma de contaminación, propuesta de remediación ante PROFEPA y ejecución hasta alcanzar los niveles de limpieza autorizados en suelo y agua subterránea.",
-  },
-  {
-    href: "/servicios/estudios-ambientales/control-de-ruido-perimetral/",
-    color: "blue",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/>
-      </svg>
-    ),
-    label: "Ruido NOM-081",
-    title: "Monitoreo de ruido perimetral",
-    desc: "Medición de ruido perimetral conforme a la NOM-081-SEMARNAT con sonómetros calibrados, y diseño de las medidas de control acústico cuando el resultado rebasa los límites permitidos.",
+    icon: <Icon name="drone" size={24} />,
+    label: "UAV · DEM · Ortofotomosaico · SIG",
+    title: "Servicios Geoespaciales y Drones",
+    desc: "Levantamientos fotogramétricos con UAV, modelos digitales de elevación, ortofotomosaicos y análisis SIG. La base cartográfica de precisión sobre la que se apoyan los estudios de topografía, hidrología y estabilidad.",
   },
 ];
 
@@ -95,53 +71,59 @@ const alcanceCards = [
     color: "blue",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/>
+        <path d="M2 20h20"/><path d="M4 20l7-13 4 7 2-3 3 9"/>
       </svg>
     ),
-    title: "Evaluación de sitios contaminados Phase I y II (ASTM)",
-    desc: "Due diligence bajo estándar internacional ASTM E1527 y E1903. La Fase I identifica condiciones ambientales reconocidas a partir de historial, registros y recorrido; la Fase II las confirma o descarta con muestreo y analítica acreditada.",
+    title: "Geología, geofísica y estabilidad de taludes",
+    desc: "Caracterización del subsuelo mediante métodos geológicos y geofísicos —resistividad, sísmica de refracción, tomografía eléctrica— y análisis de estabilidad de taludes naturales y de corte, con factores de seguridad y medidas de estabilización.",
   },
   {
     color: "green",
-    icon: <Icon name="flask" size={24} />,
-    title: "Caracterización de sitios bajo normativa mexicana",
-    desc: "Estudios de caracterización conforme a las NOM-138, NOM-147 y demás normas aplicables, con delimitación horizontal y vertical de la afectación y comparación contra los niveles de referencia que exige PROFEPA.",
-  },
-  {
-    color: "blue",
     icon: <Icon name="droplet" size={24} />,
-    title: "Balance hídrico",
-    desc: "Cuantificación de entradas, consumos, pérdidas y descargas de agua en la instalación. Sustenta títulos de concesión, permisos de descarga, proyectos de reúso y metas corporativas de reducción de consumo.",
-  },
-  {
-    color: "green",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 20a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5"/><path d="M12 15V7"/><path d="M12 7a4 4 0 0 1 4-4"/><path d="M12 10a4 4 0 0 0-4-4"/>
-      </svg>
-    ),
-    title: "Huella de carbono y análisis de ciclo de vida",
-    desc: "Inventario de emisiones de gases de efecto invernadero por alcances 1, 2 y 3, y evaluación del ciclo de vida de producto o proceso. Insumo para reportes de sostenibilidad, exigencias de cliente y metas de descarbonización.",
+    title: "Estudios hidrológicos y geohidrológicos",
+    desc: "Modelación de cuencas, cálculo de gastos de diseño y periodos de retorno, delimitación de zonas federales y estudios de acuífero: recarga, abatimiento y disponibilidad. Sustento técnico para concesiones de CONAGUA y para el diseño de obra hidráulica.",
   },
   {
     color: "blue",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M10 21v-6h4v6"/>
+        <rect x="1" y="6" width="15" height="12" rx="2"/><path d="M16 10h4l3 3v5h-7"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/>
       </svg>
     ),
-    title: "Diseño ambiental",
-    desc: "Ingeniería de rellenos sanitarios y celdas de confinamiento, plantas de tratamiento de agua residual y sistemas de descontaminación. Del diseño conceptual al proyecto ejecutivo con memoria de cálculo.",
+    title: "Tránsito y vialidad",
+    desc: "Aforos vehiculares, análisis de capacidad y nivel de servicio, y estudios de impacto vial para desarrollos que generan atracción de viajes. Documento requerido por autoridades municipales y estatales para autorizar proyectos de gran escala.",
+  },
+  {
+    color: "green",
+    icon: <Icon name="compass" size={24} />,
+    title: "Topografía",
+    desc: "Levantamientos topográficos con estación total y GNSS de precisión, poligonales, secciones, curvas de nivel y cálculo de volúmenes de corte y relleno. Apoyados en fotogrametría con UAV cuando la superficie o el acceso lo justifican.",
+  },
+  {
+    color: "blue",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 12h4l3-7 4 14 3-7h4"/>
+      </svg>
+    ),
+    title: "Ingeniería de agua potable y alcantarillado sanitario",
+    desc: "Diseño de redes de distribución y de recolección, líneas de conducción, tanques, rebombeos y cárcamos. Modelación hidráulica con memoria de cálculo y proyecto ejecutivo listo para revisión del organismo operador.",
   },
   {
     color: "green",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/>
+        <path d="M4 14.9A5 5 0 0 1 7 6a6 6 0 0 1 11.5 1.5 4.5 4.5 0 0 1 .5 8.9"/><path d="M8 19l-1 3"/><path d="M12 19l-1 3"/><path d="M16 19l-1 3"/>
       </svg>
     ),
-    title: "Monitoreo de emisiones",
-    desc: "Medición de emisiones a la atmósfera en fuentes fijas, monitoreo perimetral y de calidad del aire, y muestreo de descargas. Datos con trazabilidad para acreditar cumplimiento ante la autoridad.",
+    title: "Soluciones pluviales e hidráulicas",
+    desc: "Drenaje pluvial, obras de captación y conducción, lagunas de regulación, cruces y estructuras de descarga. Diseño dimensionado contra el evento de lluvia de proyecto, no contra la sección disponible.",
+  },
+  {
+    color: "blue",
+    icon: <Icon name="hardhat" size={24} />,
+    title: "Proyecto ejecutivo y supervisión de obra",
+    desc: "Planos constructivos, memorias de cálculo, especificaciones, catálogo de conceptos y volúmenes. Cuando el proyecto entra a construcción, podemos supervisar que se ejecute conforme al diseño autorizado.",
   },
 ];
 
@@ -150,28 +132,28 @@ const alcanceCards = [
 const pillars = [
   {
     n: "01",
-    title: "Conocemos los criterios de revisión de la autoridad",
-    body: "No elaboramos estudios genéricos. Nuestra experiencia acumulada con SEMARNAT, CONAGUA y CONAFOR nos permite anticipar qué revisa cada unidad evaluadora y estructurar los documentos de forma que respondan esos criterios desde la primera entrega.",
+    title: "Diseño propio, no especificaciones genéricas",
+    body: "Cada proyecto de ingeniería ambiental es único: el caudal de la PTAR, el contaminante del suelo, el perfil de ruido de la planta. Dimensionamos desde cero con los datos reales de cada sitio, no adaptamos una solución de catálogo al problema del cliente.",
   },
   {
     n: "02",
-    title: "Soporte técnico y jurídico en un mismo equipo",
-    body: "Cuando la autoridad emite observaciones —o cuando el estudio deriva en un conflicto administrativo— contamos con la capacidad jurídica para responder, recurrir o negociar. No dependes de un abogado externo que no conoce el expediente.",
+    title: "Supervisión de obra con criterio ambiental",
+    body: "Diseñar bien no es suficiente si la obra se ejecuta sin control técnico. Nuestro equipo supervisa la construcción de PTAR, celdas de confinamiento y obras de contención con el mismo rigor que el diseño —verificando materiales, procedimientos y tolerancias.",
   },
   {
     n: "03",
-    title: "Más de 25 años de estudios aprobados",
-    body: "Hemos elaborado estudios para proyectos industriales, mineros, energéticos, acuícolas e inmobiliarios en todo el país. Ese historial se traduce en metodologías depuradas y en respuestas ágiles a las observaciones de la autoridad.",
+    title: "Equipamiento propio: sonómetros, drones, laboratorio de campo",
+    body: "No dependemos de terceros para los monitoreos. Contamos con sonómetros de precisión para NOM-081, drones de levantamiento fotogramétrico y equipos de muestreo de agua, aire y suelo. Eso reduce tiempos, costos y la incertidumbre sobre la cadena de custodia.",
   },
   {
     n: "04",
-    title: "Continuidad hasta la autorización",
-    body: "El estudio no termina cuando se entrega el documento. Hacemos el seguimiento ante la autoridad, respondemos observaciones, gestionamos plazos y, si es necesario, presentamos recursos. Nuestro objetivo es la resolución favorable, no el reporte.",
+    title: "25 años de proyectos en el norte de México",
+    body: "Desde PTAR en plantas alimentarias hasta remediación de sitios con derrames de hidrocarburos, estudios hidrológicos para parques industriales y levantamientos geoespaciales en zonas mineras. El catálogo de proyectos de IRCA en ingeniería ambiental es uno de los más amplios del mercado regional.",
   },
   {
     n: "05",
-    title: "Integración con otros servicios de cumplimiento",
-    body: "Una vez que tu proyecto tiene la autorización, podemos continuar con los trámites operativos, el monitoreo de condicionantes o el seguimiento de obligaciones periódicas. Todo bajo el mismo equipo que elaboró el estudio original.",
+    title: "Integración con el cumplimiento regulatorio",
+    body: "Una PTAR bien diseñada solo es valiosa si cumple los parámetros de descarga de CONAGUA. Un estudio de ruido solo es útil si su metodología resiste una inspección de SEMARNAT. Diseñamos siempre con el marco normativo en vista, no como requisito adicional.",
   },
 ];
 
@@ -179,24 +161,24 @@ const pillars = [
 
 const faqs = [
   {
-    q: "¿Qué diferencia hay entre una MIA federal y una estatal?",
-    a: "La MIA federal la resuelve la SEMARNAT federal y aplica a proyectos listados en el artículo 28 de la LGEEPA (obra pública federal, proyectos energéticos, minería, entre otros). La MIA estatal la tramita la dependencia ambiental de cada entidad para proyectos de competencia local. En muchos casos ambas pueden requerirse. Evaluamos cuál aplica a tu proyecto desde la primera consulta.",
+    q: "¿Qué tecnologías de tratamiento de aguas residuales usan para diseñar una PTAR?",
+    a: "La selección de tecnología depende del caudal, la composición del agua residual (DBO, DQO, sólidos, nitrógeno, grasas), el espacio disponible y los parámetros de descarga exigidos. Trabajamos con sistemas de lodos activados, reactores biológicos de membrana (MBR), lagunas de oxidación, sistemas anaerobios (UASB, biodigestores) y tratamientos fisicoquímicos. El diseño parte siempre de una caracterización del afluente y de la normatividad de descarga aplicable.",
   },
   {
-    q: "¿Cuánto tiempo tarda la resolución de una MIA?",
-    a: "El plazo legal de resolución de la SEMARNAT es de 60 días hábiles para modalidad particular y 120 para regional, aunque en la práctica los plazos varían según la carga de trabajo de la unidad y la calidad del expediente. Un estudio bien estructurado reduce observaciones y acelera los tiempos reales.",
+    q: "¿Cuánto tarda un proyecto de remediación de suelos contaminados?",
+    a: "El plazo varía enormemente según el tipo y extensión de la contaminación, la tecnología seleccionada y los criterios de cierre exigidos por la autoridad. Una remediación por excavación de un sitio pequeño puede completarse en semanas; un proceso de biorremediación in situ de un derrame histórico de hidrocarburos puede requerir meses o años. El primer paso es siempre una Evaluación de Sitio (Fase II) que delimita el volumen de material contaminado y define la estrategia más efectiva.",
   },
   {
-    q: "¿Qué pasa si la autoridad emite observaciones al estudio?",
-    a: "Las observaciones son parte del proceso y no representan una negativa. Nuestro equipo responde la información adicional requerida en los plazos establecidos. En casos donde la resolución sea desfavorable, contamos con capacidad jurídica para interponer recursos administrativos o impugnar ante tribunales.",
+    q: "¿Qué mide el estudio de ruido bajo NOM-081-SEMARNAT y cuándo es obligatorio?",
+    a: "La NOM-081 establece los límites máximos de emisión de ruido en el entorno inmediato de instalaciones industriales, medidos en los linderos del predio receptor. La norma fija límites diferenciados por horario (diurno/nocturno) y tipo de zona (habitacional, mixta, comercial, industrial). Es exigible cuando una autoridad ambiental —federal o estatal— lo solicita en el contexto de una LAU, una MIA, una denuncia vecinal o una visita de inspección. En IRCA realizamos el monitoreo con sonómetros de tipo 1 y elaboramos el informe con el formato que la autoridad acepta.",
   },
   {
-    q: "¿Pueden hacer un estudio si el proyecto ya está en operación sin autorización?",
-    a: "Sí. Trabajamos en procesos de regularización para instalaciones que operan sin la MIA, ERA o ETJ correspondiente. El proceso varía según el tipo de proyecto y su impacto, y puede involucrar medidas de compensación. Es recomendable atenderlo de forma proactiva antes de una inspección de la autoridad.",
+    q: "¿Para qué sirven los levantamientos con drones en proyectos ambientales?",
+    a: "Los vuelos UAV permiten obtener en horas lo que antes requería semanas de topografía tradicional: modelos digitales de elevaciones, ortofotomosaicos de alta resolución, curvas de nivel y mapas de cobertura vegetal. En proyectos ambientales los usamos para delimitación de zonas de inundación, cálculo de volúmenes de excavación en remediaciones, seguimiento de obras de confinamiento, reconocimiento de vegetación para ETJ y MIA, y monitoreo de avance de reforestaciones.",
   },
   {
-    q: "¿Trabajan con proyectos fuera de Nuevo León?",
-    a: "Sí. Contamos con experiencia documentada en proyectos a lo largo del país, incluyendo Coahuila, Tamaulipas, Sonora, Guanajuato, Estado de México, Baja California y Veracruz, entre otras entidades. El trabajo en campo incluye visitas al sitio del proyecto.",
+    q: "¿En qué se diferencian los estudios hidrológicos y geofísicos que realizan?",
+    a: "Los estudios hidrológicos calculan el comportamiento del agua en superficie: cuánto escurre, con qué velocidad, cuáles son los caudales de diseño para una obra de drenaje o un sistema de retención. Los estudios geofísicos investigan el subsuelo sin excavar: mediante métodos sísmicos, de resistividad eléctrica o electromagnéticos podemos identificar la profundidad del nivel freático, zonas de fractura, la extensión de un plume de contaminación o la estabilidad de un sitio para una obra de confinamiento. Los dos estudios son frecuentemente complementarios en proyectos de remediación y obra civil ambiental.",
   },
 ];
 
@@ -205,31 +187,31 @@ const faqs = [
 const related = [
   {
     color: "green",
-    icon: <Icon name="shield-check" size={22} />,
-    title: "Auditoría y Diagnóstico Ambiental",
-    desc: "Evaluación del cumplimiento normativo de tu instalación antes o después de obtener la autorización de impacto ambiental.",
-    href: "/servicios/auditoria-ambiental/",
+    icon: <Icon name="flask" size={22} />,
+    title: "Estudios Ambientales",
+    desc: "Caracterización de sitios, balance hídrico y diseño ambiental que se apoyan en la ingeniería de soporte de esta área.",
+    href: "/servicios/estudios-ambientales/",
   },
   {
     color: "blue",
     icon: <Icon name="file-text" size={22} />,
     title: "Estudios, Trámites y Administración de Autorizaciones",
-    desc: "Gestión de LAU, COA, permisos CONAGUA y demás obligaciones operativas que se derivan de las condicionantes de tu autorización.",
+    desc: "MIA, CUSTF y concesiones de agua que se sustentan en los estudios hidrológicos, geohidrológicos y topográficos.",
     href: "/servicios/tramites-y-autorizaciones-ambientales/",
   },
   {
     color: "green",
-    icon: <Icon name="scale" size={22} />,
-    title: "Servicios Legales y Atención de Autoridades",
-    desc: "Representación y defensa jurídica cuando la autoridad emite resoluciones desfavorables, impone medidas correctivas o inicia procedimientos administrativos.",
-    href: "/servicios/servicios-legales-y-atencion-de-autoridades/",
+    icon: <Icon name="eye" size={22} />,
+    title: "Consultoría, Administración y Supervisión Ambiental",
+    desc: "Supervisión y vigilancia durante la ejecución de la obra proyectada, con seguimiento de condicionantes en campo.",
+    href: "/servicios/consultoria-y-supervision-ambiental/",
   },
   {
     color: "blue",
-    icon: <Icon name="drone" size={22} />,
-    title: "Estudios de Ingeniería",
-    desc: "Soluciones técnicas para el control de emisiones, tratamiento de aguas y manejo de residuos que forman parte de las condicionantes del estudio.",
-    href: "/servicios/estudios-de-ingenieria/",
+    icon: <Icon name="shield-check" size={22} />,
+    title: "Auditoría y Diagnóstico Ambiental",
+    desc: "Diagnóstico de cumplimiento que identifica qué obras o adecuaciones de ingeniería requiere tu instalación.",
+    href: "/servicios/auditoria-ambiental/",
   },
 ];
 
@@ -237,7 +219,7 @@ const related = [
    PAGE
 ════════════════════════════════════════════════════════ */
 
-export default function EstudiosAmbientales() {
+export default function EstudiosDeIngenieria() {
   return (
     <>
       {/* ── HERO ──────────────────────────────────────── */}
@@ -251,12 +233,13 @@ export default function EstudiosAmbientales() {
       >
         <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.22 }} aria-hidden="true">
           <defs>
-            <pattern id="topoEstudios" width="44" height="44" patternUnits="userSpaceOnUse">
-              <path d="M0 22 Q11 13 22 22 T44 22" stroke="#C7E2F0" strokeWidth="1" fill="none" />
-              <path d="M0 33 Q11 24 22 33 T44 33" stroke="#DCEFCB" strokeWidth="1" fill="none" />
+            <pattern id="topoIng" width="44" height="44" patternUnits="userSpaceOnUse">
+              <path d="M0 22 Q11 13 22 22 T44 22" stroke="#DCEFCB" strokeWidth="1" fill="none" />
+              <path d="M0 33 Q11 24 22 33 T44 33" stroke="#C7E2F0" strokeWidth="1" fill="none" />
+              <path d="M0 11 Q11 2 22 11 T44 11"  stroke="#DCEFCB" strokeWidth="0.6" fill="none" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#topoEstudios)" />
+          <rect width="100%" height="100%" fill="url(#topoIng)" />
         </svg>
 
         <div
@@ -265,20 +248,20 @@ export default function EstudiosAmbientales() {
         >
           {/* Copy */}
           <div>
-            <Eyebrow color="var(--irca-blue-700)">Estudios Ambientales</Eyebrow>
+            <Eyebrow>Estudios de Ingeniería</Eyebrow>
             <h1 style={{
               fontFamily: "var(--font-display)", fontWeight: 900,
               fontSize: "clamp(32px,4.5vw,56px)", letterSpacing: "-0.03em", lineHeight: 1.05,
               margin: "18px 0 20px", color: "var(--ink-1000)",
             }}>
-              Caracterizar el sitio, medir el impacto y{" "}
-              <span style={{ color: "var(--irca-green)" }}>diseñar la solución</span>.
+              La ingeniería de soporte que un proyecto necesita:{" "}
+              <span style={{ color: "var(--irca-green)" }}>del subsuelo a la red hidráulica</span>.
             </h1>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 14px" }}>
-              Evaluación de sitios contaminados bajo metodología ASTM y normativa mexicana, balance hídrico, huella de carbono, análisis de ciclo de vida y diseño ambiental.
+              Geología, geofísica, estabilidad de taludes, hidrología, geohidrología, tránsito y vialidad, topografía, agua potable y soluciones pluviales.
             </p>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 32px" }}>
-              Estudios que sostienen decisiones de inversión y de remediación: cuánto pasivo hay, qué tan grave es y qué se hace al respecto. No usamos plantillas.
+              Estudios ejecutables, no solo entregables: cada uno se hace para que alguien pueda construir, autorizar o decidir con él.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -288,32 +271,32 @@ export default function EstudiosAmbientales() {
                 Solicitar información <Icon name="arrow-right" size={17} />
               </a>
               <a
-                href="#subservicios"
+                href="#incluye"
                 style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#fff", color: "var(--fg-1)", border: "1px solid var(--border-strong)", padding: "14px 24px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 16, borderRadius: 10, textDecoration: "none" }}
               >
-                Ver estudios
+                Qué incluye
               </a>
             </div>
             <div className="flex flex-wrap gap-6 mt-8" style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--fg-4)" }}>
-              <span>SEMARNAT</span><span>CONAGUA</span><span>CONAFOR</span><span>Normatividad estatal</span>
+              <span>Geotecnia</span><span>Hidrología</span><span>Topografía</span><span>Vialidad</span>
             </div>
           </div>
 
-          {/* Project portfolio card — hidden on mobile */}
+          {/* Projects status card */}
           <div className="hidden md:block">
             <div style={{ background: "#fff", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 24, boxShadow: "var(--shadow-3)" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 11, color: "var(--fg-4)", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase" }}>
                 <span style={{ width: 8, height: 8, borderRadius: 8, background: "var(--irca-green)", boxShadow: "0 0 0 4px var(--irca-green-50)" }} />
-                Portafolio activo de estudios
+                Proyectos activos
               </div>
               <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, color: "var(--fg-1)", letterSpacing: "-0.02em", marginTop: 14, lineHeight: 1.15 }}>
-                Proyectos en gestión · 2024
+                Estudios en campo y gabinete
               </div>
               <div style={{ height: 1, background: "var(--border-soft)", margin: "18px 0" }} />
               <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                {portfolio.map(({ label, status, palette }) => (
+                {projects.map(({ label, status, palette }) => (
                   <div key={label} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0" }}>
-                    <span style={{ fontSize: 14, fontWeight: 600, color: "var(--fg-2)" }}>{label}</span>
+                    <span style={{ fontSize: 13, fontWeight: 600, color: "var(--fg-2)" }}>{label}</span>
                     <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "3px 9px", borderRadius: 999, background: palette.bg, color: palette.fg, fontSize: 11, fontWeight: 600, flexShrink: 0, marginLeft: 8 }}>
                       <span style={{ width: 6, height: 6, borderRadius: 999, background: palette.fg }} /> {status}
                     </span>
@@ -321,16 +304,16 @@ export default function EstudiosAmbientales() {
                 ))}
               </div>
               <div style={{ height: 1, background: "var(--border-soft)", margin: "14px 0" }} />
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
                 {[
-                  { label: "Phase I/II", n: "5" },
-                  { label: "Caracterización", n: "3" },
-                  { label: "Balance hídrico", n: "2" },
-                  { label: "Huella de carbono", n: "4" },
+                  { label: "Estudios hidrol.", n: "24" },
+                  { label: "Taludes analiz.",  n: "16" },
+                  { label: "Vuelos UAV",       n: "45+" },
+                  { label: "Levant. topogr.",  n: "60+" },
                 ].map(({ label, n }) => (
-                  <div key={label} style={{ background: "var(--bg-2)", borderRadius: 10, padding: "12px 14px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <span style={{ fontSize: 13, color: "var(--fg-3)", fontWeight: 500 }}>{label}</span>
-                    <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, letterSpacing: "-0.02em", color: "var(--irca-blue)" }}>{n}</span>
+                  <div key={label} style={{ background: "var(--bg-2)", borderRadius: 10, padding: "10px 12px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span style={{ fontSize: 12, color: "var(--fg-3)", fontWeight: 500 }}>{label}</span>
+                    <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.02em", color: "var(--irca-green)" }}>{n}</span>
                   </div>
                 ))}
               </div>
@@ -345,21 +328,21 @@ export default function EstudiosAmbientales() {
           <div>
             <Eyebrow>Sobre el Servicio</Eyebrow>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 28px", color: "var(--ink-1000)" }}>
-              Qué resuelve un estudio ambiental bien elaborado
+              Ingeniería que resuelve el problema, no solo el expediente
             </h2>
             <ImgPlaceholder
               ratio="16/9"
-              label="Trabajo de campo / revisión documental"
-              sub="Reemplazar con foto real del equipo elaborando estudios, en campo o en gabinete."
+              label="Estudio de ingeniería en campo"
+              sub="Reemplazar con foto real de levantamiento topográfico, sondeo geofísico, aforo vial o vuelo con dron."
             />
             <p style={{ fontSize: 11, color: "var(--fg-4)", letterSpacing: "0.04em", margin: "8px 0 0" }}>Placeholder · pendiente material fotográfico del cliente</p>
           </div>
           <div>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 22px" }}>
-              Un estudio ambiental responde con datos lo que de otro modo se decide por intuición: qué contaminación existe en un predio y hasta dónde llega, cuánta agua consume realmente una planta, cuánto carbono emite una operación o qué tan viable es una solución de tratamiento. De esa evidencia dependen decisiones caras —comprar o no un activo, remediar o litigar, invertir o rediseñar— y equivocarse ahí cuesta mucho más que el estudio.
+              Detrás de casi todo proyecto ambiental o de infraestructura hay una pregunta de ingeniería que alguien tiene que responder: cómo se comporta el subsuelo, cuánta agua escurre en una lluvia extraordinaria, si el talud aguanta, cuánto tránsito genera el desarrollo, por dónde va la red. Cuando esas respuestas se estiman en lugar de calcularse, el problema no aparece en el escritorio: aparece en obra o en la revisión de la autoridad.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: 0 }}>
-              En IRCA Consultores trabajamos con estándar internacional ASTM y con la normativa mexicana aplicable, equipo propio de campo y laboratorios acreditados. Y no nos detenemos en el diagnóstico: cuando el estudio revela un problema, diseñamos la solución técnica que sigue —remediación, tratamiento, confinamiento o control— con memoria de cálculo y viabilidad de ejecución.
+              En IRCA Consultores los estudios de ingeniería parten siempre del sitio: sondeos, levantamientos y aforos antes de abrir el software. Contamos con equipo propio de campo, estación total, GNSS y drones para fotogrametría, y entregamos memoria de cálculo y planos con el nivel de detalle que exige una revisión técnica —no un documento que sólo sirve para cumplir un requisito.
             </p>
             <a
               href="#contacto"
@@ -371,51 +354,45 @@ export default function EstudiosAmbientales() {
         </div>
       </section>
 
-      {/* ── SUBSERVICIOS (sección extra) ─────────────── */}
-      <section id="subservicios" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-2)", borderTop: "1px solid var(--border-soft)" }}>
+      {/* ── ESPECIALIDADES (subservicios) ─────────────── */}
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-2)", borderTop: "1px solid var(--border-soft)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <Eyebrow color="var(--irca-blue-700)">Estudios especializados</Eyebrow>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start mt-4 mb-12">
-            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(28px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: 0, color: "var(--ink-1000)" }}>
-              Cuatro estudios, una sola firma especializada
+          <Eyebrow color="var(--irca-blue-700)">Especialidad destacada</Eyebrow>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-4 mb-10">
+            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.05, margin: 0, color: "var(--ink-1000)" }}>
+              Tres servicios con página propia por su profundidad técnica
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>
-              Cada tipo de estudio responde a una autoridad, una normatividad y un proceso de revisión distinto. Elaboramos los cuatro, y en proyectos complejos los coordinamos de forma simultánea para evitar cuellos de botella en la autorización.
+              Remediación de suelos, control de ruido y servicios geoespaciales son disciplinas con equipamiento propio, metodología específica y clientes que buscan exactamente esa especialidad —merecen su propio espacio.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {subservicios.map(({ href, color, icon, label, title, desc }) => (
               <a
                 key={href}
                 href={href}
-                style={{ textDecoration: "none", display: "flex", flexDirection: "column" }}
+                style={{ display: "flex", flexDirection: "column", gap: 16, background: "#fff", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 28, boxShadow: "var(--shadow-1)", textDecoration: "none" }}
               >
-                <article style={{
-                  background: "#fff", border: "1px solid var(--border-soft)", borderRadius: 16,
-                  padding: 28, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 14,
-                  height: "100%", transition: "box-shadow 150ms, border-color 150ms",
-                  cursor: "pointer",
-                }}>
-                  <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12 }}>
-                    <div style={{
-                      width: 50, height: 50, borderRadius: 12, flexShrink: 0,
-                      background: color === "green" ? "var(--irca-green-50)" : "var(--irca-blue-50)",
-                      color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)",
-                      display: "inline-flex", alignItems: "center", justifyContent: "center",
-                    }}>
-                      {icon}
-                    </div>
-                    <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.06em", color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)", background: color === "green" ? "var(--irca-green-50)" : "var(--irca-blue-50)", padding: "4px 10px", borderRadius: 999, whiteSpace: "nowrap" }}>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
+                  <div style={{
+                    width: 52, height: 52, borderRadius: 12, flexShrink: 0,
+                    background: color === "green" ? "var(--irca-green-50)" : "var(--irca-blue-50)",
+                    color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)",
+                    display: "inline-flex", alignItems: "center", justifyContent: "center",
+                  }}>
+                    {icon}
+                  </div>
+                  <div>
+                    <div style={{ display: "inline-block", padding: "2px 8px", borderRadius: 999, background: color === "green" ? "var(--irca-green-50)" : "var(--irca-blue-50)", color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)", fontSize: 11, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 6 }}>
                       {label}
-                    </span>
+                    </div>
+                    <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.015em", color: "var(--fg-1)", margin: 0, lineHeight: 1.2 }}>{title}</h3>
                   </div>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, letterSpacing: "-0.015em", color: "var(--fg-1)", lineHeight: 1.2, margin: 0 }}>{title}</h3>
-                  <p style={{ fontSize: 14, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>{desc}</p>
-                  <div style={{ marginTop: "auto", display: "inline-flex", alignItems: "center", gap: 6, color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)", fontWeight: 600, fontSize: 14 }}>
-                    Ver estudio completo <Icon name="arrow-right" size={14} />
-                  </div>
-                </article>
+                </div>
+                <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>{desc}</p>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 6, color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)", fontWeight: 600, fontSize: 14, marginTop: "auto" }}>
+                  Ver servicio <Icon name="arrow-right" size={14} />
+                </div>
               </a>
             ))}
           </div>
@@ -428,10 +405,10 @@ export default function EstudiosAmbientales() {
           <Eyebrow>Alcance del servicio</Eyebrow>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-4 mb-11">
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.05, margin: 0, color: "var(--ink-1000)" }}>
-              ¿Qué incluyen los estudios ambientales de IRCA?
+              ¿Qué proyectos de ingeniería ambiental realizamos?
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>
-              El alcance varía según el tipo de proyecto, su localización, el régimen de impacto y la autoridad competente. Definimos el estudio correcto para tu caso desde la primera consulta, sin cobrar por la orientación inicial.
+              Cubrimos el espectro completo de la ingeniería ambiental aplicada: tratamiento de agua, confinamiento de residuos, control acústico, monitoreo, vegetación y obra civil con criterio ambiental.
             </p>
           </div>
 
@@ -439,7 +416,7 @@ export default function EstudiosAmbientales() {
             {alcanceCards.map(({ color, icon, title, desc }) => (
               <article
                 key={title}
-                style={{ background: "var(--bg-2)", border: "1px solid var(--border-soft)", borderRadius: 14, padding: 24, display: "flex", flexDirection: "column", gap: 14 }}
+                style={{ background: "var(--bg-2)", border: "1px solid var(--border-soft)", borderRadius: 14, padding: 24, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 14 }}
               >
                 <div style={{
                   width: 46, height: 46, borderRadius: 10,
@@ -455,11 +432,11 @@ export default function EstudiosAmbientales() {
             ))}
 
             {/* Dark CTA card */}
-            <article style={{ background: "linear-gradient(160deg,var(--bg-deep),#0f2c47)", border: "1px solid var(--bg-deep)", borderRadius: 14, padding: 24, display: "flex", flexDirection: "column", gap: 12, justifyContent: "center" }}>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.01em", color: "#fff", lineHeight: 1.25 }}>El tipo de estudio lo define el proyecto</div>
-              <p style={{ fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.72)", margin: 0 }}>Cuéntanos el alcance y la ubicación de tu proyecto y determinamos qué estudio requieres y ante qué autoridad.</p>
+            <article style={{ background: "linear-gradient(160deg,var(--bg-deep),#0f2c47)", border: "1px solid var(--bg-deep)", borderRadius: 14, padding: 24, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 12, justifyContent: "center" }}>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.01em", color: "#fff", lineHeight: 1.25 }}>El diseño empieza siempre en el campo</div>
+              <p style={{ fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.72)", margin: 0 }}>Cuéntanos el problema técnico y hacemos una visita de reconocimiento inicial sin costo.</p>
               <a href="#contacto" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "#fff", fontWeight: 600, fontSize: 14, textDecoration: "none", marginTop: 4 }}>
-                Consultar sin costo <Icon name="arrow-right" size={16} />
+                Solicitar información <Icon name="arrow-right" size={16} />
               </a>
             </article>
           </div>
@@ -473,27 +450,27 @@ export default function EstudiosAmbientales() {
           style={{ maxWidth: 1280, margin: "0 auto" }}
         >
           <div>
-            <Eyebrow color="var(--irca-blue-700)">Para quién es</Eyebrow>
+            <Eyebrow>Para quién es</Eyebrow>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 20px", color: "var(--ink-1000)" }}>
-              ¿Cuándo necesitas un estudio ambiental?
+              ¿Cuándo necesitas un estudio de ingeniería?
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 28px" }}>
-              Cualquier proyecto que pueda generar impacto significativo en el entorno requiere algún tipo de autorización ambiental previa. Más allá de la obligación legal, contar con el estudio correcto desde el inicio protege la inversión, los plazos y la reputación de la operación. Es especialmente recomendable en estos escenarios:
+              Los proyectos de ingeniería ambiental surgen tanto en contextos de cumplimiento regulatorio como de expansión, modernización o respuesta a contingencias. En todos los casos, la calidad técnica del proyecto define si la solución funciona —y si la autoridad la acepta.
             </p>
             <div style={{ display: "grid", gap: 14 }}>
-              <CheckItem>Vas a comprar, vender o financiar un activo industrial y necesitas cuantificar el pasivo ambiental del sitio.</CheckItem>
-              <CheckItem>Sospechas contaminación en suelo o agua subterránea y necesitas delimitarla antes de que lo haga la autoridad.</CheckItem>
-              <CheckItem>Tu corporativo o tus clientes te exigen huella de carbono, análisis de ciclo de vida o reporte de sostenibilidad.</CheckItem>
-              <CheckItem>Necesitas sustentar una concesión de agua, un permiso de descarga o un proyecto de reúso con un balance hídrico.</CheckItem>
-              <CheckItem>Requieres diseñar un relleno sanitario, una planta de tratamiento o un sistema de descontaminación.</CheckItem>
-              <CheckItem>Debes acreditar cumplimiento con monitoreo de emisiones, descargas o ruido perimetral ante la autoridad.</CheckItem>
+              <CheckItem>Vas a construir sobre un terreno cuyo subsuelo no está caracterizado y necesitas saber qué hay debajo.</CheckItem>
+              <CheckItem>Tienes un talud natural o de corte con señales de inestabilidad y requieres el factor de seguridad y su estabilización.</CheckItem>
+              <CheckItem>La autoridad te pide un estudio hidrológico o de impacto vial para autorizar el proyecto.</CheckItem>
+              <CheckItem>Necesitas un levantamiento topográfico georreferenciado o volúmenes de corte y relleno confiables.</CheckItem>
+              <CheckItem>Vas a tramitar una concesión de agua subterránea y requieres el estudio geohidrológico que la sustente.</CheckItem>
+              <CheckItem>Tu desarrollo requiere red de agua potable, alcantarillado sanitario o una solución de drenaje pluvial.</CheckItem>
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <ImgPlaceholder
               ratio="4/3"
-              label="Trabajo de campo / muestreo"
-              sub="Reemplazar con foto real del equipo en campo (muestreo de suelo, recorrido, documentación)."
+              label="Levantamiento y trabajo de gabinete"
+              sub="Reemplazar con foto real de campo: estación total, sondeo geofísico, aforo vehicular o modelado hidráulico."
             />
             <p style={{ fontSize: 11, color: "var(--fg-4)", letterSpacing: "0.04em", margin: 0 }}>Placeholder · pendiente material fotográfico del cliente</p>
           </div>
@@ -501,7 +478,7 @@ export default function EstudiosAmbientales() {
       </section>
 
       {/* ── SOBRE IRCA ────────────────────────────────── */}
-      <section id="nosotros" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--irca-green-50)" }}>
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div className="grid grid-cols-1 md:[grid-template-columns:0.9fr_1.1fr] gap-10 md:gap-16 items-center">
             <div>
@@ -509,7 +486,7 @@ export default function EstudiosAmbientales() {
               <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 28px", color: "var(--ink-1000)" }}>
                 Sobre IRCA Consultores
               </h2>
-              <div style={{ border: "1.5px dashed var(--irca-green-700)", borderRadius: 14, background: "#fff", aspectRatio: "4/3", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10, color: "var(--fg-4)", textAlign: "center", padding: 24 }}>
+              <div style={{ border: "1.5px dashed var(--irca-green-700)", borderRadius: 14, background: "var(--bg-2)", aspectRatio: "4/3", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10, color: "var(--fg-4)", textAlign: "center", padding: 24 }}>
                 <Icon name="building" size={32} />
                 <div style={{ fontSize: 13, fontWeight: 600, color: "var(--fg-3)" }}>Equipo / oficinas IRCA</div>
                 <div style={{ fontSize: 12, lineHeight: 1.5, maxWidth: "30ch" }}>Reemplazar con foto real del equipo multidisciplinario o de las instalaciones de la firma.</div>
@@ -546,10 +523,9 @@ export default function EstudiosAmbientales() {
                 <div style={{ fontSize: 15, lineHeight: 1.6, opacity: 0.78 }}>{body}</div>
               </div>
             ))}
-            {/* Glass CTA card */}
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: 16, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 14, padding: 28 }}>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.015em", lineHeight: 1.25 }}>Tu proyecto no puede esperar a que la autoridad regrese observaciones.</div>
-              <a href="#contacto" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--irca-green)", color: "#fff", border: "1px solid transparent", padding: "12px 20px", fontWeight: 600, fontSize: 14, borderRadius: 8, textDecoration: "none", alignSelf: "flex-start" }}>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.015em", lineHeight: 1.25 }}>Una solución diseñada en gabinete sin datos de campo es una apuesta.</div>
+              <a href="#contacto" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--irca-green)", color: "#fff", padding: "12px 20px", fontWeight: 600, fontSize: 14, borderRadius: 8, textDecoration: "none", alignSelf: "flex-start" }}>
                 Solicitar información <Icon name="arrow-right" size={16} />
               </a>
             </div>
@@ -562,7 +538,7 @@ export default function EstudiosAmbientales() {
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <Eyebrow color="var(--irca-blue-700)">Preguntas frecuentes</Eyebrow>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(24px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 36px", color: "var(--ink-1000)" }}>
-            Preguntas frecuentes sobre estudios ambientales
+            Preguntas frecuentes sobre estudios de ingeniería
           </h2>
           <ServiceFAQ items={faqs} />
         </div>
@@ -602,11 +578,11 @@ export default function EstudiosAmbientales() {
 
       {/* ── CTA + FORM ───────────────────────────────── */}
       <ServiceContactSection
-        headline={<>Decidir sin datos sobre un sitio <span style={{ color: "var(--irca-green)" }}>siempre sale más caro</span>.</>}
-        copy="Cuéntanos qué necesitas resolver —un predio con historial dudoso, una meta corporativa de carbono, un balance de agua o el diseño de una solución de tratamiento— y te orientamos sobre el estudio que corresponde y su alcance real."
-        formTitle="Solicitar estudio ambiental"
-        motivoLabel="Tipo de estudio requerido"
-        motivoOptions={["Evaluación de sitio Phase I o II (ASTM)", "Caracterización de sitio contaminado", "Balance hídrico", "Huella de carbono / ciclo de vida", "Diseño ambiental (relleno, PTAR)", "Monitoreo de emisiones o ruido", "No estoy seguro / orientación general"]}
+        headline={<>Un proyecto sólido empieza <span style={{ color: "var(--irca-green)" }}>con los datos correctos del sitio</span>.</>}
+        copy="Cuéntanos el reto técnico que tienes —subsuelo, taludes, escurrimientos, vialidad, topografía o red hidráulica— y definimos el estudio que corresponde y el trabajo de campo que implica."
+        formTitle="Consultar estudio de ingeniería"
+        motivoLabel="Tipo de proyecto"
+        motivoOptions={["Geología, geofísica o taludes", "Estudio hidrológico", "Estudio geohidrológico", "Tránsito y vialidad", "Topografía / levantamiento UAV", "Agua potable y alcantarillado", "Soluciones pluviales", "Otro"]}
       />
     </>
   );

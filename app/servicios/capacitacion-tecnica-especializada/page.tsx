@@ -4,8 +4,8 @@ import ServiceFAQ from "@/components/servicios/ServiceFAQ";
 import ServiceContactSection from "@/components/servicios/ServiceContactSection";
 
 export const metadata: Metadata = {
-  title: "Capacitación Ambiental — Cursos ISO 14001 y Auditoría Ambiental",
-  description: "Cursos de ISO 14001, ISO 45001, auditoría ambiental, legislación, residuos industriales, inspección STPS y RETC para empresas. Capacitación impartida por consultores en activo. IRCA Consultores.",
+  title: "Capacitación Técnica Especializada",
+  description: "Cursos de sistemas de gestión ISO, atención de visitas de inspección, manejo de residuos, respuesta a emergencias, auditorías de cliente, legislación SHE y normas STPS y Protección Civil. IRCA Consultores.",
 };
 
 /* ── shared helpers ─────────────────────────────────── */
@@ -45,10 +45,10 @@ function CheckItem({ children }: { children: React.ReactNode }) {
 /* ── hero card data ─────────────────────────────────── */
 
 const courses = [
-  { label: "ISO 14001 — Implementación y auditoría", participants: "18 inscritos", palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
-  { label: "Atención a visitas de inspección STPS",  participants: "12 inscritos", palette: { bg: "var(--info-bg)",    fg: "var(--info)"    } },
-  { label: "RETC y obligaciones de reporte",         participants: "9 inscritos",  palette: { bg: "var(--warning-bg)", fg: "var(--warning)" } },
-  { label: "Residuos industriales — NOM vigentes",   participants: "14 inscritos", palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
+  { label: "Sistemas de gestión ISO 14001 / 45001",  participants: "18 inscritos", palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
+  { label: "Atención de visitas de inspección",       participants: "12 inscritos", palette: { bg: "var(--info-bg)",    fg: "var(--info)"    } },
+  { label: "Respuesta a emergencias y brigadas",      participants: "22 inscritos", palette: { bg: "var(--warning-bg)", fg: "var(--warning)" } },
+  { label: "Manejo de residuos — NOM vigentes",       participants: "14 inscritos", palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
 ];
 
 /* ── alcance cards ──────────────────────────────────── */
@@ -58,61 +58,49 @@ const alcanceCards = [
     color: "green",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/>
-      </svg>
-    ),
-    title: "Manejo integral y minimización de residuos industriales",
-    desc: "Curso orientado a responsables de planta y supervisores: clasificación de residuos conforme a la LGPGIR, obligaciones del generador, manejo de manifiestos, almacén temporal y plan de manejo. Incluye NOM-052, NOM-053 y NOM-055 aplicables.",
-  },
-  {
-    color: "blue",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-      </svg>
-    ),
-    title: "Legislación y administración ambiental",
-    desc: "Panorama estructurado del marco normativo ambiental en México: LGEEPA, LGPGIR, Ley de Aguas Nacionales, LGVS y sus reglamentos. Competencias federales vs. estatales, sanciones, recursos y tendencias regulatorias recientes.",
-  },
-  {
-    color: "green",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/>
       </svg>
     ),
-    title: "Sistemas de gestión: ISO 14001 e ISO 45001",
-    desc: "Implementación práctica y preparación para auditoría de Sistemas de Gestión Ambiental (ISO 14001:2015) y de Seguridad y Salud en el Trabajo (ISO 45001:2018). Pensamiento basado en riesgos, ciclo PHVA, indicadores de desempeño y técnicas de auditoría interna.",
+    title: "Sistemas de gestión (ISO)",
+    desc: "Interpretación de requisitos, implementación y formación de auditores internos en ISO 14001 e ISO 45001. Programas dirigidos tanto al equipo que sostiene el sistema como a la dirección que debe revisarlo.",
   },
   {
     color: "blue",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 21V8l9-5 9 5v13"/><path d="M9 21V12h6v9"/>
-      </svg>
-    ),
-    title: "Atención a visitas de inspección federal y estatal",
-    desc: "Curso práctico para personal directivo, supervisores y responsables ambientales: derechos del inspeccionado, protocolo de atención al inspector, manejo del acta de inspección, qué documentar, qué no proporcionar y cómo actuar ante una clausura o medida de seguridad.",
+    icon: <Icon name="shield-check" size={24} />,
+    title: "Atención de visitas de inspección",
+    desc: "Qué facultades tiene el inspector, qué puede y qué no puede solicitarse, cómo se firma un acta circunstanciada y qué consecuencias tiene cada manifestación. Formación práctica para quien recibe a la autoridad en la puerta.",
   },
   {
     color: "green",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+        <path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6l1 14h10l1-14"/><path d="M10 11v5"/><path d="M14 11v5"/>
       </svg>
     ),
-    title: "Contingencias y respuesta a emergencias ambientales",
-    desc: "Formación para brigadas y responsables de protección civil: identificación de escenarios de emergencia ambiental, protocolos de contención de derrames, notificación a la autoridad, activación del Plan de Respuesta a Emergencias y documentación del incidente.",
+    title: "Manejo de residuos y respuesta a emergencias",
+    desc: "Clasificación, envasado, señalización, bitácoras y manifiestos de residuos peligrosos y de manejo especial; y formación de brigadas para atención de derrames, fugas, incendio y evacuación, con simulacros documentados.",
   },
   {
     color: "blue",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/>
+        <path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/>
       </svg>
     ),
-    title: "RETC y obligaciones de reporte ambiental",
-    desc: "Taller sobre el Registro de Emisiones y Transferencia de Contaminantes (RETC): cómo levantar el inventario de emisiones de tu instalación, qué datos van en la COA, cómo se calcula el factor de emisión y cómo se presenta el reporte sin incurrir en inconsistencias.",
+    title: "Auditorías de cliente y de servicios",
+    desc: "Preparación del personal para las auditorías de segunda parte que ejecutan clientes y corporativos: qué evidencia se solicita, cómo se responde un hallazgo y cómo se documenta el cierre de una no conformidad.",
+  },
+  {
+    color: "green",
+    icon: <Icon name="scale" size={24} />,
+    title: "Legislación aplicable en materia de SHE",
+    desc: "Marco normativo ambiental, de seguridad y de salud en el trabajo aplicado a la operación real: qué obliga a quién, qué se reporta, en qué plazos y qué consecuencias tiene el incumplimiento en cada materia.",
+  },
+  {
+    color: "blue",
+    icon: <Icon name="hardhat" size={24} />,
+    title: "Normas STPS y Protección Civil",
+    desc: "Cursos para acreditar los requisitos de capacitación que exigen las NOM-STPS —trabajos en altura, espacios confinados, sustancias químicas, bloqueo y etiquetado, electricidad— y la formación que requiere el Programa Interno de Protección Civil.",
   },
 ];
 
@@ -184,23 +172,23 @@ const related = [
   {
     color: "blue",
     icon: <Icon name="file-text" size={22} />,
-    title: "Trámites y Licencias Ambientales",
+    title: "Estudios, Trámites y Administración de Autorizaciones",
     desc: "Conocer el proceso de gestión de trámites facilita que el personal de la empresa aporte la información correcta en tiempo y forma.",
-    href: "/servicios/tramites-y-licencias-ambientales/",
+    href: "/servicios/tramites-y-autorizaciones-ambientales/",
   },
   {
     color: "green",
     icon: <Icon name="hardhat" size={22} />,
-    title: "SHE / Seguridad y Salud Ocupacional",
+    title: "Auditoría y Diagnóstico Seguridad y Salud",
     desc: "Los sistemas ISO 45001 y los programas de prevención requieren capacitación específica para brigadas, supervisores y Comisiones Mixtas.",
-    href: "/servicios/seguridad-y-salud-ocupacional/",
+    href: "/servicios/auditoria-seguridad-y-salud/",
   },
   {
     color: "blue",
     icon: <Icon name="scale" size={22} />,
-    title: "Derecho Ambiental",
+    title: "Servicios Legales y Atención de Autoridades",
     desc: "Saber cómo atender una inspección y qué derechos tiene el inspeccionado es la primera línea de defensa jurídica ambiental.",
-    href: "/servicios/derecho-ambiental/",
+    href: "/servicios/servicios-legales-y-atencion-de-autoridades/",
   },
 ];
 
@@ -208,7 +196,7 @@ const related = [
    PAGE
 ════════════════════════════════════════════════════════ */
 
-export default function CapacitacionAmbiental() {
+export default function CapacitacionTecnicaEspecializada() {
   return (
     <>
       {/* ── HERO ──────────────────────────────────────── */}
@@ -236,21 +224,21 @@ export default function CapacitacionAmbiental() {
         >
           {/* Copy */}
           <div>
-            <Eyebrow>Capacitación Ambiental</Eyebrow>
+            <Eyebrow>Capacitación Técnica Especializada</Eyebrow>
             <h1 style={{
               fontFamily: "var(--font-display)", fontWeight: 900,
               fontSize: "clamp(32px,4.5vw,56px)", letterSpacing: "-0.03em", lineHeight: 1.05,
               margin: "18px 0 20px", color: "var(--ink-1000)",
             }}>
-              Cursos de{" "}
-              <span style={{ color: "var(--irca-green)" }}>ISO 14001, auditoría ambiental</span>{" "}
-              y cumplimiento NOM para empresas.
+              Capacitación impartida por{" "}
+              <span style={{ color: "var(--irca-green)" }}>quienes hacen el trabajo</span>,
+              no por quienes solo lo enseñan.
             </h1>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 14px" }}>
-              Capacitación impartida por consultores que hacen el trabajo: los instructores de IRCA son los mismos que auditan instalaciones, tramitan licencias y defienden clientes ante PROFEPA. No teoría —práctica aplicada a tu planta.
+              Sistemas de gestión ISO, atención de visitas de inspección, manejo de residuos, respuesta a emergencias, auditorías de cliente, legislación SHE y normas STPS y Protección Civil.
             </p>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 32px" }}>
-              Modalidad in company con casos adaptados a tu proceso, o grupos abiertos con otras empresas de la región. Constancias con validez ante la STPS.
+              Los instructores son los mismos consultores que auditan instalaciones, tramitan autorizaciones y defienden clientes ante la autoridad. Modalidad in company o en grupos abiertos, con constancias con validez ante la STPS.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -396,7 +384,7 @@ export default function CapacitacionAmbiental() {
           <div>
             <Eyebrow>Para quién es</Eyebrow>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 20px", color: "var(--ink-1000)" }}>
-              ¿Cuándo necesitas capacitación ambiental en tu empresa?
+              ¿Cuándo necesitas capacitación técnica en tu empresa?
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 28px" }}>
               La capacitación ambiental tiene más valor cuando es oportuna: antes de una inspección, durante una implementación de sistema de gestión, o justo después de identificar que el equipo no sabe cómo responder a una situación regulatoria. Estos son los momentos más comunes:
@@ -454,7 +442,7 @@ export default function CapacitacionAmbiental() {
           ))}
         </svg>
         <div className="relative" style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <Eyebrow color="rgba(255,255,255,0.7)">Por qué IRCA</Eyebrow>
+          <Eyebrow color="rgba(255,255,255,0.7)">Por qué IRCA Consultores</Eyebrow>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(28px,4vw,48px)", letterSpacing: "-0.025em", lineHeight: 1.05, margin: "16px 0 48px", color: "#fff", maxWidth: "22ch" }}>
             ¿Por qué contratar a{" "}
             <span style={{ color: "var(--irca-green)" }}>IRCA Consultores</span>?
@@ -523,10 +511,10 @@ export default function CapacitacionAmbiental() {
       {/* ── CTA + FORM ───────────────────────────────── */}
       <ServiceContactSection
         headline={<>La capacitación que cambia comportamientos <span style={{ color: "var(--irca-green)" }}>la imparte alguien que conoce el terreno</span>.</>}
-        copy="Cuéntanos qué necesita aprender tu equipo —o qué situación regulatoria se aproxima— y diseñamos un programa específico para tu empresa. Sin compromiso, con respuesta en 24 horas hábiles."
+        copy="Cuéntanos qué necesita aprender tu equipo —o qué situación regulatoria se aproxima— y diseñamos un programa específico para tu empresa, impartido por los mismos especialistas que ejecutan los proyectos."
         formTitle="Solicitar información sobre cursos"
         motivoLabel="Curso de interés"
-        motivoOptions={["ISO 14001 — Sistemas de gestión ambiental", "ISO 45001 — Seguridad y salud", "Auditoría ambiental interna", "Atención a visitas de inspección", "Residuos industriales (NOM-STPS)", "RETC y obligaciones de reporte (COA)", "Contingencias y emergencias", "Legislación ambiental", "Programa a la medida"]}
+        motivoOptions={["Sistemas de gestión ISO", "Atención de visitas de inspección", "Manejo de residuos", "Respuesta a emergencias y brigadas", "Auditorías de cliente y de servicios", "Legislación aplicable en SHE", "Normas STPS y Protección Civil", "Programa a la medida"]}
       />
     </>
   );

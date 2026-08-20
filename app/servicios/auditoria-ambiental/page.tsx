@@ -5,7 +5,7 @@ import ServiceContactSection from "@/components/servicios/ServiceContactSection"
 
 export const metadata: Metadata = {
   title: "Auditoría y Diagnóstico Ambiental",
-  description: "Auditoría ambiental integral en México. Matrices de requerimientos legales, PGI, diagnóstico de cumplimiento normativo ante SEMARNAT, PROFEPA y CONAGUA. IRCA Consultores, Monterrey.",
+  description: "Auditorías de diagnóstico y cumplimiento, Industria Limpia (PROFEPA), inventarios de emisiones, corrientes de residuos, auditorías de cliente y de producto e ISO 14001. IRCA Consultores, Monterrey.",
 };
 
 /* ── shared helpers ─────────────────────────────────── */
@@ -57,24 +57,48 @@ const alcanceCards = [
   {
     color: "green",
     icon: <Icon name="shield-check" size={24} />,
-    title: "Auditoría ambiental",
-    desc: "Revisión integral del cumplimiento de tu instalación frente a la normatividad vigente. Evaluamos permisos, licencias, reportes y obligaciones operativas para determinar tu nivel real de conformidad, no el que se asume en papel.",
+    title: "Auditorías de diagnóstico y de cumplimiento",
+    desc: "La auditoría de diagnóstico establece tu línea base: qué obligaciones te aplican y en qué estado están. La de cumplimiento verifica, sobre esa base, el grado real de conformidad de la instalación. Ambas terminan en hallazgos jerarquizados por riesgo legal y operativo, no en un listado plano.",
   },
   {
     color: "blue",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.5" y2="16.5" />
+        <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/>
       </svg>
     ),
-    title: "Diagnóstico ambiental integral",
-    desc: "Una fotografía completa del estado ambiental de tu sitio: emisiones, descargas, residuos, suelo y obligaciones administrativas. El diagnóstico te da el punto de partida ordenado para tomar decisiones con datos y no con suposiciones.",
+    title: "Auditoría voluntaria de Industria Limpia (PROFEPA)",
+    desc: "Acompañamiento en el Programa Nacional de Auditoría Ambiental: diagnóstico previo, plan de acción, atención de la auditoría con auditor aprobado y seguimiento hasta obtener o renovar el Certificado de Industria Limpia.",
   },
   {
     color: "green",
-    icon: <Icon name="scale" size={24} />,
-    title: "Matrices de requerimientos legales (SHE)",
-    desc: "Construimos el inventario preciso de obligaciones ambientales, de seguridad y salud que aplican a tu operación según su giro y ubicación. Esta matriz es la columna vertebral del cumplimiento: lo que no está identificado, no se puede gestionar.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/>
+      </svg>
+    ),
+    title: "Inventarios de emisiones y corrientes de residuos",
+    desc: "Cuantificación de las emisiones a la atmósfera por fuente y del flujo completo de residuos peligrosos, de manejo especial y sólidos urbanos. Es el insumo que sostiene la COA, el RETC y cualquier plan de manejo, y la base para detectar sobredeclaraciones o subregistros.",
+  },
+  {
+    color: "blue",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/>
+      </svg>
+    ),
+    title: "Auditorías de cliente y de producto",
+    desc: "Preparación y atención de las auditorías de segunda parte que exigen clientes, corporativos y cadenas de suministro, así como la verificación ambiental de producto. Llegamos a la auditoría con el expediente listo y acompañamos el cierre de hallazgos.",
+  },
+  {
+    color: "green",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/>
+      </svg>
+    ),
+    title: "Estándares internacionales de autogestión (ISO 14001)",
+    desc: "Diagnóstico de brechas, implementación y auditoría interna del Sistema de Gestión Ambiental bajo ISO 14001:2015, hasta dejar la organización lista para la certificación con organismo acreditado.",
   },
   {
     color: "blue",
@@ -86,17 +110,6 @@ const alcanceCards = [
     ),
     title: "Plan de gestión de incumplimientos (PGI)",
     desc: "Cada hallazgo se convierte en una acción concreta, con responsable, prioridad y horizonte de tiempo. El PGI ordena el camino para cerrar brechas de forma realista, atacando primero lo que representa mayor riesgo legal y operativo.",
-  },
-  {
-    color: "green",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/>
-        <line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/>
-      </svg>
-    ),
-    title: "Calendario ambiental anual y seguimiento",
-    desc: "Mapeamos todos tus vencimientos y obligaciones recurrentes en un calendario regulatorio claro. Así dejas de operar reaccionando a las fechas límite y pasas a anticiparlas con tiempo de maniobra.",
   },
 ];
 
@@ -159,32 +172,32 @@ const faqs = [
 
 const related = [
   {
-    color: "blue",
-    icon: <Icon name="file-text" size={22} />,
-    title: "Trámites y Licencias Ambientales",
-    desc: "Gestionamos tus LAU, COA, permisos CONAGUA y demás trámites para cerrar las brechas que detecta la auditoría y mantener tu operación en regla.",
-    href: "/servicios/tramites-y-licencias-ambientales/",
-  },
-  {
-    color: "green",
-    icon: <Icon name="scale" size={22} />,
-    title: "Derecho Ambiental y Defensa Jurídica",
-    desc: "Representación y defensa ante PROFEPA, SEMARNAT y CONAGUA cuando un hallazgo deriva en inspección, emplazamiento o procedimiento administrativo.",
-    href: "/servicios/derecho-ambiental/",
-  },
-  {
-    color: "blue",
-    icon: <Icon name="flask" size={22} />,
-    title: "Estudios Ambientales",
-    desc: "Manifestaciones de Impacto Ambiental, Estudios de Riesgo y estudios técnicos justificativos para sustentar y regularizar tu operación.",
-    href: "/servicios/estudios-ambientales/",
-  },
-  {
     color: "green",
     icon: <Icon name="shield-check" size={22} />,
     title: "Certificación Industria Limpia (PROFEPA)",
-    desc: "Acompañamiento integral para obtener el reconocimiento de Industria Limpia, partiendo del diagnóstico que arroja tu auditoría.",
-    href: "/servicios/",
+    desc: "Acompañamiento integral para obtener o renovar el reconocimiento de Industria Limpia, partiendo del diagnóstico que arroja tu auditoría.",
+    href: "/servicios/auditoria-ambiental/industria-limpia/",
+  },
+  {
+    color: "blue",
+    icon: <Icon name="check" size={22} stroke={2.2} />,
+    title: "ISO 14001 y Sistemas de Gestión Ambiental",
+    desc: "Implementación y auditoría del Sistema de Gestión Ambiental bajo ISO 14001:2015, desde el diagnóstico de brechas hasta la certificación.",
+    href: "/servicios/auditoria-ambiental/iso-14001/",
+  },
+  {
+    color: "green",
+    icon: <Icon name="file-text" size={22} />,
+    title: "Estudios, Trámites y Administración de Autorizaciones",
+    desc: "Gestionamos las autorizaciones y obligaciones que cierran las brechas detectadas en la auditoría y mantienen tu operación en regla.",
+    href: "/servicios/tramites-y-autorizaciones-ambientales/",
+  },
+  {
+    color: "blue",
+    icon: <Icon name="scale" size={22} />,
+    title: "Servicios Legales y Atención de Autoridades",
+    desc: "Representación y defensa cuando un hallazgo deriva en inspección, procedimiento sancionador o requerimiento de la autoridad.",
+    href: "/servicios/servicios-legales-y-atencion-de-autoridades/",
   },
 ];
 
@@ -455,7 +468,7 @@ export default function AuditoriaAmbiental() {
           ))}
         </svg>
         <div className="relative" style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <Eyebrow color="rgba(255,255,255,0.7)">Por qué IRCA</Eyebrow>
+          <Eyebrow color="rgba(255,255,255,0.7)">Por qué IRCA Consultores</Eyebrow>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(28px,4vw,48px)", letterSpacing: "-0.025em", lineHeight: 1.05, margin: "16px 0 48px", color: "#fff", maxWidth: "22ch" }}>
             ¿Por qué contratar a{" "}
             <span style={{ color: "var(--irca-green)" }}>IRCA Consultores</span>?
