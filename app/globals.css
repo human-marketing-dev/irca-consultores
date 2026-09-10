@@ -53,6 +53,13 @@
   --border-strong: #D2DAE3;
   --border-focus:  #0080C0;
 
+  /* Superficie translúcida de la barra fija (necesita alfa, no sirve --bg-1) */
+  --bg-nav: rgba(255, 255, 255, 0.92);
+
+  /* Lienzo para logotipos de terceros: son arte oscuro sobre blanco,
+     así que no se invierte con el tema. */
+  --bg-logo: #FFFFFF;
+
   /* Typography — Satoshi loaded via @import above; DM Sans via next/font CSS var */
   --font-display: "Satoshi", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Consolas, monospace;
@@ -69,6 +76,8 @@
   --easing-standard: cubic-bezier(0.2, 0.6, 0.2, 1);
 }
 
+:root { color-scheme: light; }
+
 body {
   color: var(--fg-2);
   background: var(--bg-1);
@@ -78,7 +87,123 @@ body {
   font-feature-settings: "ss01", "cv11";
 }
 
+/* ── Tema oscuro ─────────────────────────────────────────
+   Solo se redefinen los tokens de contexto: los componentes
+   no saben en qué tema están. La marca (verde/azul) se conserva;
+   sus tintes de fondo pasan a transparencias sobre el fondo oscuro. */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --fg-1: #F2F5F8;
+    --fg-2: #DCE4EC;
+    --fg-3: #A6B5C4;
+    --fg-4: #7C8EA0;
+    --ink-1000: #F2F5F8;
+
+    --bg-1: #111A24;
+    --bg-2: #0B131B;
+    --bg-3: #18242F;
+    --bg-deep: #060D14;
+
+    --border-soft:   #23303D;
+    --border-strong: #33424F;
+
+    --irca-green-700: #96CE6E;
+    --irca-green-50:  rgba(111, 176, 63, 0.14);
+    --irca-green-100: rgba(111, 176, 63, 0.28);
+
+    --irca-blue:      #3AA8E0;
+    --irca-blue-700:  #5FBDEC;
+    --irca-blue-50:   rgba(0, 128, 192, 0.18);
+    --irca-blue-100:  rgba(0, 128, 192, 0.34);
+
+    --success:    #8FC96A;
+    --success-bg: rgba(111, 176, 63, 0.16);
+    --info:       #5FBDEC;
+    --info-bg:    rgba(0, 128, 192, 0.18);
+    --warning:    #E5A73F;
+    --warning-bg: rgba(199, 122, 12, 0.20);
+    --danger:     #E8735C;
+    --danger-bg:  rgba(176, 51, 30, 0.22);
+
+    --ink-100: #23303D;
+    --bg-nav: rgba(17, 26, 36, 0.92);
+    --bg-logo: #E9EEF3;
+
+    --shadow-1: 0 1px 0 rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.32);
+    --shadow-2: 0 1px 0 rgba(0,0,0,0.26), 0 4px 12px -2px rgba(0,0,0,0.44);
+    --shadow-3: 0 1px 0 rgba(0,0,0,0.3), 0 12px 32px -8px rgba(0,0,0,0.55);
+  }
+}
+
+/* La preferencia explícita del usuario gana sobre la del sistema. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --fg-1: #F2F5F8;
+  --fg-2: #DCE4EC;
+  --fg-3: #A6B5C4;
+  --fg-4: #7C8EA0;
+  --ink-1000: #F2F5F8;
+
+  --bg-1: #111A24;
+  --bg-2: #0B131B;
+  --bg-3: #18242F;
+  --bg-deep: #060D14;
+
+  --border-soft:   #23303D;
+  --border-strong: #33424F;
+
+  --irca-green-700: #96CE6E;
+  --irca-green-50:  rgba(111, 176, 63, 0.14);
+  --irca-green-100: rgba(111, 176, 63, 0.28);
+
+  --irca-blue:      #3AA8E0;
+  --irca-blue-700:  #5FBDEC;
+  --irca-blue-50:   rgba(0, 128, 192, 0.18);
+  --irca-blue-100:  rgba(0, 128, 192, 0.34);
+
+  --success:    #8FC96A;
+  --success-bg: rgba(111, 176, 63, 0.16);
+  --info:       #5FBDEC;
+  --info-bg:    rgba(0, 128, 192, 0.18);
+  --warning:    #E5A73F;
+  --warning-bg: rgba(199, 122, 12, 0.20);
+  --danger:     #E8735C;
+  --danger-bg:  rgba(176, 51, 30, 0.22);
+
+  --ink-100: #23303D;
+  --bg-nav: rgba(17, 26, 36, 0.92);
+  --bg-logo: #E9EEF3;
+
+  --shadow-1: 0 1px 0 rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.32);
+  --shadow-2: 0 1px 0 rgba(0,0,0,0.26), 0 4px 12px -2px rgba(0,0,0,0.44);
+  --shadow-3: 0 1px 0 rgba(0,0,0,0.3), 0 12px 32px -8px rgba(0,0,0,0.55);
+}
+
 ::selection {
   background: var(--irca-green-100);
-  color: var(--ink-1000);
+  color: var(--fg-1);
+}
+
+/* Logotipos monocromos sobre el fondo de página (hero).
+   En oscuro se invierten para que la marca no desaparezca; ya están en
+   escala de grises, así que invertir no altera ningún color de marca. */
+.logo-mono {
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .logo-mono {
+    filter: grayscale(1) invert(1) brightness(1.7);
+    opacity: 0.6;
+  }
+}
+
+:root[data-theme="dark"] .logo-mono {
+  filter: grayscale(1) invert(1) brightness(1.7);
+  opacity: 0.6;
 }

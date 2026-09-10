@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppBubble from "@/components/ui/WhatsAppBubble";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -42,13 +43,23 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Se ejecuta antes del primer pintado para aplicar el tema guardado sin parpadeo.
+ * Debe usar la misma clave que components/ui/ThemeToggle.tsx.
+ */
+const themeScript = `(function(){try{var t=localStorage.getItem("irca-theme");if(t==="dark"||t==="light"){document.documentElement.setAttribute("data-theme",t)}}catch(e){}})()`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={dmSans.variable}>
+    <html lang="es" className={dmSans.variable} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="antialiased">
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <WhatsAppBubble />
       </body>
     </html>
   );

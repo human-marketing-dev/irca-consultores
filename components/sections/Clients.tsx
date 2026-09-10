@@ -24,7 +24,7 @@ const clients = [
 
 export default function Clients() {
   return (
-    <section id="clients" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff" }}>
+    <section id="clients" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
@@ -40,7 +40,7 @@ export default function Clients() {
           <a
             href="/experiencia/"
             className="self-start md:self-auto"
-            style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#fff", color: "var(--fg-1)", border: "1px solid var(--border-strong)", padding: "10px 18px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 14, borderRadius: 8, textDecoration: "none", whiteSpace: "nowrap" }}
+            style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--bg-1)", color: "var(--fg-1)", border: "1px solid var(--border-strong)", padding: "10px 18px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 14, borderRadius: 8, textDecoration: "none", whiteSpace: "nowrap" }}
           >
             Casos de estudio <Icon name="arrow-up-right" size={15} />
           </a>
@@ -58,7 +58,7 @@ export default function Clients() {
               return (
                 <div
                   key={name}
-                  style={{ padding: "16px 12px", display: "flex", alignItems: "center", justifyContent: "center", background: "#fff", borderColor: "var(--border-soft)" }}
+                  style={{ padding: "16px 12px", display: "flex", alignItems: "center", justifyContent: "center", background: "var(--bg-logo)", borderColor: "var(--border-soft)" }}
                   className={[
                     sm.lastCol ? "border-r-0"     : "border-r",
                     sm.lastRow ? "border-b-0"     : "border-b",

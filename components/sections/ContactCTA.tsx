@@ -36,7 +36,7 @@ const WHATSAPP_URL =
 const inputStyle: React.CSSProperties = {
   border: "1px solid var(--border-strong)", borderRadius: 8,
   padding: "10px 12px", fontFamily: "var(--font-body)", fontSize: 14,
-  color: "var(--fg-1)", background: "#fff", width: "100%", boxSizing: "border-box",
+  color: "var(--fg-1)", background: "var(--bg-1)", width: "100%", boxSizing: "border-box",
   outline: "none",
 };
 
@@ -44,7 +44,7 @@ export default function ContactCTA() {
   const [sent, setSent] = useState(false);
 
   return (
-    <section id="contact" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "linear-gradient(180deg, var(--bg-2) 0%, #fff 100%)" }}>
+    <section id="contact" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "linear-gradient(180deg, var(--bg-2) 0%, var(--bg-1) 100%)" }}>
       <div
         className="grid grid-cols-1 md:[grid-template-columns:1.05fr_1fr] gap-10 md:gap-16 items-start"
         style={{ maxWidth: 1280, margin: "0 auto" }}
@@ -111,7 +111,7 @@ export default function ContactCTA() {
               href="/contacto/"
               style={{
                 display: "inline-flex", alignItems: "center", gap: 9,
-                background: "#fff", color: "var(--fg-1)", border: "1px solid var(--border-strong)",
+                background: "var(--bg-1)", color: "var(--fg-1)", border: "1px solid var(--border-strong)",
                 padding: "12px 20px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 15,
                 borderRadius: 10, textDecoration: "none",
               }}
@@ -125,7 +125,7 @@ export default function ContactCTA() {
         {/* Form */}
         <form
           onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-          style={{ background: "#fff", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 24, boxShadow: "var(--shadow-2)" }}
+          style={{ background: "var(--bg-1)", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 24, boxShadow: "var(--shadow-2)" }}
         >
           {sent ? (
             <div style={{ padding: "40px 8px", textAlign: "center" }}>

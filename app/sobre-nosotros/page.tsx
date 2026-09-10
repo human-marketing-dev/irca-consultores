@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Icon from "@/components/ui/Icon";
+import Photo from "@/components/ui/Photo";
+import CoverageMap from "@/components/sections/CoverageMap";
 
 export const metadata: Metadata = {
   title: "Sobre Nosotros — IRCA Consultores",
@@ -14,18 +16,6 @@ function Eyebrow({ children, color = "var(--irca-green-700)" }: { children: Reac
     <div style={{ display: "inline-flex", alignItems: "center", gap: 10, fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", color }}>
       <span style={{ width: 24, height: 2, background: color, display: "inline-block", flexShrink: 0 }} />
       {children}
-    </div>
-  );
-}
-
-function ImgPlaceholder({ ratio, label, sub }: { ratio: string; label: string; sub: string }) {
-  return (
-    <div style={{ aspectRatio: ratio, border: "1.5px dashed var(--border-strong)", borderRadius: 14, background: "var(--bg-2)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10, color: "var(--fg-4)", textAlign: "center", padding: 24 }}>
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" />
-      </svg>
-      <div style={{ fontSize: 13, fontWeight: 600, color: "var(--fg-3)" }}>{label}</div>
-      <div style={{ fontSize: 12, lineHeight: 1.5, maxWidth: "30ch" }}>{sub}</div>
     </div>
   );
 }
@@ -60,7 +50,7 @@ const directors = [
     color: "blue",
     name: "C.P. Alma Patricia Fragoso Gutiérrez",
     title: "Socia Fundadora — Dirección Administrativa y Sistemas de Calidad",
-    bio: "Contadora Pública y socia fundadora de IRCA Consultores. Amplia trayectoria en gestión administrativa dentro de la industria de transformación, en empresas de iniciativa privada y entidades de carácter nacional. Especialista en implementación y soporte de sistemas de calidad orientados a la administración empresarial, garantizando la solidez operativa, la trazabilidad financiera y el cumplimiento de estándares de gestión en todos los proyectos de IRCA.",
+    bio: "Contadora Pública y socia fundadora de IRCA Consultores. Amplia trayectoria en gestión administrativa dentro de la industria de transformación, en empresas de iniciativa privada y entidades de carácter nacional. Especialista en implementación y soporte de sistemas de calidad orientados a la administración empresarial, garantizando la solidez operativa, la trazabilidad financiera y el cumplimiento de estándares de gestión en todos los proyectos de IRCA Consultores.",
     tags: ["Sistemas de calidad", "Gestión financiera", "Auditoría contable"],
   },
   {
@@ -167,15 +157,15 @@ export default function SobreNosotros() {
         className="px-4 sm:px-6"
         style={{
           position: "relative", overflow: "hidden",
-          background: "linear-gradient(180deg,#FFFFFF 0%,var(--bg-2) 100%)",
+          background: "linear-gradient(180deg,var(--bg-1) 0%,var(--bg-2) 100%)",
           paddingTop: "clamp(56px,8vw,92px)", paddingBottom: "clamp(48px,7vw,84px)",
         }}
       >
         <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.18 }} aria-hidden="true">
           <defs>
             <pattern id="topoNosotros" width="44" height="44" patternUnits="userSpaceOnUse">
-              <path d="M0 22 Q11 13 22 22 T44 22" stroke="#DCEFCB" strokeWidth="1" fill="none" />
-              <path d="M0 33 Q11 24 22 33 T44 33" stroke="#C7E2F0" strokeWidth="1" fill="none" />
+              <path d="M0 22 Q11 13 22 22 T44 22" style={{ stroke: "var(--irca-green-100)" }} strokeWidth="1" fill="none" />
+              <path d="M0 33 Q11 24 22 33 T44 33" style={{ stroke: "var(--irca-blue-100)" }} strokeWidth="1" fill="none" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#topoNosotros)" />
@@ -196,7 +186,7 @@ export default function SobreNosotros() {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {stats.map(({ n, label, sub }) => (
-              <div key={label} style={{ background: "#fff", border: "1px solid var(--border-soft)", borderRadius: 14, padding: "20px 24px", boxShadow: "var(--shadow-1)" }}>
+              <div key={label} style={{ background: "var(--bg-1)", border: "1px solid var(--border-soft)", borderRadius: 14, padding: "20px 24px", boxShadow: "var(--shadow-1)" }}>
                 <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(28px,3vw,40px)", letterSpacing: "-0.03em", color: "var(--irca-green)", lineHeight: 1 }}>{n}</div>
                 <div style={{ fontWeight: 700, fontSize: 14, color: "var(--fg-1)", marginTop: 8, lineHeight: 1.25 }}>{label}</div>
                 <div style={{ fontSize: 12, color: "var(--fg-4)", marginTop: 4 }}>{sub}</div>
@@ -207,15 +197,18 @@ export default function SobreNosotros() {
       </section>
 
       {/* ── QUIÉNES SOMOS ────────────────────────────── */}
-      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff", borderTop: "1px solid var(--border-soft)" }}>
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)", borderTop: "1px solid var(--border-soft)" }}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center" style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div>
             <Eyebrow>Nuestra historia</Eyebrow>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 28px", color: "var(--ink-1000)" }}>
               Una firma construida sobre expedientes reales
             </h2>
-            <ImgPlaceholder ratio="16/9" label="Equipo IRCA / oficinas" sub="Reemplazar con foto corporativa del equipo o las instalaciones de IRCA Consultores." />
-            <p style={{ fontSize: 11, color: "var(--fg-4)", letterSpacing: "0.04em", margin: "8px 0 0" }}>Placeholder · pendiente material fotográfico</p>
+            <Photo
+              ratio="16/9"
+              src="/images/nosotros/nosotros-equipo-irca.webp"
+              alt="Equipo de IRCA Consultores"
+            />
           </div>
           <div>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 20px" }}>
@@ -245,7 +238,7 @@ export default function SobreNosotros() {
 
           {/* Misión + Visión */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <div style={{ background: "#fff", border: "1px solid var(--border-soft)", borderRadius: 14, padding: 32, boxShadow: "var(--shadow-1)" }}>
+            <div style={{ background: "var(--bg-1)", border: "1px solid var(--border-soft)", borderRadius: 14, padding: 32, boxShadow: "var(--shadow-1)" }}>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
                 <div style={{ width: 36, height: 36, borderRadius: 8, background: "var(--irca-green-50)", color: "var(--irca-green-700)", display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
                   <Icon name="check" size={18} stroke={2.5} />
@@ -272,7 +265,7 @@ export default function SobreNosotros() {
           {/* Values grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {values.map(({ icon, label, desc }) => (
-              <div key={label} style={{ background: "#fff", border: "1px solid var(--border-soft)", borderRadius: 14, padding: 24, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 12 }}>
+              <div key={label} style={{ background: "var(--bg-1)", border: "1px solid var(--border-soft)", borderRadius: 14, padding: 24, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 12 }}>
                 <div style={{ width: 42, height: 42, borderRadius: 10, background: "var(--irca-green-50)", color: "var(--irca-green-700)", display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
                   <Icon name={icon as any} size={20} />
                 </div>
@@ -285,7 +278,7 @@ export default function SobreNosotros() {
       </section>
 
       {/* ── EQUIPO DIRECTIVO ──────────────────────────── */}
-      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff" }}>
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <Eyebrow>El equipo</Eyebrow>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mt-4 mb-10">
@@ -293,7 +286,7 @@ export default function SobreNosotros() {
               Equipo directivo
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>
-              Más de 12 profesionales certificados en ingeniería ambiental, derecho, biología, geociencias y seguridad industrial. El liderazgo de IRCA combina experiencia de campo con solidez jurídica.
+              Más de 12 profesionales certificados en ingeniería ambiental, derecho, biología, geociencias y seguridad industrial. El liderazgo de IRCA Consultores combina experiencia de campo con solidez jurídica.
             </p>
           </div>
 
@@ -321,7 +314,7 @@ export default function SobreNosotros() {
                 <p style={{ fontSize: 14, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>{bio}</p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
                   {tags.map(t => (
-                    <span key={t} style={{ padding: "3px 10px", borderRadius: 999, background: "#fff", border: "1px solid var(--border-soft)", fontSize: 11, fontWeight: 600, color: "var(--fg-3)" }}>{t}</span>
+                    <span key={t} style={{ padding: "3px 10px", borderRadius: 999, background: "var(--bg-1)", border: "1px solid var(--border-soft)", fontSize: 11, fontWeight: 600, color: "var(--fg-3)" }}>{t}</span>
                   ))}
                 </div>
               </div>
@@ -397,7 +390,7 @@ export default function SobreNosotros() {
       </section>
 
       {/* ── EXPERIENCIA — PROYECTOS LARGO PLAZO ──────── */}
-      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff" }}>
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <Eyebrow>Trayectoria</Eyebrow>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start mt-4 mb-10">
@@ -420,7 +413,7 @@ export default function SobreNosotros() {
               </thead>
               <tbody>
                 {longTermProjects.map(({ client, services, period }, i) => (
-                  <tr key={i} style={{ borderBottom: "1px solid var(--border-soft)", background: i % 2 === 0 ? "#fff" : "var(--bg-2)" }}>
+                  <tr key={i} style={{ borderBottom: "1px solid var(--border-soft)", background: i % 2 === 0 ? "var(--bg-1)" : "var(--bg-2)" }}>
                     <td style={{ padding: "14px 16px", fontWeight: 600, color: "var(--fg-1)", lineHeight: 1.35, verticalAlign: "top", minWidth: 240, maxWidth: 320 }}>{client}</td>
                     <td style={{ padding: "14px 16px", color: "var(--fg-3)", lineHeight: 1.5, verticalAlign: "top" }}>{services}</td>
                     <td style={{ padding: "14px 16px", whiteSpace: "nowrap", verticalAlign: "top", textAlign: "right" }}>
@@ -455,7 +448,7 @@ export default function SobreNosotros() {
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
                 {phaseStudies.map((s, i) => (
-                  <div key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start", padding: "10px 14px", background: "#fff", borderRadius: 10, border: "1px solid var(--border-soft)" }}>
+                  <div key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start", padding: "10px 14px", background: "var(--bg-1)", borderRadius: 10, border: "1px solid var(--border-soft)" }}>
                     <div style={{ width: 6, height: 6, borderRadius: 999, background: "var(--irca-blue)", flexShrink: 0, marginTop: 6 }} />
                     <span style={{ fontSize: 13, color: "var(--fg-2)", lineHeight: 1.45 }}>{s}</span>
                   </div>
@@ -474,7 +467,7 @@ export default function SobreNosotros() {
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 28 }}>
                 {ruido.map((c, i) => (
-                  <div key={i} style={{ display: "flex", gap: 12, alignItems: "center", padding: "12px 16px", background: "#fff", borderRadius: 10, border: "1px solid var(--border-soft)" }}>
+                  <div key={i} style={{ display: "flex", gap: 12, alignItems: "center", padding: "12px 16px", background: "var(--bg-1)", borderRadius: 10, border: "1px solid var(--border-soft)" }}>
                     <div style={{ width: 8, height: 8, borderRadius: 999, background: "var(--irca-green)", flexShrink: 0 }} />
                     <span style={{ fontSize: 14, fontWeight: 600, color: "var(--fg-1)" }}>{c}</span>
                   </div>
@@ -485,7 +478,7 @@ export default function SobreNosotros() {
               <Eyebrow color="var(--irca-blue-700)">Autoridades ante las que actuamos</Eyebrow>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 16 }}>
                 {authorities.map(a => (
-                  <span key={a} style={{ padding: "6px 14px", borderRadius: 999, background: "#fff", border: "1px solid var(--border-soft)", fontSize: 12, fontWeight: 700, color: "var(--fg-2)" }}>{a}</span>
+                  <span key={a} style={{ padding: "6px 14px", borderRadius: 999, background: "var(--bg-1)", border: "1px solid var(--border-soft)", fontSize: 12, fontWeight: 700, color: "var(--fg-2)" }}>{a}</span>
                 ))}
               </div>
             </div>
@@ -494,7 +487,7 @@ export default function SobreNosotros() {
       </section>
 
       {/* ── COBERTURA ─────────────────────────────────── */}
-      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff", borderTop: "1px solid var(--border-soft)" }}>
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)", borderTop: "1px solid var(--border-soft)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
             <div>
@@ -530,9 +523,11 @@ export default function SobreNosotros() {
                 </div>
               </div>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <ImgPlaceholder ratio="4/3" label="Mapa de cobertura / proyectos nacionales" sub="Reemplazar con mapa o infografía de cobertura nacional de IRCA Consultores." />
-              <p style={{ fontSize: 11, color: "var(--fg-4)", letterSpacing: "0.04em", margin: 0 }}>Placeholder · pendiente infografía de cobertura</p>
+            <div style={{ border: "1px solid var(--border-soft)", borderRadius: 14, background: "var(--bg-1)", padding: "22px 24px" }}>
+              <div style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--fg-4)", marginBottom: 14 }}>
+                Mapa de cobertura
+              </div>
+              <CoverageMap />
             </div>
           </div>
         </div>
@@ -554,11 +549,11 @@ export default function SobreNosotros() {
               href="/contacto/"
               style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--irca-green)", color: "#fff", padding: "14px 28px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 16, borderRadius: 10, textDecoration: "none", boxShadow: "var(--shadow-2)" }}
             >
-              Contactar a IRCA <Icon name="arrow-right" size={17} />
+              Contactar a IRCA Consultores <Icon name="arrow-right" size={17} />
             </Link>
             <Link
               href="/servicios/"
-              style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#fff", color: "var(--fg-1)", border: "1px solid var(--border-strong)", padding: "14px 24px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 16, borderRadius: 10, textDecoration: "none" }}
+              style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--bg-1)", color: "var(--fg-1)", border: "1px solid var(--border-strong)", padding: "14px 24px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 16, borderRadius: 10, textDecoration: "none" }}
             >
               Ver todos los servicios
             </Link>

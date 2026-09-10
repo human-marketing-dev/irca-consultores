@@ -91,12 +91,12 @@ export default function Experiencia() {
   return (
     <>
       {/* ── HERO ──────────────────────────────────────── */}
-      <section className="px-4 sm:px-6 pt-16 md:pt-24 pb-0" style={{ background: "linear-gradient(180deg,#fff 0%,var(--bg-2) 100%)", position: "relative", overflow: "hidden" }}>
+      <section className="px-4 sm:px-6 pt-16 md:pt-24 pb-0" style={{ background: "linear-gradient(180deg,var(--bg-1) 0%,var(--bg-2) 100%)", position: "relative", overflow: "hidden" }}>
         <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.2, pointerEvents: "none" }} aria-hidden="true">
           <defs>
             <pattern id="topo-exp" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M0 20 Q10 12 20 20 T40 20" stroke="#C7E2F0" strokeWidth="1" fill="none"/>
-              <path d="M0 30 Q10 22 20 30 T40 30" stroke="#DCEFCB" strokeWidth="1" fill="none"/>
+              <path d="M0 20 Q10 12 20 20 T40 20" style={{ stroke: "var(--irca-blue-100)" }} strokeWidth="1" fill="none"/>
+              <path d="M0 30 Q10 22 20 30 T40 30" style={{ stroke: "var(--irca-green-100)" }} strokeWidth="1" fill="none"/>
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#topo-exp)"/>
@@ -121,7 +121,7 @@ export default function Experiencia() {
           {/* Stat row */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px" style={{ background: "var(--border-soft)", borderRadius: 16, overflow: "hidden", boxShadow: "var(--shadow-2)" }}>
             {heroStats.map(({ n, label, sub }, i) => (
-              <div key={n} style={{ background: "#fff", padding: "24px 22px" }}>
+              <div key={n} style={{ background: "var(--bg-1)", padding: "24px 22px" }}>
                 <div style={{
                   fontFamily: "var(--font-display)", fontWeight: 900,
                   fontSize: "clamp(36px,4vw,52px)", letterSpacing: "-0.04em", lineHeight: 1,
@@ -146,7 +146,7 @@ export default function Experiencia() {
       </section>
 
       {/* ── TABLA DE PROYECTOS ────────────────────────── */}
-      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff", borderTop: "1px solid var(--border-soft)" }}>
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)", borderTop: "1px solid var(--border-soft)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start mb-10">
             <div>
@@ -175,7 +175,7 @@ export default function Experiencia() {
               </thead>
               <tbody>
                 {longTermProjects.map(({ client, services, period, sector }, i) => (
-                  <tr key={i} style={{ borderBottom: "1px solid var(--border-soft)", background: i % 2 === 0 ? "#fff" : "var(--bg-2)" }}>
+                  <tr key={i} style={{ borderBottom: "1px solid var(--border-soft)", background: i % 2 === 0 ? "var(--bg-1)" : "var(--bg-2)" }}>
                     <td style={{ padding: "14px 18px", fontWeight: 600, color: "var(--fg-1)", lineHeight: 1.35, verticalAlign: "top", minWidth: 220, maxWidth: 300 }}>{client}</td>
                     <td style={{ padding: "14px 18px", color: "var(--fg-3)", lineHeight: 1.5, verticalAlign: "top", maxWidth: 360 }}>{services}</td>
                     <td style={{ padding: "14px 18px", verticalAlign: "top", whiteSpace: "nowrap" }}>
@@ -206,7 +206,7 @@ export default function Experiencia() {
         <div className="relative" style={{ maxWidth: 1280, margin: "0 auto" }}>
           <Eyebrow color="rgba(255,255,255,0.7)">Capacidades especializadas</Eyebrow>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,42px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 48px", color: "#fff", maxWidth: "28ch" }}>
-            Especialidades que distinguen la práctica de IRCA
+            Especialidades que distinguen la práctica de IRCA Consultores
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
@@ -280,7 +280,7 @@ export default function Experiencia() {
                 Ocho sectores. Una sola firma.
               </h2>
               <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--fg-3)", margin: "0 0 32px", maxWidth: "50ch" }}>
-                La versatilidad técnico-jurídica de IRCA nos permite atender operaciones de sectores muy
+                La versatilidad técnico-jurídica de IRCA Consultores nos permite atender operaciones de sectores muy
                 distintos entre sí, cada uno con su propia normatividad, calendario de cumplimiento y
                 perfil de riesgo ambiental.
               </p>
@@ -300,7 +300,7 @@ export default function Experiencia() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {sectores.map(({ label, color, desc }) => (
                 <div key={label} style={{
-                  background: "#fff", border: "1px solid var(--border-soft)",
+                  background: "var(--bg-1)", border: "1px solid var(--border-soft)",
                   borderRadius: 12, padding: "16px 18px",
                   display: "flex", flexDirection: "column", gap: 6,
                 }}>
@@ -321,7 +321,7 @@ export default function Experiencia() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────── */}
-      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff", borderTop: "1px solid var(--border-soft)" }}>
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)", borderTop: "1px solid var(--border-soft)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
           <Eyebrow>¿Trabajamos juntos?</Eyebrow>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(26px,3.5vw,44px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 12px", color: "var(--fg-1)", maxWidth: "26ch" }}>
@@ -348,7 +348,7 @@ export default function Experiencia() {
               href="/sobre-nosotros/"
               style={{
                 display: "inline-flex", alignItems: "center", gap: 8,
-                background: "#fff", color: "var(--fg-1)", border: "1px solid var(--border-strong)",
+                background: "var(--bg-1)", color: "var(--fg-1)", border: "1px solid var(--border-strong)",
                 padding: "14px 26px", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 15,
                 borderRadius: 10, textDecoration: "none",
               }}

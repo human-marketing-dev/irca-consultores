@@ -20,13 +20,13 @@ function Eyebrow({ children, color = "var(--irca-green-700)" }: { children: Reac
 
 export default function Hero() {
   return (
-    <section id="home" className="px-4 sm:px-6" style={{ position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #FFFFFF 0%, var(--bg-2) 100%)" }}>
+    <section id="home" className="px-4 sm:px-6" style={{ position: "relative", overflow: "hidden", background: "linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%)" }}>
       {/* Topographic wave pattern */}
       <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.25 }} aria-hidden="true">
         <defs>
           <pattern id="topo" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M0 20 Q10 12 20 20 T40 20" stroke="#C7E2F0" strokeWidth="1" fill="none"/>
-            <path d="M0 30 Q10 22 20 30 T40 30" stroke="#DCEFCB" strokeWidth="1" fill="none"/>
+            <path d="M0 20 Q10 12 20 20 T40 20" style={{ stroke: "var(--irca-blue-100)" }} strokeWidth="1" fill="none"/>
+            <path d="M0 30 Q10 22 20 30 T40 30" style={{ stroke: "var(--irca-green-100)" }} strokeWidth="1" fill="none"/>
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#topo)"/>
@@ -69,7 +69,7 @@ export default function Hero() {
               href="/servicios/"
               style={{
                 display: "inline-flex", alignItems: "center", gap: 8,
-                background: "#fff", color: "var(--fg-1)", border: "1px solid var(--border-strong)",
+                background: "var(--bg-1)", color: "var(--fg-1)", border: "1px solid var(--border-strong)",
                 padding: "13px 22px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 15,
                 borderRadius: 10, textDecoration: "none",
               }}
@@ -85,7 +85,7 @@ export default function Hero() {
                 alt={name}
                 width={80}
                 height={32}
-                className="grayscale opacity-50"
+                className="logo-mono"
                 style={{ objectFit: "contain", height: 96, width: "auto" }}
               />
             ))}
@@ -93,29 +93,24 @@ export default function Hero() {
         </div>
 
         {/* Photo — hidden on mobile */}
-        <div className="relative hidden md:flex flex-col gap-3">
-          <div style={{
-            aspectRatio: "4/3", border: "1.5px dashed var(--border-strong)",
-            borderRadius: 20, background: "var(--bg-2)",
-            display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-            gap: 12, color: "var(--fg-4)", textAlign: "center", padding: 32,
-            boxShadow: "var(--shadow-2)",
-          }}>
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2" />
-              <circle cx="8.5" cy="8.5" r="1.5" />
-              <polyline points="21 15 16 10 5 21" />
-            </svg>
-            <div style={{ fontSize: 14, fontWeight: 600, color: "var(--fg-3)", lineHeight: 1.4 }}>
-              Foto del equipo o instalaciones
-            </div>
-            <div style={{ fontSize: 12, lineHeight: 1.5, maxWidth: "28ch", color: "var(--fg-4)" }}>
-              Reemplazar con fotografía corporativa del equipo IRCA o trabajo de campo
-            </div>
+        <div className="relative hidden md:block">
+          <div
+            style={{
+              position: "relative", aspectRatio: "4/3",
+              borderRadius: 20, overflow: "hidden",
+              background: "var(--bg-2)", border: "1px solid var(--border-soft)",
+              boxShadow: "var(--shadow-2)",
+            }}
+          >
+            <Image
+              src="/images/home/home-hero-equipo-irca.webp"
+              alt="Equipo de IRCA Consultores en trabajo de campo"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 45vw"
+              style={{ objectFit: "cover" }}
+            />
           </div>
-          <p style={{ fontSize: 11, color: "var(--fg-4)", letterSpacing: "0.04em", margin: 0, textAlign: "center" }}>
-            Placeholder · pendiente material fotográfico del cliente
-          </p>
         </div>
       </div>
     </section>

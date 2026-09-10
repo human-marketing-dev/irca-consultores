@@ -12,34 +12,28 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 
 const services: { icon: IconName; accent: "green" | "blue"; title: string; desc: string; href: string }[] = [
   {
-    icon: "shield-check", accent: "green",
-    title: "Auditoría y diagnóstico ambiental",
-    desc: "Auditorías de diagnóstico y cumplimiento, Industria Limpia, inventarios de emisiones, corrientes de residuos, auditorías de cliente e ISO 14001.",
-    href: "/servicios/auditoria-ambiental/",
+    icon: "shield-check", accent: "blue",
+    title: "Auditoría y diagnóstico Ambiental, Seguridad y Salud",
+    desc: "Auditorías de diagnóstico y cumplimiento, Industria Limpia, inventarios de emisiones, corrientes de residuos, auditorías de cliente y de terceros, autogestión STPS, manejo de sustancias e ISO 14001 y 45001.",
+    href: "/servicios/auditoria-ambiental-seguridad-y-salud/",
   },
   {
-    icon: "flask", accent: "blue",
-    title: "Estudios ambientales",
+    icon: "flask", accent: "green",
+    title: "Ingeniería Ambiental",
     desc: "Evaluación de sitios contaminados (ASTM Phase I y II), balance hídrico, huella de carbono, ciclo de vida y diseño ambiental.",
-    href: "/servicios/estudios-ambientales/",
+    href: "/servicios/ingenieria-ambiental/",
   },
   {
-    icon: "scale", accent: "green",
+    icon: "scale", accent: "blue",
     title: "Servicios legales y atención de autoridades",
     desc: "Atención de inspecciones, procedimientos sancionadores, planes de cumplimiento, representación, litigio, recursos de revisión, juicios de nulidad y amparo.",
     href: "/servicios/servicios-legales-y-atencion-de-autoridades/",
   },
   {
-    icon: "file-text", accent: "blue",
+    icon: "file-text", accent: "green",
     title: "Estudios, trámites y administración de autorizaciones",
     desc: "MIA, ERA, PPA, LAU, LFFF, CUSTF, planes de manejo y COAs ante SEMARNAT, STPS, COFEPRIS y CONAGUA.",
     href: "/servicios/tramites-y-autorizaciones-ambientales/",
-  },
-  {
-    icon: "hardhat", accent: "green",
-    title: "Auditoría y diagnóstico Seguridad y Salud",
-    desc: "Auditorías de diagnóstico y cumplimiento, autogestión STPS, manejo de sustancias y estándares internacionales de autogestión ISO 45001.",
-    href: "/servicios/auditoria-seguridad-y-salud/",
   },
   {
     icon: "eye", accent: "blue",
@@ -49,9 +43,9 @@ const services: { icon: IconName; accent: "green" | "blue"; title: string; desc:
   },
   {
     icon: "alert-triangle", accent: "green",
-    title: "Estudio de seguridad y salud",
+    title: "Proyectos de Seguridad y Salud",
     desc: "Auditorías de riesgos laborales y equipos, manejo de sustancias, metodologías de cumplimiento (SMART, DuPont) y estándares ISO 45001.",
-    href: "/servicios/estudios-de-seguridad-y-salud/",
+    href: "/servicios/proyectos-de-seguridad-y-salud/",
   },
   {
     icon: "graduation-cap", accent: "blue",
@@ -61,9 +55,9 @@ const services: { icon: IconName; accent: "green" | "blue"; title: string; desc:
   },
   {
     icon: "compass", accent: "green",
-    title: "Estudios de ingeniería",
+    title: "Estudios de viabilidad",
     desc: "Geología, geofísica, estabilidad de taludes, hidrología, geohidrología, tránsito y vialidad, topografía, agua potable y soluciones pluviales.",
-    href: "/servicios/estudios-de-ingenieria/",
+    href: "/servicios/estudios-de-viabilidad/",
   },
 ];
 
@@ -78,7 +72,7 @@ export default function Services() {
             Cobertura completa del ciclo de cumplimiento normativo ambiental, de Seguridad y salud — Del diagnóstico inicial a la resolución legal.
           </h2>
           <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", margin: 0 }}>
-            Nueve áreas de especialidad ejecutadas por un equipo multidisciplinario de ingenieros, biólogos, geocientíficos y abogados ambientales certificados.
+            Ocho áreas de especialidad ejecutadas por un equipo multidisciplinario de ingenieros, biólogos, geocientíficos y abogados ambientales certificados.
           </p>
         </div>
 
@@ -88,7 +82,7 @@ export default function Services() {
             return (
               <article
                 key={s.title}
-                style={{ background: "#fff", border: "1px solid var(--border-soft)", borderRadius: 14, padding: 22, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 12 }}
+                style={{ background: "var(--bg-1)", border: "1px solid var(--border-soft)", borderRadius: 14, padding: 22, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 12 }}
               >
                 <div style={{
                   width: 44, height: 44, borderRadius: 10, flexShrink: 0,

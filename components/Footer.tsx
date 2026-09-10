@@ -8,14 +8,13 @@ const links: { title: string; items: FooterLink[] }[] = [
   {
     title: "Servicios",
     items: [
-      { label: "Auditoría y diagnóstico ambiental",          href: "/servicios/auditoria-ambiental/" },
-      { label: "Estudios ambientales",                        href: "/servicios/estudios-ambientales/" },
+      { label: "Auditoría y diagnóstico ambiental, seguridad y salud", href: "/servicios/auditoria-ambiental-seguridad-y-salud/" },
+      { label: "Ingeniería ambiental",                        href: "/servicios/ingenieria-ambiental/" },
       { label: "Estudios, trámites y autorizaciones",         href: "/servicios/tramites-y-autorizaciones-ambientales/" },
       { label: "Servicios legales y atención de autoridades", href: "/servicios/servicios-legales-y-atencion-de-autoridades/" },
       { label: "Consultoría y supervisión ambiental",         href: "/servicios/consultoria-y-supervision-ambiental/" },
-      { label: "Auditoría y diagnóstico de seguridad y salud",href: "/servicios/auditoria-seguridad-y-salud/" },
-      { label: "Estudios de seguridad y salud",               href: "/servicios/estudios-de-seguridad-y-salud/" },
-      { label: "Estudios de ingeniería",                      href: "/servicios/estudios-de-ingenieria/" },
+      { label: "Proyectos de seguridad y salud",              href: "/servicios/proyectos-de-seguridad-y-salud/" },
+      { label: "Estudios de viabilidad",                      href: "/servicios/estudios-de-viabilidad/" },
       { label: "Capacitación técnica especializada",          href: "/servicios/capacitacion-tecnica-especializada/" },
     ],
   },
@@ -55,7 +54,7 @@ const linkClass = "text-white/65 hover:text-white transition-colors duration-200
 
 export default function Footer() {
   return (
-    <footer className="px-4 sm:px-6 pt-14 pb-8" style={{ background: "#0B1118", color: "rgba(255,255,255,0.7)" }}>
+    <footer className="px-4 sm:px-6 pt-14 pb-8" style={{ background: "var(--bg-deep)", color: "rgba(255,255,255,0.7)" }}>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12" style={{ maxWidth: 1280, margin: "0 auto" }}>
         {/* Brand col — spans 2 on mobile */}
         <div className="col-span-2 md:col-span-1">
@@ -67,8 +66,9 @@ export default function Footer() {
             style={{ height: 32, width: "auto", display: "block" }}
           />
           <p style={{ fontSize: 13, lineHeight: 1.65, marginTop: 16, maxWidth: "42ch", color: "rgba(255,255,255,0.6)" }}>
-            IRCA Ingeniería y Servicios, S.C. (IIS) · Environmental North de México, S.C. (ENM).
-            Capacidad de contratación como servicios especializados (REPSE).
+            Consultoría ambiental técnico-jurídica desde 1999. Integramos ingeniería y derecho
+            en un solo equipo para resolver el ciclo completo de cumplimiento: del diagnóstico
+            y los estudios técnicos a las autorizaciones y la defensa ante la autoridad.
           </p>
           <div className="flex gap-3 mt-4 mb-4">
             {[

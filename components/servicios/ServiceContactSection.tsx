@@ -6,7 +6,7 @@ import Icon from "@/components/ui/Icon";
 const inputStyle: React.CSSProperties = {
   border: "1px solid var(--border-strong)", borderRadius: 8,
   padding: "11px 12px", fontFamily: "var(--font-body)", fontSize: 14,
-  color: "var(--fg-1)", background: "#fff", width: "100%", boxSizing: "border-box", outline: "none",
+  color: "var(--fg-1)", background: "var(--bg-1)", width: "100%", boxSizing: "border-box", outline: "none",
 };
 
 interface Props {
@@ -21,7 +21,7 @@ export default function ServiceContactSection({ headline, copy, formTitle, motiv
   const [sent, setSent] = useState(false);
 
   return (
-    <section id="contacto" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff", borderTop: "1px solid var(--border-soft)" }}>
+    <section id="contacto" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)", borderTop: "1px solid var(--border-soft)" }}>
       <div
         className="grid grid-cols-1 md:[grid-template-columns:1.05fr_1fr] gap-10 md:gap-16 items-start"
         style={{ maxWidth: 1280, margin: "0 auto" }}
@@ -62,7 +62,7 @@ export default function ServiceContactSection({ headline, copy, formTitle, motiv
         {/* Form */}
         <form
           onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-          style={{ background: "#fff", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 28, boxShadow: "var(--shadow-2)" }}
+          style={{ background: "var(--bg-1)", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 28, boxShadow: "var(--shadow-2)" }}
         >
           {sent ? (
             <div style={{ padding: "40px 8px", textAlign: "center" }}>

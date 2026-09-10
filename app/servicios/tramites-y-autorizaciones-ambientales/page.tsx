@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Icon from "@/components/ui/Icon";
+import Photo from "@/components/ui/Photo";
 import ServiceFAQ from "@/components/servicios/ServiceFAQ";
 import ServiceContactSection from "@/components/servicios/ServiceContactSection";
 
@@ -15,18 +16,6 @@ function Eyebrow({ children, color = "var(--irca-green-700)" }: { children: Reac
     <div style={{ display: "inline-flex", alignItems: "center", gap: 10, fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", color }}>
       <span style={{ width: 24, height: 2, background: color, display: "inline-block", flexShrink: 0 }} />
       {children}
-    </div>
-  );
-}
-
-function ImgPlaceholder({ ratio, label, sub, borderColor = "var(--border-strong)", bg = "var(--bg-2)" }: { ratio: string; label: string; sub: string; borderColor?: string; bg?: string }) {
-  return (
-    <div style={{ aspectRatio: ratio, border: `1.5px dashed ${borderColor}`, borderRadius: 14, background: bg, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10, color: "var(--fg-4)", textAlign: "center", padding: 24 }}>
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" />
-      </svg>
-      <div style={{ fontSize: 13, fontWeight: 600, color: "var(--fg-3)" }}>{label}</div>
-      <div style={{ fontSize: 12, lineHeight: 1.5, maxWidth: "30ch" }}>{sub}</div>
     </div>
   );
 }
@@ -190,7 +179,7 @@ const faqs = [
   },
   {
     q: "¿Cuándo se presenta la Cédula de Operación Anual (COA)?",
-    a: "La COA federal se presenta durante el mes de enero de cada año, reportando los datos del año anterior. El incumplimiento puede derivar en sanciones de PROFEPA. Las COA estatales tienen calendarios propios que varían por entidad. En IRCA te ayudamos a identificar todas las obligaciones de reporte que aplican a tu instalación —federal y estatal— y a presentarlas en tiempo.",
+    a: "La COA federal se presenta durante el mes de enero de cada año, reportando los datos del año anterior. El incumplimiento puede derivar en sanciones de PROFEPA. Las COA estatales tienen calendarios propios que varían por entidad. En IRCA Consultores te ayudamos a identificar todas las obligaciones de reporte que aplican a tu instalación —federal y estatal— y a presentarlas en tiempo.",
   },
   {
     q: "¿Cuánto tarda obtener una concesión de agua de CONAGUA?",
@@ -212,9 +201,9 @@ const related = [
   {
     color: "green",
     icon: <Icon name="shield-check" size={22} />,
-    title: "Auditoría y Diagnóstico Ambiental",
+    title: "Auditoría y Diagnóstico Ambiental, Seguridad y Salud",
     desc: "Diagnóstico previo que identifica los trámites pendientes y las brechas de cumplimiento antes de que llegue la autoridad.",
-    href: "/servicios/auditoria-ambiental/",
+    href: "/servicios/auditoria-ambiental-seguridad-y-salud/",
   },
   {
     color: "blue",
@@ -226,16 +215,16 @@ const related = [
   {
     color: "green",
     icon: <Icon name="flask" size={22} />,
-    title: "Estudios Ambientales",
+    title: "Ingeniería Ambiental",
     desc: "MIA, ERA y ETJ que soportan técnicamente los trámites de autorización ante SEMARNAT y otras dependencias.",
-    href: "/servicios/estudios-ambientales/",
+    href: "/servicios/ingenieria-ambiental/",
   },
   {
     color: "blue",
     icon: <Icon name="hardhat" size={22} />,
-    title: "Auditoría y Diagnóstico Seguridad y Salud",
+    title: "Auditoría y Diagnóstico Ambiental, Seguridad y Salud",
     desc: "Cumplimiento de obligaciones de seguridad y salud ante STPS, complementario a los trámites ambientales federales.",
-    href: "/servicios/auditoria-seguridad-y-salud/",
+    href: "/servicios/auditoria-ambiental-seguridad-y-salud/",
   },
 ];
 
@@ -251,15 +240,15 @@ export default function TramitesYAutorizaciones() {
         className="px-4 sm:px-6"
         style={{
           position: "relative", overflow: "hidden",
-          background: "linear-gradient(180deg,#FFFFFF 0%,var(--bg-2) 100%)",
+          background: "linear-gradient(180deg,var(--bg-1) 0%,var(--bg-2) 100%)",
           paddingTop: "clamp(56px,8vw,92px)", paddingBottom: "clamp(48px,7vw,84px)",
         }}
       >
         <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.22 }} aria-hidden="true">
           <defs>
             <pattern id="topoTramites" width="44" height="44" patternUnits="userSpaceOnUse">
-              <path d="M0 22 Q11 13 22 22 T44 22" stroke="#DCEFCB" strokeWidth="1" fill="none" />
-              <path d="M0 33 Q11 24 22 33 T44 33" stroke="#C7E2F0" strokeWidth="1" fill="none" />
+              <path d="M0 22 Q11 13 22 22 T44 22" style={{ stroke: "var(--irca-green-100)" }} strokeWidth="1" fill="none" />
+              <path d="M0 33 Q11 24 22 33 T44 33" style={{ stroke: "var(--irca-blue-100)" }} strokeWidth="1" fill="none" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#topoTramites)" />
@@ -295,7 +284,7 @@ export default function TramitesYAutorizaciones() {
               </a>
               <a
                 href="#incluye"
-                style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#fff", color: "var(--fg-1)", border: "1px solid var(--border-strong)", padding: "14px 24px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 16, borderRadius: 10, textDecoration: "none" }}
+                style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--bg-1)", color: "var(--fg-1)", border: "1px solid var(--border-strong)", padding: "14px 24px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 16, borderRadius: 10, textDecoration: "none" }}
               >
                 Qué incluye
               </a>
@@ -307,7 +296,7 @@ export default function TramitesYAutorizaciones() {
 
           {/* Trámites status card */}
           <div className="hidden md:block">
-            <div style={{ background: "#fff", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 24, boxShadow: "var(--shadow-3)" }}>
+            <div style={{ background: "var(--bg-1)", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 24, boxShadow: "var(--shadow-3)" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 11, color: "var(--fg-4)", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase" }}>
                 <span style={{ width: 8, height: 8, borderRadius: 8, background: "var(--irca-green)", boxShadow: "0 0 0 4px var(--irca-green-50)" }} />
                 Trámites en gestión
@@ -346,19 +335,18 @@ export default function TramitesYAutorizaciones() {
       </section>
 
       {/* ── SOBRE EL SERVICIO ─────────────────────────── */}
-      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff", borderTop: "1px solid var(--border-soft)" }}>
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)", borderTop: "1px solid var(--border-soft)" }}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center" style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div>
             <Eyebrow>Sobre el Servicio</Eyebrow>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 28px", color: "var(--ink-1000)" }}>
               Por qué los trámites ambientales fallan y cómo evitarlo
             </h2>
-            <ImgPlaceholder
+            <Photo
               ratio="16/9"
-              label="Gestión de trámites / revisión de expediente"
-              sub="Reemplazar con foto real del equipo revisando documentos, en gestión ante ventanilla o en reunión con la autoridad."
+              src="/images/servicios/tramites-y-autorizaciones-ambientales/servicio-estudios-tramites-irca.webp"
+              alt="Gestión de trámites y autorizaciones ambientales de IRCA Consultores"
             />
-            <p style={{ fontSize: 11, color: "var(--fg-4)", letterSpacing: "0.04em", margin: "8px 0 0" }}>Placeholder · pendiente material fotográfico del cliente</p>
           </div>
           <div>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 22px" }}>
@@ -394,7 +382,7 @@ export default function TramitesYAutorizaciones() {
               <a
                 key={href}
                 href={href}
-                style={{ display: "flex", flexDirection: "column", gap: 16, background: "#fff", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 28, boxShadow: "var(--shadow-1)", textDecoration: "none" }}
+                style={{ display: "flex", flexDirection: "column", gap: 16, background: "var(--bg-1)", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 28, boxShadow: "var(--shadow-1)", textDecoration: "none" }}
               >
                 <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
                   <div style={{
@@ -423,7 +411,7 @@ export default function TramitesYAutorizaciones() {
       </section>
 
       {/* ── ALCANCE ───────────────────────────────────── */}
-      <section id="incluye" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff" }}>
+      <section id="incluye" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <Eyebrow>Alcance del servicio</Eyebrow>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-4 mb-11">
@@ -490,18 +478,17 @@ export default function TramitesYAutorizaciones() {
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <ImgPlaceholder
+            <Photo
               ratio="4/3"
-              label="Gestión ante ventanilla / presentación de expediente"
-              sub="Reemplazar con foto real del equipo en gestión, reunión con la autoridad o revisión de expediente."
+              src="/images/servicios/tramites-y-autorizaciones-ambientales/para-quien-es-estudio-tramites-irca.webp"
+              alt="Gestión de trámites y autorizaciones ambientales de IRCA Consultores"
             />
-            <p style={{ fontSize: 11, color: "var(--fg-4)", letterSpacing: "0.04em", margin: 0 }}>Placeholder · pendiente material fotográfico del cliente</p>
           </div>
         </div>
       </section>
 
       {/* ── SOBRE IRCA ────────────────────────────────── */}
-      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff" }}>
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div className="grid grid-cols-1 md:[grid-template-columns:0.9fr_1.1fr] gap-10 md:gap-16 items-center">
             <div>
@@ -509,12 +496,11 @@ export default function TramitesYAutorizaciones() {
               <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 28px", color: "var(--ink-1000)" }}>
                 Sobre IRCA Consultores
               </h2>
-              <div style={{ border: "1.5px dashed var(--irca-green-700)", borderRadius: 14, background: "var(--bg-2)", aspectRatio: "4/3", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10, color: "var(--fg-4)", textAlign: "center", padding: 24 }}>
-                <Icon name="building" size={32} />
-                <div style={{ fontSize: 13, fontWeight: 600, color: "var(--fg-3)" }}>Equipo / oficinas IRCA</div>
-                <div style={{ fontSize: 12, lineHeight: 1.5, maxWidth: "30ch" }}>Reemplazar con foto real del equipo multidisciplinario o de las instalaciones de la firma.</div>
-              </div>
-              <p style={{ fontSize: 11, color: "var(--fg-4)", letterSpacing: "0.04em", margin: "8px 0 0" }}>Placeholder · pendiente material fotográfico del cliente</p>
+              <Photo
+                ratio="4/3"
+                src="/images/nosotros/nosotros-equipo-irca.webp"
+                alt="Equipo multidisciplinario de IRCA Consultores"
+              />
             </div>
             <div>
               <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-2)", margin: 0 }}>
@@ -557,7 +543,7 @@ export default function TramitesYAutorizaciones() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────── */}
-      <section id="faq" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff" }}>
+      <section id="faq" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <Eyebrow color="var(--irca-blue-700)">Preguntas frecuentes</Eyebrow>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(24px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 36px", color: "var(--ink-1000)" }}>
@@ -578,7 +564,7 @@ export default function TramitesYAutorizaciones() {
             {related.map(({ color, icon, title, desc, href }) => (
               <article
                 key={title}
-                style={{ background: "#fff", border: "1px solid var(--border-soft)", borderRadius: 14, padding: 22, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 12 }}
+                style={{ background: "var(--bg-1)", border: "1px solid var(--border-soft)", borderRadius: 14, padding: 22, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 12 }}
               >
                 <div style={{
                   width: 42, height: 42, borderRadius: 10,

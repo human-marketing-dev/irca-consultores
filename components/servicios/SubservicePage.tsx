@@ -55,15 +55,15 @@ export default function SubservicePage({
         className="px-4 sm:px-6"
         style={{
           position: "relative", overflow: "hidden",
-          background: "linear-gradient(180deg,#FFFFFF 0%,var(--bg-2) 100%)",
+          background: "linear-gradient(180deg,var(--bg-1) 0%,var(--bg-2) 100%)",
           paddingTop: "clamp(48px,7vw,80px)", paddingBottom: "clamp(40px,6vw,68px)",
         }}
       >
         <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.22 }} aria-hidden="true">
           <defs>
             <pattern id="topoSub" width="44" height="44" patternUnits="userSpaceOnUse">
-              <path d="M0 22 Q11 13 22 22 T44 22" stroke="#C7E2F0" strokeWidth="1" fill="none" />
-              <path d="M0 33 Q11 24 22 33 T44 33" stroke="#DCEFCB" strokeWidth="1" fill="none" />
+              <path d="M0 22 Q11 13 22 22 T44 22" style={{ stroke: "var(--irca-blue-100)" }} strokeWidth="1" fill="none" />
+              <path d="M0 33 Q11 24 22 33 T44 33" style={{ stroke: "var(--irca-green-100)" }} strokeWidth="1" fill="none" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#topoSub)" />
@@ -119,7 +119,7 @@ export default function SubservicePage({
                 href={parent.href}
                 style={{
                   display: "inline-flex", alignItems: "center", gap: 8,
-                  background: "#fff", color: "var(--fg-1)", border: "1px solid var(--border-strong)",
+                  background: "var(--bg-1)", color: "var(--fg-1)", border: "1px solid var(--border-strong)",
                   padding: "13px 22px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 15,
                   borderRadius: 10, textDecoration: "none",
                 }}
@@ -130,7 +130,7 @@ export default function SubservicePage({
           </div>
 
           {/* Ficha técnica */}
-          <div style={{ background: "#fff", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 24, boxShadow: "var(--shadow-2)" }}>
+          <div style={{ background: "var(--bg-1)", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 24, boxShadow: "var(--shadow-2)" }}>
             <div style={{ fontSize: 11, color: "var(--fg-4)", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 4 }}>
               Ficha técnica
             </div>
@@ -145,7 +145,7 @@ export default function SubservicePage({
       </section>
 
       {/* ── ALCANCE + CUÁNDO ──────────────────────────── */}
-      <section className="px-4 sm:px-6 py-16 md:py-20" style={{ background: "#fff", borderTop: "1px solid var(--border-soft)" }}>
+      <section className="px-4 sm:px-6 py-16 md:py-20" style={{ background: "var(--bg-1)", borderTop: "1px solid var(--border-soft)" }}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start" style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(22px,3vw,30px)", letterSpacing: "-0.022em", lineHeight: 1.1, margin: "0 0 22px", color: "var(--ink-1000)" }}>

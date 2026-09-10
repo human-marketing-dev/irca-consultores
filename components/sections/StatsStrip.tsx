@@ -7,7 +7,7 @@ const stats = [
 
 export default function StatsStrip() {
   return (
-    <section className="px-4 sm:px-6" style={{ borderTop: "1px solid var(--border-soft)", borderBottom: "1px solid var(--border-soft)", background: "#fff" }}>
+    <section className="px-4 sm:px-6" style={{ borderTop: "1px solid var(--border-soft)", borderBottom: "1px solid var(--border-soft)", background: "var(--bg-1)" }}>
       <div className="grid grid-cols-2 md:grid-cols-4" style={{ maxWidth: 1280, margin: "0 auto" }}>
         {stats.map(({ value, title, sub }, i) => (
           <div

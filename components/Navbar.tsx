@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useRef } from "react";
+import SiteSearch from "@/components/ui/SiteSearch";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -9,15 +11,14 @@ import Icon, { type IconName } from "@/components/ui/Icon";
 /* ── services for the dropdown ───────────────────────────── */
 
 const services: { href: string; label: string; icon: IconName }[] = [
-  { href: "/servicios/auditoria-ambiental/",                          label: "Auditoría y Diagnóstico Ambiental",              icon: "shield-check"    },
-  { href: "/servicios/estudios-ambientales/",                         label: "Estudios Ambientales",                           icon: "flask"           },
-  { href: "/servicios/tramites-y-autorizaciones-ambientales/",        label: "Estudios, Trámites y Autorizaciones",            icon: "file-text"       },
-  { href: "/servicios/servicios-legales-y-atencion-de-autoridades/",  label: "Servicios Legales y Atención de Autoridades",     icon: "scale"           },
-  { href: "/servicios/consultoria-y-supervision-ambiental/",          label: "Consultoría y Supervisión Ambiental",            icon: "eye"             },
-  { href: "/servicios/auditoria-seguridad-y-salud/",                  label: "Auditoría y Diagnóstico Seguridad y Salud",      icon: "hardhat"         },
-  { href: "/servicios/estudios-de-seguridad-y-salud/",                label: "Estudios de Seguridad y Salud",                  icon: "alert-triangle"  },
-  { href: "/servicios/estudios-de-ingenieria/",                       label: "Estudios de Ingeniería",                         icon: "compass"         },
-  { href: "/servicios/capacitacion-tecnica-especializada/",           label: "Capacitación Técnica Especializada",             icon: "graduation-cap"  },
+  { href: "/servicios/auditoria-ambiental-seguridad-y-salud/",                          label: "Auditoría y Diagnóstico Ambiental, Seguridad y Salud", icon: "shield-check"    },
+  { href: "/servicios/ingenieria-ambiental/",                         label: "Ingeniería Ambiental",                                 icon: "flask"           },
+  { href: "/servicios/tramites-y-autorizaciones-ambientales/",        label: "Estudios, Trámites y Autorizaciones",                  icon: "file-text"       },
+  { href: "/servicios/servicios-legales-y-atencion-de-autoridades/",  label: "Servicios Legales y Atención de Autoridades",           icon: "scale"           },
+  { href: "/servicios/consultoria-y-supervision-ambiental/",          label: "Consultoría y Supervisión Ambiental",                  icon: "eye"             },
+  { href: "/servicios/proyectos-de-seguridad-y-salud/",                label: "Proyectos de Seguridad y Salud",                       icon: "alert-triangle"  },
+  { href: "/servicios/estudios-de-viabilidad/",                       label: "Estudios de viabilidad",                               icon: "compass"         },
+  { href: "/servicios/capacitacion-tecnica-especializada/",           label: "Capacitación Técnica Especializada",                   icon: "graduation-cap"  },
 ];
 
 /* ── top-level nav (non-services) ────────────────────────── */
@@ -53,7 +54,7 @@ export default function Navbar() {
       className="px-4 sm:px-6"
       style={{
         position: "sticky", top: 0, zIndex: 50,
-        background: "rgba(255,255,255,0.92)",
+        background: "var(--bg-nav)",
         backdropFilter: "saturate(140%) blur(10px)",
         WebkitBackdropFilter: "saturate(140%) blur(10px)",
         borderBottom: "1px solid var(--border-soft)",
@@ -122,7 +123,7 @@ export default function Navbar() {
                 onMouseLeave={closeServices}
               >
                 <div style={{
-                  background: "#fff", borderRadius: 12, padding: "8px 6px",
+                  background: "var(--bg-1)", borderRadius: 12, padding: "8px 6px",
                   boxShadow: "var(--shadow-3)", border: "1px solid var(--border-soft)",
                 }}>
                 {services.map(({ href, label, icon }) => {
@@ -190,8 +191,11 @@ export default function Navbar() {
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden md:flex items-center gap-5 ml-auto">
+        <div className="hidden md:flex items-center gap-3 lg:gap-4 ml-auto">
+          <SiteSearch />
+          <ThemeToggle />
           <a
+            className="hidden lg:inline-flex"
             href="tel:+528115059330"
             style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: "var(--fg-3)", textDecoration: "none", fontWeight: 600 }}
           >
@@ -210,10 +214,14 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile: buscador, tema y menú */}
+        <div className="flex md:hidden items-center gap-2 ml-auto">
+          <SiteSearch compact />
+          <ThemeToggle compact />
+        </div>
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex md:hidden ml-auto"
+          className="flex md:hidden ml-2"
           style={{ background: "none", border: 0, cursor: "pointer", color: "var(--fg-2)", padding: 4 }}
           aria-label="Abrir menú"
         >
@@ -223,7 +231,7 @@ export default function Navbar() {
 
       {/* Mobile dropdown */}
       {mobileOpen && (
-        <div style={{ borderTop: "1px solid var(--border-soft)", background: "#fff" }} className="px-6 pb-5 pt-3">
+        <div style={{ borderTop: "1px solid var(--border-soft)", background: "var(--bg-1)" }} className="px-6 pb-5 pt-3">
           <Link
             href="/"
             onClick={() => setMobileOpen(false)}

@@ -26,7 +26,7 @@ export default function LegalPage({
       <section
         className="px-4 sm:px-6"
         style={{
-          background: "linear-gradient(180deg,#FFFFFF 0%,var(--bg-2) 100%)",
+          background: "linear-gradient(180deg,var(--bg-1) 0%,var(--bg-2) 100%)",
           borderBottom: "1px solid var(--border-soft)",
           paddingTop: "clamp(48px,7vw,80px)", paddingBottom: "clamp(32px,5vw,56px)",
         }}
@@ -53,7 +53,7 @@ export default function LegalPage({
         </div>
       </section>
 
-      <section className="px-4 sm:px-6 py-14 md:py-20" style={{ background: "#fff" }}>
+      <section className="px-4 sm:px-6 py-14 md:py-20" style={{ background: "var(--bg-1)" }}>
         <div style={{ maxWidth: 820, margin: "0 auto" }}>
           {sections.map(({ h, body }, i) => (
             <section key={h} style={{ marginTop: i === 0 ? 0 : 40 }}>
@@ -89,7 +89,7 @@ export default function LegalPage({
             </Link>
             <Link
               href="/"
-              style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#fff", color: "var(--fg-1)", border: "1px solid var(--border-strong)", padding: "11px 20px", borderRadius: 10, fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 14, textDecoration: "none" }}
+              style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--bg-1)", color: "var(--fg-1)", border: "1px solid var(--border-strong)", padding: "11px 20px", borderRadius: 10, fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 14, textDecoration: "none" }}
             >
               Volver al inicio
             </Link>

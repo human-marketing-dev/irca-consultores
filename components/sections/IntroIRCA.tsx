@@ -45,7 +45,7 @@ const differentiators: Differentiator[] = [
 
 export default function IntroIRCA() {
   return (
-    <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff", borderBottom: "1px solid var(--border-soft)" }}>
+    <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)", borderBottom: "1px solid var(--border-soft)" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
       <div className="grid grid-cols-1 md:[grid-template-columns:1.1fr_0.9fr] gap-12 md:gap-20 items-start md:items-center">
 
@@ -53,7 +53,7 @@ export default function IntroIRCA() {
         <div>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 10, fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--irca-green-700)" }}>
             <span style={{ width: 24, height: 2, background: "var(--irca-green-700)", display: "inline-block" }} />
-            Sobre IRCA
+            Sobre IRCA Consultores
           </div>
 
           <h2 style={{
@@ -108,7 +108,7 @@ export default function IntroIRCA() {
         </div>
 
         {/* Right — mapa de alcance */}
-        <div style={{ border: "1px solid var(--border-soft)", borderRadius: 12, background: "#fff", padding: "20px 22px" }}>
+        <div style={{ border: "1px solid var(--border-soft)", borderRadius: 12, background: "var(--bg-1)", padding: "20px 22px" }}>
           <div style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--fg-4)", marginBottom: 14 }}>
             Alcance de operación
           </div>

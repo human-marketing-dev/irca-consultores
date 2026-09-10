@@ -40,7 +40,7 @@ export default function PlaceholderPage({ eyebrow, title, description, keyword }
           </Link>
           <Link
             href="/servicios/"
-            style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#fff", color: "var(--fg-1)", border: "1px solid var(--border-strong)", padding: "10px 20px", borderRadius: 8, fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 14, textDecoration: "none" }}
+            style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--bg-1)", color: "var(--fg-1)", border: "1px solid var(--border-strong)", padding: "10px 20px", borderRadius: 8, fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 14, textDecoration: "none" }}
           >
             Ver todos los servicios
           </Link>

@@ -1,32 +1,30 @@
 const sectores = [
   {
-    label: "Industrial",
+    label: "Manufactura y transformación",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="7" width="20" height="14" rx="1"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
-        <line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>
+        <path d="M2 21V10l6 4V10l6 4V7l6 3v11z"/><line x1="7" y1="17" x2="7" y2="18"/><line x1="12" y1="17" x2="12" y2="18"/><line x1="17" y1="17" x2="17" y2="18"/>
       </svg>
     ),
   },
   {
-    label: "Construcción y desarrollo inmobiliario",
+    label: "Química, materiales y procesos especiales",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-        <polyline points="9 22 9 12 15 12 15 22"/>
+        <path d="M9 3v6L4 19a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-10V3"/><path d="M8 3h8"/><path d="M6 14h12"/>
       </svg>
     ),
   },
   {
-    label: "Minero",
+    label: "Construcción e infraestructura",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 22 L12 2 L22 22"/><line x1="6" y1="14" x2="18" y2="14"/>
+        <path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/>
       </svg>
     ),
   },
   {
-    label: "Energético: petrolíferos y eléctrico",
+    label: "Energía, hidrocarburos y minería",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
@@ -34,40 +32,37 @@ const sectores = [
     ),
   },
   {
-    label: "Marítimo y acuícola",
+    label: "Logística y parques industriales",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+        <rect x="1" y="6" width="14" height="11" rx="1"/><path d="M15 10h4l3 3v4h-7"/>
+        <circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/>
       </svg>
     ),
   },
   {
-    label: "Ferroviario",
+    label: "Marítimo, portuario y acuícola",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="4" y="3" width="16" height="14" rx="2"/>
-        <line x1="4" y1="10" x2="20" y2="10"/>
-        <line x1="9" y1="3" x2="9" y2="10"/>
-        <line x1="15" y1="3" x2="15" y2="10"/>
-        <path d="M8 21l2-4h4l2 4"/>
-        <line x1="6" y1="21" x2="18" y2="21"/>
+        <path d="M12 5v12"/><circle cx="12" cy="3.4" r="1.6"/><path d="M8.5 8.5h7"/>
+        <path d="M5 13a7 7 0 0 0 14 0"/>
       </svg>
     ),
   },
   {
-    label: "Portuario",
+    label: "Salud, alimentario, servicios e instituciones",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 20h20"/><path d="M5 20V10l7-7 7 7v10"/>
-        <path d="M9 20v-5h6v5"/>
+        <path d="M4 21V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M2 21h20"/>
+        <path d="M12 9v6"/><path d="M9 12h6"/>
       </svg>
     ),
   },
   {
-    label: "Obra pública y paraestatal",
+    label: "Gobierno, municipios y desarrollo urbano",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 21V8l9-7 9 7v13"/><path d="M9 21v-8h6v8"/>
+        <path d="M3 21h18"/><path d="M4 21V10l8-6 8 6v11"/><path d="M9 21v-7h6v7"/><line x1="12" y1="4" x2="12" y2="2"/>
       </svg>
     ),
   },
@@ -77,7 +72,7 @@ const coverage = ["Nuevo León", "Coahuila", "Tamaulipas", "Sonora", "Guanajuato
 
 export default function SectoresStrip() {
   return (
-    <section className="px-4 sm:px-6 py-14 md:py-20" style={{ background: "#fff", borderTop: "1px solid var(--border-soft)" }}>
+    <section className="px-4 sm:px-6 py-14 md:py-20" style={{ background: "var(--bg-1)", borderTop: "1px solid var(--border-soft)" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
 
         {/* Header row */}
@@ -88,7 +83,7 @@ export default function SectoresStrip() {
               Presencia multisectorial
             </div>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(22px,3vw,34px)", letterSpacing: "-0.022em", lineHeight: 1.1, margin: "12px 0 0", color: "var(--ink-1000)" }}>
-              25 años de experiencia en ocho sectores de la economía mexicana
+              25 años de experiencia en los sectores productivos de la economía mexicana
             </h2>
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 8, flexShrink: 0 }}>

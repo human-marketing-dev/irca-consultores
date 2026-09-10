@@ -1,0 +1,547 @@
+import type { Metadata } from "next";
+import Icon from "@/components/ui/Icon";
+import Photo from "@/components/ui/Photo";
+import ServiceFAQ from "@/components/servicios/ServiceFAQ";
+import ServiceContactSection from "@/components/servicios/ServiceContactSection";
+
+export const metadata: Metadata = {
+  title: "Auditoría y Diagnóstico Ambiental, Seguridad y Salud",
+  description: "Auditorías de diagnóstico y cumplimiento, Industria Limpia, inventarios de emisiones, corrientes de residuos, auditorías de cliente y de terceros, autogestión STPS, manejo de sustancias e ISO 14001 y 45001. IRCA Consultores.",
+};
+
+/* ── shared helpers ─────────────────────────────────── */
+
+function Eyebrow({ children, color = "var(--irca-green-700)" }: { children: React.ReactNode; color?: string }) {
+  return (
+    <div style={{ display: "inline-flex", alignItems: "center", gap: 10, fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", color }}>
+      <span style={{ width: 24, height: 2, background: color, display: "inline-block", flexShrink: 0 }} />
+      {children}
+    </div>
+  );
+}
+
+function CheckItem({ children }: { children: React.ReactNode }) {
+  return (
+    <div style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+      <span style={{ flexShrink: 0, width: 24, height: 24, borderRadius: 999, background: "var(--irca-green-50)", color: "var(--irca-green-700)", display: "inline-flex", alignItems: "center", justifyContent: "center", marginTop: 1 }}>
+        <Icon name="check" size={14} stroke={2.4} />
+      </span>
+      <span style={{ fontSize: 15, lineHeight: 1.55, color: "var(--fg-2)" }}>{children}</span>
+    </div>
+  );
+}
+
+/* ── audit hero card data ───────────────────────────── */
+
+const findings = [
+  { label: "LAU vigente",                      status: "Cumple",  palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
+  { label: "COA 2024 sin presentar",           status: "Crítico", palette: { bg: "var(--danger-bg)",  fg: "var(--danger)"  } },
+  { label: "Bitácora de residuos incompleta",  status: "Alto",    palette: { bg: "var(--warning-bg)", fg: "var(--warning)" } },
+  { label: "NOM-005 STPS · sustancias",        status: "Alto",    palette: { bg: "var(--warning-bg)", fg: "var(--warning)" } },
+  { label: "Comisión Mixta sin registro",      status: "Medio",   palette: { bg: "var(--info-bg)",    fg: "var(--info)"    } },
+];
+
+/* ── alcance cards ──────────────────────────────────── */
+
+const alcanceCards = [
+  {
+    color: "green",
+    icon: <Icon name="shield-check" size={24} />,
+    title: "Auditorías de diagnóstico y de cumplimiento",
+    desc: "La auditoría de diagnóstico establece tu línea base —qué obligaciones ambientales y de seguridad y salud te aplican y en qué estado están—; la de cumplimiento verifica el grado real de conformidad sobre esa base. Los hallazgos se jerarquizan por riesgo legal, operativo y para el trabajador.",
+  },
+  {
+    color: "blue",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/>
+      </svg>
+    ),
+    title: "Industria Limpia (PROFEPA)",
+    desc: "Acompañamiento en el Programa Nacional de Auditoría Ambiental: diagnóstico previo, plan de acción, atención de la auditoría con auditor aprobado y seguimiento hasta obtener o renovar el Certificado de Industria Limpia.",
+  },
+  {
+    color: "green",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/>
+      </svg>
+    ),
+    title: "Inventarios de emisiones y corrientes de residuos",
+    desc: "Cuantificación de las emisiones a la atmósfera por fuente y del flujo completo de residuos peligrosos, de manejo especial y sólidos urbanos. Es el insumo que sostiene la COA y el RETC, y la base para detectar subregistros o sobredeclaraciones.",
+  },
+  {
+    color: "blue",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/>
+      </svg>
+    ),
+    title: "Auditorías de cliente y de terceros",
+    desc: "Preparación y atención de las auditorías de segunda y tercera parte que exigen clientes, corporativos y cadenas de suministro. Llegamos con el expediente integrado y acompañamos el cierre de cada hallazgo.",
+  },
+  {
+    color: "green",
+    icon: <Icon name="hardhat" size={24} />,
+    title: "Autogestión STPS y manejo de sustancias",
+    desc: "Evaluación bajo el Programa de Autogestión en Seguridad y Salud en el Trabajo, y revisión específica del almacenamiento, trasiego, señalización, compatibilidades y controles de exposición a sustancias químicas peligrosas conforme a la NOM-005-STPS.",
+  },
+  {
+    color: "blue",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/>
+      </svg>
+    ),
+    title: "Estándares internacionales ISO 14001 e ISO 45001",
+    desc: "Diagnóstico de brechas y auditoría interna de los sistemas de gestión ambiental y de seguridad y salud. Al compartir estructura de alto nivel, ambos se auditan de forma integrada y sin duplicar evidencia.",
+  },
+  {
+    color: "green",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M11 6h10"/><path d="M11 12h10"/><path d="M11 18h10"/>
+        <path d="M3 6l1.5 1.5L6 5"/><path d="M3 12l1.5 1.5L6 11"/><path d="M3 18l1.5 1.5L6 17"/>
+      </svg>
+    ),
+    title: "Plan de gestión de incumplimientos (PGI)",
+    desc: "Cada hallazgo se convierte en una acción concreta, con responsable, prioridad y horizonte de tiempo. El PGI ordena el camino de forma realista, atacando primero lo que representa mayor riesgo legal y operativo.",
+  },
+];
+
+/* ── ¿por qué irca? pillars ─────────────────────────── */
+
+const pillars = [
+  {
+    n: "01",
+    title: "Mirada técnica y jurídica en un solo equipo",
+    body: "Una auditoría que solo ve la parte técnica deja descubierto el flanco legal, y viceversa. Combinamos ingeniería y derecho ambiental bajo un mismo techo, de modo que cada hallazgo se valora también por su exposición jurídica real ante la autoridad.",
+  },
+  {
+    n: "02",
+    title: "Más de 25 años leyendo a las autoridades",
+    body: "Sabemos qué revisa cada dependencia, cómo se comporta en una visita de inspección y dónde suele concentrar su atención. Esa experiencia te permite prepararte para lo que de verdad importa, no para una lista genérica.",
+  },
+  {
+    n: "03",
+    title: "Conocimiento sectorial profundo",
+    body: "Hemos auditado y acompañado plantas industriales, minas, fundiciones, acerías y desarrollos inmobiliarios. Entendemos la operación real de tu giro, lo que hace que el diagnóstico sea relevante y no una plantilla aplicada a la fuerza.",
+  },
+  {
+    n: "04",
+    title: "De la auditoría a la solución",
+    body: "No te dejamos con una lista de hallazgos y un adiós. El Plan de Gestión de Incumplimientos prioriza y ordena el camino, y podemos acompañarte en la ejecución a través de nuestros servicios de trámites, ingeniería y defensa jurídica.",
+  },
+  {
+    n: "05",
+    title: "Representación efectiva ante la autoridad",
+    body: "Cuando un hallazgo deriva en un procedimiento, contar con quien ya conoce tu expediente marca la diferencia. Nuestra capacidad de intermediación y litigio ambiental respalda el resultado de la auditoría.",
+  },
+];
+
+/* ── faq data ───────────────────────────────────────── */
+
+const faqs = [
+  {
+    q: "¿Una auditoría ambiental es obligatoria?",
+    a: "La auditoría como tal suele ser voluntaria, pero las obligaciones que evalúa no lo son. Realizarla te permite anticiparte a una inspección de la autoridad y corregir brechas antes de que generen una sanción.",
+  },
+  {
+    q: "¿Cuánto tiempo toma una auditoría ambiental?",
+    a: "Depende del tamaño y complejidad de la instalación. Tras una primera visita de alcance podemos darte un tiempo estimado realista; lo importante es que el resultado sea útil y accionable, no solo rápido.",
+  },
+  {
+    q: "¿En qué se diferencia de la Auditoría de Industria Limpia de PROFEPA?",
+    a: "La auditoría que hacemos es una evaluación interna de tu cumplimiento. La certificación de Industria Limpia es un programa formal ante PROFEPA. Frecuentemente nuestra auditoría es el primer paso para saber si estás listo para esa certificación.",
+  },
+  {
+    q: "¿Qué recibo al final?",
+    a: "Un diagnóstico claro de tu estado de cumplimiento, una matriz de requerimientos legales aplicable a tu operación y un Plan de Gestión de Incumplimientos priorizado, con acciones concretas para cerrar cada brecha.",
+  },
+  {
+    q: "¿Trabajan con empresas fuera de Nuevo León?",
+    a: "Sí. Aunque nuestra sede operativa está en Nuevo León, atendemos proyectos a nivel nacional, con experiencia documentada en Coahuila, Tamaulipas, Sonora, Guanajuato, Estado de México y más.",
+  },
+];
+
+/* ── related services ───────────────────────────────── */
+
+const related = [
+  {
+    color: "green",
+    icon: <Icon name="shield-check" size={22} />,
+    title: "Certificación Industria Limpia (PROFEPA)",
+    desc: "Acompañamiento integral para obtener o renovar el reconocimiento de Industria Limpia, partiendo del diagnóstico que arroja tu auditoría.",
+    href: "/servicios/auditoria-ambiental-seguridad-y-salud/industria-limpia/",
+  },
+  {
+    color: "blue",
+    icon: <Icon name="check" size={22} stroke={2.2} />,
+    title: "ISO 14001 y Sistemas de Gestión Ambiental",
+    desc: "Implementación y auditoría del Sistema de Gestión Ambiental bajo ISO 14001:2015, desde el diagnóstico de brechas hasta la certificación.",
+    href: "/servicios/auditoria-ambiental-seguridad-y-salud/iso-14001/",
+  },
+  {
+    color: "green",
+    icon: <Icon name="file-text" size={22} />,
+    title: "Estudios, Trámites y Administración de Autorizaciones",
+    desc: "Gestionamos las autorizaciones y obligaciones que cierran las brechas detectadas en la auditoría y mantienen tu operación en regla.",
+    href: "/servicios/tramites-y-autorizaciones-ambientales/",
+  },
+  {
+    color: "blue",
+    icon: <Icon name="scale" size={22} />,
+    title: "Servicios Legales y Atención de Autoridades",
+    desc: "Representación y defensa cuando un hallazgo deriva en inspección, procedimiento sancionador o requerimiento de la autoridad.",
+    href: "/servicios/servicios-legales-y-atencion-de-autoridades/",
+  },
+];
+
+/* ══════════════════════════════════════════════════════
+   PAGE
+════════════════════════════════════════════════════════ */
+
+export default function AuditoriaAmbiental() {
+  return (
+    <>
+      {/* ── HERO ──────────────────────────────────────── */}
+      <section
+        className="px-4 sm:px-6"
+        style={{
+          position: "relative", overflow: "hidden",
+          background: "linear-gradient(180deg,var(--bg-1) 0%,var(--bg-2) 100%)",
+          paddingTop: "clamp(56px,8vw,92px)", paddingBottom: "clamp(48px,7vw,84px)",
+        }}
+      >
+        <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.22 }} aria-hidden="true">
+          <defs>
+            <pattern id="topoSvc" width="44" height="44" patternUnits="userSpaceOnUse">
+              <path d="M0 22 Q11 13 22 22 T44 22" style={{ stroke: "var(--irca-blue-100)" }} strokeWidth="1" fill="none" />
+              <path d="M0 33 Q11 24 22 33 T44 33" style={{ stroke: "var(--irca-green-100)" }} strokeWidth="1" fill="none" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#topoSvc)" />
+        </svg>
+
+        <div
+          className="relative grid grid-cols-1 md:[grid-template-columns:1.15fr_0.95fr] gap-12 md:gap-16 items-center"
+          style={{ maxWidth: 1280, margin: "0 auto" }}
+        >
+          {/* Copy */}
+          <div>
+            <Eyebrow color="var(--irca-blue-700)">Auditoría y Diagnóstico Ambiental, Seguridad y Salud</Eyebrow>
+            <h1 style={{
+              fontFamily: "var(--font-display)", fontWeight: 900,
+              fontSize: "clamp(30px,4vw,48px)", letterSpacing: "-0.03em", lineHeight: 1.07,
+              margin: "18px 0 20px", color: "var(--ink-1000)",
+            }}>
+              Auditoría ambiental y/o de SST para empresas que no pueden permitirse una{" "}
+              <span style={{ color: "var(--irca-green)" }}>multa</span>{" "}
+              <span style={{ color: "var(--danger)" }}>o paro de actividades</span>{" "}
+              por incumplimiento.
+            </h1>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 14px" }}>
+              Identificamos tus brechas de cumplimiento antes que la autoridad. Una radiografía técnica y legal del estado real de tu operación frente a SEMARNAT, PROFEPA, CONAGUA y normatividad estatal.
+            </p>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 32px" }}>
+              Saber dónde estás parado es el primer paso para operar tranquilo. Una auditoría bien hecha convierte la incertidumbre regulatoria en un plan de acción claro y priorizado.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="#contacto"
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: 8,
+                  background: "var(--irca-green)", color: "#fff",
+                  padding: "14px 26px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 16,
+                  borderRadius: 10, textDecoration: "none", boxShadow: "var(--shadow-1)",
+                }}
+              >
+                Solicitar información <Icon name="arrow-right" size={17} />
+              </a>
+              <a
+                href="#incluye"
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: 8,
+                  background: "var(--bg-1)", color: "var(--fg-1)", border: "1px solid var(--border-strong)",
+                  padding: "14px 24px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 16,
+                  borderRadius: 10, textDecoration: "none",
+                }}
+              >
+                Qué incluye
+              </a>
+            </div>
+            <div className="flex flex-wrap gap-6 mt-8" style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--fg-4)" }}>
+              <span>SEMARNAT</span><span>PROFEPA</span><span>CONAGUA</span><span>STPS</span><span>ISO 14001 · 45001</span>
+            </div>
+          </div>
+
+          {/* Audit report card — hidden on mobile */}
+          <div className="hidden md:block">
+            <div style={{ background: "var(--bg-1)", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 24, boxShadow: "var(--shadow-3)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 11, color: "var(--fg-4)", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase" }}>
+                <span style={{ width: 8, height: 8, borderRadius: 8, background: "var(--irca-blue)", boxShadow: "0 0 0 4px var(--irca-blue-50)" }} />
+                Resumen de diagnóstico
+              </div>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, color: "var(--fg-1)", letterSpacing: "-0.02em", marginTop: 14, lineHeight: 1.15 }}>
+                Instalación · línea base
+              </div>
+              <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginTop: 18 }}>
+                <span style={{ fontSize: 12, color: "var(--fg-3)", fontWeight: 600 }}>Nivel de cumplimiento</span>
+                <span style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 34, letterSpacing: "-0.03em", lineHeight: 1, color: "var(--irca-green)" }}>
+                  72<span style={{ fontSize: 18 }}>%</span>
+                </span>
+              </div>
+              <div style={{ height: 8, borderRadius: 999, background: "var(--ink-100)", marginTop: 10, overflow: "hidden" }}>
+                <div style={{ width: "72%", height: "100%", background: "linear-gradient(90deg,var(--irca-blue),var(--irca-green))", borderRadius: 999 }} />
+              </div>
+              <div style={{ height: 1, background: "var(--border-soft)", margin: "18px 0" }} />
+              <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                {findings.map(({ label, status, palette }) => (
+                  <div key={label} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0" }}>
+                    <span style={{ fontSize: 14, fontWeight: 600, color: "var(--fg-2)" }}>{label}</span>
+                    <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "3px 9px", borderRadius: 999, background: palette.bg, color: palette.fg, fontSize: 11, fontWeight: 600, flexShrink: 0 }}>
+                      <span style={{ width: 6, height: 6, borderRadius: 999, background: palette.fg }} /> {status}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div style={{ height: 1, background: "var(--border-soft)", margin: "14px 0" }} />
+              <div style={{ display: "flex", alignItems: "center", gap: 10, color: "var(--irca-blue-700)", fontSize: 13, fontWeight: 600 }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M11 6h10"/><path d="M11 12h10"/><path d="M11 18h10"/>
+                  <path d="M3 6l1.5 1.5L6 5"/><path d="M3 12l1.5 1.5L6 11"/><path d="M3 18l1.5 1.5L6 17"/>
+                </svg>
+                Cada brecha → Plan de Gestión de Incumplimientos
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SOBRE EL SERVICIO ─────────────────────────── */}
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)", borderTop: "1px solid var(--border-soft)" }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center" style={{ maxWidth: 1280, margin: "0 auto" }}>
+          <div>
+            <Eyebrow>Sobre el Servicio</Eyebrow>
+            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 28px", color: "var(--ink-1000)" }}>
+              Qué hace por ti una auditoría ambiental
+            </h2>
+            <Photo
+              ratio="16/9"
+              src="/images/servicios/auditoria-ambiental-seguridad-y-salud/servicio-auditoria-ambiental-irca.webp"
+              alt="Equipo de IRCA Consultores durante una auditoría ambiental y de seguridad y salud en planta"
+            />
+          </div>
+          <div>
+            <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 22px" }}>
+              Una auditoría ambiental es la evaluación sistemática del grado en que tu instalación cumple con las obligaciones ambientales que le aplican —federales, estatales y municipales— y, cuando el alcance así lo define, con las obligaciones de seguridad y salud en el trabajo que le aplican conforme a las Normas Oficiales Mexicanas de la STPS. La mayoría de las empresas no tiene una multa por mala fe, sino por desconocer una obligación, perder un vencimiento o asumir que un trámite estaba en regla cuando no lo estaba. Este servicio elimina esa zona ciega: te dice con precisión qué cumples, qué no cumples y qué representa cada brecha en términos de riesgo real.
+            </p>
+            <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: 0 }}>
+              En IRCA Consultores abordamos la auditoría desde nuestros dos frentes: el técnico y el jurídico. No nos limitamos a levantar un checklist; construimos una matriz de requerimientos legales aplicable a tu giro y operación específica, valoramos la criticidad de cada hallazgo y lo traducimos en un plan de gestión de incumplimientos accionable. Más de 25 años atendiendo sectores industrial, minero, energético e inmobiliario nos permiten anticipar qué revisa cada autoridad y cómo se comporta en campo durante una inspección.
+            </p>
+            <a
+              href="#contacto"
+              style={{ marginTop: 28, display: "inline-flex", alignItems: "center", gap: 8, background: "var(--irca-green)", color: "#fff", padding: "13px 24px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 15, borderRadius: 10, textDecoration: "none", boxShadow: "var(--shadow-1)" }}
+            >
+              Solicitar información <Icon name="arrow-right" size={16} />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ALCANCE ───────────────────────────────────── */}
+      <section id="incluye" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-2)" }}>
+        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+          <Eyebrow color="var(--irca-blue-700)">Alcance del servicio</Eyebrow>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-4 mb-11">
+            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(28px,4vw,44px)", letterSpacing: "-0.025em", lineHeight: 1.05, margin: 0, color: "var(--ink-1000)" }}>
+              ¿Qué incluye este servicio?
+            </h2>
+            <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>
+              Cada auditoría se ajusta al tamaño, giro y madurez ambiental de tu operación. El alcance final se define contigo según el objetivo: preparar una inspección, sustentar una compraventa o establecer una línea base de cumplimiento.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {alcanceCards.map(({ color, icon, title, desc }) => (
+              <article
+                key={title}
+                style={{ background: "var(--bg-1)", border: "1px solid var(--border-soft)", borderRadius: 14, padding: 24, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 14 }}
+              >
+                <div style={{
+                  width: 46, height: 46, borderRadius: 10,
+                  background: color === "green" ? "var(--irca-green-50)" : "var(--irca-blue-50)",
+                  color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)",
+                  display: "inline-flex", alignItems: "center", justifyContent: "center",
+                }}>
+                  {icon}
+                </div>
+                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.01em", color: "var(--fg-1)", lineHeight: 1.2, margin: 0 }}>{title}</h3>
+                <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--fg-3)", margin: 0 }}>{desc}</p>
+              </article>
+            ))}
+
+            {/* Dark CTA card */}
+            <article style={{ background: "linear-gradient(160deg,var(--bg-deep),#0f2c47)", border: "1px solid var(--bg-deep)", borderRadius: 14, padding: 24, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 12, justifyContent: "center" }}>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.01em", color: "#fff", lineHeight: 1.25 }}>El alcance se define contigo</div>
+              <p style={{ fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.72)", margin: 0 }}>No todas las auditorías son iguales. Cuéntanos tu objetivo y armamos el alcance correcto para tu operación.</p>
+              <a href="#contacto" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "#fff", fontWeight: 600, fontSize: 14, textDecoration: "none", marginTop: 4 }}>
+                Definir alcance <Icon name="arrow-right" size={16} />
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ¿CUÁNDO? ──────────────────────────────────── */}
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)" }}>
+        <div
+          className="grid grid-cols-1 md:[grid-template-columns:1.05fr_0.95fr] gap-10 md:gap-16 items-center"
+          style={{ maxWidth: 1280, margin: "0 auto" }}
+        >
+          <div>
+            <Eyebrow>Para quién es</Eyebrow>
+            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 20px", color: "var(--ink-1000)" }}>
+              ¿Cuándo necesita tu empresa una auditoría ambiental o de SST?
+            </h2>
+            <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 28px" }}>
+              No es un trámite reservado para grandes corporativos. Es una herramienta de gestión de riesgo útil para cualquier organización cuya operación genere emisiones, descargas, residuos, requiera permisos ambientales o exponga a su personal a riesgos de seguridad y salud en el trabajo. Es especialmente recomendable en estos escenarios:
+            </p>
+            <div style={{ display: "grid", gap: 14 }}>
+              <CheckItem>Recibiste una notificación de inspección de PROFEPA, SEMARNAT, STPS o una autoridad estatal y necesitas saber qué encontrarán.</CheckItem>
+              <CheckItem>Vas a comprar, vender o fusionar una instalación industrial y necesitas conocer sus pasivos ambientales y laborales.</CheckItem>
+              <CheckItem>Heredaste la responsabilidad ambiental o de seguridad e higiene de una planta y no tienes claridad de su estatus de cumplimiento.</CheckItem>
+              <CheckItem>Operas en un sector regulado (industrial, minero, energético, metalúrgico) y quieres establecer una línea base ordenada.</CheckItem>
+              <CheckItem>Tu operación implica trabajos de alto riesgo —altura, espacios confinados, sustancias químicas peligrosas, maquinaria— y necesitas verificar el cumplimiento de las NOM de la STPS.</CheckItem>
+              <CheckItem>Tuviste un accidente o incidente laboral y necesitas revisar programas, comisiones mixtas y expedientes antes de que lo haga la autoridad.</CheckItem>
+              <CheckItem>Acumulas trámites dispersos, vencimientos olvidados o documentación incompleta y necesitas poner orden.</CheckItem>
+              <CheckItem>Tu corporativo o tus clientes te exigen evidencia de cumplimiento ambiental y de seguridad e higiene como condición para operar o contratar.</CheckItem>
+              <CheckItem>Buscas obtener una certificación como Industria Limpia o el reconocimiento de Empresa Segura de la STPS y necesitas conocer tu punto de partida.</CheckItem>
+            </div>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <Photo
+              ratio="4/3"
+              src="/images/servicios/auditoria-ambiental-seguridad-y-salud/para-quien-es-auditoria-ambiental-irca.webp"
+              alt="Equipo de IRCA Consultores durante una auditoría ambiental y de seguridad y salud"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── SOBRE IRCA ────────────────────────────────── */}
+      <section id="nosotros" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--irca-green-50)" }}>
+        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+          <div className="grid grid-cols-1 md:[grid-template-columns:0.9fr_1.1fr] gap-10 md:gap-16 items-center">
+            <div>
+              <Eyebrow>Sobre la empresa</Eyebrow>
+              <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 28px", color: "var(--ink-1000)" }}>
+                Sobre IRCA Consultores
+              </h2>
+              <Photo
+                ratio="4/3"
+                src="/images/nosotros/nosotros-equipo-irca.webp"
+                alt="Equipo multidisciplinario de IRCA Consultores"
+              />
+            </div>
+            <div>
+              <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-2)", margin: 0 }}>
+                IRCA Consultores es una firma de consultoría ambiental fundada en 1999, especializada en ingeniería ambiental y cumplimiento normativo. A lo largo de más de 25 años nos hemos consolidado como referente técnico-legal ambiental en el norte de México, con cobertura nacional y proyectos en sectores tan diversos como el industrial, minero, energético, acuícola, inmobiliario y gubernamental. Operamos en regla con lo que le exigimos a nuestros clientes: contamos con registro <strong style={{ color: "var(--fg-1)", fontWeight: 600 }}>REPSE</strong> ante la STPS y mantenemos vigentes los <strong style={{ color: "var(--fg-1)", fontWeight: 600 }}>Registros de Prestador de Servicios</strong> en materia ambiental y de seguridad e higiene en los estados donde operamos. Conjugamos rigor técnico con solidez jurídica para representar a nuestros clientes ante SEMARNAT, PROFEPA, CONAGUA, STPS y demás autoridades. Nuestro equipo multidisciplinario acompaña cada proyecto de principio a fin: del diagnóstico a la resolución.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ¿POR QUÉ IRCA? ───────────────────────────── */}
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ position: "relative", overflow: "hidden", background: "var(--bg-deep)", color: "#fff" }}>
+        <svg style={{ position: "absolute", right: -120, top: -120, opacity: 0.13, pointerEvents: "none" }} width="540" height="540" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          {[5,10,15,20,25,30,35,40,45].map((r) => (
+            <circle key={r} cx="50" cy="50" r={r} stroke="#fff" strokeWidth="0.4" />
+          ))}
+        </svg>
+        <div className="relative" style={{ maxWidth: 1280, margin: "0 auto" }}>
+          <Eyebrow color="rgba(255,255,255,0.7)">Por qué IRCA Consultores</Eyebrow>
+          <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(28px,4vw,48px)", letterSpacing: "-0.025em", lineHeight: 1.05, margin: "16px 0 48px", color: "#fff", maxWidth: "22ch" }}>
+            ¿Por qué contratar a{" "}
+            <span style={{ color: "var(--irca-green)" }}>IRCA Consultores</span>?
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-x-10">
+            {pillars.map(({ n, title, body }) => (
+              <div key={n} style={{ borderTop: "1px solid rgba(255,255,255,0.15)", paddingTop: 22 }}>
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, opacity: 0.6, marginBottom: 12 }}>{n}</div>
+                <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 21, letterSpacing: "-0.015em", marginBottom: 10 }}>{title}</div>
+                <div style={{ fontSize: 15, lineHeight: 1.6, opacity: 0.78 }}>{body}</div>
+              </div>
+            ))}
+            {/* Glass CTA card */}
+            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: 16, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 14, padding: 28 }}>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.015em", lineHeight: 1.25 }}>Tu tranquilidad ambiental — nuestra especialidad.</div>
+              <a
+                href="#contacto"
+                style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--irca-green)", color: "#fff", border: "1px solid transparent", padding: "12px 20px", fontWeight: 600, fontSize: 14, borderRadius: 8, textDecoration: "none", alignSelf: "flex-start" }}
+              >
+                Solicitar información <Icon name="arrow-right" size={16} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ──────────────────────────────────────── */}
+      <section id="faq" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)" }}>
+        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+          <Eyebrow color="var(--irca-blue-700)">Preguntas frecuentes</Eyebrow>
+          <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(24px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 36px", color: "var(--ink-1000)" }}>
+            Preguntas frecuentes sobre auditoría ambiental
+          </h2>
+          <ServiceFAQ items={faqs} />
+        </div>
+      </section>
+
+      {/* ── SERVICIOS RELACIONADOS ────────────────────── */}
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-2)", borderTop: "1px solid var(--border-soft)" }}>
+        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+          <Eyebrow>Servicios relacionados</Eyebrow>
+          <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(20px,3vw,32px)", letterSpacing: "-0.022em", lineHeight: 1.1, margin: "16px 0 40px", color: "var(--ink-1000)" }}>
+            Otros servicios que pueden complementar este proyecto
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {related.map(({ color, icon, title, desc, href }) => (
+              <article
+                key={title}
+                style={{ background: "var(--bg-1)", border: "1px solid var(--border-soft)", borderRadius: 14, padding: 22, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 12 }}
+              >
+                <div style={{
+                  width: 42, height: 42, borderRadius: 10,
+                  background: color === "blue" ? "var(--irca-blue-50)" : "var(--irca-green-50)",
+                  color: color === "blue" ? "var(--irca-blue-700)" : "var(--irca-green-700)",
+                  display: "inline-flex", alignItems: "center", justifyContent: "center",
+                }}>
+                  {icon}
+                </div>
+                <h4 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 17, letterSpacing: "-0.01em", color: "var(--fg-1)", margin: 0, lineHeight: 1.25 }}>{title}</h4>
+                <p style={{ fontSize: 13, lineHeight: 1.55, color: "var(--fg-3)", margin: 0 }}>{desc}</p>
+                <a
+                  href={href}
+                  style={{ marginTop: "auto", display: "inline-flex", alignItems: "center", gap: 6, color: color === "blue" ? "var(--irca-blue-700)" : "var(--irca-green-700)", fontWeight: 600, fontSize: 13, textDecoration: "none" }}
+                >
+                  Ver servicio <Icon name="arrow-right" size={14} />
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA + FORM ───────────────────────────────── */}
+      <ServiceContactSection
+        headline={<>Deja de operar con <span style={{ color: "var(--irca-green)" }}>incertidumbre</span> regulatoria.</>}
+        copy="Una auditoría ambiental es la inversión más rentable en tranquilidad operativa: te muestra exactamente dónde estás y qué hacer al respecto. Da el primer paso con un equipo que conoce tanto la norma como a quien la aplica."
+        formTitle="Solicitar auditoría ambiental"
+        motivoLabel="Motivo de la auditoría"
+        motivoOptions={["Notificación de inspección", "Compraventa / fusión (due diligence)", "Línea base de cumplimiento", "Camino a Industria Limpia", "Otro"]}
+      />
+    </>
+  );
+}

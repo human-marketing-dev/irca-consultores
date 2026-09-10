@@ -4,7 +4,7 @@ import Icon, { type IconName } from "@/components/ui/Icon";
 
 export const metadata: Metadata = {
   title: "Servicios de Consultoría Ambiental — IRCA Consultores",
-  description: "Nueve áreas de especialidad ambiental y de seguridad y salud: auditoría, estudios ambientales, trámites y autorizaciones, servicios legales, supervisión, estudios de ingeniería y capacitación. IRCA Consultores, Monterrey.",
+  description: "Ocho áreas de especialidad ambiental y de seguridad y salud: auditoría, estudios ambientales, trámites y autorizaciones, servicios legales, supervisión, estudios de ingeniería y capacitación. IRCA Consultores, Monterrey.",
 };
 
 /* ── helpers ──────────────────────────────────────────── */
@@ -33,25 +33,26 @@ type Service = {
 
 const services: Service[] = [
   {
-    icon: "shield-check", accent: "green", number: "01",
-    title: "Auditoría y diagnóstico ambiental",
-    desc: "Identificamos el perfil de cumplimiento de tu instalación ante SEMARNAT, PROFEPA y CONAGUA antes de que lo haga la autoridad. Punto de partida de cualquier estrategia ambiental seria.",
+    icon: "shield-check", accent: "blue", number: "01",
+    title: "Auditoría y diagnóstico Ambiental, Seguridad y Salud",
+    desc: "Auditorías de diagnóstico y cumplimiento. Industria Limpia, inventarios de emisiones, corrientes de residuos, auditorías de cliente y de terceros. Autogestión STPS, manejo de sustancias y estándares internacionales ISO 14001 y 45001.",
     alcance: [
       "Auditorías de diagnóstico y de cumplimiento",
-      "Auditoría voluntaria de Industria Limpia (PROFEPA)",
+      "Industria Limpia (PROFEPA)",
       "Inventarios de emisiones y corrientes de residuos",
-      "Auditorías de cliente y de producto",
-      "Estándares internacionales de autogestión (ISO 14001)",
+      "Auditorías de cliente y de terceros",
+      "Autogestión STPS y manejo de sustancias",
+      "Estándares internacionales ISO 14001 e ISO 45001",
     ],
     subservicios: [
-      { label: "Industria Limpia", href: "/servicios/auditoria-ambiental/industria-limpia/" },
-      { label: "ISO 14001", href: "/servicios/auditoria-ambiental/iso-14001/" },
+      { label: "Industria Limpia", href: "/servicios/auditoria-ambiental-seguridad-y-salud/industria-limpia/" },
+      { label: "ISO 14001", href: "/servicios/auditoria-ambiental-seguridad-y-salud/iso-14001/" },
     ],
-    href: "/servicios/auditoria-ambiental/",
+    href: "/servicios/auditoria-ambiental-seguridad-y-salud/",
   },
   {
-    icon: "flask", accent: "blue", number: "02",
-    title: "Estudios ambientales",
+    icon: "flask", accent: "green", number: "02",
+    title: "Ingeniería Ambiental",
     desc: "Caracterizamos y evaluamos sitios e instalaciones bajo normativa mexicana y metodología ASTM, y diseñamos la solución técnica que sigue. Estudios que sostienen decisiones de inversión y de remediación.",
     alcance: [
       "Evaluación de sitios contaminados Phase I y II (ASTM)",
@@ -61,14 +62,14 @@ const services: Service[] = [
       "Monitoreo de emisiones",
     ],
     subservicios: [
-      { label: "Phase I y II", href: "/servicios/estudios-ambientales/evaluacion-ambiental-fase-1-y-2/" },
-      { label: "Remediación de suelos", href: "/servicios/estudios-ambientales/remediacion-de-suelos-contaminados/" },
-      { label: "Ruido NOM-081", href: "/servicios/estudios-ambientales/control-de-ruido-perimetral/" },
+      { label: "Phase I y II", href: "/servicios/ingenieria-ambiental/evaluacion-ambiental-fase-1-y-2/" },
+      { label: "Remediación de suelos", href: "/servicios/ingenieria-ambiental/remediacion-de-suelos-contaminados/" },
+      { label: "Ruido NOM-081", href: "/servicios/ingenieria-ambiental/control-de-ruido-perimetral/" },
     ],
-    href: "/servicios/estudios-ambientales/",
+    href: "/servicios/ingenieria-ambiental/",
   },
   {
-    icon: "file-text", accent: "green", number: "03",
+    icon: "file-text", accent: "blue", number: "03",
     title: "Estudios, trámites y administración de autorizaciones",
     desc: "Elaboramos los estudios y gestionamos las autorizaciones federales y estatales que tu proyecto necesita para operar. Seguimiento hasta resolución favorable y administración del expediente en el tiempo.",
     alcance: [
@@ -87,7 +88,7 @@ const services: Service[] = [
     href: "/servicios/tramites-y-autorizaciones-ambientales/",
   },
   {
-    icon: "scale", accent: "blue", number: "04",
+    icon: "scale", accent: "green", number: "04",
     title: "Servicios legales y atención de autoridades",
     desc: "Atendemos inspecciones, procedimientos sancionadores y litigio ante PROFEPA, SEMARNAT, CONAGUA y STPS. Defensa técnica y jurídica desde el acta circunstanciada hasta el amparo.",
     alcance: [
@@ -100,7 +101,7 @@ const services: Service[] = [
     href: "/servicios/servicios-legales-y-atencion-de-autoridades/",
   },
   {
-    icon: "eye", accent: "green", number: "05",
+    icon: "eye", accent: "blue", number: "05",
     title: "Consultoría, administración y supervisión ambiental",
     desc: "Operamos como tu área ambiental externa: acompañamiento continuo, supervisión en campo y control de los compromisos adquiridos ante la autoridad. Cumplimiento sostenido, no solo el trámite resuelto.",
     alcance: [
@@ -112,20 +113,8 @@ const services: Service[] = [
     href: "/servicios/consultoria-y-supervision-ambiental/",
   },
   {
-    icon: "hardhat", accent: "blue", number: "06",
-    title: "Auditoría y diagnóstico Seguridad y Salud",
-    desc: "Evaluamos el cumplimiento de tu operación frente a las NOM-STPS y a los estándares internacionales de gestión. Diagnóstico previo a cualquier inspección o proceso de certificación.",
-    alcance: [
-      "Auditorías de diagnóstico y de cumplimiento",
-      "Auditoría de autogestión (STPS)",
-      "Auditoría de manejo de sustancias",
-      "Estándares internacionales de autogestión (ISO 45001)",
-    ],
-    href: "/servicios/auditoria-seguridad-y-salud/",
-  },
-  {
-    icon: "alert-triangle", accent: "green", number: "07",
-    title: "Estudio de seguridad y salud",
+    icon: "alert-triangle", accent: "green", number: "06",
+    title: "Proyectos de Seguridad y Salud",
     desc: "Analizamos riesgos laborales, equipos y manejo de sustancias con metodologías reconocidas internacionalmente. Gestión integral del riesgo para operaciones industriales.",
     alcance: [
       "Auditorías de riesgos laborales y de equipos",
@@ -133,11 +122,11 @@ const services: Service[] = [
       "Metodologías de cumplimiento (SMART, DuPont, entre otras)",
       "Estándares internacionales de gestión de seguridad y salud (ISO 45001)",
     ],
-    href: "/servicios/estudios-de-seguridad-y-salud/",
+    href: "/servicios/proyectos-de-seguridad-y-salud/",
   },
   {
-    icon: "compass", accent: "blue", number: "08",
-    title: "Estudios de ingeniería",
+    icon: "compass", accent: "blue", number: "07",
+    title: "Estudios de viabilidad",
     desc: "Resolvemos la ingeniería de soporte que los proyectos ambientales y de infraestructura requieren, del subsuelo a la red hidráulica. Estudios ejecutables, no solo entregables.",
     alcance: [
       "Geología, geofísica y estabilidad de taludes",
@@ -148,12 +137,12 @@ const services: Service[] = [
       "Soluciones pluviales e hidráulicas",
     ],
     subservicios: [
-      { label: "Geoespaciales y UAV", href: "/servicios/estudios-de-ingenieria/servicios-geoespaciales/" },
+      { label: "Geoespaciales y UAV", href: "/servicios/estudios-de-viabilidad/servicios-geoespaciales/" },
     ],
-    href: "/servicios/estudios-de-ingenieria/",
+    href: "/servicios/estudios-de-viabilidad/",
   },
   {
-    icon: "graduation-cap", accent: "green", number: "09",
+    icon: "graduation-cap", accent: "green", number: "08",
     title: "Capacitación técnica especializada",
     desc: "Programas impartidos por los mismos especialistas que ejecutan los proyectos. No solo teoría: instructores que conocen la realidad de la industria mexicana.",
     alcance: [
@@ -201,12 +190,12 @@ export default function Servicios() {
   return (
     <>
       {/* ── HERO ──────────────────────────────────────── */}
-      <section className="px-4 sm:px-6 pt-16 md:pt-24 pb-16 md:pb-20" style={{ background: "linear-gradient(180deg,#fff 0%,var(--bg-2) 100%)", position: "relative", overflow: "hidden" }}>
+      <section className="px-4 sm:px-6 pt-16 md:pt-24 pb-16 md:pb-20" style={{ background: "linear-gradient(180deg,var(--bg-1) 0%,var(--bg-2) 100%)", position: "relative", overflow: "hidden" }}>
         <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.2, pointerEvents: "none" }} aria-hidden="true">
           <defs>
             <pattern id="topo-srv" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M0 20 Q10 12 20 20 T40 20" stroke="#C7E2F0" strokeWidth="1" fill="none"/>
-              <path d="M0 30 Q10 22 20 30 T40 30" stroke="#DCEFCB" strokeWidth="1" fill="none"/>
+              <path d="M0 20 Q10 12 20 20 T40 20" style={{ stroke: "var(--irca-blue-100)" }} strokeWidth="1" fill="none"/>
+              <path d="M0 30 Q10 22 20 30 T40 30" style={{ stroke: "var(--irca-green-100)" }} strokeWidth="1" fill="none"/>
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#topo-srv)"/>
@@ -220,7 +209,7 @@ export default function Servicios() {
               letterSpacing: "-0.03em", lineHeight: 1.05,
               margin: 0, color: "var(--fg-1)",
             }}>
-              Nueve áreas de especialidad.{" "}
+              Ocho áreas de especialidad.{" "}
               <span style={{ color: "var(--irca-green)" }}>Un solo equipo.</span>
             </h1>
             <div>
@@ -248,7 +237,7 @@ export default function Servicios() {
       </section>
 
       {/* ── LISTADO DE SERVICIOS ───────────────────────── */}
-      <section className="px-4 sm:px-6 py-16 md:py-20" style={{ background: "#fff", borderTop: "1px solid var(--border-soft)" }}>
+      <section className="px-4 sm:px-6 py-16 md:py-20" style={{ background: "var(--bg-1)", borderTop: "1px solid var(--border-soft)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", display: "flex", flexDirection: "column", gap: 6 }}>
           {services.map((s, i) => {
             const isGreen = s.accent === "green";
@@ -256,7 +245,7 @@ export default function Servicios() {
               <article
                 key={s.number}
                 style={{
-                  background: i % 2 === 0 ? "#fff" : "var(--bg-2)",
+                  background: i % 2 === 0 ? "var(--bg-1)" : "var(--bg-2)",
                   border: "1px solid var(--border-soft)",
                   borderRadius: 16, padding: "28px 30px",
                   display: "grid",
@@ -364,7 +353,7 @@ export default function Servicios() {
               Cómo acompañamos a un cliente de principio a fin
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.65, color: "rgba(255,255,255,0.65)", margin: 0 }}>
-              El modelo integrado de IRCA significa que el mismo equipo que hace el diagnóstico lleva el trámite
+              El modelo integrado de IRCA Consultores significa que el mismo equipo que hace el diagnóstico lleva el trámite
               y, si la autoridad actúa, se mantiene en la defensa jurídica. Sin transferencias ni pérdida de contexto.
             </p>
           </div>
@@ -394,7 +383,7 @@ export default function Servicios() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────── */}
-      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "#fff", borderTop: "1px solid var(--border-soft)" }}>
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)", borderTop: "1px solid var(--border-soft)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
@@ -423,7 +412,7 @@ export default function Servicios() {
                   href="/experiencia/"
                   style={{
                     display: "inline-flex", alignItems: "center", gap: 8,
-                    background: "#fff", color: "var(--fg-1)", border: "1px solid var(--border-strong)",
+                    background: "var(--bg-1)", color: "var(--fg-1)", border: "1px solid var(--border-strong)",
                     padding: "14px 24px", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 15,
                     borderRadius: 10, textDecoration: "none",
                   }}
