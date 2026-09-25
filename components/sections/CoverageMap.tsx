@@ -77,6 +77,7 @@ const markers: Marker[] = [
   { label: "Coahuila",   at: [-101.00, 25.42], anchor: "end",   dx: -12, dy: 5 },
   { label: "Monterrey",  at: [-100.31, 25.67], anchor: "start", dx: 14, dy: -6, hq: true },
   { label: "Tamaulipas", at: [-99.14, 23.74],  anchor: "start", dx: 12, dy: 12 },
+  { label: "San Luis Potosí", at: [-100.98, 22.15], anchor: "start", dx: 12, dy: 4 },
   { label: "Guanajuato", at: [-101.26, 20.92], anchor: "end",   dx: -12, dy: 4 },
   { label: "CDMX",       at: [-99.13, 19.43],  anchor: "start", dx: 12, dy: 14 },
 ];
@@ -88,7 +89,7 @@ export default function CoverageMap() {
         viewBox={`0 0 ${VB_W} ${VB_H}`}
         style={{ width: "100%", height: "auto", display: "block" }}
         role="img"
-        aria-label="Mapa de cobertura de IRCA Consultores en México: sede en Monterrey, Nuevo León, con operación recurrente en Sonora, Coahuila, Tamaulipas, Guanajuato y Ciudad de México."
+        aria-label="Mapa de cobertura de IRCA Consultores en México: sede en Monterrey, Nuevo León, con operación recurrente en Sonora, Coahuila, Tamaulipas, San Luis Potosí, Guanajuato y Ciudad de México."
       >
         <path
           d={path}

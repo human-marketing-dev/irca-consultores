@@ -71,7 +71,7 @@ const services: Service[] = [
   {
     icon: "file-text", accent: "blue", number: "03",
     title: "Estudios, trámites y administración de autorizaciones",
-    desc: "Elaboramos los estudios y gestionamos las autorizaciones federales y estatales que tu proyecto necesita para operar. Seguimiento hasta resolución favorable y administración del expediente en el tiempo.",
+    desc: "Elaboramos los estudios y gestionamos las autorizaciones federales y estatales que tu proyecto necesita para operar. Seguimiento hasta resolución favorable y cumplimiento de términos y condicionantes.",
     alcance: [
       "Impacto Ambiental (MIA) y Riesgo Ambiental (ERA)",
       "Programa de Prevención de Accidentes (PPA)",

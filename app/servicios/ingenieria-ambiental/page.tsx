@@ -168,24 +168,24 @@ const pillars = [
 
 const faqs = [
   {
-    q: "¿Qué diferencia hay entre una MIA federal y una estatal?",
-    a: "La MIA federal la resuelve la SEMARNAT federal y aplica a proyectos listados en el artículo 28 de la LGEEPA (obra pública federal, proyectos energéticos, minería, entre otros). La MIA estatal la tramita la dependencia ambiental de cada entidad para proyectos de competencia local. En muchos casos ambas pueden requerirse. Evaluamos cuál aplica a tu proyecto desde la primera consulta.",
+    q: "¿Cuál es la diferencia entre una evaluación Phase I y una caracterización bajo normativa mexicana?",
+    a: "La evaluación Phase I sigue el estándar internacional ASTM y está orientada a decisiones de inversión: documenta el historial del sitio e identifica indicios de contaminación para limitar responsabilidad en una transacción. La caracterización bajo las NOM mexicanas es el procedimiento que PROFEPA reconoce para acreditar formalmente la afectación y sustentar una remediación. Es común que una Phase II derive en una caracterización formal.",
   },
   {
-    q: "¿Cuánto tiempo tarda la resolución de una MIA?",
-    a: "El plazo legal de resolución de la SEMARNAT es de 60 días hábiles para modalidad particular y 120 para regional, aunque en la práctica los plazos varían según la carga de trabajo de la unidad y la calidad del expediente. Un estudio bien estructurado reduce observaciones y acelera los tiempos reales.",
+    q: "¿Qué incluye un balance hídrico y para qué sirve?",
+    a: "Cuantifica todas las entradas, consumos, pérdidas y descargas de agua de la instalación, hasta cerrar el balance. Sirve para sustentar un título de concesión o un permiso de descarga ante CONAGUA, para dimensionar un proyecto de reúso y para fijar metas corporativas de reducción de consumo con una línea base defendible.",
   },
   {
-    q: "¿Qué pasa si la autoridad emite observaciones al estudio?",
-    a: "Las observaciones son parte del proceso y no representan una negativa. Nuestro equipo responde la información adicional requerida en los plazos establecidos. En casos donde la resolución sea desfavorable, contamos con capacidad jurídica para interponer recursos administrativos o impugnar ante tribunales.",
+    q: "¿Cómo se calcula la huella de carbono y qué alcances cubre?",
+    a: "Se elabora un inventario de emisiones de gases de efecto invernadero por alcances: el 1 cubre las emisiones directas de la operación, el 2 las asociadas a la energía comprada y el 3 las de la cadena de valor. El alcance 3 es el más laborioso porque depende de información de proveedores y clientes, y suele definirse según lo que exija el corporativo, el cliente o el marco de reporte que se vaya a usar.",
   },
   {
-    q: "¿Pueden hacer un estudio si el proyecto ya está en operación sin autorización?",
-    a: "Sí. Trabajamos en procesos de regularización para instalaciones que operan sin la MIA, ERA o ETJ correspondiente. El proceso varía según el tipo de proyecto y su impacto, y puede involucrar medidas de compensación. Es recomendable atenderlo de forma proactiva antes de una inspección de la autoridad.",
+    q: "¿Diseñan la solución o solo entregan el diagnóstico?",
+    a: "Ambas cosas. Cuando el estudio revela un problema, diseñamos la solución técnica que sigue —remediación, planta de tratamiento, celda de confinamiento, control acústico o descontaminación— con memoria de cálculo y viabilidad de ejecución, no solo una recomendación genérica.",
   },
   {
-    q: "¿Trabajan con proyectos fuera de Nuevo León?",
-    a: "Sí. Contamos con experiencia documentada en proyectos a lo largo del país, incluyendo Coahuila, Tamaulipas, Sonora, Guanajuato, Estado de México, Baja California y Veracruz, entre otras entidades. El trabajo en campo incluye visitas al sitio del proyecto.",
+    q: "¿Con qué equipo y laboratorios trabajan?",
+    a: "Contamos con equipo propio de campo, incluidos sonómetros clase 1 con certificado de calibración vigente para los estudios de ruido. La parte analítica se procesa en laboratorios acreditados, que es lo que da validez al resultado frente a la autoridad y ante un tercero en una transacción.",
   },
 ];
 
@@ -365,10 +365,10 @@ export default function EstudiosAmbientales() {
           <Eyebrow color="var(--irca-blue-700)">Estudios especializados</Eyebrow>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start mt-4 mb-12">
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(28px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: 0, color: "var(--ink-1000)" }}>
-              Cuatro estudios, una sola firma especializada
+              Estudios especializados, una sola firma
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>
-              Cada tipo de estudio responde a una autoridad, una normatividad y un proceso de revisión distinto. Elaboramos los cuatro, y en proyectos complejos los coordinamos de forma simultánea para evitar cuellos de botella en la autorización.
+              Caracterización de sitio, remediación de suelos, diseño de plantas de tratamiento y de celdas de confinamiento, control de ruido, balance hídrico, huella de carbono y análisis de ciclo de vida, entre otros. Cada estudio responde a una normatividad y un proceso de revisión distintos; en proyectos complejos los coordinamos de forma simultánea.
             </p>
           </div>
 
@@ -463,18 +463,21 @@ export default function EstudiosAmbientales() {
           <div>
             <Eyebrow color="var(--irca-blue-700)">Para quién es</Eyebrow>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 20px", color: "var(--ink-1000)" }}>
-              ¿Cuándo necesitas un estudio ambiental?
+              ¿Cuándo necesitas respaldo ambiental especializado?
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 28px" }}>
-              Cualquier proyecto que pueda generar impacto significativo en el entorno requiere algún tipo de autorización ambiental previa. Más allá de la obligación legal, contar con el estudio correcto desde el inicio protege la inversión, los plazos y la reputación de la operación. Es especialmente recomendable en estos escenarios:
+              Cuando una inversión, autorización u operación depende de información ambiental verificable.
+              IRCA Consultores determina el estudio, trámite o evidencia técnica aplicable para reducir
+              contingencias, retrasos y costos innecesarios.
             </p>
             <div style={{ display: "grid", gap: 14 }}>
-              <CheckItem>Vas a comprar, vender o financiar un activo industrial y necesitas cuantificar el pasivo ambiental del sitio.</CheckItem>
-              <CheckItem>Sospechas contaminación en suelo o agua subterránea y necesitas delimitarla antes de que lo haga la autoridad.</CheckItem>
-              <CheckItem>Tu corporativo o tus clientes te exigen huella de carbono, análisis de ciclo de vida o reporte de sostenibilidad.</CheckItem>
-              <CheckItem>Necesitas sustentar una concesión de agua, un permiso de descarga o un proyecto de reúso con un balance hídrico.</CheckItem>
-              <CheckItem>Requieres diseñar un relleno sanitario, una planta de tratamiento o un sistema de descontaminación.</CheckItem>
-              <CheckItem>Debes acreditar cumplimiento con monitoreo de emisiones, descargas o ruido perimetral ante la autoridad.</CheckItem>
+              <CheckItem>Compra, venta o financiamiento de activos industriales.</CheckItem>
+              <CheckItem>Investigación de contaminación en suelo o agua subterránea.</CheckItem>
+              <CheckItem>Huella de carbono, ciclo de vida y reportes de sostenibilidad.</CheckItem>
+              <CheckItem>Concesiones, descargas, reúso y balances hídricos.</CheckItem>
+              <CheckItem>Diseño de sistemas de tratamiento, manejo o descontaminación.</CheckItem>
+              <CheckItem>Monitoreo de emisiones, descargas y ruido para acreditar cumplimiento.</CheckItem>
+              <CheckItem>Modelación ambiental en aire, agua y suelo.</CheckItem>
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -497,14 +500,14 @@ export default function EstudiosAmbientales() {
                 Sobre IRCA Consultores
               </h2>
               <Photo
-                ratio="4/3"
-                src="/images/nosotros/nosotros-equipo-irca.webp"
+                ratio="16/9"
+                src="/images/nosotros/sobre-la-empresa-irca.webp"
                 alt="Equipo multidisciplinario de IRCA Consultores"
               />
             </div>
             <div>
               <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-2)", margin: 0 }}>
-                IRCA Consultores es una firma de consultoría ambiental fundada en 1999, especializada en ingeniería ambiental y cumplimiento normativo. A lo largo de más de 25 años nos hemos consolidado como referente técnico-legal ambiental en el norte de México, con cobertura nacional y proyectos en sectores tan diversos como el industrial, minero, energético, acuícola, inmobiliario y gubernamental. Operamos bajo dos razones sociales —IRCA Ingeniería y Servicios, S.C. y Environmental North de México, S.C.— y conjugamos rigor técnico con solidez jurídica para representar a nuestros clientes ante SEMARNAT, PROFEPA, CONAGUA, STPS y demás autoridades. Nuestro equipo multidisciplinario acompaña cada proyecto de principio a fin: del diagnóstico a la resolución.
+                IRCA Consultores es una firma de consultoría ambiental fundada en 1999, especializada en ingeniería ambiental y cumplimiento normativo. A lo largo de más de 25 años nos hemos consolidado como referente técnico-legal ambiental en el norte de México, con cobertura nacional y proyectos en sectores tan diversos como el industrial, minero, energético, acuícola, inmobiliario y gubernamental. Operamos en regla con lo que le exigimos a nuestros clientes: contamos con registro <strong style={{ color: "var(--fg-1)", fontWeight: 600 }}>REPSE</strong> ante la STPS y mantenemos vigentes los <strong style={{ color: "var(--fg-1)", fontWeight: 600 }}>Registros de Prestador de Servicios</strong> en materia ambiental y de seguridad e higiene en los estados donde operamos. Conjugamos rigor técnico con solidez jurídica para representar a nuestros clientes ante SEMARNAT, PROFEPA, CONAGUA, STPS y demás autoridades. Nuestro equipo multidisciplinario acompaña cada proyecto de principio a fin: del diagnóstico a la resolución.
               </p>
             </div>
           </div>

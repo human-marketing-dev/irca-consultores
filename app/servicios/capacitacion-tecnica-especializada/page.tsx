@@ -31,15 +31,6 @@ function CheckItem({ children }: { children: React.ReactNode }) {
   );
 }
 
-/* ── hero card data ─────────────────────────────────── */
-
-const courses = [
-  { label: "Sistemas de gestión ISO 14001 / 45001",  participants: "18 inscritos", palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
-  { label: "Atención de visitas de inspección",       participants: "12 inscritos", palette: { bg: "var(--info-bg)",    fg: "var(--info)"    } },
-  { label: "Respuesta a emergencias y brigadas",      participants: "22 inscritos", palette: { bg: "var(--warning-bg)", fg: "var(--warning)" } },
-  { label: "Manejo de residuos — NOM vigentes",       participants: "14 inscritos", palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
-];
-
 /* ── alcance cards ──────────────────────────────────── */
 
 const alcanceCards = [
@@ -127,24 +118,44 @@ const pillars = [
 
 const faqs = [
   {
-    q: "¿Los cursos tienen validez ante la STPS?",
-    a: "Sí. Emitimos constancias de participación con los datos del instructor, el temario, la duración y la fecha del curso, en el formato que la STPS acepta para acreditar el cumplimiento de las obligaciones de capacitación del patrón conforme a la Ley Federal del Trabajo. También proporcionamos la evidencia documental —lista de asistencia, material didáctico, evaluaciones— para integrar al expediente de la empresa.",
+    q: "¿Qué cursos ofrece IRCA Consultores?",
+    a: "Contamos con programas en regulación y cumplimiento ambiental, prevención de accidentes, minimización de residuos industriales, auditoría ambiental, elaboración y control de planes integrales de manejo de residuos, implementación de ISO 14001, atención de visitas de inspección y control de polvos en obras de construcción.",
   },
   {
-    q: "¿Pueden adaptar el curso de ISO 14001 a nuestra empresa?",
-    a: "Sí, es precisamente el formato que recomendamos para cursos de implementación de sistemas de gestión. El curso in company utiliza los procesos, los aspectos ambientales y los requisitos legales de tu instalación como materia de trabajo: los participantes construyen la matriz de aspectos e impactos, el registro de requisitos legales y los objetivos ambientales con datos reales de su planta, no con ejercicios de práctica genéricos.",
+    q: "¿Los cursos están registrados ante la STPS?",
+    a: "Nuestro personal capacitador está registrado como agente capacitador externo ante la Secretaría del Trabajo y Previsión Social (STPS), junto con los programas señalados. Antes de contratar, se especifica el alcance del curso y el tipo de constancia que corresponde emitir. La participación en un curso no implica, por sí sola, la expedición automática de una constancia DC-3.",
   },
   {
-    q: "¿Qué cubre el curso de atención a visitas de inspección?",
-    a: "El curso cubre el proceso completo de una visita de inspección: notificación previa vs. visita no programada, derechos del inspeccionado durante el levantamiento del acta, qué documentos se deben tener disponibles, cómo orientar al personal que atiende al inspector, qué no se debe firmar sin revisión y cómo actuar si la autoridad levanta una medida de seguridad o clausura. Es uno de los cursos más demandados porque la diferencia entre una inspección sin consecuencias y un procedimiento sancionador suele medirse en los primeros minutos.",
+    q: "¿Qué documentación recibe la empresa?",
+    a: "Se entrega la constancia correspondiente, el temario, la duración del curso y la relación de participantes. Cuando resulte procedente conforme al programa impartido y a los requisitos laborales y documentales aplicables, se integra la Constancia de Competencias o de Habilidades Laborales DC-3.",
   },
   {
-    q: "¿Cuántas personas pueden participar en un curso in company?",
-    a: "No hay límite fijo, pero recomendamos grupos de entre 10 y 25 personas para cursos técnicos que incluyen ejercicios prácticos. Para talleres de concientización o inducción, el formato puede escalar a grupos más grandes. Si necesitas capacitar a varios turnos o áreas, diseñamos un plan de réplica con instructores y materiales estandarizados.",
+    q: "¿Los cursos pueden adaptarse a nuestra empresa?",
+    a: "Sí. Podemos incorporar procesos, instalaciones, obligaciones y casos relacionados con la operación del cliente. En los cursos registrados se conserva el objetivo y contenido esencial; cuando se requiere una modificación sustancial, se estructura un programa específico y se define previamente la documentación aplicable.",
   },
   {
-    q: "¿Cuánto tiempo toma el curso de RETC y obligaciones de reporte?",
-    a: "El taller de RETC y COA tiene una duración típica de 6 a 8 horas, dependiendo del nivel previo de conocimiento del grupo y de la complejidad de la instalación. Lo recomendamos en el tercer trimestre del año, cuando aún hay tiempo para levantar o corregir el inventario de emisiones antes de la fecha de presentación de la COA en enero. También puede complementarse con una sesión práctica de llenado del sistema electrónico de SEMARNAT.",
+    q: "¿Qué modalidades de capacitación manejan?",
+    a: "Los cursos pueden impartirse in company, en las instalaciones del cliente, o mediante grupos abiertos programados por IRCA Consultores. La modalidad se determina de acuerdo con el tema, la ubicación, el número de participantes y los ejercicios requeridos.",
+  },
+  {
+    q: "¿Cuánto duran los cursos?",
+    a: "La duración depende del programa. Los cursos registrados tienen cargas de entre 5 y 16 horas. La capacitación puede organizarse en una sola jornada o distribuirse en varias sesiones, sin reducir los contenidos ni las actividades de evaluación.",
+  },
+  {
+    q: "¿Qué incluye el curso de atención de visitas de inspección?",
+    a: "Aborda la preparación documental, recepción de inspectores, identificación del alcance de la orden, acompañamiento del recorrido, formulación de observaciones, manejo de evidencias y seguimiento posterior. El objetivo es que el personal conozca sus responsabilidades y evite errores que puedan agravar un procedimiento administrativo.",
+  },
+  {
+    q: "¿La capacitación incluye ejercicios y casos prácticos?",
+    a: "Sí. Los contenidos se apoyan en situaciones derivadas de auditorías, trámites y procedimientos reales, utilizando información reservada y datos anonimizados. Los participantes trabajan con ejemplos, documentos y decisiones semejantes a las que pueden enfrentar en su operación.",
+  },
+  {
+    q: "¿Quiénes deberían participar?",
+    a: "Responsables ambientales, personal de seguridad y salud en el trabajo, supervisores, residentes de obra, responsables de mantenimiento, recursos humanos, áreas jurídicas y directivos con funciones relacionadas con el cumplimiento normativo.",
+  },
+  {
+    q: "¿Qué información necesitan para preparar una cotización?",
+    a: "Se requiere conocer el curso de interés, objetivo de la capacitación, número de participantes, ubicación, sector de la empresa, modalidad solicitada y fechas tentativas.",
   },
 ];
 
@@ -219,15 +230,12 @@ export default function CapacitacionTecnicaEspecializada() {
               fontSize: "clamp(32px,4.5vw,56px)", letterSpacing: "-0.03em", lineHeight: 1.05,
               margin: "18px 0 20px", color: "var(--ink-1000)",
             }}>
-              Capacitación impartida por{" "}
-              <span style={{ color: "var(--irca-green)" }}>quienes hacen el trabajo</span>,
-              no por quienes solo lo enseñan.
+              Capacitación técnica con{" "}
+              <span style={{ color: "var(--irca-green)" }}>registro ante la STPS</span>{" "}
+              y experiencia en campo.
             </h1>
-            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 14px" }}>
-              Sistemas de gestión ISO, atención de visitas de inspección, manejo de residuos, respuesta a emergencias, auditorías de cliente, legislación SHE y normas STPS y Protección Civil.
-            </p>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 32px" }}>
-              Los instructores son los mismos consultores que auditan instalaciones, tramitan autorizaciones y defienden clientes ante la autoridad. Modalidad in company o en grupos abiertos, con constancias con validez ante la STPS.
+              Registrados como agente capacitador externo ante la Secretaría del Trabajo y Previsión Social (STPS), con cursos en regulación y cumplimiento ambiental, prevención de accidentes, minimización de residuos industriales, elaboración y control de planes integrales de manejo de residuos, implementación de ISO 14001, atención de visitas de inspección y control de polvos en obras. La capacitación se imparte in company o en grupos abiertos, con un enfoque práctico que convierte las obligaciones normativas en procedimientos aplicables a la operación.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -248,42 +256,14 @@ export default function CapacitacionTecnicaEspecializada() {
             </div>
           </div>
 
-          {/* Course catalog card */}
-          <div className="hidden md:block">
-            <div style={{ background: "var(--bg-1)", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 24, boxShadow: "var(--shadow-3)" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 11, color: "var(--fg-4)", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase" }}>
-                <span style={{ width: 8, height: 8, borderRadius: 8, background: "var(--irca-green)", boxShadow: "0 0 0 4px var(--irca-green-50)" }} />
-                Cursos disponibles
-              </div>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, color: "var(--fg-1)", letterSpacing: "-0.02em", marginTop: 14, lineHeight: 1.15 }}>
-                Próximas ediciones abiertas
-              </div>
-              <div style={{ height: 1, background: "var(--border-soft)", margin: "18px 0" }} />
-              <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                {courses.map(({ label, participants, palette }) => (
-                  <div key={label} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0" }}>
-                    <span style={{ fontSize: 13, fontWeight: 600, color: "var(--fg-2)" }}>{label}</span>
-                    <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "3px 9px", borderRadius: 999, background: palette.bg, color: palette.fg, fontSize: 11, fontWeight: 600, flexShrink: 0, marginLeft: 8 }}>
-                      <span style={{ width: 6, height: 6, borderRadius: 999, background: palette.fg }} /> {participants}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <div style={{ height: 1, background: "var(--border-soft)", margin: "14px 0" }} />
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
-                {[
-                  { label: "Cursos impartidos", n: "120+" },
-                  { label: "Empresas formadas",  n: "85+"  },
-                  { label: "Participantes",       n: "1,400+" },
-                  { label: "Modalidades",         n: "2"   },
-                ].map(({ label, n }) => (
-                  <div key={label} style={{ background: "var(--bg-2)", borderRadius: 10, padding: "10px 12px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <span style={{ fontSize: 12, color: "var(--fg-3)", fontWeight: 500 }}>{label}</span>
-                    <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 18, letterSpacing: "-0.02em", color: "var(--irca-green)" }}>{n}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+          {/* Hero photo */}
+          <div>
+            <Photo
+              ratio="3/2"
+              priority
+              src="/images/servicios/capacitacion-tecnica-especializada/capacitacion-irca-consultores.webp"
+              alt="Curso de capacitación técnica impartido por IRCA Consultores"
+            />
           </div>
         </div>
       </section>
@@ -292,9 +272,9 @@ export default function CapacitacionTecnicaEspecializada() {
       <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)", borderTop: "1px solid var(--border-soft)" }}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center" style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div>
-            <Eyebrow>Sobre el Servicio</Eyebrow>
+            <Eyebrow>Sobre el servicio</Eyebrow>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 28px", color: "var(--ink-1000)" }}>
-              La diferencia entre formación y experiencia en el aula
+              Formación técnica respaldada por experiencia real
             </h2>
             <Photo
               ratio="16/9"
@@ -304,10 +284,10 @@ export default function CapacitacionTecnicaEspecializada() {
           </div>
           <div>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 22px" }}>
-              La capacitación ambiental que más valor aporta no es la que recita la norma: es la que explica por qué la norma existe, cómo la interpreta la autoridad en campo y qué hace la diferencia entre una empresa que cumple y una que sólo tiene el papel. Hay cursos de ISO 14001 que terminan con un certificado de asistencia y ningún cambio en la operación. Los nuestros terminan con una persona que puede aplicar lo aprendido al día siguiente.
+              La capacitación ambiental que genera resultados no se limita a repetir la norma. Explica su propósito, los criterios con los que la autoridad verifica su cumplimiento y la manera de incorporarla a los procedimientos, controles y evidencias de cada operación. El objetivo no es únicamente acreditar la asistencia, sino desarrollar la capacidad de aplicar lo aprendido.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: 0 }}>
-              En IRCA Consultores la capacitación la imparten los mismos profesionales que realizan auditorías de cumplimiento, gestionan trámites ante SEMARNAT y acompañan a empresas en procedimientos ante PROFEPA. Los casos que presentamos en clase no son ejercicios académicos: son situaciones reales de instalaciones reales, con los nombres modificados y las lecciones aprendidas intactas.
+              En IRCA Consultores, los cursos son impartidos por profesionales que realizan auditorías de cumplimiento, gestionan autorizaciones y acompañan a empresas durante visitas de inspección y procedimientos administrativos. Los contenidos incorporan casos reales —con datos debidamente reservados— para analizar decisiones, errores recurrentes y soluciones técnica y jurídicamente defendibles.
             </p>
             <a
               href="#contacto"
@@ -406,14 +386,14 @@ export default function CapacitacionTecnicaEspecializada() {
                 Sobre IRCA Consultores
               </h2>
               <Photo
-                ratio="4/3"
-                src="/images/nosotros/nosotros-equipo-irca.webp"
+                ratio="16/9"
+                src="/images/nosotros/sobre-la-empresa-irca.webp"
                 alt="Equipo multidisciplinario de IRCA Consultores"
               />
             </div>
             <div>
               <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-2)", margin: 0 }}>
-                IRCA Consultores es una firma de consultoría ambiental fundada en 1999, especializada en ingeniería ambiental y cumplimiento normativo. A lo largo de más de 25 años nos hemos consolidado como referente técnico-legal ambiental en el norte de México, con cobertura nacional y proyectos en sectores tan diversos como el industrial, minero, energético, acuícola, inmobiliario y gubernamental. Operamos bajo dos razones sociales —IRCA Ingeniería y Servicios, S.C. y Environmental North de México, S.C.— y conjugamos rigor técnico con solidez jurídica para representar a nuestros clientes ante SEMARNAT, PROFEPA, CONAGUA, STPS y demás autoridades. Nuestro equipo multidisciplinario acompaña cada proyecto de principio a fin: del diagnóstico a la resolución.
+                IRCA Consultores es una firma de consultoría ambiental fundada en 1999, especializada en ingeniería ambiental y cumplimiento normativo. A lo largo de más de 25 años nos hemos consolidado como referente técnico-legal ambiental en el norte de México, con cobertura nacional y proyectos en sectores tan diversos como el industrial, minero, energético, acuícola, inmobiliario y gubernamental. Operamos en regla con lo que le exigimos a nuestros clientes: contamos con registro <strong style={{ color: "var(--fg-1)", fontWeight: 600 }}>REPSE</strong> ante la STPS y mantenemos vigentes los <strong style={{ color: "var(--fg-1)", fontWeight: 600 }}>Registros de Prestador de Servicios</strong> en materia ambiental y de seguridad e higiene en los estados donde operamos. Conjugamos rigor técnico con solidez jurídica para representar a nuestros clientes ante SEMARNAT, PROFEPA, CONAGUA, STPS y demás autoridades. Nuestro equipo multidisciplinario acompaña cada proyecto de principio a fin: del diagnóstico a la resolución.
               </p>
             </div>
           </div>
@@ -456,7 +436,7 @@ export default function CapacitacionTecnicaEspecializada() {
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <Eyebrow color="var(--irca-blue-700)">Preguntas frecuentes</Eyebrow>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(24px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 36px", color: "var(--ink-1000)" }}>
-            Preguntas frecuentes sobre los cursos de capacitación ambiental
+            Preguntas frecuentes sobre capacitación técnica y ambiental
           </h2>
           <ServiceFAQ items={faqs} />
         </div>

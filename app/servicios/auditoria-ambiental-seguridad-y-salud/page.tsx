@@ -114,7 +114,7 @@ const alcanceCards = [
 const pillars = [
   {
     n: "01",
-    title: "Mirada técnica y jurídica en un solo equipo",
+    title: "Enfoque técnico y jurídico en un solo equipo",
     body: "Una auditoría que solo ve la parte técnica deja descubierto el flanco legal, y viceversa. Combinamos ingeniería y derecho ambiental bajo un mismo techo, de modo que cada hallazgo se valora también por su exposición jurídica real ante la autoridad.",
   },
   {
@@ -235,7 +235,7 @@ export default function AuditoriaAmbiental() {
               fontSize: "clamp(30px,4vw,48px)", letterSpacing: "-0.03em", lineHeight: 1.07,
               margin: "18px 0 20px", color: "var(--ink-1000)",
             }}>
-              Auditoría ambiental y/o de SST para empresas que no pueden permitirse una{" "}
+              Auditoría ambiental y/o de Seguridad y Salud en el Trabajo para empresas que no pueden permitirse una{" "}
               <span style={{ color: "var(--irca-green)" }}>multa</span>{" "}
               <span style={{ color: "var(--danger)" }}>o paro de actividades</span>{" "}
               por incumplimiento.
@@ -244,7 +244,7 @@ export default function AuditoriaAmbiental() {
               Identificamos tus brechas de cumplimiento antes que la autoridad. Una radiografía técnica y legal del estado real de tu operación frente a SEMARNAT, PROFEPA, CONAGUA y normatividad estatal.
             </p>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 32px" }}>
-              Saber dónde estás parado es el primer paso para operar tranquilo. Una auditoría bien hecha convierte la incertidumbre regulatoria en un plan de acción claro y priorizado.
+              Conocer con precisión el estado de cumplimiento es el primer paso para operar con certeza. Una auditoría transforma la incertidumbre regulatoria en un plan de acción claro y priorizado.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -402,7 +402,7 @@ export default function AuditoriaAmbiental() {
           <div>
             <Eyebrow>Para quién es</Eyebrow>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 20px", color: "var(--ink-1000)" }}>
-              ¿Cuándo necesita tu empresa una auditoría ambiental o de SST?
+              ¿Cuándo necesita tu empresa una auditoría ambiental o de Seguridad y Salud en el Trabajo?
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 28px" }}>
               No es un trámite reservado para grandes corporativos. Es una herramienta de gestión de riesgo útil para cualquier organización cuya operación genere emisiones, descargas, residuos, requiera permisos ambientales o exponga a su personal a riesgos de seguridad y salud en el trabajo. Es especialmente recomendable en estos escenarios:
@@ -439,8 +439,8 @@ export default function AuditoriaAmbiental() {
                 Sobre IRCA Consultores
               </h2>
               <Photo
-                ratio="4/3"
-                src="/images/nosotros/nosotros-equipo-irca.webp"
+                ratio="16/9"
+                src="/images/nosotros/sobre-la-empresa-irca.webp"
                 alt="Equipo multidisciplinario de IRCA Consultores"
               />
             </div>

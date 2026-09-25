@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const pillars = [
   {
     n: "01",
@@ -54,6 +56,17 @@ export default function MissionStrip() {
               la norma aplicable y el criterio de la autoridad.
             </p>
           </div>
+        </div>
+
+        <div style={{ marginBottom: 48, position: "relative", aspectRatio: "21/9", borderRadius: 18, overflow: "hidden" }}>
+          <Image
+            src="/images/home/por-que-irca-consultores.webp"
+            alt="Equipo técnico y jurídico de IRCA Consultores trabajando sobre un expediente"
+            fill
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            quality={90}
+            style={{ objectFit: "cover" }}
+          />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

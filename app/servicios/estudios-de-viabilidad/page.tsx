@@ -40,17 +40,16 @@ const projects = [
   { label: "Topografía y levantamiento UAV",        status: "Completado",    palette: { bg: "var(--success-bg)", fg: "var(--success)" } },
 ];
 
-/* ── subservicios ───────────────────────────────────── */
+/* ── fotogrametría y percepción remota ─────────────── */
 
-const subservicios = [
-  {
-    href: "/servicios/estudios-de-viabilidad/servicios-geoespaciales/",
-    color: "blue",
-    icon: <Icon name="drone" size={24} />,
-    label: "UAV · DEM · Ortofotomosaico · SIG",
-    title: "Servicios Geoespaciales y Drones",
-    desc: "Levantamientos fotogramétricos con UAV, modelos digitales de elevación, ortofotomosaicos y análisis SIG. La base cartográfica de precisión sobre la que se apoyan los estudios de topografía, hidrología y estabilidad.",
-  },
+const aplicacionesFotogrametria = [
+  "Levantamientos topográficos y cartografía de precisión.",
+  "Modelación de escurrimientos, cuencas y zonas inundables.",
+  "Cálculo de superficies, pendientes, cortes, rellenos y volúmenes.",
+  "Seguimiento del avance de obras y modificaciones del terreno.",
+  "Evaluación de vegetación y cambios de uso de suelo.",
+  "Inspección de infraestructura y detección de anomalías.",
+  "Integración de información para estudios ambientales y proyectos ejecutivos.",
 ];
 
 /* ── alcance cards ──────────────────────────────────── */
@@ -131,8 +130,8 @@ const pillars = [
   },
   {
     n: "03",
-    title: "Equipamiento propio: sonómetros, drones, laboratorio de campo",
-    body: "No dependemos de terceros para los monitoreos. Contamos con sonómetros de precisión para NOM-081, drones de levantamiento fotogramétrico y equipos de muestreo de agua, aire y suelo. Eso reduce tiempos, costos y la incertidumbre sobre la cadena de custodia.",
+    title: "Equipamiento de campo y laboratorios acreditados",
+    body: "Contamos con sonómetros, drones y equipos de medición y muestreo para obtener información rápida directamente en campo. Cuando el proyecto requiere análisis especializados o resultados con validez oficial, incorporamos laboratorios reconocidos en México, acreditados por la entidad mexicana de acreditación (ema) y, según el alcance, registrados o aprobados ante la Procuraduría Federal de Protección al Ambiente (PROFEPA). Así combinamos rapidez operativa con precisión analítica, cadena de custodia y respaldo técnico.",
   },
   {
     n: "04",
@@ -150,24 +149,36 @@ const pillars = [
 
 const faqs = [
   {
-    q: "¿Qué tecnologías de tratamiento de aguas residuales usan para diseñar una PTAR?",
-    a: "La selección de tecnología depende del caudal, la composición del agua residual (DBO, DQO, sólidos, nitrógeno, grasas), el espacio disponible y los parámetros de descarga exigidos. Trabajamos con sistemas de lodos activados, reactores biológicos de membrana (MBR), lagunas de oxidación, sistemas anaerobios (UASB, biodigestores) y tratamientos fisicoquímicos. El diseño parte siempre de una caracterización del afluente y de la normatividad de descarga aplicable.",
+    q: "¿Qué estudios especializados puede integrar IRCA Consultores?",
+    a: "Coordinamos estudios de geología, geofísica, geotecnia, estabilidad de taludes, hidrología, hidrogeología, topografía, tránsito y vialidad. También integramos proyectos de agua potable, alcantarillado sanitario, drenaje pluvial y redes hidráulicas.",
   },
   {
-    q: "¿Cuánto tarda un proyecto de remediación de suelos contaminados?",
-    a: "El plazo varía enormemente según el tipo y extensión de la contaminación, la tecnología seleccionada y los criterios de cierre exigidos por la autoridad. Una remediación por excavación de un sitio pequeño puede completarse en semanas; un proceso de biorremediación in situ de un derrame histórico de hidrocarburos puede requerir meses o años. El primer paso es siempre una Evaluación de Sitio (Fase II) que delimita el volumen de material contaminado y define la estrategia más efectiva.",
+    q: "¿Los estudios son realizados directamente por IRCA Consultores?",
+    a: "IRCA Consultores define el alcance, coordina a los especialistas, revisa los resultados e integra cada disciplina al proyecto general. Cuando se requiere una especialidad externa, seleccionamos al proveedor conforme a su experiencia, capacidad técnica y responsabilidad profesional.",
   },
   {
-    q: "¿Qué mide el estudio de ruido bajo NOM-081-SEMARNAT y cuándo es obligatorio?",
-    a: "La NOM-081 establece los límites máximos de emisión de ruido en el entorno inmediato de instalaciones industriales, medidos en los linderos del predio receptor. La norma fija límites diferenciados por horario (diurno/nocturno) y tipo de zona (habitacional, mixta, comercial, industrial). Es exigible cuando una autoridad ambiental —federal o estatal— lo solicita en el contexto de una LAU, una MIA, una denuncia vecinal o una visita de inspección. En IRCA Consultores realizamos el monitoreo con sonómetros de tipo 1 y elaboramos el informe con el formato que la autoridad acepta.",
+    q: "¿Qué productos se obtienen mediante fotogrametría con drones?",
+    a: "Según el objetivo del levantamiento, pueden generarse ortofotomosaicos georreferenciados, modelos digitales de elevación y superficie, nubes de puntos, curvas de nivel, modelos tridimensionales, cálculos de áreas y volúmenes, y cartografía para Sistemas de Información Geográfica (SIG).",
   },
   {
-    q: "¿Para qué sirven los levantamientos con drones en proyectos ambientales?",
-    a: "Los vuelos UAV permiten obtener en horas lo que antes requería semanas de topografía tradicional: modelos digitales de elevaciones, ortofotomosaicos de alta resolución, curvas de nivel y mapas de cobertura vegetal. En proyectos ambientales los usamos para delimitación de zonas de inundación, cálculo de volúmenes de excavación en remediaciones, seguimiento de obras de confinamiento, reconocimiento de vegetación para ETJ y MIA, y monitoreo de avance de reforestaciones.",
+    q: "¿Cuándo conviene utilizar drones en lugar de topografía convencional?",
+    a: "Los drones son especialmente útiles en superficies extensas, terrenos de difícil acceso, seguimiento de obras y proyectos que requieren información visual y altimétrica detallada. No siempre sustituyen a la topografía convencional: ambas técnicas pueden complementarse mediante puntos de control y verificación en campo.",
   },
   {
-    q: "¿En qué se diferencian los estudios hidrológicos y geofísicos que realizan?",
-    a: "Los estudios hidrológicos calculan el comportamiento del agua en superficie: cuánto escurre, con qué velocidad, cuáles son los caudales de diseño para una obra de drenaje o un sistema de retención. Los estudios geofísicos investigan el subsuelo sin excavar: mediante métodos sísmicos, de resistividad eléctrica o electromagnéticos podemos identificar la profundidad del nivel freático, zonas de fractura, la extensión de un plume de contaminación o la estabilidad de un sitio para una obra de confinamiento. Los dos estudios son frecuentemente complementarios en proyectos de remediación y obra civil ambiental.",
+    q: "¿Qué precisión puede alcanzar un levantamiento con drones?",
+    a: "La precisión depende de la altura de vuelo, el sensor, la resolución requerida, las condiciones del terreno, el posicionamiento GNSS y los puntos de control utilizados. Antes del levantamiento se define la precisión necesaria conforme al uso que tendrán los resultados.",
+  },
+  {
+    q: "¿Para qué se utiliza la percepción remota?",
+    a: "Permite identificar y comparar condiciones del terreno, cobertura vegetal, humedad, drenaje, cambios de uso de suelo y anomalías térmicas. Dependiendo del proyecto, se emplean sensores RGB, multiespectrales o térmicos.",
+  },
+  {
+    q: "¿Los resultados pueden utilizarse para diseño, construcción o trámites?",
+    a: "Sí, siempre que el levantamiento se planee desde el inicio conforme al uso previsto. IRCA Consultores define los entregables, sistemas de coordenadas, formatos, precisión y responsables técnicos necesarios para que la información sea compatible con el diseño, la autorización o la construcción.",
+  },
+  {
+    q: "¿Los equipos de campo sustituyen los análisis de laboratorio?",
+    a: "No. Los equipos de campo permiten obtener datos rápidos, orientar el muestreo y tomar decisiones preliminares. Cuando se requieren resultados analíticos o con validez oficial, incorporamos laboratorios acreditados por la entidad mexicana de acreditación (ema) y, según corresponda, aprobados o registrados ante la PROFEPA.",
   },
 ];
 
@@ -243,14 +254,17 @@ export default function EstudiosDeIngenieria() {
               fontSize: "clamp(32px,4.5vw,56px)", letterSpacing: "-0.03em", lineHeight: 1.05,
               margin: "18px 0 20px", color: "var(--ink-1000)",
             }}>
-              La ingeniería de soporte que un proyecto necesita:{" "}
-              <span style={{ color: "var(--irca-green)" }}>del subsuelo a la red hidráulica</span>.
+              Ingeniería especializada para{" "}
+              <span style={{ color: "var(--irca-green)" }}>completar tu proyecto</span>.
             </h1>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 14px" }}>
-              Geología, geofísica, estabilidad de taludes, hidrología, geohidrología, tránsito y vialidad, topografía, agua potable y soluciones pluviales.
+              IRCA Consultores coordina e integra servicios elaborados por especialistas externos: geología, geofísica, geotecnia, estabilidad de taludes, hidrología, hidrogeología, topografía, tránsito y vialidad.
+            </p>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 14px" }}>
+              También desarrollamos, mediante equipos especializados, proyectos de agua potable, alcantarillado sanitario, drenaje pluvial y redes hidráulicas.
             </p>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 32px" }}>
-              Estudios ejecutables, no solo entregables: cada uno se hace para que alguien pueda construir, autorizar o decidir con él.
+              Cada estudio se revisa e integra al proyecto general para asegurar que sea útil en el diseño, la autorización, la construcción y la toma de decisiones.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -267,7 +281,7 @@ export default function EstudiosDeIngenieria() {
               </a>
             </div>
             <div className="flex flex-wrap gap-6 mt-8" style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--fg-4)" }}>
-              <span>Geotecnia</span><span>Hidrología</span><span>Topografía</span><span>Vialidad</span>
+              <span>Geología</span><span>Geotecnia</span><span>Hidrología</span><span>Topografía</span><span>Vialidad</span><span>Infraestructura hidráulica</span>
             </div>
           </div>
 
@@ -342,47 +356,44 @@ export default function EstudiosDeIngenieria() {
         </div>
       </section>
 
-      {/* ── ESPECIALIDADES (subservicios) ─────────────── */}
+      {/* ── FOTOGRAMETRÍA Y PERCEPCIÓN REMOTA ─────────── */}
       <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-2)", borderTop: "1px solid var(--border-soft)" }}>
-        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <Eyebrow color="var(--irca-blue-700)">Especialidad destacada</Eyebrow>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-4 mb-10">
-            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.05, margin: 0, color: "var(--ink-1000)" }}>
-              Tres servicios con página propia por su profundidad técnica
+        <div
+          className="grid grid-cols-1 md:[grid-template-columns:1.05fr_0.95fr] gap-10 md:gap-16 items-start"
+          style={{ maxWidth: 1280, margin: "0 auto" }}
+        >
+          <div>
+            <Eyebrow color="var(--irca-blue-700)">Fotogrametría y percepción remota</Eyebrow>
+            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 20px", color: "var(--ink-1000)" }}>
+              Convertimos imágenes aéreas en información técnica para decidir
             </h2>
-            <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>
-              Remediación de suelos, control de ruido y servicios geoespaciales son disciplinas con equipamiento propio, metodología específica y clientes que buscan exactamente esa especialidad —merecen su propio espacio.
+            <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 16px" }}>
+              Realizamos levantamientos con drones para documentar terrenos, infraestructura y cambios en el territorio con alta resolución espacial. Procesamos la información obtenida para generar ortofotomosaicos georreferenciados, modelos digitales de elevación y superficie, nubes de puntos, curvas de nivel, cálculos volumétricos y cartografía integrada en Sistemas de Información Geográfica (SIG).
             </p>
+            <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 28px" }}>
+              Según las necesidades del proyecto, incorporamos sensores RGB, multiespectrales o térmicos para analizar cobertura vegetal, humedad, drenaje, anomalías térmicas y otras condiciones ambientales.
+            </p>
+            <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 19, letterSpacing: "-0.01em", color: "var(--fg-1)", lineHeight: 1.2, margin: "0 0 16px" }}>
+              Aplicaciones
+            </h3>
+            <div style={{ display: "grid", gap: 12 }}>
+              {aplicacionesFotogrametria.map((item) => (
+                <CheckItem key={item}>{item}</CheckItem>
+              ))}
+            </div>
+            <a
+              href="/servicios/estudios-de-viabilidad/servicios-geoespaciales/"
+              style={{ marginTop: 28, display: "inline-flex", alignItems: "center", gap: 8, color: "var(--irca-blue-700)", fontWeight: 600, fontSize: 15, textDecoration: "none" }}
+            >
+              Ver servicios geoespaciales <Icon name="arrow-right" size={16} />
+            </a>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {subservicios.map(({ href, color, icon, label, title, desc }) => (
-              <a
-                key={href}
-                href={href}
-                style={{ display: "flex", flexDirection: "column", gap: 16, background: "var(--bg-1)", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 28, boxShadow: "var(--shadow-1)", textDecoration: "none" }}
-              >
-                <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
-                  <div style={{
-                    width: 52, height: 52, borderRadius: 12, flexShrink: 0,
-                    background: color === "green" ? "var(--irca-green-50)" : "var(--irca-blue-50)",
-                    color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)",
-                    display: "inline-flex", alignItems: "center", justifyContent: "center",
-                  }}>
-                    {icon}
-                  </div>
-                  <div>
-                    <div style={{ display: "inline-block", padding: "2px 8px", borderRadius: 999, background: color === "green" ? "var(--irca-green-50)" : "var(--irca-blue-50)", color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)", fontSize: 11, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 6 }}>
-                      {label}
-                    </div>
-                    <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, letterSpacing: "-0.015em", color: "var(--fg-1)", margin: 0, lineHeight: 1.2 }}>{title}</h3>
-                  </div>
-                </div>
-                <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>{desc}</p>
-                <div style={{ display: "inline-flex", alignItems: "center", gap: 6, color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)", fontWeight: 600, fontSize: 14, marginTop: "auto" }}>
-                  Ver servicio <Icon name="arrow-right" size={14} />
-                </div>
-              </a>
-            ))}
+          <div className="md:sticky md:top-24">
+            <Photo
+              ratio="16/9"
+              src="/images/servicios/estudios-de-viabilidad/fotogrametria-y-percepcion-remota.webp"
+              alt="Levantamiento con dron y ortofotomosaico georreferenciado de IRCA Consultores"
+            />
           </div>
         </div>
       </section>
@@ -474,14 +485,14 @@ export default function EstudiosDeIngenieria() {
                 Sobre IRCA Consultores
               </h2>
               <Photo
-                ratio="4/3"
-                src="/images/nosotros/nosotros-equipo-irca.webp"
+                ratio="16/9"
+                src="/images/nosotros/sobre-la-empresa-irca.webp"
                 alt="Equipo multidisciplinario de IRCA Consultores"
               />
             </div>
             <div>
               <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-2)", margin: 0 }}>
-                IRCA Consultores es una firma de consultoría ambiental fundada en 1999, especializada en ingeniería ambiental y cumplimiento normativo. A lo largo de más de 25 años nos hemos consolidado como referente técnico-legal ambiental en el norte de México, con cobertura nacional y proyectos en sectores tan diversos como el industrial, minero, energético, acuícola, inmobiliario y gubernamental. Operamos bajo dos razones sociales —IRCA Ingeniería y Servicios, S.C. y Environmental North de México, S.C.— y conjugamos rigor técnico con solidez jurídica para representar a nuestros clientes ante SEMARNAT, PROFEPA, CONAGUA, STPS y demás autoridades. Nuestro equipo multidisciplinario acompaña cada proyecto de principio a fin: del diagnóstico a la resolución.
+                IRCA Consultores es una firma de consultoría ambiental fundada en 1999, especializada en ingeniería ambiental y cumplimiento normativo. A lo largo de más de 25 años nos hemos consolidado como referente técnico-legal ambiental en el norte de México, con cobertura nacional y proyectos en sectores tan diversos como el industrial, minero, energético, acuícola, inmobiliario y gubernamental. Operamos en regla con lo que le exigimos a nuestros clientes: contamos con registro <strong style={{ color: "var(--fg-1)", fontWeight: 600 }}>REPSE</strong> ante la STPS y mantenemos vigentes los <strong style={{ color: "var(--fg-1)", fontWeight: 600 }}>Registros de Prestador de Servicios</strong> en materia ambiental y de seguridad e higiene en los estados donde operamos. Conjugamos rigor técnico con solidez jurídica para representar a nuestros clientes ante SEMARNAT, PROFEPA, CONAGUA, STPS y demás autoridades. Nuestro equipo multidisciplinario acompaña cada proyecto de principio a fin: del diagnóstico a la resolución.
               </p>
             </div>
           </div>

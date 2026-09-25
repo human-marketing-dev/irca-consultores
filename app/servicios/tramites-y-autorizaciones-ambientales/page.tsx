@@ -103,8 +103,8 @@ const alcanceCards = [
         <rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10"/><path d="M7 13h6"/>
       </svg>
     ),
-    title: "Licencia Ambiental Única (LAU) y Licencia de Fuentes Fijas (LFF)",
-    desc: "El permiso de operación en materia de atmósfera. Gestionamos la LAU federal para fuentes de jurisdicción federal y la licencia estatal de fuentes fijas, incluidas sus actualizaciones cuando cambia el proceso o la capacidad instalada.",
+    title: "LAU, Licencia de Fuentes Fijas y COA",
+    desc: "El permiso de operación en materia de atmósfera y su reporte anual. Gestionamos la Licencia Ambiental Única federal, la licencia estatal de fuentes fijas y sus actualizaciones cuando cambia el proceso o la capacidad instalada, además de la Cédula de Operación Anual que consolida cada año emisiones, descargas, residuos y transferencias ante el RETC.",
   },
   {
     color: "blue",
@@ -123,8 +123,8 @@ const alcanceCards = [
         <path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6l1 14h10l1-14"/><path d="M10 11v5"/><path d="M14 11v5"/>
       </svg>
     ),
-    title: "Planes de Manejo de Residuos (PMR) y COA",
-    desc: "Registro como generador, plan de manejo de residuos peligrosos y de manejo especial, y la Cédula de Operación Anual que consolida cada año emisiones, descargas, residuos y transferencias ante el RETC.",
+    title: "Planes de Manejo de Residuos (PMR)",
+    desc: "Registro como generador y elaboración del plan de manejo que corresponda: de residuos peligrosos, de manejo especial, metalúrgicos y de residuos sujetos a condiciones particulares de manejo. Cada tipo responde a una autoridad y a un procedimiento distintos.",
   },
   {
     color: "blue",
@@ -135,7 +135,7 @@ const alcanceCards = [
   {
     color: "green",
     icon: <Icon name="calendar" size={24} />,
-    title: "Administración del expediente en el tiempo",
+    title: "Cumplimiento de términos y condicionantes",
     desc: "La autorización no termina cuando se emite: hay condicionantes que acreditar, informes que presentar y vigencias que renovar. Administramos el expediente completo para que ninguna obligación derivada se pierda de vista.",
   },
 ];
@@ -470,8 +470,8 @@ export default function TramitesYAutorizaciones() {
             </p>
             <div style={{ display: "grid", gap: 14 }}>
               <CheckItem>Vas a iniciar operaciones o construir y necesitas las autorizaciones previas.</CheckItem>
-              <CheckItem>Tu LAU venció o fue modificada y necesitas actualizarla ante la autoridad competente.</CheckItem>
-              <CheckItem>Tienes una COA pendiente de presentar o detectaste errores en reportes anteriores.</CheckItem>
+              <CheckItem>Tu Licencia Ambiental Única (LAU) venció o fue modificada y necesitas actualizarla ante la autoridad competente.</CheckItem>
+              <CheckItem>Tienes una Cédula de Operación Anual (COA) pendiente de presentar o detectaste errores en reportes anteriores.</CheckItem>
               <CheckItem>Tu concesión de agua está próxima a vencer y necesitas renovarla o modificarla.</CheckItem>
               <CheckItem>Recibiste una observación de PROFEPA sobre falta de permisos o licencias vigentes.</CheckItem>
               <CheckItem>Quieres impulsar una certificación de desempeño ambiental para diferenciarte o cumplir con un cliente.</CheckItem>
@@ -497,14 +497,14 @@ export default function TramitesYAutorizaciones() {
                 Sobre IRCA Consultores
               </h2>
               <Photo
-                ratio="4/3"
-                src="/images/nosotros/nosotros-equipo-irca.webp"
+                ratio="16/9"
+                src="/images/nosotros/sobre-la-empresa-irca.webp"
                 alt="Equipo multidisciplinario de IRCA Consultores"
               />
             </div>
             <div>
               <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-2)", margin: 0 }}>
-                IRCA Consultores es una firma de consultoría ambiental fundada en 1999, especializada en ingeniería ambiental y cumplimiento normativo. A lo largo de más de 25 años nos hemos consolidado como referente técnico-legal ambiental en el norte de México, con cobertura nacional y proyectos en sectores tan diversos como el industrial, minero, energético, acuícola, inmobiliario y gubernamental. Operamos bajo dos razones sociales —IRCA Ingeniería y Servicios, S.C. y Environmental North de México, S.C.— y conjugamos rigor técnico con solidez jurídica para representar a nuestros clientes ante SEMARNAT, PROFEPA, CONAGUA, STPS y demás autoridades. Nuestro equipo multidisciplinario acompaña cada proyecto de principio a fin: del diagnóstico a la resolución.
+                IRCA Consultores es una firma de consultoría ambiental fundada en 1999, especializada en ingeniería ambiental y cumplimiento normativo. A lo largo de más de 25 años nos hemos consolidado como referente técnico-legal ambiental en el norte de México, con cobertura nacional y proyectos en sectores tan diversos como el industrial, minero, energético, acuícola, inmobiliario y gubernamental. Operamos en regla con lo que le exigimos a nuestros clientes: contamos con registro <strong style={{ color: "var(--fg-1)", fontWeight: 600 }}>REPSE</strong> ante la STPS y mantenemos vigentes los <strong style={{ color: "var(--fg-1)", fontWeight: 600 }}>Registros de Prestador de Servicios</strong> en materia ambiental y de seguridad e higiene en los estados donde operamos. Conjugamos rigor técnico con solidez jurídica para representar a nuestros clientes ante SEMARNAT, PROFEPA, CONAGUA, STPS y demás autoridades. Nuestro equipo multidisciplinario acompaña cada proyecto de principio a fin: del diagnóstico a la resolución.
               </p>
             </div>
           </div>

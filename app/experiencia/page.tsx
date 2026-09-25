@@ -23,7 +23,7 @@ const heroStats = [
   { n: "+25",  label: "Años de operación", sub: "Desde 1999" },
   { n: "+500", label: "Proyectos ejecutados", sub: "Estudios, trámites y litigios" },
   { n: "+50",  label: "Clientes activos", sub: "Nacionales e internacionales" },
-  { n: "8",    label: "Sectores", sub: "Industrial · energético · minero · más" },
+  { n: "8",    label: "Grandes sectores", sub: "Manufactura · energía · infraestructura · más" },
 ];
 
 const longTermProjects = [
@@ -70,14 +70,14 @@ const ruidoClientes = [
 ];
 
 const sectores = [
-  { label: "Industrial",    color: "green", desc: "Manufactura, fundición, química, cerámica y acería" },
-  { label: "Energético",    color: "blue",  desc: "Plantas de generación ciclo sencillo y combinado" },
-  { label: "Minero",        color: "green", desc: "Bancos de material, moliendas y minas a cielo abierto" },
-  { label: "Acuícola",      color: "blue",  desc: "Obras de pesca e infraestructura portuaria pesquera" },
-  { label: "Inmobiliario",  color: "green", desc: "Desarrollos urbanos, parques industriales y comercial" },
-  { label: "Ferroviario",   color: "blue",  desc: "Derechos de vía e infraestructura de transporte" },
-  { label: "Portuario",     color: "green", desc: "Terminales marítimas y logística costera" },
-  { label: "Gubernamental", color: "blue",  desc: "Municipios, dependencias federales y estatales" },
+  { label: "Manufactura y transformación",                 color: "green", desc: "Automotriz, metalmecánica, fundición, acería, cerámica y bienes de consumo" },
+  { label: "Química, materiales y procesos especiales",    color: "blue",  desc: "Químicos, recubrimientos, refractarios, vidrio y procesos de alto riesgo" },
+  { label: "Construcción e infraestructura",               color: "green", desc: "Obra civil, vialidades, desarrollos inmobiliarios y obra pública" },
+  { label: "Energía, hidrocarburos y minería",             color: "blue",  desc: "Generación eléctrica, ductos, terminales, bancos de material y moliendas" },
+  { label: "Logística y parques industriales",             color: "green", desc: "Parques industriales, centros de distribución, patios y autotransporte" },
+  { label: "Marítimo, portuario y acuícola",               color: "blue",  desc: "Terminales, escolleras, obras pesqueras e infraestructura costera" },
+  { label: "Salud, alimentario, servicios e instituciones", color: "green", desc: "Hospitales, plantas de alimentos, comercio, servicios e instituciones" },
+  { label: "Gobierno, municipios y desarrollo urbano",     color: "blue",  desc: "Dependencias federales y estatales, municipios y proyectos urbanos" },
 ];
 
 const authorities = ["SEMARNAT", "PROFEPA", "CONAGUA", "STPS", "COFEPRIS", "CONANP", "Secretarías estatales"];
@@ -277,7 +277,7 @@ export default function Experiencia() {
             <div>
               <Eyebrow>Alcance sectorial</Eyebrow>
               <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(24px,3vw,38px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "14px 0 16px", color: "var(--fg-1)" }}>
-                Ocho sectores. Una sola firma.
+                Sectores distintos. Una sola firma.
               </h2>
               <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--fg-3)", margin: "0 0 32px", maxWidth: "50ch" }}>
                 La versatilidad técnico-jurídica de IRCA Consultores nos permite atender operaciones de sectores muy
@@ -304,15 +304,11 @@ export default function Experiencia() {
                   borderRadius: 12, padding: "16px 18px",
                   display: "flex", flexDirection: "column", gap: 6,
                 }}>
-                  <div style={{
-                    display: "inline-block", padding: "2px 10px", borderRadius: 999,
-                    background: color === "green" ? "var(--irca-green-50)" : "var(--irca-blue-50)",
-                    color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)",
-                    fontSize: 10, fontWeight: 800, letterSpacing: "0.08em", alignSelf: "flex-start",
-                  }}>
-                    {label}
+                  <div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
+                    <span style={{ width: 8, height: 8, borderRadius: 999, flexShrink: 0, marginTop: 6, background: color === "green" ? "var(--irca-green)" : "var(--irca-blue)" }} />
+                    <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15, lineHeight: 1.3, color: "var(--fg-1)" }}>{label}</span>
                   </div>
-                  <div style={{ fontSize: 13, color: "var(--fg-3)", lineHeight: 1.5 }}>{desc}</div>
+                  <div style={{ fontSize: 13, color: "var(--fg-3)", lineHeight: 1.5, paddingLeft: 18 }}>{desc}</div>
                 </div>
               ))}
             </div>
@@ -324,12 +320,12 @@ export default function Experiencia() {
       <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)", borderTop: "1px solid var(--border-soft)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
           <Eyebrow>¿Trabajamos juntos?</Eyebrow>
-          <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(26px,3.5vw,44px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 12px", color: "var(--fg-1)", maxWidth: "26ch" }}>
-            Tu operación merece la experiencia de una firma que ya conoce tu sector.
+          <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(26px,3.5vw,44px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 12px", color: "var(--fg-1)", maxWidth: "30ch" }}>
+            Tu operación merece una firma que conozca los retos técnicos y regulatorios de tu sector, rubro o actividad.
           </h2>
           <p style={{ fontSize: 17, lineHeight: 1.65, color: "var(--fg-3)", maxWidth: "52ch", margin: "0 0 32px" }}>
-            Cuéntanos sobre tu proyecto, el sector en que operas y el reto ambiental que enfrentas.
-            Te respondemos en 24 horas hábiles.
+            Cuéntanos sobre tu proyecto, la actividad que desarrollas y el reto ambiental que necesitas resolver.
+            Te responderemos en un plazo máximo de 24 horas hábiles.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center" }}>
             <Link

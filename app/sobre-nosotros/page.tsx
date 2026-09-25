@@ -3,6 +3,8 @@ import Link from "next/link";
 import Icon from "@/components/ui/Icon";
 import Photo from "@/components/ui/Photo";
 import CoverageMap from "@/components/sections/CoverageMap";
+import Clients from "@/components/sections/Clients";
+import GoogleReviews from "@/components/sections/GoogleReviews";
 
 export const metadata: Metadata = {
   title: "Sobre Nosotros — IRCA Consultores",
@@ -30,111 +32,24 @@ const stats = [
 ];
 
 const values = [
-  { icon: "shield-check", label: "Rigor técnico y científico", desc: "Cada estudio, diagnóstico y proyecto parte de metodologías verificables y datos de campo reales." },
-  { icon: "check",        label: "Integridad y transparencia", desc: "Comunicación directa con el cliente sobre alcances, plazos, costos y resultados, sin intermediarios ni sorpresas." },
-  { icon: "building",     label: "Compromiso con el cliente", desc: "Acompañamos cada proyecto de principio a fin. El expediente no se cierra hasta que el cliente tiene el resultado en mano." },
-  { icon: "flask",        label: "Responsabilidad ambiental", desc: "Practicamos lo que aconsejamos: nuestros proyectos incorporan criterios de sostenibilidad más allá del mínimo normativo." },
-  { icon: "drone",        label: "Innovación continua", desc: "Desarrollamos herramientas propias de gestión ambiental y adoptamos tecnología de campo (UAV, telemetría, software de modelación) para mejorar la calidad de nuestros entregables." },
-  { icon: "scale",        label: "Excelencia ante autoridades", desc: "Conocemos los criterios reales de revisión de SEMARNAT, PROFEPA, CONAGUA y STPS. Eso se traduce en expedientes que se resuelven en tiempo." },
+  { icon: "shield-check", label: "Integridad",       desc: "Privilegiar el respeto al medio ambiente, a la seguridad, a la legalidad y a la ética de trabajo." },
+  { icon: "building",     label: "Trabajo en equipo", desc: "Promover el compañerismo, el sentido de pertenencia y el respeto al personal, al cliente y a las autoridades con las que interactuamos." },
+  { icon: "satellite",    label: "Innovación",       desc: "Desarrollar estrategias, productos y servicios de cumplimiento, así como promover nuevas tecnologías (IA) que aumenten la eficiencia de nuestros servicios." },
+  { icon: "check",        label: "Eficiencia",       desc: "Ofrecer SIEMPRE la mejor estrategia de cumplimiento al cliente: “nunca vender lo que no necesite”." },
 ];
 
-const directors = [
-  {
-    color: "green",
-    name: "M.C. Ing. Juan Carlos Aguilar Ibarra",
-    title: "Socio Fundador — Director General",
-    bio: "Ingeniero Civil con posgrado en Ingeniería Ambiental y Licenciatura en Derecho con especialidad en Derecho Administrativo y Ambiental. Auditor Líder certificado en ISO 9001, ISO 14001 e ISO 45001. Más de 25 años de experiencia en cumplimiento normativo ambiental para empresas privadas, transnacionales, paraestatales y gobiernos federal y estatal. Director de la estrategia ambiental del Complejo Penitenciario Islas Marías (2009-2012) y de los estudios FONDEN para CONAPESCA (2013-2019). Conferencista en impacto ambiental, ISO 14001 y certificación Industria Limpia.",
-    tags: ["ISO 9001", "ISO 14001", "ISO 45001", "Derecho Ambiental"],
-  },
-  {
-    color: "blue",
-    name: "C.P. Alma Patricia Fragoso Gutiérrez",
-    title: "Socia Fundadora — Dirección Administrativa y Sistemas de Calidad",
-    bio: "Contadora Pública y socia fundadora de IRCA Consultores. Amplia trayectoria en gestión administrativa dentro de la industria de transformación, en empresas de iniciativa privada y entidades de carácter nacional. Especialista en implementación y soporte de sistemas de calidad orientados a la administración empresarial, garantizando la solidez operativa, la trazabilidad financiera y el cumplimiento de estándares de gestión en todos los proyectos de IRCA Consultores.",
-    tags: ["Sistemas de calidad", "Gestión financiera", "Auditoría contable"],
-  },
-  {
-    color: "green",
-    name: "M en G. Ing. Juan Gualberto Antonio Pérez",
-    title: "Director de Operaciones",
-    bio: "15 años de experiencia en proyectos de monitoreo de calidad ambiental, minimización de residuos, tratamiento de agua residual, manejo de cuencas hidrológicas y forestación. Especialista en implementación de sistemas de monitoreo atmosférico, inventario de emisiones, balances hídricos y gestión bajo estándares ISO 14001, OHSAS 18001 e ISO 50001.",
-    tags: ["ISO 14001", "ISO 50001", "Monitoreo ambiental", "PTAR"],
-  },
-  {
-    color: "blue",
-    name: "Lic. Iveth Reyes Moreno",
-    title: "Coordinadora Administrativa",
-    bio: "Más de 15 años de experiencia en gestión administrativa. Responsable de la administración de cuentas, archivo contable, facturación, alta de proveedores, registros REPSE y programación de gastos. Garantiza la solidez operativa y fiscal de todos los proyectos de IRCA Consultores.",
-    tags: ["Administración", "REPSE", "Facturación"],
-  },
-  {
-    color: "green",
-    name: "Lic. Esteban Benjamín Hernández Aguilar",
-    title: "Coordinador de Estrategia Legal",
-    bio: "Licenciado en Derecho por la UANL, especialista en normatividad de impacto ambiental federal, cambio de uso de suelo en terrenos forestales y litigio activo a nivel federal y estatal. Responsable del seguimiento y cumplimiento de términos y condicionantes en resolutivos ambientales, intermediación para regularización ambiental, atención de visitas de inspección y recursos de revisión ante autoridades ambientales.",
-    tags: ["Litigio ambiental", "ETJ", "Recursos de revisión", "PROFEPA"],
-  },
+const timeline = [
+  { period: "1998 – 1999", title: "Auditoría ambiental" },
+  { period: "1999",        title: "Origen en Sonora" },
+  { period: "2004",        title: "Marca en Monterrey" },
+  { period: "2008 – 2009", title: "Dedicación plena y formalización" },
+  { period: "2009 – 2012", title: "Proyecto Islas Marías" },
+  { period: "2012 – 2019", title: "Integración jurídica" },
+  { period: "2014 – 2018", title: "CONAPESCA y FONDEN" },
+  { period: "2020",        title: "Nueva estructura corporativa" },
 ];
 
-const projectLeads = [
-  { name: "Ing. Xitlali Palomino Huerta",     spec: "Gestión de trámites MIA y federales"           },
-  { name: "Ing. Diana Clark Morales",          spec: "Residuos, impacto ambiental y sector HC"        },
-  { name: "Ing. Fernanda Reyna Raygoza",       spec: "Sistemas de gestión y salud ocupacional"        },
-  { name: "Ing. Juan Clemente Cárdenas M.",    spec: "SHE, análisis de riesgos y trabajo de campo"   },
-  { name: "Biol. Marcelo Guzmán de la Garza", spec: "Biología, SIG y análisis geoespacial"           },
-  { name: "Lic. Luis A. Ortiz Hernández",      spec: "Seguridad en el trabajo y energías verdes"     },
-  { name: "Ing. Jessica González Cruz",        spec: "Gestión integral de trámites ambientales"       },
-  { name: "Ing. Luis Fernando Moo Chan",       spec: "Proyectos forestales y monitoreo de fauna"      },
-  { name: "Lic. Edson Carrizales Ramos",       spec: "Logística y gestión de proyectos"              },
-];
-
-const longTermProjects = [
-  { client: "Secretaría de Seguridad Pública — Complejo Penitenciario Islas Marías", services: "MIA, ETJ, PVA, Programas Específicos, Cumplimiento Ambiental en ANP (PROFEPA, SEMARNAT, CONAGUA, UNESCO)", period: "2009 – 2012" },
-  { client: "CONAPESCA — FONDEN (26 obras civiles)",                                   services: "Avisos de obra emergente, PVA, Condiciones Iniciales, Programas de Cumplimiento y Medidas de Mitigación",     period: "2013 – 2019" },
-  { client: "Energía de Ramos SAPI de CV — Planta ciclo sencillo",                    services: "MIA y gestión, PVA, Programas Específicos y Seguimiento Ambiental",                                              period: "2012 – 2016" },
-  { client: "Energía de Celaya SA de CV — Planta Ciclo Combinado (Fisterra Energy)",  services: "MIA, ERA, Modelación de Emisiones, PVA, Programas Específicos y Cumplimiento",                                   period: "2016 – Vigente" },
-  { client: "Deacero — Acería Ramos Arizpe",                                           services: "MIA, PVA, Programas Específicos y Seguimiento Ambiental",                                                         period: "2010 – Vigente" },
-  { client: "Deacero Recycling SA de CV — Patios de Chatarra (nacional)",              services: "MIA, Protección Civil, Residuos, Gestión Estatal, Seguimiento Técnico/Jurídico",                                  period: "2017 – Vigente" },
-  { client: "Vitromex — Minas y Moliendas (4 moliendas, 12 bancos de material)",      services: "MIA, ETJ, PVA, Seguimiento Ambiental y Técnico/Jurídico de Expedientes",                                         period: "2012 – Vigente" },
-  { client: "Frisa Forjados SA de CV (4 plantas)",                                     services: "MIA, ERA, LAU, SHE, Seguimiento Técnico/Jurídico y Estudios Técnicos",                                           period: "2019 – Vigente" },
-  { client: "Fundición Águilas SA de CV — FA Foundry",                                services: "MIA, ERA, Licencias Ambientales, SHE, Juicio de Amparo, Seguimiento T/J",                                        period: "2018 – Vigente" },
-  { client: "Metal Technologies Inc. — Planta de Fundición",                           services: "MIA, Programas Específicos, Seguimiento Ambiental y Estudios Técnicos",                                          period: "2017 – 2020" },
-  { client: "H. Ayuntamiento de San Pedro Garza García",                               services: "Asesoría normativa y MIA para proyectos urbanos",                                                                  period: "2021 – Vigente" },
-  { client: "Coflex SA de CV (Planta Santa Catarina, NL)",                             services: "Regulación ambiental, MIA, ERA, Planes de Manejo de Residuos",                                                    period: "2024 – Vigente" },
-  { client: "Daltile México SA de CV (3 plantas, NL y Guanajuato)",                   services: "Regulación ambiental, MIA, ERA, Planes de Manejo de Residuos",                                                    period: "2023 – Vigente" },
-  { client: "Aquamex SA de CV (Planta Santa Catarina)",                                services: "MIA, Planes de Manejo, Permisos y Licencias Ambientales",                                                         period: "2024 – Vigente" },
-  { client: "Novocast Mexico S de RL de CV (El Carmen, NL)",                           services: "Regulación ambiental, MIA, ERA, Planes de Manejo",                                                                period: "2025 – Vigente" },
-  { client: "ASK Chemicals de México (Planta El Carmen, NL)",                          services: "Regulación en materia de cumplimiento normativo ambiental",                                                        period: "2025 – Vigente" },
-  { client: "Vesuvius México SA de CV (2 plantas)",                                    services: "ERA, COA, LAU, Juicio de Amparo, Auditoría de Cumplimiento",                                                      period: "2021 – Vigente" },
-  { client: "Gobierno Municipal San Pedro Garza García",                               services: "Cumplimiento normativo y MIA para proyectos urbanos municipales",                                                  period: "2021 – Vigente" },
-];
-
-const phaseStudies = [
-  "REA Magnet Wire — Planta Ciénega de Flores (Technology Park)",
-  "Manufacturas Vitromex SA de CV — Planta Saltillo (Phase I)",
-  "Autotransportes MOR SA de CV — Ciénega de Flores (Phase I y II)",
-  "Engine Power Components Inc. — Parque Industrial Las Américas, Torreón",
-  "Bos Automotive Products — Irapuato, Gto.",
-  "Pentair Technical Products — Parque Industrial del Norte, Reynosa (Phase I y II)",
-  "Morrison Products Inc. — Parque Industrial La Silla, Apodaca",
-  "Química RANA SA de CV — Santa Catarina, NL (Phase I y II)",
-  "Carbone Lorraine — Guadalupe, NL",
-  "Praxair — Tlalnepantla, Estado de México",
-  "Terminal de Distribución — Complejo Penitenciario Islas Marías (Phase I, II y Caracterización)",
-  "Keystone Automotive — Linares, NL",
-];
-
-const ruido = ["Hunter Douglas — Planta Apodaca", "Prolec (GE) — Campus II y Campus III", "Novocast S de RL de CV", "Vitromex — Planta Saltillo"];
-
-const authorities = ["SEMARNAT", "PROFEPA", "CONAGUA", "STPS", "COFEPRIS", "CONANP", "Secretarías estatales"];
 const coverage = ["Nuevo León — sede operativa", "Coahuila · Tamaulipas · Sonora", "Guanajuato · Estado de México · CDMX", "Cobertura nacional e internacional"];
-
-const milieusFeatures = [
-  "Gestión centralizada de obligaciones ambientales",
-  "Alertas de vencimientos y calendario regulatorio",
-  "Resguardo digital del expediente ambiental",
-  "Indicadores de cumplimiento por instalación",
-];
 
 const equipment = [
   { label: "Equipos HACH", desc: "Diagnóstico fisicoquímico instantáneo de agua y suelo en campo" },
@@ -206,7 +121,7 @@ export default function SobreNosotros() {
             </h2>
             <Photo
               ratio="16/9"
-              src="/images/nosotros/nosotros-equipo-irca.webp"
+              src="/images/nosotros/sobre-la-empresa-irca.webp"
               alt="Equipo de IRCA Consultores"
             />
           </div>
@@ -246,7 +161,7 @@ export default function SobreNosotros() {
                 <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 18, color: "var(--fg-1)" }}>Misión</span>
               </div>
               <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--fg-3)", margin: 0 }}>
-                Proporcionar soluciones integrales en materia de cumplimiento normativo ambiental, protegiendo los intereses de nuestros clientes mediante la combinación de rigor técnico, solidez jurídica y acompañamiento estratégico, contribuyendo al desarrollo sustentable de las organizaciones que atendemos.
+                Ofrecer y proveer conocimientos de cumplimiento normativo y consultoría en ingeniería ambiental, seguridad industrial y control de contaminación a la industria nacional, mediante estrategias técnico-legales que soporten la viabilidad y operabilidad del negocio y disminuyan sus costos.
               </p>
             </div>
             <div style={{ background: "var(--bg-deep)", border: "1px solid transparent", borderRadius: 14, padding: 32, boxShadow: "var(--shadow-1)" }}>
@@ -257,13 +172,13 @@ export default function SobreNosotros() {
                 <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 18, color: "#fff" }}>Visión</span>
               </div>
               <p style={{ fontSize: 16, lineHeight: 1.7, color: "rgba(255,255,255,0.78)", margin: 0 }}>
-                Ser la firma de consultoría ambiental líder en México, reconocida por la excelencia técnica, la innovación en gestión del cumplimiento normativo y la confianza que generamos en nuestros clientes como aliados estratégicos para la sostenibilidad operativa y reputacional de sus negocios.
+                Ser la empresa líder en consultoría ESG en México, con una estrategia de administración de la calidad y servicio al cliente en nuestros procesos, y con presencia y reconocimiento nacional e internacional a través de nuestros clientes y cámaras industriales.
               </p>
             </div>
           </div>
 
           {/* Values grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             {values.map(({ icon, label, desc }) => (
               <div key={label} style={{ background: "var(--bg-1)", border: "1px solid var(--border-soft)", borderRadius: 14, padding: 24, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 12 }}>
                 <div style={{ width: 42, height: 42, borderRadius: 10, background: "var(--irca-green-50)", color: "var(--irca-green-700)", display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
@@ -274,217 +189,148 @@ export default function SobreNosotros() {
               </div>
             ))}
           </div>
+
+          {/* Lema */}
+          <div style={{ marginTop: 32, padding: "28px 32px", borderRadius: 14, background: "var(--irca-green-50)", border: "1px solid var(--irca-green-100)", textAlign: "center" }}>
+            <p style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(20px,2.6vw,30px)", letterSpacing: "-0.02em", lineHeight: 1.2, color: "var(--ink-1000)", margin: 0 }}>
+              No vendemos estudios,{" "}
+              <span style={{ color: "var(--irca-green-700)" }}>vendemos tranquilidad y viabilidad</span>.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* ── EQUIPO DIRECTIVO ──────────────────────────── */}
       <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <Eyebrow>El equipo</Eyebrow>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mt-4 mb-10">
-            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.05, margin: 0, color: "var(--ink-1000)" }}>
-              Equipo directivo
-            </h2>
-            <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>
-              Más de 12 profesionales certificados en ingeniería ambiental, derecho, biología, geociencias y seguridad industrial. El liderazgo de IRCA Consultores combina experiencia de campo con solidez jurídica.
-            </p>
-          </div>
+          {/* Línea del tiempo */}
+          <Eyebrow>Nuestra trayectoria</Eyebrow>
+          <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 36px", color: "var(--ink-1000)" }}>
+            Hitos que definieron a IRCA Consultores
+          </h2>
+          <ol className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8" style={{ listStyle: "none", margin: 0, padding: 0 }}>
+            {timeline.map(({ period, title }, i) => (
+              <li key={period + title} style={{ position: "relative", borderTop: "2px solid var(--border-soft)", paddingTop: 20 }}>
+                <span style={{
+                  position: "absolute", top: -7, left: 0, width: 12, height: 12, borderRadius: 999,
+                  background: i % 2 === 0 ? "var(--irca-green)" : "var(--irca-blue)",
+                  boxShadow: "0 0 0 4px var(--bg-1)",
+                }} />
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 600, color: i % 2 === 0 ? "var(--irca-green-700)" : "var(--irca-blue-700)", marginBottom: 6 }}>{period}</div>
+                <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 18, letterSpacing: "-0.01em", lineHeight: 1.25, color: "var(--fg-1)" }}>{title}</div>
+              </li>
+            ))}
+          </ol>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {directors.map(({ color, name, title, bio, tags }) => (
-              <div
-                key={name}
-                style={{ background: "var(--bg-2)", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 28, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 14 }}
-              >
-                <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
-                  <div style={{
-                    width: 48, height: 48, borderRadius: 12, flexShrink: 0,
-                    background: color === "green" ? "var(--irca-green-50)" : "var(--irca-blue-50)",
-                    color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)",
-                    display: "inline-flex", alignItems: "center", justifyContent: "center",
-                    fontSize: 20, fontFamily: "var(--font-display)", fontWeight: 800,
-                  }}>
-                    {name.split(" ").filter(w => w.match(/^[A-Z]/) && !w.includes(".")).slice(0, 2).map(w => w[0]).join("")}
+          <div style={{ height: 1, background: "var(--border-soft)", margin: "56px 0 40px" }} />
+
+          <Eyebrow>Semblanza del director</Eyebrow>
+          <div className="grid grid-cols-1 md:[grid-template-columns:1fr_0.85fr] gap-10 md:gap-16 items-start mt-4">
+            <div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "0 0 24px", color: "var(--ink-1000)" }}>
+                Juan Carlos Aguilar Ibarra y la formación de IRCA Consultores
+              </h2>
+              <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 32px" }}>
+                IRCA Consultores nació en 1999 de una convicción formada por Juan Carlos Aguilar Ibarra
+                durante sus primeros años como auditor ambiental: identificar incumplimientos no era
+                suficiente. La industria necesitaba convertir los hallazgos en soluciones técnicas viables,
+                jurídicamente correctas y verificables en la operación.
+              </p>
+
+              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(19px,2.4vw,24px)", letterSpacing: "-0.018em", lineHeight: 1.25, margin: "0 0 14px", color: "var(--ink-1000)" }}>
+                De la auditoría a la consultoría
+              </h3>
+              <p style={{ fontSize: 16, lineHeight: 1.75, color: "var(--fg-3)", margin: "0 0 16px" }}>
+                Ingeniero civil y maestro en ciencias con especialidad en Ingeniería Ambiental por el
+                Tecnológico de Monterrey, Juan Carlos participó entre 1998 y 1999 como auditor líder y
+                responsable del auditor coordinador dentro del Programa Nacional de Auditoría Ambiental.
+                Intervino en auditorías de Industria Limpia para Petróleos Mexicanos, la Comisión Federal
+                de Electricidad, PYOSA y otras organizaciones, incluyendo las terminales de Topolobampo y
+                Rosarito y el poliducto Tuxpan-Cerro Hermoso.
+              </p>
+              <p style={{ fontSize: 16, lineHeight: 1.75, color: "var(--fg-3)", margin: 0 }}>
+                Esa experiencia le mostró que numerosos estudios terminaban como documentos aislados:
+                describían problemas, pero no siempre indicaban cómo resolverlos ni aseguraban un beneficio
+                ambiental real. En 1999 inició servicios independientes dentro de Ingeniería y
+                Representaciones Comerciales Aguilar, S.A. de C.V.; de ese nombre surgió el acrónimo{" "}
+                <strong style={{ color: "var(--fg-2)", fontWeight: 600 }}>IRCA</strong>. Desde su casa y con
+                dos colaboradores atendió en Sonora proyectos acuícolas, escolleras, desarrollos
+                urbanísticos, procesos industriales y estudios de impacto ambiental.
+              </p>
+            </div>
+
+            {/* Ficha del director */}
+            <div style={{ background: "var(--bg-2)", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 28, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 16 }}>
+              <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
+                <div style={{
+                  width: 52, height: 52, borderRadius: 12, flexShrink: 0,
+                  background: "var(--irca-green-50)", color: "var(--irca-green-700)",
+                  display: "inline-flex", alignItems: "center", justifyContent: "center",
+                  fontSize: 20, fontFamily: "var(--font-display)", fontWeight: 800,
+                }}>
+                  JC
+                </div>
+                <div>
+                  <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 18, letterSpacing: "-0.01em", color: "var(--fg-1)", lineHeight: 1.25 }}>
+                    M.C. Ing. Juan Carlos Aguilar Ibarra
                   </div>
-                  <div>
-                    <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 18, letterSpacing: "-0.01em", color: "var(--fg-1)", lineHeight: 1.2 }}>{name}</div>
-                    <div style={{ fontSize: 13, color: color === "green" ? "var(--irca-green-700)" : "var(--irca-blue-700)", fontWeight: 600, marginTop: 4 }}>{title}</div>
+                  <div style={{ fontSize: 13, color: "var(--irca-green-700)", fontWeight: 600, marginTop: 4 }}>
+                    Socio Fundador — Director General
                   </div>
                 </div>
-                <p style={{ fontSize: 14, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>{bio}</p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                  {tags.map(t => (
-                    <span key={t} style={{ padding: "3px 10px", borderRadius: 999, background: "var(--bg-1)", border: "1px solid var(--border-soft)", fontSize: 11, fontWeight: 600, color: "var(--fg-3)" }}>{t}</span>
-                  ))}
-                </div>
               </div>
-            ))}
+              <div style={{ height: 1, background: "var(--border-soft)" }} />
+              <div style={{ display: "grid", gap: 11 }}>
+                {[
+                  ["Formación", "Ingeniero Civil · M.C. en Ingeniería Ambiental (ITESM) · Lic. en Derecho"],
+                  ["Certificaciones", "Auditor Líder ISO 9001, ISO 14001 e ISO 45001"],
+                  ["Trayectoria", "Auditor líder del Programa Nacional de Auditoría Ambiental (1998-1999)"],
+                  ["Proyectos", "Complejo Penitenciario Islas Marías (2009-2012) · FONDEN para CONAPESCA (2013-2019)"],
+                ].map(([k, v]) => (
+                  <div key={k}>
+                    <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.09em", textTransform: "uppercase", color: "var(--fg-4)", marginBottom: 3 }}>{k}</div>
+                    <div style={{ fontSize: 14, lineHeight: 1.5, color: "var(--fg-2)" }}>{v}</div>
+                  </div>
+                ))}
+              </div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                {["ISO 9001", "ISO 14001", "ISO 45001", "Derecho Ambiental"].map(t => (
+                  <span key={t} style={{ padding: "3px 10px", borderRadius: 999, background: "var(--bg-1)", border: "1px solid var(--border-soft)", fontSize: 11, fontWeight: 600, color: "var(--fg-3)" }}>{t}</span>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* Project leads */}
-          <Eyebrow color="var(--irca-blue-700)">Líderes de proyectos especializados</Eyebrow>
-          <p style={{ fontSize: 15, color: "var(--fg-3)", margin: "14px 0 24px", maxWidth: "60ch" }}>
-            El equipo operativo está conformado por profesionales en Ingeniería Ambiental, Química, Biología, Ciencias Ambientales y Derecho, egresados de instituciones de reconocida trayectoria en el país.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-            {projectLeads.map(({ name, spec }) => (
-              <div key={name} style={{ background: "var(--bg-2)", border: "1px solid var(--border-soft)", borderRadius: 12, padding: "16px 18px", display: "flex", flexDirection: "column", gap: 4 }}>
-                <div style={{ fontWeight: 700, fontSize: 14, color: "var(--fg-1)" }}>{name}</div>
-                <div style={{ fontSize: 13, color: "var(--fg-4)", lineHeight: 1.45 }}>{spec}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* ── INNOVACIÓN ────────────────────────────────── */}
+      {/* ── EQUIPAMIENTO ─────────────────────────────── */}
       <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-deep)", color: "#fff", position: "relative", overflow: "hidden" }}>
         <svg style={{ position: "absolute", right: -100, top: -100, opacity: 0.1, pointerEvents: "none" }} width="500" height="500" viewBox="0 0 100 100" fill="none" aria-hidden="true">
           {[5,10,15,20,25,30,35,40].map((r) => (<circle key={r} cx="50" cy="50" r={r} stroke="#fff" strokeWidth="0.5" />))}
         </svg>
         <div className="relative" style={{ maxWidth: 1280, margin: "0 auto" }}>
           <Eyebrow color="rgba(255,255,255,0.7)">Innovación tecnológica</Eyebrow>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start mt-6">
-            {/* Milieus Pro */}
-            <div>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "4px 12px", borderRadius: 999, background: "rgba(111,176,63,0.15)", border: "1px solid rgba(111,176,63,0.3)", color: "var(--irca-green)", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", marginBottom: 20 }}>
-                EN BETA · Próximamente disponible
+          <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 32px", color: "#fff" }}>
+            Equipamiento de campo especializado
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            {equipment.map(({ label, desc }) => (
+              <div key={label} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 10, padding: "14px 18px", display: "flex", gap: 14, alignItems: "flex-start" }}>
+                <div style={{ width: 8, height: 8, borderRadius: 999, background: "var(--irca-green)", flexShrink: 0, marginTop: 5 }} />
+                <div>
+                  <div style={{ fontWeight: 700, fontSize: 14, color: "#fff", marginBottom: 3 }}>{label}</div>
+                  <div style={{ fontSize: 13, color: "rgba(255,255,255,0.65)", lineHeight: 1.45 }}>{desc}</div>
+                </div>
               </div>
-              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(24px,3vw,36px)", letterSpacing: "-0.02em", lineHeight: 1.1, margin: "0 0 16px", color: "#fff" }}>
-                Milieus Pro
-              </h3>
-              <p style={{ fontSize: 16, lineHeight: 1.7, color: "rgba(255,255,255,0.75)", margin: "0 0 28px" }}>
-                Plataforma digital de gestión ambiental basada en internet, diseñada para que los responsables de SHE lleven un respaldo digital de su archivo ambiental y conozcan su nivel de cumplimiento normativo en tiempo real. Actualmente en etapa de prueba con integraciones piloto en proceso de validación operativa.
-              </p>
-              <div style={{ display: "grid", gap: 12 }}>
-                {milieusFeatures.map(f => (
-                  <div key={f} style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                    <span style={{ width: 22, height: 22, borderRadius: 999, background: "rgba(111,176,63,0.2)", color: "var(--irca-green)", display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                      <Icon name="check" size={12} stroke={2.5} />
-                    </span>
-                    <span style={{ fontSize: 15, color: "rgba(255,255,255,0.82)" }}>{f}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Equipment */}
-            <div>
-              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, letterSpacing: "-0.015em", margin: "0 0 20px", color: "#fff" }}>
-                Equipamiento de campo especializado
-              </h3>
-              <div style={{ display: "grid", gap: 8 }}>
-                {equipment.map(({ label, desc }) => (
-                  <div key={label} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 10, padding: "14px 18px", display: "flex", gap: 14, alignItems: "flex-start" }}>
-                    <div style={{ width: 8, height: 8, borderRadius: 999, background: "var(--irca-green)", flexShrink: 0, marginTop: 5 }} />
-                    <div>
-                      <div style={{ fontWeight: 700, fontSize: 14, color: "#fff", marginBottom: 3 }}>{label}</div>
-                      <div style={{ fontSize: 13, color: "rgba(255,255,255,0.65)", lineHeight: 1.45 }}>{desc}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── EXPERIENCIA — PROYECTOS LARGO PLAZO ──────── */}
-      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)" }}>
-        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <Eyebrow>Trayectoria</Eyebrow>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start mt-4 mb-10">
-            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.05, margin: 0, color: "var(--ink-1000)" }}>
-              Proyectos de seguimiento ambiental de largo plazo
-            </h2>
-            <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--fg-3)", margin: 0 }}>
-              Con 25 años de operación continua, IRCA Consultores ha desarrollado más de 500 estudios, proyectos y procedimientos legales. Estos son algunos de los clientes con relaciones de largo plazo.
-            </p>
-          </div>
-
-          <div style={{ overflowX: "auto" }}>
-            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14 }}>
-              <thead>
-                <tr style={{ background: "var(--bg-2)", borderBottom: "2px solid var(--border-soft)" }}>
-                  <th style={{ textAlign: "left", padding: "12px 16px", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--fg-4)", whiteSpace: "nowrap" }}>Cliente / Proyecto</th>
-                  <th style={{ textAlign: "left", padding: "12px 16px", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--fg-4)" }}>Servicios prestados</th>
-                  <th style={{ textAlign: "right", padding: "12px 16px", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--fg-4)", whiteSpace: "nowrap" }}>Período</th>
-                </tr>
-              </thead>
-              <tbody>
-                {longTermProjects.map(({ client, services, period }, i) => (
-                  <tr key={i} style={{ borderBottom: "1px solid var(--border-soft)", background: i % 2 === 0 ? "var(--bg-1)" : "var(--bg-2)" }}>
-                    <td style={{ padding: "14px 16px", fontWeight: 600, color: "var(--fg-1)", lineHeight: 1.35, verticalAlign: "top", minWidth: 240, maxWidth: 320 }}>{client}</td>
-                    <td style={{ padding: "14px 16px", color: "var(--fg-3)", lineHeight: 1.5, verticalAlign: "top" }}>{services}</td>
-                    <td style={{ padding: "14px 16px", whiteSpace: "nowrap", verticalAlign: "top", textAlign: "right" }}>
-                      <span style={{
-                        display: "inline-block", padding: "3px 9px", borderRadius: 999, fontSize: 11, fontWeight: 700,
-                        background: period.includes("Vigente") ? "var(--success-bg)" : "var(--bg-3)",
-                        color: period.includes("Vigente") ? "var(--success)" : "var(--fg-4)",
-                      }}>
-                        {period}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* ── PHASE I / II + RUIDO ──────────────────────── */}
-      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-2)" }}>
-        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
-            {/* Phase I & II */}
-            <div>
-              <Eyebrow color="var(--irca-blue-700)">Estudios de sitio</Eyebrow>
-              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(22px,2.5vw,32px)", letterSpacing: "-0.02em", lineHeight: 1.1, margin: "16px 0 8px", color: "var(--ink-1000)" }}>
-                Estudios Phase I y Phase II (ASTM E1527)
-              </h3>
-              <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--fg-3)", margin: "0 0 24px" }}>
-                Amplia trayectoria en evaluaciones de condición ambiental de sitio para fusiones, adquisiciones, cierres y cambios de uso de instalaciones industriales y comerciales.
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                {phaseStudies.map((s, i) => (
-                  <div key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start", padding: "10px 14px", background: "var(--bg-1)", borderRadius: 10, border: "1px solid var(--border-soft)" }}>
-                    <div style={{ width: 6, height: 6, borderRadius: 999, background: "var(--irca-blue)", flexShrink: 0, marginTop: 6 }} />
-                    <span style={{ fontSize: 13, color: "var(--fg-2)", lineHeight: 1.45 }}>{s}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Ruido perimetral */}
-            <div>
-              <Eyebrow>Especialidad destacada</Eyebrow>
-              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(22px,2.5vw,32px)", letterSpacing: "-0.02em", lineHeight: 1.1, margin: "16px 0 8px", color: "var(--ink-1000)" }}>
-                Control de ruido perimetral (NOM-081)
-              </h3>
-              <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--fg-3)", margin: "0 0 24px" }}>
-                Contamos con modelos propios de evaluación acústica, sonómetros calibrados y software de modelación de refracción. Clientes de alta exigencia confían en nuestra metodología y en la validez regulatoria de nuestros informes.
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 28 }}>
-                {ruido.map((c, i) => (
-                  <div key={i} style={{ display: "flex", gap: 12, alignItems: "center", padding: "12px 16px", background: "var(--bg-1)", borderRadius: 10, border: "1px solid var(--border-soft)" }}>
-                    <div style={{ width: 8, height: 8, borderRadius: 999, background: "var(--irca-green)", flexShrink: 0 }} />
-                    <span style={{ fontSize: 14, fontWeight: 600, color: "var(--fg-1)" }}>{c}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Sectores + autoridades */}
-              <Eyebrow color="var(--irca-blue-700)">Autoridades ante las que actuamos</Eyebrow>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 16 }}>
-                {authorities.map(a => (
-                  <span key={a} style={{ padding: "6px 14px", borderRadius: 999, background: "var(--bg-1)", border: "1px solid var(--border-soft)", fontSize: 12, fontWeight: 700, color: "var(--fg-2)" }}>{a}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ── CLIENTES + RESEÑAS ────────────────────────── */}
+      <Clients />
+      <GoogleReviews />
 
       {/* ── COBERTURA ─────────────────────────────────── */}
       <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)", borderTop: "1px solid var(--border-soft)" }}>

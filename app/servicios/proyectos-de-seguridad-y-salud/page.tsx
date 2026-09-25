@@ -68,8 +68,8 @@ const alcanceCards = [
         <path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/>
       </svg>
     ),
-    title: "Metodologías de cumplimiento (SMART, DuPont)",
-    desc: "Aplicación de marcos reconocidos internacionalmente para medir madurez en seguridad y estructurar el plan de mejora. La metodología se elige según el punto de partida de la operación y el objetivo del corporativo.",
+    title: "Gestión de riesgos y cumplimiento",
+    desc: "Aplicamos las NOM-STPS vigentes y marcos internacionales como ISO 45001, ISO 31000 e IEC 31010 para identificar peligros, evaluar riesgos y definir controles verificables, con responsables y plazos de ejecución.",
   },
   {
     color: "blue",
@@ -220,9 +220,8 @@ export default function EstudiosDeSeguridadYSalud() {
               fontSize: "clamp(32px,4.5vw,56px)", letterSpacing: "-0.03em", lineHeight: 1.05,
               margin: "18px 0 20px", color: "var(--ink-1000)",
             }}>
-              Saber qué puede{" "}
-              <span style={{ color: "var(--danger)" }}>lastimar a alguien</span>{" "}
-              antes de que ocurra.
+              Identificar y controlar el riesgo{" "}
+              <span style={{ color: "var(--danger)" }}>antes de que ocurra un accidente</span>.
             </h1>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--fg-3)", maxWidth: "54ch", margin: "0 0 14px" }}>
               Análisis de riesgos laborales, equipos y manejo de sustancias con metodologías reconocidas internacionalmente. Gestión integral del riesgo para operaciones industriales.
@@ -295,7 +294,7 @@ export default function EstudiosDeSeguridadYSalud() {
           <div>
             <Eyebrow>Sobre el Servicio</Eyebrow>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 28px", color: "var(--ink-1000)" }}>
-              Cumplimiento NOM-STPS que se sostiene más allá de la inspección
+              Cumplimiento de normas oficiales mexicanas STPS, que se sostiene más allá de la inspección
             </h2>
             <Photo
               ratio="16/9"
@@ -305,10 +304,18 @@ export default function EstudiosDeSeguridadYSalud() {
           </div>
           <div>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: "0 0 22px" }}>
-              Un estudio de seguridad y salud responde una pregunta concreta: qué en esta operación puede lesionar a un trabajador, con qué probabilidad y con qué gravedad. No es un inventario de documentos faltantes ni un checklist de normas; es la evaluación técnica del riesgo real por puesto, por área y por equipo, incluida la exposición a sustancias químicas peligrosas.
+              Un estudio de seguridad y salud no consiste en reunir documentos para una inspección.
+              Parte de observar cómo se ejecuta realmente cada tarea, identificar los peligros, valorar
+              la probabilidad y gravedad de sus consecuencias y determinar la exposición de cada puesto
+              de trabajo.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-3)", margin: 0 }}>
-              En IRCA Consultores aplicamos metodologías reconocidas internacionalmente —SMART, DuPont y los requisitos de ISO 45001— sobre la operación como efectivamente se ejecuta, no como está descrita en el procedimiento. Cada riesgo relevante se jerarquiza y se traduce en un control concreto siguiendo la jerarquía correcta: primero ingeniería, luego administración y sólo al final equipo de protección personal.
+              En IRCA Consultores evaluamos los riesgos con base en las NOM-STPS aplicables y en marcos
+              vigentes como ISO 45001:2018, ISO 31000:2018 e IEC 31010:2019. Cada hallazgo se traduce en
+              acciones verificables siguiendo la jerarquía de controles: eliminar o sustituir el peligro,
+              implementar controles de ingeniería, establecer medidas administrativas y utilizar equipo de
+              protección personal para el riesgo residual. El resultado no es un checklist, sino un
+              programa priorizado con responsables, plazos y evidencia de cumplimiento.
             </p>
             <a
               href="#contacto"
@@ -407,14 +414,14 @@ export default function EstudiosDeSeguridadYSalud() {
                 Sobre IRCA Consultores
               </h2>
               <Photo
-                ratio="4/3"
-                src="/images/nosotros/nosotros-equipo-irca.webp"
+                ratio="16/9"
+                src="/images/nosotros/sobre-la-empresa-irca.webp"
                 alt="Equipo multidisciplinario de IRCA Consultores"
               />
             </div>
             <div>
               <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--fg-2)", margin: 0 }}>
-                IRCA Consultores es una firma de consultoría ambiental fundada en 1999, especializada en ingeniería ambiental y cumplimiento normativo. A lo largo de más de 25 años nos hemos consolidado como referente técnico-legal ambiental en el norte de México, con cobertura nacional y proyectos en sectores tan diversos como el industrial, minero, energético, acuícola, inmobiliario y gubernamental. Operamos bajo dos razones sociales —IRCA Ingeniería y Servicios, S.C. y Environmental North de México, S.C.— y conjugamos rigor técnico con solidez jurídica para representar a nuestros clientes ante SEMARNAT, PROFEPA, CONAGUA, STPS y demás autoridades. Nuestro equipo multidisciplinario acompaña cada proyecto de principio a fin: del diagnóstico a la resolución.
+                IRCA Consultores es una firma de consultoría ambiental fundada en 1999, especializada en ingeniería ambiental y cumplimiento normativo. A lo largo de más de 25 años nos hemos consolidado como referente técnico-legal ambiental en el norte de México, con cobertura nacional y proyectos en sectores tan diversos como el industrial, minero, energético, acuícola, inmobiliario y gubernamental. Operamos en regla con lo que le exigimos a nuestros clientes: contamos con registro <strong style={{ color: "var(--fg-1)", fontWeight: 600 }}>REPSE</strong> ante la STPS y mantenemos vigentes los <strong style={{ color: "var(--fg-1)", fontWeight: 600 }}>Registros de Prestador de Servicios</strong> en materia ambiental y de seguridad e higiene en los estados donde operamos. Conjugamos rigor técnico con solidez jurídica para representar a nuestros clientes ante SEMARNAT, PROFEPA, CONAGUA, STPS y demás autoridades. Nuestro equipo multidisciplinario acompaña cada proyecto de principio a fin: del diagnóstico a la resolución.
               </p>
             </div>
           </div>

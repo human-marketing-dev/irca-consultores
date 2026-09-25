@@ -79,9 +79,8 @@ export default function IntroIRCA() {
             <strong style={{ color: "var(--fg-2)", fontWeight: 600 }}>metodologías internas</strong>{" "}
             de diagnóstico y evidencia, equipamiento de campo para aire, agua, suelo y ruido,{" "}
             <strong style={{ color: "var(--fg-2)", fontWeight: 600 }}>inteligencia artificial</strong>{" "}
-            aplicada al análisis normativo y{" "}
-            <strong style={{ color: "var(--fg-2)", fontWeight: 600 }}>Milieus Pro</strong>, nuestra
-            plataforma para administrar el expediente ambiental y los vencimientos de cada instalación.
+            aplicada al análisis normativo y plataformas propias para administrar el
+            expediente ambiental y los vencimientos de cada instalación.
           </p>
           <p style={{ fontSize: 17, lineHeight: 1.65, color: "var(--fg-3)", marginBottom: 32, maxWidth: "58ch" }}>
             Y nos llevó a un modelo poco común en México: un despacho{" "}
@@ -160,7 +159,7 @@ export default function IntroIRCA() {
         }}>1999</span>
         <div>
           <div style={{ fontSize: 13, fontWeight: 700, color: "var(--irca-green-700)", lineHeight: 1.2 }}>Año de fundación</div>
-          <div style={{ fontSize: 12, color: "var(--irca-green-700)", opacity: 0.75 }}>Monterrey, Nuevo León</div>
+          <div style={{ fontSize: 12, color: "var(--irca-green-700)", opacity: 0.75 }}>Primeros proyectos en Sonora</div>
         </div>
       </div>
 

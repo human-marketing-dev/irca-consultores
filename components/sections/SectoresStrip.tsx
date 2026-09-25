@@ -68,7 +68,7 @@ const sectores = [
   },
 ];
 
-const coverage = ["Nuevo León", "Coahuila", "Tamaulipas", "Sonora", "Guanajuato", "CDMX", "Nacional"];
+const coverage = ["Nuevo León", "Coahuila", "Tamaulipas", "San Luis Potosí", "Sonora", "Guanajuato", "CDMX", "Nacional"];
 
 export default function SectoresStrip() {
   return (
@@ -83,7 +83,7 @@ export default function SectoresStrip() {
               Presencia multisectorial
             </div>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(22px,3vw,34px)", letterSpacing: "-0.022em", lineHeight: 1.1, margin: "12px 0 0", color: "var(--ink-1000)" }}>
-              25 años de experiencia en los sectores productivos de la economía mexicana
+              Más de 25 años de experiencia en los sectores productivos de la economía mexicana
             </h2>
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 8, flexShrink: 0 }}>
