@@ -5,7 +5,7 @@ import Icon from "@/components/ui/Icon";
 // índices 6–7 cierran la primera fila y los 14–15 cierran la segunda.
 const clients = [
   { name: "Deacero",          logo: "/deacero-logo.webp" },
-  { name: "Vitromex",         logo: "/vitromex-logo.webp" },
+  { name: "Vitromex",         logo: "/vitromex-logo-v2.webp" },
   { name: "Frisa",            logo: "/frisa-logo.webp" },
   { name: "Fundición Águilas",logo: "/fundicion-aguilas-logo.webp" },
   { name: "Daltile",          logo: "/daltile-logo.webp" },
