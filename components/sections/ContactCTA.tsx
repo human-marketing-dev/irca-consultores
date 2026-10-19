@@ -1,7 +1,7 @@
-"use client";
-
-import { useState } from "react";
 import Icon, { type IconName } from "@/components/ui/Icon";
+import ContactForm from "@/components/ui/ContactForm";
+import SocialIcon from "@/components/ui/SocialIcon";
+import { ircaSocial } from "@/lib/social";
 
 const contactDetails: { icon: IconName; value: string }[] = [
   { icon: "phone",   value: "+52 81 1505‑9330 · 9332" },
@@ -9,12 +9,6 @@ const contactDetails: { icon: IconName; value: string }[] = [
   { icon: "globe",   value: "www.ircaconsultores.com" },
   { icon: "map-pin", value: "Nuevo León · sede operativa principal" },
 ];
-
-const fields = [
-  { label: "Nombre completo", placeholder: "Ej. María Sánchez",  type: "text" },
-  { label: "Empresa",          placeholder: "Razón social",        type: "text" },
-  { label: "Correo",           placeholder: "tu@empresa.com",     type: "email" },
-] as const;
 
 const serviceOptions = [
   "Auditoría y diagnóstico ambiental",
@@ -33,16 +27,7 @@ const WHATSAPP_URL =
   "https://wa.me/528115059330?text=" +
   encodeURIComponent("Hola, tengo una situación ambiental urgente y necesito apoyo de IRCA Consultores.");
 
-const inputStyle: React.CSSProperties = {
-  border: "1px solid var(--border-strong)", borderRadius: 8,
-  padding: "10px 12px", fontFamily: "var(--font-body)", fontSize: 14,
-  color: "var(--fg-1)", background: "var(--bg-1)", width: "100%", boxSizing: "border-box",
-  outline: "none",
-};
-
 export default function ContactCTA() {
-  const [sent, setSent] = useState(false);
-
   return (
     <section id="contact" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "linear-gradient(180deg, var(--bg-2) 0%, var(--bg-1) 100%)" }}>
       <div
@@ -92,6 +77,26 @@ export default function ContactCTA() {
             ))}
           </div>
 
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 20 }}>
+            <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--fg-4)" }}>
+              Síguenos
+            </span>
+            {ircaSocial.map(({ icon, href, label }) => (
+              <a
+                key={icon}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${label} de IRCA Consultores`}
+                title={label}
+                className="bg-[color:var(--irca-blue-50)] text-[color:var(--irca-blue-700)] hover:bg-[color:var(--irca-blue-700)] hover:text-white transition-colors"
+                style={{ width: 36, height: 36, borderRadius: 8, display: "inline-flex", alignItems: "center", justifyContent: "center" }}
+              >
+                <SocialIcon name={icon} size={16} />
+              </a>
+            ))}
+          </div>
+
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 24 }}>
             <a
               href={WHATSAPP_URL}
@@ -123,61 +128,14 @@ export default function ContactCTA() {
         </div>
 
         {/* Form */}
-        <form
-          onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-          style={{ background: "var(--bg-1)", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 24, boxShadow: "var(--shadow-2)" }}
-        >
-          {sent ? (
-            <div style={{ padding: "40px 8px", textAlign: "center" }}>
-              <div style={{ width: 56, height: 56, borderRadius: 999, background: "var(--irca-green-50)", color: "var(--irca-green-700)", display: "inline-flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
-                <Icon name="check" size={28} stroke={2.4} />
-              </div>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, color: "var(--fg-1)", letterSpacing: "-0.015em" }}>
-                Gracias, recibimos tu solicitud.
-              </div>
-              <div style={{ fontSize: 14, color: "var(--fg-3)", marginTop: 8 }}>
-                Un coordinador procurará contactarte dentro del siguiente día hábil.
-              </div>
-            </div>
-          ) : (
-            <div style={{ display: "grid", gap: 14 }}>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, color: "var(--fg-1)", letterSpacing: "-0.015em" }}>
-                Solicitar información
-              </div>
-              {fields.map(({ label, placeholder, type }) => (
-                <label key={label} style={{ display: "flex", flexDirection: "column", gap: 6, fontSize: 12, fontWeight: 600, color: "var(--fg-2)" }}>
-                  {label}
-                  <input type={type} required placeholder={placeholder} style={inputStyle} />
-                </label>
-              ))}
-              <label style={{ display: "flex", flexDirection: "column", gap: 6, fontSize: 12, fontWeight: 600, color: "var(--fg-2)" }}>
-                Servicio de interés
-                <select style={{ ...inputStyle, appearance: "none" }}>
-                  {serviceOptions.map((o) => <option key={o}>{o}</option>)}
-                </select>
-              </label>
-              <label style={{ display: "flex", flexDirection: "column", gap: 6, fontSize: 12, fontWeight: 600, color: "var(--fg-2)" }}>
-                Descripción breve
-                <textarea
-                  rows={3}
-                  placeholder="Cuéntanos del proyecto y la autoridad involucrada"
-                  style={{ ...inputStyle, resize: "vertical" }}
-                />
-              </label>
-              <button
-                type="submit"
-                style={{
-                  display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
-                  background: "var(--irca-green)", color: "#fff", border: "none",
-                  padding: "13px 22px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 15,
-                  borderRadius: 10, cursor: "pointer", width: "100%", boxShadow: "var(--shadow-1)",
-                }}
-              >
-                Enviar solicitud <Icon name="arrow-right" size={17} />
-              </button>
-            </div>
-          )}
-        </form>
+        <ContactForm
+          compact
+          title="Solicitar información"
+          selectLabel="Servicio de interés"
+          options={serviceOptions}
+          descriptionPlaceholder="Cuéntanos del proyecto y la autoridad involucrada"
+          successMessage="Un coordinador procurará contactarte dentro del siguiente día hábil."
+        />
       </div>
     </section>
   );

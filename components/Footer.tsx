@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/components/ui/Icon";
+import SocialIcon from "@/components/ui/SocialIcon";
+import { ircaSocial } from "@/lib/social";
 
 type FooterLink = { label: string; href: string };
 
@@ -52,6 +54,12 @@ const linkStyle: React.CSSProperties = {
 /** El color vive en clases, no en el style inline: si no, el inline gana y el hover no aplica. */
 const linkClass = "text-white/65 hover:text-white transition-colors duration-200";
 
+const footerIconStyle: React.CSSProperties = {
+  width: 34, height: 34, borderRadius: 8,
+  display: "inline-flex", alignItems: "center", justifyContent: "center", textDecoration: "none",
+};
+const footerIconClass = "bg-white/[0.08] text-white/70 hover:bg-white/[0.16] hover:text-white transition-colors duration-200";
+
 export default function Footer() {
   return (
     <footer className="px-4 sm:px-6 pt-14 pb-8" style={{ background: "var(--bg-deep)", color: "rgba(255,255,255,0.7)" }}>
@@ -70,23 +78,28 @@ export default function Footer() {
             en un solo equipo para resolver el ciclo completo de cumplimiento: del diagnóstico
             y los estudios técnicos a las autorizaciones y la defensa ante la autoridad.
           </p>
-          <div className="flex gap-3 mt-4 mb-4">
+          <div className="flex flex-wrap gap-3 mt-4 mb-4">
             {[
-              { icon: "phone" as const, href: "tel:+528115059330" },
-              { icon: "mail" as const,  href: "mailto:info@ircaconsultores.com" },
-              { icon: "globe" as const, href: "https://ircaconsultores.com" },
-            ].map(({ icon, href }) => (
+              { icon: "phone" as const, href: "tel:+528115059330",               label: "Llamar a IRCA Consultores" },
+              { icon: "mail" as const,  href: "mailto:info@ircaconsultores.com", label: "Escribir a IRCA Consultores" },
+              { icon: "globe" as const, href: "https://ircaconsultores.com",     label: "Sitio web de IRCA Consultores" },
+            ].map(({ icon, href, label }) => (
+              <a key={icon} href={href} aria-label={label} title={label} style={footerIconStyle} className={footerIconClass}>
+                <Icon name={icon} size={15} />
+              </a>
+            ))}
+            {ircaSocial.map(({ icon, href, label }) => (
               <a
                 key={icon}
                 href={href}
-                style={{
-                  width: 34, height: 34, borderRadius: 8,
-                  background: "rgba(255,255,255,0.08)",
-                  display: "inline-flex", alignItems: "center", justifyContent: "center",
-                  color: "rgba(255,255,255,0.7)", textDecoration: "none",
-                }}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${label} de IRCA Consultores`}
+                title={label}
+                style={footerIconStyle}
+                className={footerIconClass}
               >
-                <Icon name={icon} size={15} />
+                <SocialIcon name={icon} size={15} />
               </a>
             ))}
           </div>

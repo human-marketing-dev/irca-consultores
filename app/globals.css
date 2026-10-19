@@ -207,3 +207,9 @@ body {
   filter: grayscale(1) invert(1) brightness(1.7);
   opacity: 0.6;
 }
+
+/* Carruseles con scroll horizontal: oculta la barra sin quitar el desplazamiento */
+@layer utilities {
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}

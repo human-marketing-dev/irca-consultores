@@ -5,6 +5,7 @@ import Services from "@/components/sections/Services";
 import SectoresStrip from "@/components/sections/SectoresStrip";
 import MissionStrip from "@/components/sections/MissionStrip";
 import Clients from "@/components/sections/Clients";
+import InstagramReels from "@/components/sections/InstagramReels";
 import ContactCTA from "@/components/sections/ContactCTA";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <SectoresStrip />
       <MissionStrip />
       <Clients />
+      <InstagramReels />
       <ContactCTA />
     </>
   );

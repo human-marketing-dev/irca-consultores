@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Icon from "@/components/ui/Icon";
 import Photo from "@/components/ui/Photo";
 import ServiceFAQ from "@/components/servicios/ServiceFAQ";
@@ -83,6 +84,26 @@ const alcanceCards = [
     desc: "Cursos para acreditar los requisitos de capacitación que exigen las NOM-STPS —trabajos en altura, espacios confinados, sustancias químicas, bloqueo y etiquetado, electricidad— y la formación que requiere el Programa Interno de Protección Civil.",
   },
 ];
+
+/* ── cursos registrados ────────────────────────────── */
+
+const cursos = [
+  "Regulación y cumplimiento ambiental",
+  "Prevención de accidentes",
+  "Minimización de residuos industriales",
+  "Auditoría ambiental",
+  "Elaboración y control de planes integrales de manejo de residuos",
+  "Implementación de ISO 14001",
+  "Atención de visitas de inspección",
+  "Control de polvos en obras de construcción",
+];
+
+/** Lleva al formulario de /contacto con el servicio preseleccionado y, opcionalmente, el curso. */
+function contactoHref(curso?: string) {
+  const params = new URLSearchParams({ servicio: "Capacitación técnica especializada" });
+  if (curso) params.set("curso", curso);
+  return `/contacto/?${params.toString()}`;
+}
 
 /* ── ¿por qué irca? pillars ─────────────────────────── */
 
@@ -340,6 +361,59 @@ export default function CapacitacionTecnicaEspecializada() {
               </a>
             </article>
           </div>
+        </div>
+      </section>
+
+      {/* ── CAPACITACIONES Y CURSOS ──────────────────── */}
+      <section className="px-4 sm:px-6 py-16 md:py-24" style={{ position: "relative", overflow: "hidden", background: "var(--bg-deep)", color: "#fff" }}>
+        <svg style={{ position: "absolute", left: -140, bottom: -160, opacity: 0.1, pointerEvents: "none" }} width="520" height="520" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          {[5,10,15,20,25,30,35,40,45].map((r) => (
+            <circle key={r} cx="50" cy="50" r={r} stroke="#fff" strokeWidth="0.4" />
+          ))}
+        </svg>
+        <div
+          className="relative grid grid-cols-1 md:[grid-template-columns:0.9fr_1.1fr] gap-10 md:gap-16 items-start"
+          style={{ maxWidth: 1280, margin: "0 auto" }}
+        >
+          <div>
+            <Eyebrow color="rgba(255,255,255,0.7)">Capacitaciones y cursos</Eyebrow>
+            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "16px 0 20px", color: "#fff" }}>
+              Cursos con registro ante la{" "}
+              <span style={{ color: "var(--irca-green)" }}>STPS</span>
+            </h2>
+            <p style={{ fontSize: 16, lineHeight: 1.7, color: "rgba(255,255,255,0.75)", margin: "0 0 14px" }}>
+              Programas impartidos como agente capacitador externo registrado ante la Secretaría del Trabajo y Previsión Social, con cargas de entre 5 y 16 horas, in company o en grupos abiertos.
+            </p>
+            <p style={{ fontSize: 16, lineHeight: 1.7, color: "rgba(255,255,255,0.75)", margin: "0 0 28px" }}>
+              Elige el curso que necesita tu equipo y solicita información: te compartimos el temario, la duración, la modalidad y la documentación que corresponde emitir.
+            </p>
+            <Link
+              href={contactoHref()}
+              style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--irca-green)", color: "#fff", padding: "14px 26px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 16, borderRadius: 10, textDecoration: "none", boxShadow: "var(--shadow-1)" }}
+            >
+              Solicitar información de cursos <Icon name="arrow-right" size={17} />
+            </Link>
+          </div>
+
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3" style={{ listStyle: "none", margin: 0, padding: 0 }}>
+            {cursos.map((curso) => (
+              <li key={curso}>
+                <Link
+                  href={contactoHref(curso)}
+                  className="group"
+                  style={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 14, padding: "16px 18px", borderRadius: 12, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)", color: "#fff", textDecoration: "none" }}
+                >
+                  <span style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+                    <span style={{ width: 8, height: 8, borderRadius: 999, background: "var(--irca-green)", flexShrink: 0, marginTop: 7 }} />
+                    <span style={{ fontSize: 15, fontWeight: 600, lineHeight: 1.4 }}>{curso}</span>
+                  </span>
+                  <span className="transition-transform group-hover:translate-x-1" style={{ color: "var(--irca-green)", flexShrink: 0, display: "inline-flex" }}>
+                    <Icon name="arrow-right" size={16} />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

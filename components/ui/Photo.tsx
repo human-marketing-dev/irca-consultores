@@ -6,13 +6,15 @@ import Image from "next/image";
  * Sin `src` se muestra un placeholder con el `alt` como descripción de la foto pendiente.
  */
 export default function Photo({
-  src, alt, ratio = "16/9", priority = false,
+  src, alt, ratio = "16/9", priority = false, position = "center",
   sizes = "(max-width: 768px) 100vw, 50vw",
 }: {
   src?: string;
   alt: string;
   ratio?: string;
   priority?: boolean;
+  /** Punto focal del recorte (object-position), p. ej. "50% 20%". */
+  position?: string;
   sizes?: string;
 }) {
   return (
@@ -24,7 +26,7 @@ export default function Photo({
       }}
     >
       {src ? (
-        <Image src={src} alt={alt} fill sizes={sizes} priority={priority} style={{ objectFit: "cover" }} />
+        <Image src={src} alt={alt} fill sizes={sizes} priority={priority} style={{ objectFit: "cover", objectPosition: position }} />
       ) : (
         <div
           role="img"

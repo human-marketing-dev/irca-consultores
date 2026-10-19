@@ -1,13 +1,5 @@
-"use client";
-
-import { useState } from "react";
 import Icon from "@/components/ui/Icon";
-
-const inputStyle: React.CSSProperties = {
-  border: "1px solid var(--border-strong)", borderRadius: 8,
-  padding: "11px 12px", fontFamily: "var(--font-body)", fontSize: 14,
-  color: "var(--fg-1)", background: "var(--bg-1)", width: "100%", boxSizing: "border-box", outline: "none",
-};
+import ContactForm from "@/components/ui/ContactForm";
 
 interface Props {
   headline: React.ReactNode;
@@ -18,8 +10,6 @@ interface Props {
 }
 
 export default function ServiceContactSection({ headline, copy, formTitle, motivoLabel = "Motivo", motivoOptions }: Props) {
-  const [sent, setSent] = useState(false);
-
   return (
     <section id="contacto" className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)", borderTop: "1px solid var(--border-soft)" }}>
       <div
@@ -60,65 +50,13 @@ export default function ServiceContactSection({ headline, copy, formTitle, motiv
         </div>
 
         {/* Form */}
-        <form
-          onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-          style={{ background: "var(--bg-1)", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 28, boxShadow: "var(--shadow-2)" }}
-        >
-          {sent ? (
-            <div style={{ padding: "40px 8px", textAlign: "center" }}>
-              <div style={{ width: 56, height: 56, borderRadius: 999, background: "var(--irca-green-50)", color: "var(--irca-green-700)", display: "inline-flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
-                <Icon name="check" size={28} stroke={2.4} />
-              </div>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 24, color: "var(--fg-1)", letterSpacing: "-0.015em" }}>
-                Gracias, recibimos tu solicitud.
-              </div>
-              <div style={{ fontSize: 14, color: "var(--fg-3)", marginTop: 8 }}>
-                Un coordinador te contactará en menos de 24 horas hábiles.
-              </div>
-            </div>
-          ) : (
-            <div style={{ display: "grid", gap: 14 }}>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, color: "var(--fg-1)", letterSpacing: "-0.015em" }}>
-                {formTitle}
-              </div>
-              {[
-                { label: "Nombre completo", placeholder: "Ej. María Sánchez", type: "text" },
-                { label: "Empresa",          placeholder: "Razón social",       type: "text" },
-                { label: "Correo",           placeholder: "tu@empresa.com",    type: "email" },
-              ].map(({ label, placeholder, type }) => (
-                <label key={label} style={{ display: "flex", flexDirection: "column", gap: 6, fontSize: 12, fontWeight: 600, color: "var(--fg-2)" }}>
-                  {label}
-                  <input type={type} required placeholder={placeholder} style={inputStyle} />
-                </label>
-              ))}
-              <label style={{ display: "flex", flexDirection: "column", gap: 6, fontSize: 12, fontWeight: 600, color: "var(--fg-2)" }}>
-                {motivoLabel}
-                <select style={{ ...inputStyle, appearance: "none" }}>
-                  {motivoOptions.map((o) => <option key={o}>{o}</option>)}
-                </select>
-              </label>
-              <label style={{ display: "flex", flexDirection: "column", gap: 6, fontSize: 12, fontWeight: 600, color: "var(--fg-2)" }}>
-                Descripción breve
-                <textarea
-                  rows={3}
-                  placeholder="Cuéntanos del proyecto, la planta o la autoridad involucrada"
-                  style={{ ...inputStyle, resize: "vertical" }}
-                />
-              </label>
-              <button
-                type="submit"
-                style={{
-                  display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
-                  background: "var(--irca-green)", color: "#fff", border: "none",
-                  padding: "14px 26px", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 16,
-                  borderRadius: 10, cursor: "pointer", width: "100%", boxShadow: "var(--shadow-1)",
-                }}
-              >
-                Enviar solicitud <Icon name="arrow-right" size={17} />
-              </button>
-            </div>
-          )}
-        </form>
+        <ContactForm
+          title={formTitle}
+          selectLabel={motivoLabel}
+          options={motivoOptions}
+          descriptionPlaceholder="Cuéntanos del proyecto, la planta o la autoridad involucrada"
+          successMessage="Un coordinador te contactará en menos de 24 horas hábiles."
+        />
       </div>
     </section>
   );

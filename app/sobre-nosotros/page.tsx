@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Icon from "@/components/ui/Icon";
 import Photo from "@/components/ui/Photo";
+import SocialIcon, { type SocialIconName } from "@/components/ui/SocialIcon";
 import CoverageMap from "@/components/sections/CoverageMap";
 import Clients from "@/components/sections/Clients";
 import GoogleReviews from "@/components/sections/GoogleReviews";
@@ -36,6 +37,17 @@ const values = [
   { icon: "building",     label: "Trabajo en equipo", desc: "Promover el compañerismo, el sentido de pertenencia y el respeto al personal, al cliente y a las autoridades con las que interactuamos." },
   { icon: "satellite",    label: "Innovación",       desc: "Desarrollar estrategias, productos y servicios de cumplimiento, así como promover nuevas tecnologías (IA) que aumenten la eficiencia de nuestros servicios." },
   { icon: "check",        label: "Eficiencia",       desc: "Ofrecer SIEMPRE la mejor estrategia de cumplimiento al cliente: “nunca vender lo que no necesite”." },
+];
+
+const directorLinks: { label: string; href: string; icon: SocialIconName | "web" }[] = [
+  { label: "Sitio web",  href: "https://jcaguilar.com/",                          icon: "web" },
+  { label: "LinkedIn",   href: "https://www.linkedin.com/in/ambientaljca/",       icon: "linkedin" },
+  { label: "Instagram",  href: "https://www.instagram.com/ambientaljca/",         icon: "instagram" },
+  { label: "Facebook",   href: "https://www.facebook.com/AmbientalJCA",           icon: "facebook" },
+  { label: "TikTok",     href: "https://www.tiktok.com/@jcaambiental",            icon: "tiktok" },
+  { label: "X",          href: "https://x.com/AmbientalJca",                      icon: "x" },
+  { label: "YouTube",    href: "https://www.youtube.com/@ambientaljca/shorts",    icon: "youtube" },
+  { label: "Substack",   href: "https://substack.com/@ambientaljca",              icon: "substack" },
 ];
 
 const timeline = [
@@ -225,7 +237,44 @@ export default function SobreNosotros() {
           <div style={{ height: 1, background: "var(--border-soft)", margin: "56px 0 40px" }} />
 
           <Eyebrow>Semblanza del director</Eyebrow>
-          <div className="grid grid-cols-1 md:[grid-template-columns:1fr_0.85fr] gap-10 md:gap-16 items-start mt-4">
+          <div className="grid grid-cols-1 md:[grid-template-columns:0.72fr_1.28fr] gap-10 md:gap-16 items-start mt-6">
+            {/* Foto + nombre */}
+            <figure className="w-full max-w-[380px] md:max-w-none md:sticky md:top-24" style={{ margin: 0 }}>
+              <Photo
+                ratio="4/5"
+                position="50% 20%"
+                sizes="(max-width: 768px) 380px, 440px"
+                src="/images/nosotros/foto-semblanza-juan-carlos-irca-consultores.webp"
+                alt="M.C. Ing. Juan Carlos Aguilar Ibarra, socio fundador y director general de IRCA Consultores"
+              />
+              <figcaption style={{ marginTop: 16 }}>
+                <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 18, letterSpacing: "-0.01em", color: "var(--fg-1)", lineHeight: 1.25 }}>
+                  M.C. Ing. Juan Carlos Aguilar Ibarra
+                </div>
+                <div style={{ fontSize: 13, color: "var(--irca-green-700)", fontWeight: 600, marginTop: 4 }}>
+                  Socio Fundador — Director General
+                </div>
+                <ul aria-label="Juan Carlos Aguilar Ibarra en redes" style={{ listStyle: "none", margin: "16px 0 0", padding: 0, display: "flex", flexWrap: "wrap", gap: 8 }}>
+                  {directorLinks.map(({ label, href, icon }) => (
+                    <li key={label}>
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${label} de Juan Carlos Aguilar Ibarra`}
+                        title={label}
+                        className="border border-[color:var(--border-soft)] text-[color:var(--fg-3)] hover:border-[color:var(--irca-green)] hover:text-[color:var(--irca-green-700)] transition-colors"
+                        style={{ width: 38, height: 38, borderRadius: 10, display: "inline-flex", alignItems: "center", justifyContent: "center", background: "var(--bg-2)" }}
+                      >
+                        {icon === "web" ? <Icon name="globe" size={18} /> : <SocialIcon name={icon} size={17} />}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </figcaption>
+            </figure>
+
+            {/* Semblanza */}
             <div>
               <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,3.5vw,40px)", letterSpacing: "-0.025em", lineHeight: 1.08, margin: "0 0 24px", color: "var(--ink-1000)" }}>
                 Juan Carlos Aguilar Ibarra y la formación de IRCA Consultores
@@ -258,46 +307,27 @@ export default function SobreNosotros() {
                 urbanísticos, procesos industriales y estudios de impacto ambiental.
               </p>
             </div>
+          </div>
 
-            {/* Ficha del director */}
-            <div style={{ background: "var(--bg-2)", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 28, boxShadow: "var(--shadow-1)", display: "flex", flexDirection: "column", gap: 16 }}>
-              <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
-                <div style={{
-                  width: 52, height: 52, borderRadius: 12, flexShrink: 0,
-                  background: "var(--irca-green-50)", color: "var(--irca-green-700)",
-                  display: "inline-flex", alignItems: "center", justifyContent: "center",
-                  fontSize: 20, fontFamily: "var(--font-display)", fontWeight: 800,
-                }}>
-                  JC
+          {/* Ficha del director */}
+          <div style={{ marginTop: 48, background: "var(--bg-2)", border: "1px solid var(--border-soft)", borderRadius: 16, padding: 28, boxShadow: "var(--shadow-1)" }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                ["Formación", "Ingeniero Civil · M.C. en Ingeniería Ambiental (ITESM) · Lic. en Derecho"],
+                ["Certificaciones", "Auditor Líder ISO 9001, ISO 14001 e ISO 45001"],
+                ["Trayectoria", "Auditor líder del Programa Nacional de Auditoría Ambiental (1998-1999)"],
+                ["Proyectos", "Complejo Penitenciario Islas Marías (2009-2012) · FONDEN para CONAPESCA (2013-2019)"],
+              ].map(([k, v]) => (
+                <div key={k}>
+                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.09em", textTransform: "uppercase", color: "var(--fg-4)", marginBottom: 6 }}>{k}</div>
+                  <div style={{ fontSize: 14, lineHeight: 1.5, color: "var(--fg-2)" }}>{v}</div>
                 </div>
-                <div>
-                  <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 18, letterSpacing: "-0.01em", color: "var(--fg-1)", lineHeight: 1.25 }}>
-                    M.C. Ing. Juan Carlos Aguilar Ibarra
-                  </div>
-                  <div style={{ fontSize: 13, color: "var(--irca-green-700)", fontWeight: 600, marginTop: 4 }}>
-                    Socio Fundador — Director General
-                  </div>
-                </div>
-              </div>
-              <div style={{ height: 1, background: "var(--border-soft)" }} />
-              <div style={{ display: "grid", gap: 11 }}>
-                {[
-                  ["Formación", "Ingeniero Civil · M.C. en Ingeniería Ambiental (ITESM) · Lic. en Derecho"],
-                  ["Certificaciones", "Auditor Líder ISO 9001, ISO 14001 e ISO 45001"],
-                  ["Trayectoria", "Auditor líder del Programa Nacional de Auditoría Ambiental (1998-1999)"],
-                  ["Proyectos", "Complejo Penitenciario Islas Marías (2009-2012) · FONDEN para CONAPESCA (2013-2019)"],
-                ].map(([k, v]) => (
-                  <div key={k}>
-                    <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.09em", textTransform: "uppercase", color: "var(--fg-4)", marginBottom: 3 }}>{k}</div>
-                    <div style={{ fontSize: 14, lineHeight: 1.5, color: "var(--fg-2)" }}>{v}</div>
-                  </div>
-                ))}
-              </div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                {["ISO 9001", "ISO 14001", "ISO 45001", "Derecho Ambiental"].map(t => (
-                  <span key={t} style={{ padding: "3px 10px", borderRadius: 999, background: "var(--bg-1)", border: "1px solid var(--border-soft)", fontSize: 11, fontWeight: 600, color: "var(--fg-3)" }}>{t}</span>
-                ))}
-              </div>
+              ))}
+            </div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 22, paddingTop: 20, borderTop: "1px solid var(--border-soft)" }}>
+              {["ISO 9001", "ISO 14001", "ISO 45001", "Derecho Ambiental"].map(t => (
+                <span key={t} style={{ padding: "3px 10px", borderRadius: 999, background: "var(--bg-1)", border: "1px solid var(--border-soft)", fontSize: 11, fontWeight: 600, color: "var(--fg-3)" }}>{t}</span>
+              ))}
             </div>
           </div>
 
