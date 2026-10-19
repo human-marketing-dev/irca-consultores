@@ -5,7 +5,6 @@ import Photo from "@/components/ui/Photo";
 import SocialIcon, { type SocialIconName } from "@/components/ui/SocialIcon";
 import CoverageMap from "@/components/sections/CoverageMap";
 import Clients from "@/components/sections/Clients";
-import GoogleReviews from "@/components/sections/GoogleReviews";
 
 export const metadata: Metadata = {
   title: "Sobre Nosotros — IRCA Consultores",
@@ -358,9 +357,8 @@ export default function SobreNosotros() {
         </div>
       </section>
 
-      {/* ── CLIENTES + RESEÑAS ────────────────────────── */}
+      {/* ── CLIENTES ────────────────────────── */}
       <Clients />
-      <GoogleReviews />
 
       {/* ── COBERTURA ─────────────────────────────────── */}
       <section className="px-4 sm:px-6 py-16 md:py-24" style={{ background: "var(--bg-1)", borderTop: "1px solid var(--border-soft)" }}>
