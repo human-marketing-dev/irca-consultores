@@ -88,14 +88,13 @@ const alcanceCards = [
 /* ── cursos registrados ────────────────────────────── */
 
 const cursos = [
-  "Regulación y cumplimiento ambiental",
-  "Prevención de accidentes",
-  "Minimización de residuos industriales",
-  "Auditoría ambiental",
-  "Elaboración y control de planes integrales de manejo de residuos",
-  "Implementación de ISO 14001",
-  "Atención de visitas de inspección",
-  "Control de polvos en obras de construcción",
+  { nombre: "Regulación y cumplimiento ambiental",                                              area: "Productividad y competitividad",                                    horas: 16 },
+  { nombre: "Prevención de accidentes",                                                         area: "Cursos de capacitación dirigidos a paramédicos y enfermeras",       horas: 16 },
+  { nombre: "Minimización de residuos industriales",                                            area: "Productividad y competitividad",                                    horas: 8 },
+  { nombre: "Elaboración y control de planes integrales de manejo de residuos",                 area: "Seguridad",                                                         horas: 5 },
+  { nombre: "Implementación de ISO 14001",                                                      area: "Ambientales",                                                       horas: 5 },
+  { nombre: "Atención de visitas de inspección",                                                area: "Administración general",                                            horas: 5 },
+  { nombre: "Implementación y cumplimiento de la norma NAE-SDS-002-2019 para control de polvos de construcción", area: "Ambientales",                          horas: 5 },
 ];
 
 /** Lleva al formulario de /contacto con el servicio preseleccionado y, opcionalmente, el curso. */
@@ -140,7 +139,7 @@ const pillars = [
 const faqs = [
   {
     q: "¿Qué cursos ofrece IRCA Consultores?",
-    a: "Contamos con programas en regulación y cumplimiento ambiental, prevención de accidentes, minimización de residuos industriales, auditoría ambiental, elaboración y control de planes integrales de manejo de residuos, implementación de ISO 14001, atención de visitas de inspección y control de polvos en obras de construcción.",
+    a: "Contamos con programas en regulación y cumplimiento ambiental, prevención de accidentes, minimización de residuos industriales, elaboración y control de planes integrales de manejo de residuos, implementación de ISO 14001, atención de visitas de inspección y control de polvos en obras de construcción.",
   },
   {
     q: "¿Los cursos están registrados ante la STPS?",
@@ -396,16 +395,22 @@ export default function CapacitacionTecnicaEspecializada() {
           </div>
 
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3" style={{ listStyle: "none", margin: 0, padding: 0 }}>
-            {cursos.map((curso) => (
-              <li key={curso}>
+            {cursos.map(({ nombre, area, horas }) => (
+              <li key={nombre}>
                 <Link
-                  href={contactoHref(curso)}
+                  href={contactoHref(nombre)}
                   className="group"
                   style={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 14, padding: "16px 18px", borderRadius: 12, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)", color: "#fff", textDecoration: "none" }}
                 >
                   <span style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
                     <span style={{ width: 8, height: 8, borderRadius: 999, background: "var(--irca-green)", flexShrink: 0, marginTop: 7 }} />
-                    <span style={{ fontSize: 15, fontWeight: 600, lineHeight: 1.4 }}>{curso}</span>
+                    <span style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                      <span style={{ fontSize: 15, fontWeight: 600, lineHeight: 1.4 }}>{nombre}</span>
+                      <span style={{ fontSize: 12.5, lineHeight: 1.45, color: "rgba(255,255,255,0.65)" }}>{area}</span>
+                      <span style={{ alignSelf: "flex-start", padding: "2px 9px", borderRadius: 999, background: "rgba(111,176,63,0.18)", color: "var(--irca-green)", fontSize: 11.5, fontWeight: 700 }}>
+                        {horas} horas
+                      </span>
+                    </span>
                   </span>
                   <span className="transition-transform group-hover:translate-x-1" style={{ color: "var(--irca-green)", flexShrink: 0, display: "inline-flex" }}>
                     <Icon name="arrow-right" size={16} />
